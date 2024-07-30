@@ -1,0 +1,1336 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      namespace、cgroup与capabilities | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「namespace、cgroup与capabilities」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/" itemprop="url">
+		namespace、cgroup与capabilities
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/" itemprop="url">
+		<time datetime="2024-03-25T04:17:54.000Z" itemprop="dateUpdated">
+	  		2024-03-25
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Linux/" class=" ">
+			Linux
+		</a>
+	
+		<a href="/tags/kernel/" class=" ">
+			kernel
+		</a>
+	
+		<a href="/tags/namespace/" class=" ">
+			namespace
+		</a>
+	
+		<a href="/tags/cgroup/" class=" ">
+			cgroup
+		</a>
+	
+		<a href="/tags/capabilities/" class=" ">
+			capabilities
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="一、namespace"><a href="#一、namespace" class="headerlink" title="一、namespace"></a>一、namespace</h1><h2 id="1-1-类型"><a href="#1-1-类型" class="headerlink" title="1.1 类型"></a>1.1 类型</h2><table>
+<thead>
+<tr>
+<th>Namespace</th>
+<th>Flag</th>
+<th>Page</th>
+<th>Isolates</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Cgroup</td>
+<td><code>CLONE_NEWCGROUP</code></td>
+<td><code>cgroup_namespaces</code>(7)</td>
+<td>Cgroup root directory</td>
+</tr>
+<tr>
+<td>IPC</td>
+<td><code>CLONE_NEWIPC</code></td>
+<td><code>ipc_namespaces</code>(7)</td>
+<td>System V IPC, POSIX message queues</td>
+</tr>
+<tr>
+<td>Network</td>
+<td><code>CLONE_NEWNET</code></td>
+<td><code>network_namespaces</code>(7)</td>
+<td>Network devices, stacks, ports, etc.</td>
+</tr>
+<tr>
+<td>Mount</td>
+<td><code>CLONE_NEWNS</code></td>
+<td><code>mount_namespaces</code>(7)</td>
+<td>Mount points</td>
+</tr>
+<tr>
+<td>PID</td>
+<td><code>CLONE_NEWPID</code></td>
+<td><code>pid_namespaces</code>(7)</td>
+<td>Process IDs</td>
+</tr>
+<tr>
+<td>Time</td>
+<td><code>CLONE_NEWTIME</code></td>
+<td><code>time_namespaces</code>(7)</td>
+<td>Boot and monotonic clocks</td>
+</tr>
+<tr>
+<td>User</td>
+<td><code>CLONE_NEWUSER</code></td>
+<td><code>user_namespaces</code>(7)</td>
+<td>User and group IDs</td>
+</tr>
+<tr>
+<td>UTS</td>
+<td><code>CLONE_NEWUTS</code></td>
+<td><code>uts_namespaces</code>(7)</td>
+<td>Hostname and NIS domain name</td>
+</tr>
+</tbody></table>
+<h2 id="1-2-namespace-API"><a href="#1-2-namespace-API" class="headerlink" title="1.2 namespace API"></a>1.2 namespace API</h2><p><code>clone</code>(2): 创建新进程，<code>flags</code>参数可以传入上面提到的Flag，并为每一个Flag创建新的命名空间，新进程在新的namespace里面</p>
+<p><code>setns</code>(2): 将调用它的进程加入到<strong>现有的</strong>命名空间，命名空间通过<code>/proc/$&#123;pid&#125;/ns</code>下面的文件描述符之一指定</p>
+<p><code>unshare</code>(2): 将调用它的进程加入到<strong>新的</strong>命名空间，<code>flags</code>参数可以传入上面提到的Flag，并为每一个Flag创建新的命名空间，进程在新的namespace里面</p>
+<p><code>ioctl</code>(2): 相关操作可以描述命名空间的信息，操作定义在<code>ioctl_ns</code>(2)</p>
+<p>大部分情况下使用<code>clone</code>(2)和<code>unshare</code>(2)需要<code>CAP_SYS_ADMIN</code> capability（因为会改变系统全局资源到新的namspace）</p>
+<blockquote>
+<p>Uuser namespaces除外，Linux 3.8之后创建它不需要任何权限</p>
+</blockquote>
+<h2 id="1-3-The-proc-pid-ns-directory"><a href="#1-3-The-proc-pid-ns-directory" class="headerlink" title="1.3 The &#x2F;proc&#x2F;${pid}&#x2F;ns&#x2F; directory"></a>1.3 The &#x2F;proc&#x2F;${pid}&#x2F;ns&#x2F; directory</h2><p>每个进程都有一个<code>/proc/$&#123;pid&#125;/ns/</code>文件夹，里面包含了支持被<code>setns</code>(2)操作的每个命名空间的条目</p>
+<blockquote>
+<p>将此目录中的一个文件bind mounting到文件系统中的其他位置，使pid指定的进程的相应命名空间保持活动状态，即使当前命名空间中的所有进程都终止。</p>
+<p>打开此目录中的一个文件（或bind mounted到其中一个文件的文件），将返回由pid指定的进程的相应命名空间的文件句柄。只要此文件描述符保持打开，即使命名空间中的所有进程都终止，命名空间也将保持活动状态。文件描述符可以传递给<code>setns</code>(2)。</p>
+</blockquote>
+<p>如果两个进程在某同一个命名空间中，则他们的<code>/proc/$&#123;pid&#125;/ns/xxx</code>是相同的</p>
+<h2 id="1-4-The-proc-sys-user-directory"><a href="#1-4-The-proc-sys-user-directory" class="headerlink" title="1.4 The &#x2F;proc&#x2F;sys&#x2F;user directory"></a>1.4 The &#x2F;proc&#x2F;sys&#x2F;user directory</h2><p>该目录下的文件描述了可以创建的各种类型的命名空间数量限制</p>
+<p>这些文件公开的值是打开进程所在的用户命名空间的限制</p>
+<p>限制是针对每个用户的</p>
+<h2 id="1-5-命名空间生命周期"><a href="#1-5-命名空间生命周期" class="headerlink" title="1.5 命名空间生命周期"></a>1.5 命名空间生命周期</h2><p>一般而言，当名称空间中的最后一个进程终止或离开名称空间时，名称空间会自动被销毁，除非：</p>
+<ul>
+<li>目前有<code>/proc/$&#123;pid&#125;/ns/*</code>文件被打开了或者被挂载了</li>
+<li>当前命名空间被继承了或者有了子命名空间</li>
+<li>or其他种种</li>
+</ul>
+<h2 id="1-6-pid-namespaces"><a href="#1-6-pid-namespaces" class="headerlink" title="1.6 pid_namespaces"></a>1.6 pid_namespaces</h2><p>新的pid命名空间中的pid从1开始计数</p>
+<p>使用<code>CLONE_NEWPID</code>标志通过<code>clone</code>(2)或者<code>unshare</code>(2)在新命名空间中的第一个进程是init进程，pid为1</p>
+<h2 id="1-7-mount-namespaces"><a href="#1-7-mount-namespaces" class="headerlink" title="1.7 mount_namespaces"></a>1.7 mount_namespaces</h2><h1 id="二、cgroup"><a href="#二、cgroup" class="headerlink" title="二、cgroup"></a>二、cgroup</h1><h2 id="2-1-原理与实现"><a href="#2-1-原理与实现" class="headerlink" title="2.1 原理与实现"></a>2.1 原理与实现</h2><p>Link：</p>
+<ul>
+<li>官方文档：<a target="_blank" rel="noopener" href="https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt">https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt</a></li>
+<li>官方文档：<a target="_blank" rel="noopener" href="https://www.kernel.org/doc/Documentation/cgroup-v2.txt">https://www.kernel.org/doc/Documentation/cgroup-v2.txt</a></li>
+<li>v2的文档翻译：<a target="_blank" rel="noopener" href="https://arthurchiao.art/blog/cgroupv2-zh/">https://arthurchiao.art/blog/cgroupv2-zh/</a></li>
+</ul>
+<blockquote>
+<p>Linux没有为cgroup添加新的系统调用，所有功能都通过cgroup这个文件系统实现</p>
+</blockquote>
+<p>&#x3D;&#x3D;感觉最好还是不要死磕文档&#x3D;&#x3D;</p>
+<h2 id="2-2-cgroup-v2与systemd"><a href="#2-2-cgroup-v2与systemd" class="headerlink" title="2.2 cgroup v2与systemd"></a>2.2 cgroup v2与systemd</h2><p>分成两部分知识，一部分是cgroup v2（这里的重点），另一部分是systemd（感觉像是运维知识）</p>
+<p>Link: </p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sparkdev/p/9523194.html">https://www.cnblogs.com/sparkdev/p/9523194.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://darkyzhou.net/articles/rootless-containers-systemd-cgroup-v2">https://darkyzhou.net/articles/rootless-containers-systemd-cgroup-v2</a></li>
+</ul>
+<p>查看自己支持的是哪个版本的cgroup：<code>mount | grep cgroup</code></p>
+<p>cgroup v2有两种驱动模式：</p>
+<ul>
+<li>一种是直接通过提供的文件系统接口（cgroupfs）</li>
+<li>另一种是systemd&#x3D;&#x3D;感觉本质上也只是对cgroupfs操作的封装&#x3D;&#x3D;</li>
+</ul>
+<p>查看使用的是哪种驱动：</p>
+<ul>
+<li><code>ll /sys/fs/cgroup/</code>，要是存在<code>system.slice</code>以及<code>user.slice</code>两个文件夹，则为systemd驱动</li>
+<li>或者直接通过<code>sudo docker info</code>查看</li>
+</ul>
+<p><img src="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/image-20240325155023410.png" alt="image-20240325155023410"></p>
+<blockquote>
+<p>&#x3D;&#x3D;下面内容是关于systemd的前置知识&#x3D;&#x3D;</p>
+<p><strong>系统初始化需要做的事情非常多。需要启动后台服务，比如启动 ssh 服务；需要做配置工作，比如挂载文件系统。这个过程中的每一步都被 systemd 抽象为一个配置单元，即 unit。</strong>可以认为一个服务是一个配置单元，一个挂载点是一个配置单元，一个交换分区的配置是一个配置单元等等。systemd 将配置单元归纳为以下一些不同的类型。</p>
+<p>和cgroup有关的unit有：slice、scope以及service</p>
+<ul>
+<li><strong>slice</strong>：一组按层级排列的 unit。slice 并不包含进程，但会组建一个层级，并将 scope 和 service 都放置其中。真正的进程包含在 scope 或 service 中。在这一被划分层级的树中，每一个 slice 单位的名字对应通向层级中一个位置的路径&#x3D;&#x3D;也就是说，这一层下的一些cgroupfs相关的文件接口，是空的&#x2F;没有意义的（比如针对特定资源的限制等）&#x3D;&#x3D;</li>
+<li><strong>scope</strong>：一组外部创建的进程。由进程通过 <code>fork()</code> 函数启动和终止、之后被 systemd 在运行时注册的进程，scope 会将其封装。例如：用户会话、 容器和虚拟机被认为是 scope</li>
+<li><strong>service</strong>：一个或一组进程，由 systemd 依据 unit 配置文件启动。service 对指定进程进行封装，这样进程可以作为一个整体被启动或终止</li>
+</ul>
+</blockquote>
+<p>systemd提供了一个查看系统下cgroup层级情况的实用工具：<code>systemd-cgls</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Control group /:</span><br><span class="line">-.slice</span><br><span class="line">├─user.slice </span><br><span class="line">│ └─user-1000.slice </span><br><span class="line">│   ├─user@1000.service </span><br><span class="line">│   │ ├─session.slice </span><br><span class="line">│   │ │ ├─org.gnome.SettingsDaemon.MediaKeys.service </span><br><span class="line">│   │ │ │ └─2423 /usr/libexec/gsd-media-keys</span><br><span class="line">......</span><br><span class="line">│   │ ├─background.slice </span><br><span class="line">│   │ │ └─tracker-miner-fs-3.service </span><br><span class="line">│   │ │   └─2726 /usr/libexec/tracker-miner-fs-3</span><br><span class="line">│   │ ├─app.slice </span><br><span class="line">│   │ │ ├─xdg-permission-store.service </span><br><span class="line">│   │ │ │ └─2092 /usr/libexec/xdg-permission-store</span><br><span class="line">......</span><br><span class="line">│   │ └─init.scope </span><br><span class="line">│   │   ├─2051 /lib/systemd/systemd --user</span><br><span class="line">│   │   └─2052 (sd-pam)</span><br><span class="line">│   └─session-2.scope </span><br><span class="line">│     ├─2038 gdm-session-worker [pam/gdm-password]</span><br><span class="line">......</span><br><span class="line">├─init.scope </span><br><span class="line">│ └─1 /sbin/init splash</span><br><span class="line">├─system.slice </span><br><span class="line">│ ├─containerd.service </span><br><span class="line">│ │ └─1032 /usr/bin/containerd</span><br><span class="line">......</span><br><span class="line">└─machine.slice </span><br><span class="line">  └─machine-qemu\x2d2\x2dubuntu22.04\x2deBPF.scope </span><br><span class="line">    └─libvirt </span><br><span class="line">      ├─6654 /usr/bin/qemu-system-x86_64 -name guest=ubuntu22.04-eBPF,debug-thr&gt;</span><br><span class="line">......</span><br><span class="line">      └─vcpu3 </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-.slice：根 slice<ul>
+<li>user.slice：所有用户会话的默认位置<ul>
+<li>user-1000.slice：表示ID为1000的这个用户的相关配置</li>
+</ul>
+</li>
+<li>init.scope：<code>/sbin/init</code>其实就是<code>/lib/systemd/systemd</code>的符号链接，systemd的scope</li>
+<li>system.slice：所有系统 service 的默认位置&#x3D;&#x3D;就是各种系统服务所在的位置，ssh、containerd什么的&#x3D;&#x3D;</li>
+<li>machine.slice：所有虚拟机<del>和Linux容器&#x3D;&#x3D;？存疑，待会做实验&#x3D;&#x3D;</del>的默认位置&#x3D;&#x3D;容器的cgroup位置不在这里，见2.3节&#x3D;&#x3D;</li>
+</ul>
+</li>
+</ul>
+<p>对资源管理的设置可以是 transient(临时的)，也可以是 persistent(永久的)</p>
+<h3 id="2-2-1-创建临时的（transient）cgroup"><a href="#2-2-1-创建临时的（transient）cgroup" class="headerlink" title="2.2.1 创建临时的（transient）cgroup"></a>2.2.1 创建临时的（<em>transient</em>）cgroup</h3><p>使用<code>systemd-run</code>跑一个临时服务：<code>sudo systemd-run --unit=toptest --slice=test top -b</code></p>
+<p>检查cgroupfs，发现多了新的slice - test.slice：</p>
+<p><img src="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/image-20240325161554181.png" alt="image-20240325161554181"></p>
+<p>这个.slice文件夹下有cgroupfs的标准接口文件，也有进一步的toptest.service文件夹，里面同样也有cgroupfs的标准接口文件</p>
+<p>查看test.slice的状态：<code>sudo systemctl status test.slice</code>，看到对应的cgroup信息</p>
+<p><img src="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/image-20240325161912118.png" alt="image-20240325161912118"></p>
+<p>查看服务的状态也是类似的：<code>sudo systemctl status toptest.service</code></p>
+<p><img src="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/image-20240325162011547.png" alt="image-20240325162011547"></p>
+<p>查看对应进程的cgroup信息：<code>cat /proc/3471/cgroup</code>，标出了属于的cgroup层级结构</p>
+<p><img src="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/image-20240325162132099.png" alt="image-20240325162132099"></p>
+<p>通过<code>systemctl</code>限制资源使用，比如修改可用内存上限为500M：</p>
+<p><code>sudo systemctl set-property toptest.service MemoryLimit=500M</code></p>
+<p>检查对应的cgroupfs文件接口：</p>
+<p><code>cat /sys/fs/cgroup/test.slice/toptest.service/memory.max</code></p>
+<p>回显“524288000”，验证确实生效（之前是“max”）</p>
+<p>查看对应服务状态：<code>sudo systemctl status toptest.service</code>，发现Memory那栏多了限制500M</p>
+<p><img src="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/image-20240325162728917.png" alt="image-20240325162728917"></p>
+<p>临时 cgroup 的特征是，所包含的进程一旦结束，临时 cgroup 就会被自动释放。</p>
+<p><code>sudo kill -9 3471</code>，再去<code>ll /sys/fs/cgroup/test.slice/</code>，发现<code>toptest.service</code>文件夹已消失</p>
+<h3 id="2-2-2-创建持久的cgroup"><a href="#2-2-2-创建持久的cgroup" class="headerlink" title="2.2.2 创建持久的cgroup"></a>2.2.2 创建持久的cgroup</h3><p>创建对应的unit配置文件，据个例子就是在<code>/usr/lib/systemd/system/</code>目录下</p>
+<p>这里以<code>/usr/lib/systemd/system/cron.service</code>这个配置文件为例</p>
+<p>首先检查cron服务的资源限制情况：<code>sudo systemctl status cron.service</code></p>
+<p><img src="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/image-20240325163734578.png" alt="image-20240325163734578"></p>
+<p>找到对应的进程号573，以及所属的cgroup层级<code>/system.slice/cron.service</code></p>
+<p>观察一下内存限制情况：<code>cat /sys/fs/cgroup/system.slice/cron.service/memory.max</code>，回显“max”</p>
+<p>修改unit配置文件：</p>
+<p><img src="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/image-20240325164048391.png" alt="image-20240325164048391"></p>
+<p>重新加载配置文件并重启cron.service：</p>
+<p><code>sudo systemctl daemon-reload</code></p>
+<p><code>sudo systemctl restart cron.service</code></p>
+<p>重新查看相关信息：</p>
+<p><code>sudo systemctl status cron.service</code></p>
+<p><code>cat /sys/fs/cgroup/system.slice/cron.service/memory.max</code></p>
+<p>证实确实通过unit配置文件对资源进行了限制</p>
+<p>最后有一个类似于<code>top</code>的，systemd提供专门用于查看cgroup实时资源消耗情况的工具：<code>systemd-cgtop</code></p>
+<h3 id="2-2-3-其他关于systemd下cgroup管理的文档"><a href="#2-2-3-其他关于systemd下cgroup管理的文档" class="headerlink" title="2.2.3 其他关于systemd下cgroup管理的文档"></a>2.2.3 其他关于systemd下cgroup管理的文档</h3><p>Link: <a target="_blank" rel="noopener" href="https://www.freedesktop.org/wiki/Software/systemd/ControlGroupInterface/">https://www.freedesktop.org/wiki/Software/systemd/ControlGroupInterface/</a></p>
+<ul>
+<li><strong>首先root cgroup只能被systemd（PID 1）管理并写入</strong>，用户不能自己去写root cgroup的文件接口（这与每个cgroup只能有一个writer的内核要求冲突）</li>
+<li>任何service必须为其打算亲自管理的subcgroup设置<code>Delegate=yes</code></li>
+<li><strong>任何.slice下的cgroup都不包含进程</strong></li>
+<li>slice的命名规则：以“-”标识父子slice，例如foobar-waldo.slice是foobar.slice的子slice</li>
+<li>systemd的Bus API文档，包含了cgroup相关配置的API信息</li>
+</ul>
+<p><strong>Delegation属性</strong></p>
+<p>给service和scope用，一个布尔属性，如果为True则意味着对应service或scope下的进程可以控制它们自己的cgroup子树（直接在&#x2F;sys&#x2F;fs&#x2F;cgroup下创建subcgroup）</p>
+<ul>
+<li>All controllers systemd knows are enabled for that scope&#x2F;service, if the scope&#x2F;service runs privileged code</li>
+<li>Access to the cgroup directory of the scope&#x2F;service is permitted, and  files&#x2F;and directories are updated to get write access for the user  specified in <code>User=</code> if the scope&#x2F;unit runs unprivileged. Note that in this case access to any controllers is not available</li>
+<li>systemd will refrain from moving processes across the “delegation” boundary</li>
+</ul>
+<p>像是容器管理器这样的进程，才需要使用Delegation属性去管理自己的cgroup子树</p>
+<hr>
+<p>Link: <a target="_blank" rel="noopener" href="https://systemd.io/CGROUP_DELEGATION/">https://systemd.io/CGROUP_DELEGATION/</a></p>
+<p>cgroup v2的两大规则：</p>
+<ul>
+<li>内部节点不能有进程：意味着不允许进程直接附加到有subcgroup的cgroup，反之亦然（根cgroup除外）</li>
+<li>每个cgroup只能由一个writer：保证每个cgroup只能由同一个进程管理</li>
+</ul>
+<p>systemd下的推论：</p>
+<ul>
+<li>用户不能自己在根cgroup中创建&#x2F;管理自己的cgroup -&gt; 违背第二个规则，因为根cgroup只由systemd管理</li>
+</ul>
+<p>规则一在v2下由内核强制执行（v1没有），规则二内核不强制执行（v1和v2都是）（但不遵循会很痛苦）</p>
+<p><code>.service</code> unit类型：磁盘上的unit配置文件（静态），或者是D-Bus API启动（transient）</p>
+<p><code>.scope</code> unit类型：只能是transient</p>
+<p><code>.slice</code> unit类型：不直接包含任何进程，可以在磁盘上用unit文件定义，也可以通过编程将其定义为transient unit</p>
+<p><strong>Delegation属性</strong></p>
+<p>类似上一个文档所述，仅用于<code>.service</code>以及<code>.scope</code>。开启之后：</p>
+<ul>
+<li>systemd再也不会干涉cgroup（包括创建、删除cgroup或者更改进程）</li>
+<li>如果指定了<code>User=</code>，那么对应的用户有权创建cgroup</li>
+<li>&#x3D;&#x3D;BPF？&#x3D;&#x3D;</li>
+</ul>
+<p>然后给了一些systemd系统下容器管理程序的cgroup使用建议，分了三种情况：</p>
+<ul>
+<li>使用systemd</li>
+<li>尽量减少使用systemd（“去他妈的systemd”的态度也适用这个）</li>
+<li>还有一种没太理解，貌似是管理程序以及容器进程，分了两个cgroup</li>
+</ul>
+<p>最后给了一些Dos和Don’ts，这里讲Don’ts：</p>
+<ul>
+<li>永远不要在根cgroup下创建自己的cgroup</li>
+<li>永远不要在一个<code>.slice</code>下设置<code>Delegate=</code>（<code>-.slice</code>除外）</li>
+<li>永远不要在systemd创建的cgroup下自行写入任何属性（读就完全可以），确保只在自己的subcgroup下捣鼓</li>
+<li>When not using <code>CLONE_NEWCGROUP</code> when delegating a sub-tree to a container payload running systemd, then don’t get the idea that you can bind mount only a sub-tree of the host’s cgroup tree into the container. Part of the cgroup API is that <code>/proc/$PID/cgroup</code> reports the cgroup path of every process, and hence any path below <code>/sys/fs/cgroup/</code> needs to match what <code>/proc/$PID/cgroup</code> of the payload processes reports. What you can do safely however, is mount the upper parts of the cgroup tree read-only (or even replace the middle bits with an intermediary <code>tmpfs</code> — but be careful not to break the <code>statfs()</code> detection logic discussed above), as long as the path to the delegated sub-tree remains accessible as-is.</li>
+<li>…</li>
+</ul>
+<h2 id="2-3-Docker下的cgroup利用"><a href="#2-3-Docker下的cgroup利用" class="headerlink" title="2.3 Docker下的cgroup利用"></a>2.3 Docker下的cgroup利用</h2><p>版本：</p>
+<ul>
+<li>Docker：25.0.3</li>
+<li>cgroup: v2</li>
+<li>cgroupv2驱动：systemd</li>
+</ul>
+<p>跑一个限制200M内存使用的busybox下的<code>top</code>工具：</p>
+<p><code>sudo docker run -m 200M -d busybox top</code></p>
+<p>查看容器的详细信息：<code>sudo docker inspect &#123;容器id&#125;</code>，找到对应的PID为2729</p>
+<p><code>cat /proc/2729/cgroup</code>，找到对应的cgroup层级：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0::/system.slice/docker-10f6bc2c3379ca666db529a1d316e2974d933e21dee611e9b9392ac94fed282b.scope</span><br></pre></td></tr></table></figure>
+
+<p>可以看到是在system.slice层级下，命名为“docker-{容器ID}.scope”&#x3D;&#x3D;与启动容器时指定的–name容器名字无关，只以容器id作为标识&#x3D;&#x3D;</p>
+<p>下面的memory.max可以看到之前设置的内存限制</p>
+<p>&#x3D;&#x3D;但是systemd的<a target="_blank" rel="noopener" href="https://www.freedesktop.org/wiki/Software/systemd/ControlGroupInterface/">官方文档</a>确实有说容器的cgroup会放在machine.slice下（这只是默认设置）&#x3D;&#x3D;</p>
+<h1 id="三、capabilities"><a href="#三、capabilities" class="headerlink" title="三、capabilities"></a>三、capabilities</h1><p>Link:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://icloudnative.io/posts/linux-capabilities-why-they-exist-and-how-they-work/">https://icloudnative.io/posts/linux-capabilities-why-they-exist-and-how-they-work/</a></li>
+</ul>
+<p>Linux capabilities：</p>
+<ul>
+<li>进程 capabilities：细分到线程，每个线程可以有自己的capabilities</li>
+<li>文件 capabilities：capabilities 保存在文件的扩展属性中</li>
+</ul>
+<p>文件与线程的 capabilities 共同决定了通过 <code>execve()</code> 运行该文件后的线程的 capabilities。</p>
+<h2 id="3-1-进程的capabilities"><a href="#3-1-进程的capabilities" class="headerlink" title="3.1 进程的capabilities"></a>3.1 进程的capabilities</h2><p><strong>Permitter</strong></p>
+<p>定义了线程能够使用的 capabilities 的上限。它并不使能线程的 capabilities，而是作为一个规定。也就是说，线程可以通过系统调用 <code>capset()</code> 来从 <code>Effective</code> 或 <code>Inheritable</code> 集合中添加或删除 capability，前提是添加或删除的 capability 必须包含在 <code>Permitted</code> 集合中（其中 Bounding 集合也会有影响，具体参考下文）。</p>
+<p><strong>Effective</strong></p>
+<p>内核检查线程是否可以进行特权操作时，检查的对象便是 <code>Effective</code> 集合。如之前所说，<code>Permitted</code> 集合定义了上限，线程可以删除 Effective 集合中的某 capability，随后在需要时，再从 Permitted 集合中恢复该 capability，以此达到临时禁用 capability 的功能。</p>
+<p><strong>Inheritable</strong></p>
+<p>当执行 <code>exec()</code> 系统调用时，能够被新的可执行文件继承的 capabilities，被包含在 <code>Inheritable</code> 集合中。这里需要说明一下，包含在该集合中的 capabilities 并不会自动继承给新的可执行文件，即不会添加到新线程的 <code>Effective</code> 集合中，它只会影响新线程的 <code>Permitted</code> 集合。</p>
+<p><strong>Bounding</strong></p>
+<p><code>Bounding</code> 集合是 <code>Inheritable</code> 集合的超集，如果某个 capability 不在 <code>Bounding</code> 集合中，即使它在 <code>Permitted</code> 集合中，该线程也不能将该 capability 添加到它的 <code>Inheritable</code> 集合中。</p>
+<p>Bounding 集合的 capabilities 在执行 <code>fork()</code> 系统调用时会传递给子进程的 Bounding 集合，并且在执行 <code>execve</code> 系统调用后保持不变。</p>
+<ul>
+<li>当线程运行时，不能向 Bounding 集合中添加 capabilities。</li>
+<li>一旦某个 capability 被从 Bounding 集合中删除，便不能再添加回来。</li>
+<li>将某个 capability 从 Bounding 集合中删除后，如果之前 <code>Inherited</code> 集合包含该 capability，将继续保留。但如果后续从 <code>Inheritable</code> 集合中删除了该 capability，便不能再添加回来。</li>
+</ul>
+<p><strong>Ambient</strong></p>
+<p>Linux <code>4.3</code> 内核新增了一个 capabilities 集合叫 <code>Ambient</code> ，用来弥补 <code>Inheritable</code> 的不足。<code>Ambient</code> 具有如下特性：</p>
+<ul>
+<li><code>Permitted</code> 和 <code>Inheritable</code> 未设置的 capabilities，<code>Ambient</code> 也不能设置。</li>
+<li>当 <code>Permitted</code> 和 <code>Inheritable</code> 关闭某权限（比如 <code>CAP_SYS_BOOT</code>）后，<code>Ambient</code> 也随之关闭对应权限。这样就确保了降低权限后子进程也会降低权限。</li>
+<li>非特权用户如果在 <code>Permitted</code> 集合中有一个 capability，那么可以添加到 <code>Ambient</code> 集合中，这样它的子进程便可以在 <code>Ambient</code>、<code>Permitted</code> 和 <code>Effective</code> 集合中获取这个 capability。现在不知道为什么也没关系，后面会通过具体的公式来告诉你。</li>
+</ul>
+<p><code>Ambient</code> 的好处显而易见，举个例子，如果你将 <code>CAP_NET_ADMIN</code> 添加到当前进程的 <code>Ambient</code> 集合中，它便可以通过 <code>fork()</code> 和 <code>execve()</code> 调用 shell 脚本来执行网络管理任务，因为 <code>CAP_NET_ADMIN</code> 会自动继承下去。</p>
+<h2 id="3-2-文件的capabilities"><a href="#3-2-文件的capabilities" class="headerlink" title="3.2 文件的capabilities"></a>3.2 文件的capabilities</h2><p>文件的 capabilities 功能，需要文件系统的支持。如果文件系统使用了 <code>nouuid</code> 选项进行挂载，那么文件的 capabilities 将会被忽略。</p>
+<p><strong>Permitted</strong></p>
+<p>这个集合中包含的 capabilities，在文件被执行时，会与线程的 Bounding 集合计算交集，然后添加到线程的 <code>Permitted</code> 集合中。</p>
+<p><strong>Inheritable</strong></p>
+<p>这个集合与线程的 <code>Inheritable</code> 集合的交集，会被添加到执行完 <code>execve()</code> 后的线程的 <code>Permitted</code> 集合中。</p>
+<p><strong>Effective</strong></p>
+<p>这不是一个集合，仅仅是一个标志位。如果设置开启，那么在执行完 <code>execve()</code> 后，线程 <code>Permitted</code> 集合中的 capabilities 会自动添加到它的 <code>Effective</code> 集合中。对于一些旧的可执行文件，由于其不会调用 capabilities 相关函数设置自身的 <code>Effective</code> 集合，所以可以将可执行文件的 Effective bit 开启，从而可以将 <code>Permitted</code> 集合中的 capabilities 自动添加到 <code>Effective</code> 集合中。</p>
+<h2 id="3-3-capabilities的计算"><a href="#3-3-capabilities的计算" class="headerlink" title="3.3 capabilities的计算"></a>3.3 capabilities的计算</h2><blockquote>
+<p>P’(ambient) &#x3D; (file is privileged) ? 0 : P(ambient)</p>
+<p>P’(permitted) &#x3D; (P(inheritable) &amp; F(inheritable)) |<br>         (F(permitted) &amp; P(bounding))) | P’(ambient)</p>
+<p>P’(effective)  &#x3D; F(effective) ? P’(permitted) : P’(ambient)</p>
+<p>P’(inheritable) &#x3D; P(inheritable) [i.e., unchanged]</p>
+<p>P’(bounding) &#x3D; P(bounding) [i.e., unchanged]</p>
+<p><code>P</code> 代表执行 <code>execve()</code> 前线程的 capabilities，<code>P&#39;</code> 代表执行 <code>execve()</code> 后线程的 capabilities，<code>F</code> 代表可执行文件的 capabilities。那么</p>
+</blockquote>
+<ul>
+<li>如果用户是 root 用户，那么执行 <code>execve()</code> 后线程的 <code>Ambient</code> 集合是空集；如果是普通用户，那么执行 <code>execve()</code> 后线程的 <code>Ambient</code> 集合将会继承执行 <code>execve()</code> 前线程的 <code>Ambient</code> 集合。</li>
+</ul>
+<ul>
+<li>执行 <code>execve()</code> 前线程的 <code>Inheritable</code> 集合与可执行文件的 <code>Inheritable</code> 集合取交集，会被添加到执行 <code>execve()</code> 后线程的 <code>Permitted</code> 集合；可执行文件的 capability bounding 集合与可执行文件的 <code>Permitted</code> 集合取交集，也会被添加到执行 <code>execve()</code> 后线程的 <code>Permitted</code> 集合；同时执行 <code>execve()</code> 后线程的 <code>Ambient</code> 集合中的 capabilities 会被自动添加到该线程的 <code>Permitted</code> 集合中。</li>
+<li>如果可执行文件开启了 Effective 标志位，那么在执行完 <code>execve()</code> 后，线程 <code>Permitted</code> 集合中的 capabilities 会自动添加到它的 <code>Effective</code> 集合中。</li>
+<li>执行 <code>execve()</code> 前线程的 <code>Inheritable</code> 集合会继承给执行 <code>execve()</code> 后线程的 <code>Inheritable</code> 集合。</li>
+</ul>
+<ol>
+<li>上面的公式是针对系统调用 <code>execve()</code> 的，如果是 <code>fork()</code>，那么子线程的 capabilities 信息完全复制父进程的 capabilities 信息。</li>
+<li>可执行文件的 <code>Inheritable</code> 集合与线程的 <code>Inheritable</code> 集合并没有什么关系，可执行文件 <code>Inheritable</code> 集合中的 capabilities 不会被添加到执行 <code>execve()</code> 后线程的 <code>Inheritable</code> 集合中。如果想让新线程的 <code>Inheritable</code> 集合包含某个 capability，只能通过 <code>capset()</code> 将该 capability 添加到当前线程的 <code>Inheritable</code> 集合中（因为 P’(inheritable) &#x3D; P(inheritable)）。</li>
+<li>如果想让当前线程 <code>Inheritable</code> 集合中的 capabilities 传递给新的可执行文件，该文件的 <code>Inheritable</code> 集合中也必须包含这些 capabilities（因为 P’(permitted)  &#x3D; (P(inheritable) &amp; F(inheritable))|…）。</li>
+<li>将当前线程的 capabilities 传递给新的可执行文件时，仅仅只是传递给新线程的 <code>Permitted</code> 集合。如果想让其生效，新线程必须通过 <code>capset()</code> 将 capabilities 添加到 <code>Effective</code> 集合中。或者开启新的可执行文件的 Effective 标志位（因为 P’(effective)  &#x3D; F(effective) ? P’(permitted) : P’(ambient)）。</li>
+<li>在没有 <code>Ambient</code> 集合之前，如果某个脚本不能调用 <code>capset()</code>，但想让脚本中的线程都能获得该脚本的 <code>Permitted</code> 集合中的 capabilities，只能将 <code>Permitted</code> 集合中的 capabilities 添加到 <code>Inheritable</code> 集合中（P’(permitted) &#x3D; P(inheritable) &amp; F(inheritable)|…），同时开启  Effective 标志位（P’(effective)  &#x3D; F(effective) ? P’(permitted) :  P’(ambient)）。有 有 <code>Ambient</code> 集合之后，事情就变得简单多了，后续的文章会详细解释。</li>
+<li>如果某个 UID 非零（普通用户）的线程执行了 <code>execve()</code>，那么 <code>Permitted</code> 和 <code>Effective</code> 集合中的 capabilities 都会被清空。</li>
+<li>从 root 用户切换到普通用户，那么 <code>Permitted</code> 和 <code>Effective</code> 集合中的 capabilities 都会被清空，除非设置了 SECBIT_KEEP_CAPS 或者更宽泛的 SECBIT_NO_SETUID_FIXUP。</li>
+</ol>
+<h2 id="3-4-no-new-privs"><a href="#3-4-no-new-privs" class="headerlink" title="3.4 no_new_privs"></a>3.4 no_new_privs</h2><p>一般情况下，<code>execve()</code> 系统调用能够赋予新启动的进程其父进程没有的权限，最常见的例子就是通过 <code>setuid</code> 和 <code>setgid</code> 来设置程序进程的 uid 和 gid 以及文件的访问权限。这就给不怀好意者钻了不少空子，可以直接通过 fork 来提升进程的权限，从而达到不可告人的目的。</p>
+<p>为了解决这个问题，Linux 内核从 3.5 版本开始，引入了 <code>no_new_privs</code> 属性（实际上就是一个 bit，可以开启和关闭），提供给进程一种能够在 <code>execve()</code> 调用整个阶段都能持续有效且安全的方法。</p>
+<ul>
+<li>开启了 <code>no_new_privs</code> 之后，execve 函数可以确保所有操作都必须调用 <code>execve()</code> 判断并赋予权限后才能被执行。这就确保了线程及子线程都无法获得额外的权限，因为无法执行 setuid 和 setgid，也不能设置文件的权限。</li>
+<li>一旦当前线程的 <code>no_new_privs</code> 被置位后，不论通过 fork，clone 或 execve 生成的子线程都无法将该位清零。</li>
+</ul>
+<p>Docker 中可以通过参数 <code>--security-opt</code> 来开启 <code>no_new_privs</code> 属性，例如：<code>docker run --security-opt=no_new_privs busybox</code>。下面通过一个例子来体会一下 <code>no_new_privs</code> 属性的作用。</p>
+<h2 id="3-5-一个构建半特权环境的例子"><a href="#3-5-一个构建半特权环境的例子" class="headerlink" title="3.5 一个构建半特权环境的例子"></a>3.5 一个构建半特权环境的例子</h2><p><code>Ambient</code> 和 <code>Inheritable</code> 集合，这两个集合的意义就在于可以<strong>帮助我们在进程树或 namespace 的范围内创建一个允许任意进程使用某些 capabilities 的环境。</strong>&#x3D;&#x3D;最小特权Docker&#x3D;&#x3D;</p>
+<p>例如，我们可以在 <code>Ambient</code> 集合中加入 <code>CAP_NET_BIND_SERVICE</code>  capabilities 来创建一个可以绑定到 80 端口的 “webserver” 环境，不需要额外的 capabilities，也不需要以  root 用户身份运行。webserver 可以通过解释器或辅助脚本启动，并且不需要给可执行文件设置 capabilities。相关公式：</p>
+<blockquote>
+<p>P’(ambient) &#x3D; (file is privileged) ? 0 : P(ambient)<br>P’(effective) &#x3D; F(effective) ? P’(permitted) : P’(ambient)</p>
+</blockquote>
+<p>set_ambient.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cap-ng.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/prctl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/capability.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Definitions from the kernel header files. These are going to be removed</span></span><br><span class="line"><span class="comment"> * when the /usr/include files have these defined.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * AM: This should be updated, I was just being lazy.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PR_CAP_AMBIENT 47</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PR_CAP_AMBIENT_IS_SET 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PR_CAP_AMBIENT_RAISE 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PR_CAP_AMBIENT_LOWER 3</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PR_CAP_AMBIENT_CLEAR_ALL 4</span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">set_ambient_cap</span><span class="params">(<span class="type">int</span> cap)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> rc;</span><br><span class="line"></span><br><span class="line">	capng_get_caps_process();</span><br><span class="line">	rc = capng_update(CAPNG_ADD, CAPNG_INHERITABLE, cap);</span><br><span class="line">	<span class="keyword">if</span> (rc) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Cannot add inheritable cap\n&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	capng_apply(CAPNG_SELECT_CAPS);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Note the two 0s at the end. Kernel checks for these */</span></span><br><span class="line">	<span class="keyword">if</span> (prctl(PR_CAP_AMBIENT, PR_CAP_AMBIENT_RAISE, cap, <span class="number">0</span>, <span class="number">0</span>)) &#123;</span><br><span class="line">		perror(<span class="string">&quot;Cannot set cap&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> rc;</span><br><span class="line"></span><br><span class="line">	set_ambient_cap(CAP_NET_BIND_SERVICE);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Starting process with CAP_NET_BIND_SERVICE in ambient\n&quot;</span>);</span><br><span class="line">	<span class="keyword">if</span> (execv(argv[<span class="number">1</span>], argv + <span class="number">1</span>))</span><br><span class="line">		perror(<span class="string">&quot;Cannot exec&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装依赖与编译：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install libcap-ng-dev</span><br><span class="line">gcc -o set_ambient ./set_ambient.c -lcap-ng</span><br></pre></td></tr></table></figure>
+
+
+
+<p>给文件添加<code>cap_net_bind_service</code>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">setcap</span> cap_net_bind_service+p set_ambient</span><br></pre></td></tr></table></figure>
+
+
+
+<p>之后使用小于1024的端口，就不用sudo了。例如：<code>./set_ambient /usr/bin/python3 -m http.server 80</code></p>
+<p>这样子即使内置了一个shell，也只能用网络服务绑定之类的功能</p>
+<blockquote>
+<p>用 shell 的好处是：具有 <code>Ambient</code> 集合中 capabilities 的 bash 环境变成了一个<strong>半特权环境</strong>，在这个环境中不仅可以运行 Web 服务，也可以运行相关脚本和程序，而这些脚本和程序又可以正常启动 webserver。</p>
+</blockquote>
+<p>最后讲一下 <code>Inheritable</code> 与 <code>Ambient</code> 集合的区别，如果想使用 Inheritable 达到上述目的，需要将 <code>CAP_NET_BIND_SERVICE</code> capabilities 添加到 Go web 服务可执行文件的 <code>Inheritable</code> 集合中，同时还需要开启 Effective 标志位。</p>
+<h2 id="3-6-Docker的相关选项"><a href="#3-6-Docker的相关选项" class="headerlink" title="3.6 Docker的相关选项"></a>3.6 Docker的相关选项</h2><p>在容器中限制 capabilities 最简单最常见的方法是 <code>--cap-drop</code> 和 <code>--cap-add</code> 参数，这些参数只会影响所有用户的 <code>Bounding</code> 集合，包括 root 用户。安全的做法是移除所有的 capabilities，只添加需要的 capabilities，例如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --cap-drop all --cap-add NET_BIND_SERVICE -it amouat/caps capsh --<span class="built_in">print</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/Linux%E4%BC%81%E9%B9%85.png"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+			<a href="/2024/04/08/%E5%AE%B9%E5%99%A8%E5%AE%89%E5%85%A8/" title="容器安全" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2024/03/19/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%9E%B6%E6%9E%84/" title="Docker基础与架构" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/07/18/Linux-VFS/" title="Linux VFS">
+								Linux VFS			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 18日, 2024				
+							</p>
+							<p class="relate-post-content">
+								七、Linux VFS
+
+
+
+主要是VFS——虚拟文件系统：
+提供了统一的文件模型（common file model），底层具体的文件系统负责具体实现这种文件模型
+
+抽象，统一表示
+
+7.0 统一文件模型文件存在硬盘上，硬盘的最小存...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/07/18/Linux-VFS/" title="Linux VFS">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux VFS"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">
+								Linux攻防-权限维持及痕迹隐藏			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 17日, 2023				
+							</p>
+							<p class="relate-post-content">
+								零、Linux下的控守技术概述控守技术可以理解为权限维持技术，泛指攻击者获取目标机器的控制权限后，将该权限长久维持的技术和方法
+这里主要分为两大类：
+
+权限维持：能够在失去当前控制权限时，下次能更容易地重获权限的方法
+痕迹隐藏：能够使...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux攻防-权限维持及痕迹隐藏"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">
+								Redis-配置&命令&漏洞利用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 22日, 2023				
+							</p>
+							<p class="relate-post-content">
+								Redis配置路径：/etc/redis/redis.conf
+允许远程主机访问数据库：NETWORK一栏，注释掉bind 127.0.0.1 ::1同时设置protected-mode no
+说明是这样的：
+
+意思是Redis仅允许...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Redis.png" alt="Redis-配置&amp;命令&amp;漏洞利用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">
+								Linux环境变量			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 10日, 2021				
+							</p>
+							<p class="relate-post-content">
+								前言学，以前一直没会
+以Kali Linux 2021.2为例
+资料1资料2
+概述Linux环境变量包括：系统级、用户级系统级环境变量：每个登录到系统的用户都要读取的用户级环境变量：用户使用系统时加载的
+相关命令export：设置或显...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux环境变量.png" alt="Linux环境变量"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/05/09/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Golang学习笔记">
+								Golang学习笔记			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 9日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、菜鸟&#x3D;&#x3D;学了基础中的基础语法&#x3D;&#x3D;
+1.1 Go语言结构.go文件必须在非注释的第一行指明这个文件属于哪个包，如：package main
+每一个可执行文件都必须包含main函数，一般来说都是...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/05/09/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Golang学习笔记">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Golang.png" alt="Golang学习笔记"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/04/08/%E5%AE%B9%E5%99%A8%E5%AE%89%E5%85%A8/" title="容器安全">
+								容器安全			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 8日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、Docker安全概述Docker 自身是基于 Linux 的多种 Namespace 实现的，其中有一个很重要的 Namespace 叫作 User Namespace，User Namespace 主要是用来做容器内用户和主机的...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/04/08/%E5%AE%B9%E5%99%A8%E5%AE%89%E5%85%A8/" title="容器安全">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/docker.jpg" alt="容器安全"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/03/19/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%9E%B6%E6%9E%84/" title="Docker基础与架构">
+								Docker基础与架构			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 19日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、Docker进程与Linux进程Link: https://zhuanlan.zhihu.com/p/537982888
+1.1 Linux的forkLinux：由父进程创建并执行子进程，创建通过fork完成，执行通过exec完成...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/03/19/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%9E%B6%E6%9E%84/" title="Docker基础与架构">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/docker.jpg" alt="Docker基础与架构"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">
+								Web漏洞整理-SQLi			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 7日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQLi前言主要是之前练习了很多靶场所设计到的SQLi的笔记都比较分散这里就系统地整理下，主要是整合到一起，方便以后查阅
+整理自靶场练习Webgoat、pikachu、Web For Pentester、XVWA、sql...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/WebVuln1.jpg" alt="Web漏洞整理-SQLi"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>

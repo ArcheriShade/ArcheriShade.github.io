@@ -1,0 +1,1113 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      Linux VFS | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「Linux VFS」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2024/07/18/Linux-VFS/" itemprop="url">
+		Linux VFS
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2024/07/18/Linux-VFS/" itemprop="url">
+		<time datetime="2024-07-18T04:22:26.000Z" itemprop="dateUpdated">
+	  		2024-07-18
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Linux/" class=" ">
+			Linux
+		</a>
+	
+		<a href="/tags/kernel/" class=" ">
+			kernel
+		</a>
+	
+		<a href="/tags/VFS/" class=" ">
+			VFS
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="七、Linux-VFS"><a href="#七、Linux-VFS" class="headerlink" title="七、Linux VFS"></a>七、Linux VFS</h1><img src="20180318233241252.png" alt="20180318233241252" style="zoom:67%;" />
+
+
+
+<p>主要是VFS——虚拟文件系统：</p>
+<p>提供了统一的<strong>文件模型（common file model）</strong>，底层具体的文件系统负责具体实现这种文件模型</p>
+<blockquote>
+<p>抽象，统一表示</p>
+</blockquote>
+<h2 id="7-0-统一文件模型"><a href="#7-0-统一文件模型" class="headerlink" title="7.0 统一文件模型"></a>7.0 统一文件模型</h2><p>文件存在硬盘上，<strong>硬盘的最小存储单位是sector</strong>，512字节</p>
+<p>OS一次性读取8个sector，4KB，组成一个block，<strong>文件系统的最小存储单位是block</strong></p>
+<p>文件存储的元信息：<code>inode</code></p>
+<p>文件存储的数据：<code>block</code></p>
+<blockquote>
+<p>一个文件必须占用一个<code>inode</code>，但至少占用一个<code>block</code></p>
+</blockquote>
+<p>&#x3D;&#x3D;下面的结构体均来自5.15版本的内核&#x3D;&#x3D;</p>
+<h2 id="7-1-super-block"><a href="#7-1-super-block" class="headerlink" title="7.1 super_block"></a>7.1 super_block</h2><p><strong>文件系统的基本元数据</strong>（fs类型、大小、状态等）</p>
+<p>一个<code>super_block</code>对应一个文件系统</p>
+<blockquote>
+<p>静态：superblock保存了一个文件系统的最基础的元信息，一般都保存在底层存储设备的开头；</p>
+<p>动态：挂载之后会读取文件系统的superblock并常驻内存，部分字段是动态创建时设置的。superblock的具体定义见linux&#x2F;include&#x2F;fs&#x2F;fs.h</p>
+</blockquote>
+<p><img src="/2024/07/18/Linux-VFS/20180318233329641.png" alt="20180318233329641"></p>
+<p><img src="/2024/07/18/Linux-VFS/310930178608466.png" alt="310930178608466"></p>
+<p>所有的文件系统都存在于file_systems链表中，通过调用<code>register_filesystem</code>接口来注册文件系统</p>
+<p><img src="/2024/07/18/Linux-VFS/310930198295365.png" alt="310930198295365"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /include/linux/fs.h</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">super_block</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>	<span class="title">s_list</span>;</span>		<span class="comment">// 串联super_block的链表</span></span><br><span class="line">	<span class="type">dev_t</span>			s_dev;		<span class="comment">/* search index; _not_ kdev_t */</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">char</span>		s_blocksize_bits;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span>		s_blocksize;</span><br><span class="line">	<span class="type">loff_t</span>			s_maxbytes;	<span class="comment">/* Max file size */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">file_system_type</span>	*<span class="title">s_type</span>;</span>		<span class="comment">// 该文件系统的类型</span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">super_operations</span>	*<span class="title">s_op</span>;</span>	<span class="comment">// 指向该文件系统所支持的各种操作的结构体</span></span><br><span class="line">    										<span class="comment">// VFS抽象的关键，对应一系列函数指针，由VFS转到具体的FS</span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">dquot_operations</span>	*<span class="title">dq_op</span>;</span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">quotactl_ops</span>	*<span class="title">s_qcop</span>;</span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">export_operations</span> *<span class="title">s_export_op</span>;</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span>		s_flags;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span>		s_iflags;	<span class="comment">/* internal SB_I_* flags */</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span>		s_magic;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">dentry</span>		*<span class="title">s_root</span>;</span>	<span class="comment">// 该文件系统的根目录</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">rw_semaphore</span>	<span class="title">s_umount</span>;</span></span><br><span class="line">	<span class="type">int</span>			s_count;</span><br><span class="line">	<span class="type">atomic_t</span>		s_active;</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_SECURITY</span></span><br><span class="line">	<span class="type">void</span>                    *s_security;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">xattr_handler</span> **<span class="title">s_xattr</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_FS_ENCRYPTION</span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">fscrypt_operations</span>	*<span class="title">s_cop</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">key</span>		*<span class="title">s_master_keys</span>;</span> <span class="comment">/* master crypto keys in use */</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_FS_VERITY</span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">fsverity_operations</span> *<span class="title">s_vop</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_UNICODE</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">unicode_map</span> *<span class="title">s_encoding</span>;</span></span><br><span class="line">	__u16 s_encoding_flags;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">hlist_bl_head</span>	<span class="title">s_roots</span>;</span>	<span class="comment">/* alternate root dentries for NFS */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>	<span class="title">s_mounts</span>;</span>	<span class="comment">/* list of mounts; _not_ for fs use */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">block_device</span>	*<span class="title">s_bdev</span>;</span>	<span class="comment">// 该文件系统所在的设备信息</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">backing_dev_info</span> *<span class="title">s_bdi</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mtd_info</span>		*<span class="title">s_mtd</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">hlist_node</span>	<span class="title">s_instances</span>;</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span>		s_quota_types;	<span class="comment">/* Bitmask of supported quota types */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">quota_info</span>	<span class="title">s_dquot</span>;</span>	<span class="comment">/* Diskquota specific options */</span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">sb_writers</span>	<span class="title">s_writers</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * Keep s_fs_info, s_time_gran, s_fsnotify_mask, and</span></span><br><span class="line"><span class="comment">	 * s_fsnotify_marks together for cache efficiency. They are frequently</span></span><br><span class="line"><span class="comment">	 * accessed and rarely modified.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="type">void</span>			*s_fs_info;	<span class="comment">/* Filesystem private info */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Granularity of c/m/atime in ns (cannot be worse than a second) */</span></span><br><span class="line">	u32			s_time_gran;</span><br><span class="line">	<span class="comment">/* Time limits for c/m/atime in seconds */</span></span><br><span class="line">	<span class="type">time64_t</span>		   s_time_min;</span><br><span class="line">	<span class="type">time64_t</span>		   s_time_max;</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_FSNOTIFY</span></span><br><span class="line">	__u32			s_fsnotify_mask;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">fsnotify_mark_connector</span> __<span class="title">rcu</span>	*<span class="title">s_fsnotify_marks</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="type">char</span>			s_id[<span class="number">32</span>];	<span class="comment">/* Informational name */</span></span><br><span class="line">	<span class="type">uuid_t</span>			s_uuid;		<span class="comment">/* UUID */</span></span><br><span class="line"></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span>		s_max_links;</span><br><span class="line">	<span class="type">fmode_t</span>			s_mode;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * The next field is for VFS *only*. No filesystems have any business</span></span><br><span class="line"><span class="comment">	 * even looking at it. You had been warned.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mutex</span> <span class="title">s_vfs_rename_mutex</span>;</span>	<span class="comment">/* Kludge */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * Filesystem subtype.  If non-empty the filesystem type field</span></span><br><span class="line"><span class="comment">	 * in /proc/mounts will be &quot;type.subtype&quot;</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="type">const</span> <span class="type">char</span> *s_subtype;</span><br><span class="line"></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">dentry_operations</span> *<span class="title">s_d_op</span>;</span> <span class="comment">/* default d_op for dentries */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * Saved pool identifier for cleancache (-1 means none)</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="type">int</span> cleancache_poolid;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">shrinker</span> <span class="title">s_shrink</span>;</span>	<span class="comment">/* per-sb shrinker handle */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Number of inodes with nlink == 0 but still referenced */</span></span><br><span class="line">	<span class="type">atomic_long_t</span> s_remove_count;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * Number of inode/mount/sb objects that are being watched, note that</span></span><br><span class="line"><span class="comment">	 * inodes objects are currently double-accounted.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="type">atomic_long_t</span> s_fsnotify_connectors;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Being remounted read-only */</span></span><br><span class="line">	<span class="type">int</span> s_readonly_remount;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* per-sb errseq_t for reporting writeback errors via syncfs */</span></span><br><span class="line">	<span class="type">errseq_t</span> s_wb_err;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* AIO completions deferred from interrupt context */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">workqueue_struct</span> *<span class="title">s_dio_done_wq</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">hlist_head</span> <span class="title">s_pins</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * Owning user namespace and default context in which to</span></span><br><span class="line"><span class="comment">	 * interpret filesystem uids, gids, quotas, device nodes,</span></span><br><span class="line"><span class="comment">	 * xattrs and security labels.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">user_namespace</span> *<span class="title">s_user_ns</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * The list_lru structure is essentially just a pointer to a table</span></span><br><span class="line"><span class="comment">	 * of per-node lru lists, each of which has its own spinlock.</span></span><br><span class="line"><span class="comment">	 * There is no need to put them into separate cachelines.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_lru</span>		<span class="title">s_dentry_lru</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_lru</span>		<span class="title">s_inode_lru</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">rcu_head</span>		<span class="title">rcu</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">work_struct</span>	<span class="title">destroy_work</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mutex</span>		<span class="title">s_sync_lock</span>;</span>	<span class="comment">/* sync serialisation lock */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * Indicates how deep in a filesystem stack this SB is</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="type">int</span> s_stack_depth;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* s_inode_list_lock protects s_inodes */</span></span><br><span class="line">	<span class="type">spinlock_t</span>		s_inode_list_lock ____cacheline_aligned_in_smp;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>	<span class="title">s_inodes</span>;</span>	<span class="comment">// 所有的inode</span></span><br><span class="line"></span><br><span class="line">	<span class="type">spinlock_t</span>		s_inode_wblist_lock;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>	<span class="title">s_inodes_wb</span>;</span>	<span class="comment">/* writeback inodes */</span></span><br><span class="line">&#125; __randomize_layout;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="7-2-inode"><a href="#7-2-inode" class="headerlink" title="7.2 inode"></a>7.2 inode</h2><p><strong>文件的元数据</strong>（属主、属组、访问时间、文件类型等，<strong>不包括文件名</strong>）</p>
+<blockquote>
+<p><strong>静态</strong>：创建文件系统时生成inode，保存在具体存储设备上，记录了文件系统的元信息</p>
+<p><strong>动态：</strong>VFS在内存中使用inode数据结构，来管理文件系统的文件对象，记录了文件对象的详细信息，部分字段与关联的文件对象有关，会动态创建</p>
+</blockquote>
+<p>inode：保存的其实是实际的数据的一些信息，这些信息称为“元数据”(也就是对文件属性的描述)。例如：文件大小，设备标识符，用户标识符，用户组标识符，文件模式，扩展属性，文件读取或修改的时间戳，链接数量，指向存储该内容的磁盘区块的指针，文件分类等等。</p>
+<blockquote>
+<p>inode有两种，一种是VFS的 inode，一种是具体文件系统的inode。前者在内存中，后者在磁盘中。所以每次其实是将磁盘中的inode调进填充内存中的inode，这样才是算使用了磁盘文件inode。</p>
+</blockquote>
+<p><strong>inode和文件的关系</strong>：当创建一个文件的时候，就给文件分配了一个inode。一个inode只对应一个实际文件，一个文件也会只有一个inode。inodes最大数量就是文件的最大数量。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// /include/linux/fs.h</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">inode</span> &#123;</span></span><br><span class="line">	<span class="type">umode_t</span>			i_mode;			<span class="comment">// 访问控制权限</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">short</span>		i_opflags;</span><br><span class="line">	<span class="type">kuid_t</span>			i_uid;			<span class="comment">// 使用者id</span></span><br><span class="line">	<span class="type">kgid_t</span>			i_gid;			<span class="comment">// 使用者id组</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span>		i_flags;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_FS_POSIX_ACL</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">posix_acl</span>	*<span class="title">i_acl</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">posix_acl</span>	*<span class="title">i_default_acl</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">inode_operations</span>	*<span class="title">i_op</span>;</span>	<span class="comment">// 该inode对象支持的操作</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">super_block</span>	*<span class="title">i_sb</span>;</span>				<span class="comment">// 相关的super_block</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">address_space</span>	*<span class="title">i_mapping</span>;</span>		<span class="comment">// 相关的地址映射</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_SECURITY</span></span><br><span class="line">	<span class="type">void</span>			*i_security;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Stat data, not accessed from path walking */</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span>		i_ino;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * Filesystems may only read i_nlink directly.  They shall use the</span></span><br><span class="line"><span class="comment">	 * following functions for modification:</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 *    (set|clear|inc|drop)_nlink</span></span><br><span class="line"><span class="comment">	 *    inode_(inc|dec)_link_count</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">		<span class="type">const</span> <span class="type">unsigned</span> <span class="type">int</span> i_nlink;</span><br><span class="line">		<span class="type">unsigned</span> <span class="type">int</span> __i_nlink;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="type">dev_t</span>			i_rdev;</span><br><span class="line">	<span class="type">loff_t</span>			i_size;			<span class="comment">// 以字节为单位的文件大小</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">timespec64</span>	<span class="title">i_atime</span>;</span>	<span class="comment">// 最后访问时间</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">timespec64</span>	<span class="title">i_mtime</span>;</span>	<span class="comment">// 最后修改时间</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">timespec64</span>	<span class="title">i_ctime</span>;</span>	<span class="comment">// </span></span><br><span class="line">	<span class="type">spinlock_t</span>		i_lock;	<span class="comment">/* i_blocks, i_bytes, maybe i_size */</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">short</span>          i_bytes;</span><br><span class="line">	u8			i_blkbits;</span><br><span class="line">	u8			i_write_hint;</span><br><span class="line">	<span class="type">blkcnt_t</span>		i_blocks;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __NEED_I_SIZE_ORDERED</span></span><br><span class="line">	<span class="type">seqcount_t</span>		i_size_seqcount;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Misc */</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span>		i_state;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">rw_semaphore</span>	<span class="title">i_rwsem</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span>		dirtied_when;	<span class="comment">/* jiffies of first dirtying */</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span>		dirtied_time_when;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">hlist_node</span>	<span class="title">i_hash</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>	<span class="title">i_io_list</span>;</span>	<span class="comment">/* backing dev IO list */</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_CGROUP_WRITEBACK</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">bdi_writeback</span>	*<span class="title">i_wb</span>;</span>		<span class="comment">/* the associated cgroup wb */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* foreign inode detection, see wbc_detach_inode() */</span></span><br><span class="line">	<span class="type">int</span>			i_wb_frn_winner;</span><br><span class="line">	u16			i_wb_frn_avg_time;</span><br><span class="line">	u16			i_wb_frn_history;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>	<span class="title">i_lru</span>;</span>		<span class="comment">/* inode LRU list */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>	<span class="title">i_sb_list</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>	<span class="title">i_wb_list</span>;</span>	<span class="comment">/* backing dev writeback list */</span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">hlist_head</span>	<span class="title">i_dentry</span>;</span>	<span class="comment">// 指定当前inode标识的文件对象的名称——dentry，链表</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">rcu_head</span>		<span class="title">i_rcu</span>;</span></span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="type">atomic64_t</span>		i_version;</span><br><span class="line">	<span class="type">atomic64_t</span>		i_sequence; <span class="comment">/* see futex */</span></span><br><span class="line">	<span class="type">atomic_t</span>		i_count;	<span class="comment">// 引用计数</span></span><br><span class="line">	<span class="type">atomic_t</span>		i_dio_count;</span><br><span class="line">	<span class="type">atomic_t</span>		i_writecount;</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> defined(CONFIG_IMA) || defined(CONFIG_FILE_LOCKING)</span></span><br><span class="line">	<span class="type">atomic_t</span>		i_readcount; <span class="comment">/* struct files open RO */</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">		<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">file_operations</span>	*<span class="title">i_fop</span>;</span>	<span class="comment">/* former -&gt;i_op-&gt;default_file_ops */</span></span><br><span class="line">		<span class="type">void</span> (*free_inode)(<span class="keyword">struct</span> inode *);</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">file_lock_context</span>	*<span class="title">i_flctx</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">address_space</span>	<span class="title">i_data</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>	<span class="title">i_devices</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">pipe_inode_info</span>	*<span class="title">i_pipe</span>;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">cdev</span>		*<span class="title">i_cdev</span>;</span></span><br><span class="line">		<span class="type">char</span>			*i_link;</span><br><span class="line">		<span class="type">unsigned</span>		i_dir_seq;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	__u32			i_generation;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_FSNOTIFY</span></span><br><span class="line">	__u32			i_fsnotify_mask; <span class="comment">/* all events this inode cares about */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">fsnotify_mark_connector</span> __<span class="title">rcu</span>	*<span class="title">i_fsnotify_marks</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_FS_ENCRYPTION</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">fscrypt_info</span>	*<span class="title">i_crypt_info</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_FS_VERITY</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">fsverity_info</span>	*<span class="title">i_verity_info</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="type">void</span>			*i_private; <span class="comment">/* fs or device private pointer */</span></span><br><span class="line">&#125; __randomize_layout;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="7-3-dentry"><a href="#7-3-dentry" class="headerlink" title="7.3 dentry"></a>7.3 dentry</h2><p><strong>保存文件名&#x2F;目录名和inode之间的对应关系</strong>，目录也有自己的inode</p>
+<p>实现硬链接、缓存、多级目录等树状文件系统的特性</p>
+<p>每个文件系统拥有一个没有父dentry的根目录（root dentry），这个dentry会被super_block引用，用来作为进行树形结构的查找入口</p>
+<p>每个dentry也都有一个inode与之关联，存储了具体的数据</p>
+<blockquote>
+<p>dentry只存在于内存中，并没有实际对应的磁盘上的描述</p>
+<p>对于一个文件”&#x2F;home&#x2F;user&#x2F;a”，会存在“&#x2F;”、“home”、“user”、“a”四个dentry，依次构成父子关系</p>
+</blockquote>
+<p>dentry的三种状态：</p>
+<ul>
+<li>used：与一个inode关联，正处于被VFS使用的状态，不能被损坏和丢弃</li>
+<li>unused：与inode关联，但处于被缓存状态，没有被VFS使用</li>
+<li>negative：没有与具体的inode关联（相当于是一个无效的路径）</li>
+</ul>
+<p>还有一个dentry cache</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /inlcude/linux/dcache.h</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">dentry</span> &#123;</span></span><br><span class="line">	<span class="comment">/* RCU lookup touched fields */</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span> d_flags;		<span class="comment">/* protected by d_lock */</span>	<span class="comment">// 目录项标志</span></span><br><span class="line">	<span class="type">seqcount_spinlock_t</span> d_seq;	<span class="comment">/* per dentry seqlock */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">hlist_bl_node</span> <span class="title">d_hash</span>;</span>	<span class="comment">/* lookup hash list */</span>	<span class="comment">// 散列表表项的指针</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">dentry</span> *<span class="title">d_parent</span>;</span>	<span class="comment">/* parent directory */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">qstr</span> <span class="title">d_name</span>;</span>			<span class="comment">// dentry的名称字符串（文件名）</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">inode</span> *<span class="title">d_inode</span>;</span>		<span class="comment">/* Where the name belongs to - NULL is negative */</span></span><br><span class="line">    							<span class="comment">// 指向了当前dentry关联的inode</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">char</span> d_iname[DNAME_INLINE_LEN];	<span class="comment">/* small names */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Ref lookup also touches following */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">lockref</span> <span class="title">d_lockref</span>;</span>	<span class="comment">/* per-dentry lock and refcount */</span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">dentry_operations</span> *<span class="title">d_op</span>;</span>	<span class="comment">// dentry支持的操作合集</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">super_block</span> *<span class="title">d_sb</span>;</span>	<span class="comment">/* The root of the dentry tree */</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> d_time;		<span class="comment">/* used by d_revalidate */</span></span><br><span class="line">	<span class="type">void</span> *d_fsdata;			<span class="comment">/* fs-specific data */</span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">d_lru</span>;</span>		<span class="comment">/* LRU list */</span></span><br><span class="line">		<span class="type">wait_queue_head_t</span> *d_wait;	<span class="comment">/* in-lookup ones only */</span></span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">d_child</span>;</span>	<span class="comment">/* child of parent list */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">d_subdirs</span>;</span>	<span class="comment">/* our children */</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * d_alias and d_rcu can share memory</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">hlist_node</span> <span class="title">d_alias</span>;</span>	<span class="comment">/* inode alias list */</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">hlist_bl_node</span> <span class="title">d_in_lookup_hash</span>;</span>	<span class="comment">/* only for in-lookup ones */</span></span><br><span class="line">	 	<span class="class"><span class="keyword">struct</span> <span class="title">rcu_head</span> <span class="title">d_rcu</span>;</span></span><br><span class="line">	&#125; d_u;</span><br><span class="line">&#125; __randomize_layout;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="7-4-file"><a href="#7-4-file" class="headerlink" title="7.4 file"></a>7.4 file</h2><p>一组逻辑上相关联的数据，被进程打开并关连使用</p>
+<blockquote>
+<p>文件对象描述的是进程已经打开的文件。因为一个文件可以被多个进程打开，所以一个文件可以存在多个文件对象。但是由于文件是唯一的，那么inode就是唯一的，目录项也是定的！</p>
+<p>文件对象是打开一个具体文件之后创建的一个内存数据结构，与具体的进程和用户相联系。一个文件对象包括的内容就是编程语言支持设置的各种文件打开的flag、mode，文件名称、当前的偏移等，其中非常重要的一个字段就是f_op，指向了当前文件所支持的操作集合。</p>
+</blockquote>
+<p>Linux用file结构体来保存打开的文件的位置，所以file称为打开的文件描述</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /include/linux/fs.h</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">file</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">llist_node</span>	<span class="title">fu_llist</span>;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">rcu_head</span> 	<span class="title">fu_rcuhead</span>;</span></span><br><span class="line">	&#125; f_u;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">path</span>		<span class="title">f_path</span>;</span>			<span class="comment">// 确定文件路径</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">inode</span>		*<span class="title">f_inode</span>;</span>	<span class="comment">/* cached value */</span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">file_operations</span>	*<span class="title">f_op</span>;</span>	<span class="comment">// 与该文件相关联的操作函数合集</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * Protects f_ep, f_flags.</span></span><br><span class="line"><span class="comment">	 * Must not be taken from IRQ context.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="type">spinlock_t</span>		f_lock;</span><br><span class="line">	<span class="class"><span class="keyword">enum</span> <span class="title">rw_hint</span>		<span class="title">f_write_hint</span>;</span></span><br><span class="line">	<span class="type">atomic_long_t</span>		f_count;	<span class="comment">// 引用计数</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span> 		f_flags;	<span class="comment">// 文件打开时的flag</span></span><br><span class="line">	<span class="type">fmode_t</span>			f_mode;			<span class="comment">// open时的mode参数（读写模式参数）</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mutex</span>		<span class="title">f_pos_lock</span>;</span></span><br><span class="line">	<span class="type">loff_t</span>			f_pos;			<span class="comment">// 该文件在当前进程中的文件偏移量</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">fown_struct</span>	<span class="title">f_owner</span>;</span></span><br><span class="line">	<span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">cred</span>	*<span class="title">f_cred</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">file_ra_state</span>	<span class="title">f_ra</span>;</span></span><br><span class="line"></span><br><span class="line">	u64			f_version;</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_SECURITY</span></span><br><span class="line">	<span class="type">void</span>			*f_security;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="comment">/* needed for tty driver, and maybe others */</span></span><br><span class="line">	<span class="type">void</span>			*private_data;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_EPOLL</span></span><br><span class="line">	<span class="comment">/* Used by fs/eventpoll.c to link all the hooks to this file */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">hlist_head</span>	*<span class="title">f_ep</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* #ifdef CONFIG_EPOLL */</span></span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">address_space</span>	*<span class="title">f_mapping</span>;</span></span><br><span class="line">	<span class="type">errseq_t</span>		f_wb_err;</span><br><span class="line">	<span class="type">errseq_t</span>		f_sb_err; <span class="comment">/* for syncfs */</span></span><br><span class="line">&#125; __randomize_layout</span><br><span class="line">  __attribute__((aligned(<span class="number">4</span>)));	<span class="comment">/* lest something weird decides that 2 is OK */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fown_struct</span> &#123;</span></span><br><span class="line">	<span class="type">rwlock_t</span> lock;          <span class="comment">/* protects pid, uid, euid fields */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">pid</span> *<span class="title">pid</span>;</span>	<span class="comment">/* pid or -pgrp where SIGIO should be sent */</span></span><br><span class="line">	<span class="class"><span class="keyword">enum</span> <span class="title">pid_type</span> <span class="title">pid_type</span>;</span>	<span class="comment">/* Kind of process group SIGIO should be sent to */</span></span><br><span class="line">	<span class="type">kuid_t</span> uid, euid;	<span class="comment">/* uid/euid of process setting the owner */</span></span><br><span class="line">	<span class="type">int</span> signum;		<span class="comment">/* posix.1b rt signal to be delivered on IO */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="/2024/07/18/Linux-VFS/20180318233406533.png" alt="20180318233406533"></p>
+<h2 id="7-5-path"><a href="#7-5-path" class="headerlink" title="7.5 path"></a>7.5 path</h2><blockquote>
+<p>一个文件系统可以挂装载到不同的挂载点。所以文件系统树的一个位置要由&lt;mount, dentry&gt;二元组（或者说&lt;vfsmount, dentry&gt;）来确定。</p>
+</blockquote>
+<p>因此下面的结构体唯一确定一个文件系统中的位置</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /include/linux/path.h</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">path</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">vfsmount</span> *<span class="title">mnt</span>;</span>	<span class="comment">// 当前文件所在文件系统的挂载根目录（指向mount结构体里的struct vfsmount mnt）</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">dentry</span> *<span class="title">dentry</span>;</span>	<span class="comment">// f_path.dentry: 当前文件的dentry结构</span></span><br><span class="line">&#125; __randomize_layout;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="7-6-vfsmount"><a href="#7-6-vfsmount" class="headerlink" title="7.6 vfsmount"></a>7.6 vfsmount</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /include/linux/mount.h</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">vfsmount</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">dentry</span> *<span class="title">mnt_root</span>;</span>	<span class="comment">/* root of the mounted tree */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">super_block</span> *<span class="title">mnt_sb</span>;</span>	<span class="comment">/* pointer to superblock */</span></span><br><span class="line">	<span class="type">int</span> mnt_flags;				<span class="comment">// 次文件系统的挂载标志</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">user_namespace</span> *<span class="title">mnt_userns</span>;</span></span><br><span class="line">&#125; __randomize_layout;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="7-7-mount"><a href="#7-7-mount" class="headerlink" title="7.7 mount"></a>7.7 mount</h2><p>一个struct mount代表着一个mount实例（一次真正的挂载）</p>
+<p>struct mount里面最重要的就是上面的vfsmount</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /fs/mount.h</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mount</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">hlist_node</span> <span class="title">mnt_hash</span>;</span>		<span class="comment">// 用于链接到全局已挂载文件系统的链表</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mount</span> *<span class="title">mnt_parent</span>;</span>		<span class="comment">// 指向此文件系统的挂载点所属的文件系统，即父文件系统</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">dentry</span> *<span class="title">mnt_mountpoint</span>;</span>	<span class="comment">// 指向此文件系统的挂载点的dentry</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">vfsmount</span> <span class="title">mnt</span>;</span>			<span class="comment">// 指向此文件系统的vfsmount实例</span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">rcu_head</span> <span class="title">mnt_rcu</span>;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">llist_node</span> <span class="title">mnt_llist</span>;</span></span><br><span class="line">	&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_SMP</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mnt_pcp</span> __<span class="title">percpu</span> *<span class="title">mnt_pcp</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">	<span class="type">int</span> mnt_count;</span><br><span class="line">	<span class="type">int</span> mnt_writers;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">mnt_mounts</span>;</span>	<span class="comment">/* 挂载在此文件系统下的所有子文件系统的链表的表头，下面的节点都是mnt_child */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">mnt_child</span>;</span>	<span class="comment">/* 链接到被此文件系统所挂的父文件系统的mnt_mounts上 */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">mnt_instance</span>;</span>	<span class="comment">/* 链接到sb-&gt;s_mounts上的一个mount实例 */</span></span><br><span class="line">	<span class="type">const</span> <span class="type">char</span> *mnt_devname;	<span class="comment">/* 设备名，如/dev/sdb1 */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">mnt_list</span>;</span>		<span class="comment">// 链接到进程namespace中已挂载文件系统中，表头为mnt_namespace的list域</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">mnt_expire</span>;</span>	<span class="comment">/* 链接到一些文件系统专有的过期链表，如NFS, CIFS等 */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">mnt_share</span>;</span>	<span class="comment">/* 链接到共享挂载的循环链表中 */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">mnt_slave_list</span>;</span><span class="comment">/* 此文件系统的slave mount链表的表头 */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">mnt_slave</span>;</span>	<span class="comment">/* 连接到master文件系统的mnt_slave_list */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mount</span> *<span class="title">mnt_master</span>;</span>	<span class="comment">/* slave is on master-&gt;mnt_slave_list */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mnt_namespace</span> *<span class="title">mnt_ns</span>;</span>	<span class="comment">/* 指向包含这个文件系统的进程的namespace */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mountpoint</span> *<span class="title">mnt_mp</span>;</span>	<span class="comment">/* where is it mounted */</span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">hlist_node</span> <span class="title">mnt_mp_list</span>;</span>	<span class="comment">/* list mounts with the same mountpoint */</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">hlist_node</span> <span class="title">mnt_umount</span>;</span></span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">mnt_umounting</span>;</span> <span class="comment">/* list entry for umount propagation */</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_FSNOTIFY</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">fsnotify_mark_connector</span> __<span class="title">rcu</span> *<span class="title">mnt_fsnotify_marks</span>;</span></span><br><span class="line">	__u32 mnt_fsnotify_mask;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="type">int</span> mnt_id;			<span class="comment">/* mount identifier */</span></span><br><span class="line">	<span class="type">int</span> mnt_group_id;		<span class="comment">/* peer group identifier */</span></span><br><span class="line">	<span class="type">int</span> mnt_expiry_mark;		<span class="comment">/* true if marked for expiry */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">hlist_head</span> <span class="title">mnt_pins</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">hlist_head</span> <span class="title">mnt_stuck_children</span>;</span></span><br><span class="line">&#125; __randomize_layout;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="7-8-nameidata"><a href="#7-8-nameidata" class="headerlink" title="7.8 nameidata"></a>7.8 nameidata</h2><blockquote>
+<p><code>nameidata</code>结构体在路径寻找中有着重要的作用，通常它叫做nd，通过它可以很容易的找到当前的路径<code>path</code>，以及当前文件系统的root，也就是当前文件系统的“根”，话句话说，就是当前文件系统的挂载点目录。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">nameidata</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">path</span>	<span class="title">path</span>;</span>				<span class="comment">// 当前路径</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">qstr</span>	<span class="title">last</span>;</span>				<span class="comment">// 最后一个路径分量（last.name指向一个字符串）</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">path</span>	<span class="title">root</span>;</span>				<span class="comment">// 当前文件系统的根</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">inode</span>	*<span class="title">inode</span>;</span> 		<span class="comment">// 指向path中当前路径dentry的inode</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span>	flags, state;</span><br><span class="line">	<span class="type">unsigned</span>	seq, m_seq, r_seq;</span><br><span class="line">	<span class="type">int</span>		last_type;</span><br><span class="line">	<span class="type">unsigned</span>	depth;				<span class="comment">// 当前路径深度</span></span><br><span class="line">	<span class="type">int</span>		total_link_count;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">saved</span> &#123;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">path</span> <span class="title">link</span>;</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">delayed_call</span> <span class="title">done</span>;</span></span><br><span class="line">		<span class="type">const</span> <span class="type">char</span> *name;</span><br><span class="line">		<span class="type">unsigned</span> seq;</span><br><span class="line">	&#125; *<span class="built_in">stack</span>, internal[EMBEDDED_LEVELS];</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">filename</span>	*<span class="title">name</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">nameidata</span> *<span class="title">saved</span>;</span>		<span class="comment">// 被用在restore_nameidata函数中，saved在追踪路径之前保存当前路径，当路径行走完成时，用来还原原来的路径</span></span><br><span class="line">	<span class="type">unsigned</span>	root_seq;</span><br><span class="line">	<span class="type">int</span>		dfd;</span><br><span class="line">	<span class="type">kuid_t</span>		dir_uid;</span><br><span class="line">	<span class="type">umode_t</span>		dir_mode;</span><br><span class="line">&#125; __randomize_layout;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="7-X-路径解析过程"><a href="#7-X-路径解析过程" class="headerlink" title="7.X 路径解析过程"></a>7.X 路径解析过程</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jinking01/article/details/104813672">https://blog.csdn.net/jinking01/article/details/104813672</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/oqqYuJi12345678/article/details/101689334">https://blog.csdn.net/oqqYuJi12345678/article/details/101689334</a></p>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/Linux%E4%BC%81%E9%B9%85.png"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+		
+			<a href="/2024/05/09/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Golang学习笔记" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/" title="namespace、cgroup与capabilities">
+								namespace、cgroup与capabilities			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 25日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、namespace1.1 类型
+
+
+Namespace
+Flag
+Page
+Isolates
+
+
+
+Cgroup
+CLONE_NEWCGROUP
+cgroup_namespaces(7)
+Cgroup root directory...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/" title="namespace、cgroup与capabilities">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="namespace、cgroup与capabilities"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">
+								Linux攻防-权限维持及痕迹隐藏			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 17日, 2023				
+							</p>
+							<p class="relate-post-content">
+								零、Linux下的控守技术概述控守技术可以理解为权限维持技术，泛指攻击者获取目标机器的控制权限后，将该权限长久维持的技术和方法
+这里主要分为两大类：
+
+权限维持：能够在失去当前控制权限时，下次能更容易地重获权限的方法
+痕迹隐藏：能够使...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux攻防-权限维持及痕迹隐藏"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">
+								Redis-配置&命令&漏洞利用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 22日, 2023				
+							</p>
+							<p class="relate-post-content">
+								Redis配置路径：/etc/redis/redis.conf
+允许远程主机访问数据库：NETWORK一栏，注释掉bind 127.0.0.1 ::1同时设置protected-mode no
+说明是这样的：
+
+意思是Redis仅允许...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/04/22/Redis-%E9%85%8D%E7%BD%AE-%E5%91%BD%E4%BB%A4-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" title="Redis-配置&命令&漏洞利用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Redis.png" alt="Redis-配置&amp;命令&amp;漏洞利用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">
+								Linux环境变量			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 10日, 2021				
+							</p>
+							<p class="relate-post-content">
+								前言学，以前一直没会
+以Kali Linux 2021.2为例
+资料1资料2
+概述Linux环境变量包括：系统级、用户级系统级环境变量：每个登录到系统的用户都要读取的用户级环境变量：用户使用系统时加载的
+相关命令export：设置或显...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2021/12/10/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="Linux环境变量">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux环境变量.png" alt="Linux环境变量"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/05/09/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Golang学习笔记">
+								Golang学习笔记			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 9日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、菜鸟&#x3D;&#x3D;学了基础中的基础语法&#x3D;&#x3D;
+1.1 Go语言结构.go文件必须在非注释的第一行指明这个文件属于哪个包，如：package main
+每一个可执行文件都必须包含main函数，一般来说都是...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/05/09/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Golang学习笔记">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Golang.png" alt="Golang学习笔记"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/04/08/%E5%AE%B9%E5%99%A8%E5%AE%89%E5%85%A8/" title="容器安全">
+								容器安全			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 8日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、Docker安全概述Docker 自身是基于 Linux 的多种 Namespace 实现的，其中有一个很重要的 Namespace 叫作 User Namespace，User Namespace 主要是用来做容器内用户和主机的...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/04/08/%E5%AE%B9%E5%99%A8%E5%AE%89%E5%85%A8/" title="容器安全">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/docker.jpg" alt="容器安全"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/03/19/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%9E%B6%E6%9E%84/" title="Docker基础与架构">
+								Docker基础与架构			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 19日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、Docker进程与Linux进程Link: https://zhuanlan.zhihu.com/p/537982888
+1.1 Linux的forkLinux：由父进程创建并执行子进程，创建通过fork完成，执行通过exec完成...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/03/19/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%9E%B6%E6%9E%84/" title="Docker基础与架构">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/docker.jpg" alt="Docker基础与架构"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">
+								Web漏洞整理-SQLi			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 7日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQLi前言主要是之前练习了很多靶场所设计到的SQLi的笔记都比较分散这里就系统地整理下，主要是整合到一起，方便以后查阅
+整理自靶场练习Webgoat、pikachu、Web For Pentester、XVWA、sql...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/WebVuln1.jpg" alt="Web漏洞整理-SQLi"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>
